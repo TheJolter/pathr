@@ -4,12 +4,18 @@ import { useEffect, useState } from "react"
 import ChainTokenIcon from "./ChainTokenIcon"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faGasPump, faClock, faSackDollar } from '@fortawesome/free-solid-svg-icons'
+import { observer } from "mobx-react-lite"
+import { useStore } from "@/stores/hooks"
 
-export default function Provider(props: {
+export default observer(function Provider(props: {
   className?: string,
-  isBest?: boolean
+  isBest?: boolean,
+  selected?: boolean
 }) {
-  const {className, isBest} = props
+  const {className, isBest, selected} = props
+
+  const displayStore = useStore('displayStore')
+  const rubicStore = useStore('rubicStore')
 
   const { theme } = useTheme()
 
@@ -25,12 +31,18 @@ export default function Provider(props: {
 
   return (
 <div style={{background}}
-className={`min-h-[64px] rounded-xl border-[#35593F] border-1 p-4 ${className} cursor-pointer`}
+  className={`min-h-[64px] rounded-xl border-[#35593F] border-1 p-4 ${className} cursor-pointer`}
+  onClick={()=>{
+    displayStore.setSelectedProvider(1)
+    displayStore.setShowPreview(true)
+  }}
 >
   {isBest&&<Chip size="sm" className="mb-3" color="success">Best</Chip>}
 
+  {selected&&<div className="font-semibold mb-2">You get</div>}
+
   <div className="flex items-center justify-between">
-    <ChainTokenIcon />
+    <ChainTokenIcon tokenAddr={rubicStore.toChainTokenAddr!} chainName={rubicStore.toChainName!} />
     <div className="grow ml-4">
       <div className="text-lg font-semibold">123.456789 USDT</div>
       <div className="flex items-center text-gray-400 text-sm">
@@ -60,4 +72,4 @@ className={`min-h-[64px] rounded-xl border-[#35593F] border-1 p-4 ${className} c
   </div>
 </div>
   )
-}
+})

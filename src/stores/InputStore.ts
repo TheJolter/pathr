@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from "mobx";
 
-export class InputStore {
+export default class InputStore {
   constructor() {
     makeObservable(this)
   }

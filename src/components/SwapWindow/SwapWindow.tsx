@@ -6,20 +6,51 @@ import Providers from "./Providers"
 import Exchange from "./Exchange"
 import { useStore } from "@/stores/hooks"
 import { observer } from "mobx-react-lite"
+import ChainTokenSelector from "./ChainTokenSelector/ChainTokenSelector"
+import Review from "./Review/Review"
+import SuccessDialog from "./SuccessDialog"
+import WarningDialog from "./WarningDialog"
+import bn from "@/utils/bn"
 
 export default observer(function SwapWindow(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 ) {
   const { theme } = useTheme()
   const inputStore = useStore('inputStore')
+  const displayStore = useStore('displayStore')
+  const rubicStore = useStore('rubicStore')
 
   const [boxBgStyle, setBoxBgStyle] = useState<CSSProperties>()
   const [showProvider, setShowProvider] = useState(false)
-  const [showChainTokenSelector, setShowChainTokenSelector] = useState<'from'|'to'>()
 
   useEffect(()=>{
-    setShowProvider(!!inputStore.tokenAmout)
-  }, [inputStore.tokenAmout])
+    console.log('displayStore.showChainTokenSelector', displayStore.showChainTokenSelector)
+  }, [displayStore.showChainTokenSelector])
+
+  useEffect(()=>{
+    if (bn(inputStore.tokenAmout||0).lte(0)) {
+      displayStore.setShowProviders(false)
+    }
+    if (!inputStore.tokenAmout) {
+      displayStore.setSelectedProvider(-1)
+      displayStore.setShowChainTokenSelector(undefined)
+    }
+  }, [
+    displayStore,
+    inputStore.tokenAmout,
+  ])
+
+  useEffect(()=>{
+    displayStore.setShowProviders(false)
+    inputStore.setTokenAmount('')
+  }, [
+    displayStore,
+    inputStore,
+    rubicStore.fromChainTokenAddr, 
+    rubicStore.toChainTokenAddr,
+    rubicStore.fromChainName,
+    rubicStore.toChainName,
+  ])
 
   useEffect(()=>{
     if (theme==='dark') {
@@ -38,15 +69,29 @@ export default observer(function SwapWindow(
     // className={`grid gap-6 ${showProvider?'grid-cols-2':'grid-cols-1'} ${props.className}`}
     className={`${props.className} flex justify-center`}
   >
-    {!showChainTokenSelector&&<>
-      <div className={`flex ${showProvider?'justify-end':'justify-center'}`}>
-        <Exchange style={boxBgStyle} />
-      </div>
-      
-      <div className={`transform transition-transform duration-500 ease-in-out ${showProvider ? "visible scale-100 ml-6" : "invisible scale-0 h-0 w-0"}`}>
-        <Providers style={boxBgStyle} />
-      </div>
-    </>}
+    { !displayStore.showChainTokenSelector && !displayStore.showReview && 
+      <>
+        <div className={`flex ${displayStore.showProviders?'justify-end':'justify-center'}`}>
+          <Exchange style={boxBgStyle} />
+        </div>
+        
+        <div className={`transform transition-transform duration-500 ease-in-out ${displayStore.showProviders ? "visible scale-100 ml-6" : "invisible scale-0 h-0 w-0"}`}>
+          <Providers style={boxBgStyle} />
+        </div>
+      </>
+    }
+
+    { displayStore.showChainTokenSelector && !displayStore.showReview &&
+      <ChainTokenSelector style={boxBgStyle} />
+    }
+
+    { displayStore.showReview &&
+      <Review style={boxBgStyle} />
+    }
+
+    <SuccessDialog />
+
+    <WarningDialog />
   </div>
 </div>
 )

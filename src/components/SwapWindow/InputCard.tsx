@@ -13,6 +13,7 @@ export default observer(function InputCard(props: {
 }) {
   const { theme } = useTheme()
   const inputStore = useStore('inputStore')
+  const rubicStore = useStore('rubicStore')
 
   const [background, setBackground] = useState('')
 
@@ -23,6 +24,8 @@ export default observer(function InputCard(props: {
     }
     setBackground('#ffffff')
   }, [theme])
+
+  if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
   return (
 <div style={{background, ...props.style}} 
   className={`h-[100px] rounded-xl border-[#35593F] border-1 ${props.className}
@@ -31,7 +34,7 @@ export default observer(function InputCard(props: {
 >
   <div className="font-semibold mb-2">You pay</div>
   <div id="input-card-icon-input-amout" className="flex">
-    <div><ChainTokenIcon /></div>
+    <div><ChainTokenIcon chainName={rubicStore.fromChainName} tokenAddr={rubicStore.fromChainTokenAddr} /></div>
     <div className="grow ml-4">
       <div className="flex items-center mb-1">
         <input placeholder="0" value={inputStore.tokenAmout}
