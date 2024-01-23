@@ -25,7 +25,7 @@ export default function Menu() {
 <div className="relative">
   <div className="relative z-10 px-[6px] flex items-center h-[58px]">
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth>Swap</MainButton>
-    <MainButton className="h-[46px] font-semibold text-lg" fullWidth style={{background: 'rgba(0,0,0,0)', color: '#9FA8AB'}}>Limit Order</MainButton>
+    <MainButton className="h-[46px] font-semibold text-lg" fullWidth style={{background: 'rgba(0,0,0,0)', color: '#9FA8AB'}}>Gas</MainButton>
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 
     style={menuBgStyle}

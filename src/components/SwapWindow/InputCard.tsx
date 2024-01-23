@@ -6,6 +6,10 @@ import ChainTokenIcon from "./ChainTokenIcon"
 import { Chip } from "@nextui-org/react"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
+import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
+import allTokens from '@/configs/rubic/all-tokens.json'
+import getAndSotreBalance from "@/utils/get-and-store-balance"
+import { bigNumberFloor } from "@/utils/bigNumberCeilFloor"
 
 export default observer(function InputCard(props: {
   style?: CSSProperties,
@@ -14,8 +18,11 @@ export default observer(function InputCard(props: {
   const { theme } = useTheme()
   const inputStore = useStore('inputStore')
   const rubicStore = useStore('rubicStore')
+  const evmWalletStore = useStore('evmWalletStore')
+  const balanceStore = useStore('balanceStore')
 
   const [background, setBackground] = useState('')
+  const [balanceKey, setBalanceKey] = useState('')
 
   useEffect(()=>{
     if (theme==='dark') {
@@ -24,6 +31,23 @@ export default observer(function InputCard(props: {
     }
     setBackground('#ffffff')
   }, [theme])
+
+  useEffect(()=>{
+    setBalanceKey('')
+    // console.log({fromChainName, fromTokenName, account: evmWalletStore.address})
+    const chainId = BlockchainInfo[rubicStore.fromChainName||'']?.id
+    const fromToken = allTokens.find(item=>{return item.address===rubicStore.fromChainTokenAddr && item.blockchainName===rubicStore.fromChainName})
+    if (!fromToken || !evmWalletStore.address) return
+    getAndSotreBalance({
+      balanceStore,
+      chainId,
+      tokenAddress: fromToken.address,
+      account: evmWalletStore.address,
+      getBakanceKey: (_balanceKey: string) => {
+        setBalanceKey(_balanceKey)
+      }
+    })
+  }, [rubicStore.fromChainName, rubicStore.fromChainTokenAddr, evmWalletStore.address, balanceStore])
 
   if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
   return (
@@ -47,8 +71,8 @@ export default observer(function InputCard(props: {
         <Chip size="sm" color="success" className="cursor-pointer">Max</Chip>
       </div>
       <div className="items-center justify-between text-xs text-gray-400">
-        <div>$123.45</div>
-        <div>/ 123.45</div>
+        {/* <div>$123.45</div> */}
+        <div>/ {bigNumberFloor(balanceStore.balances[balanceKey]?.amount||0 ,6).toFormat()}</div>
       </div>
     </div>
   </div>

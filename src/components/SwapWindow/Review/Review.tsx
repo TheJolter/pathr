@@ -12,6 +12,9 @@ import allTokens from '@/configs/rubic/all-tokens.json'
 import connectEvmWallet from "@/utils/connectEvmWallet"
 import { ADDR0 } from "@/configs/rubic/tokens"
 import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
+import getEthereum from "@/utils/getEthereum"
+import evmSwitchChain from "@/utils/evmSwitchChain"
+import getAndSotreBalance from "@/utils/get-and-store-balance"
 
 export default observer(function Review(props: {
   style?: CSSProperties
@@ -21,6 +24,7 @@ export default observer(function Review(props: {
   const rubicStore = useStore('rubicStore')
   const inputStore = useStore('inputStore')
   const evmWalletStore = useStore('evmWalletStore')
+  const balanceStore = useStore('balanceStore')
 
   const [isBusy, setIsBusy] = useState(false)
 
@@ -47,6 +51,15 @@ export default observer(function Review(props: {
       connectEvmWallet({evmWalletStore})
       return
     }
+    const ethereum = getEthereum()
+
+    if (Number(ethereum.chainId)!==chainInfo.id) {
+      evmSwitchChain(`0x${chainInfo.id.toString(16)}`).then(()=>{
+        handleSwap()
+      })
+      return
+    }
+
     const blockchainAdapter: EvmWeb3Public = Injector.web3PublicService.getWeb3Public(rubicStore.fromChainName as EvmBlockchainName)
     setIsBusy(true)
     let gasPrice = '0'
@@ -115,6 +128,12 @@ export default observer(function Review(props: {
       // })
       if (evmWalletStore.address) {
         // getAndSotreBalance
+        getAndSotreBalance({
+          balanceStore,
+          chainId: chainInfo.id,
+          tokenAddress: rubicStore.fromChainTokenAddr!,
+          account: evmWalletStore.address
+        })
       }
     }).catch(err=>{
       setIsBusy(false)

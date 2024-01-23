@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button } from "@nextui-org/react"
-import { CSSProperties } from "react"
+import { CSSProperties, useEffect, useState } from "react"
 import ToggleButton from "./ToggleButton"
 import ChainTokenCard from "./ChainTokenCard"
 import InputCard from "./InputCard"
@@ -17,6 +17,8 @@ export default observer(function Exchange(props: {
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
   const inputStore = useStore('inputStore')
+  const evmWalletStore = useStore('evmWalletStore')
+  const balanceStore = useStore('balanceStore')
 
   function handleToggle() {
     const _fromChainName = rubicStore.fromChainName

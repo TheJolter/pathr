@@ -7,10 +7,19 @@ import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@ne
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import MainButton from "../MainButton";
+import { useEffect } from "react";
+import getAndStoreBalances from "@/utils/get-and-store-balances";
 
 export default observer(function EvmWalletButton() {
 
   const evmWalletStore = useStore('evmWalletStore')
+  const balanceStore = useStore('balanceStore')
+
+  useEffect(()=>{
+    if (!evmWalletStore.address) return
+    if (balanceStore.fetchedAddresses.includes(evmWalletStore.address)) return
+    getAndStoreBalances({balanceStore, account: evmWalletStore.address})
+  }, [evmWalletStore.address, balanceStore])
 
   return (
 <>
