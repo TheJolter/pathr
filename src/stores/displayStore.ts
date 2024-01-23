@@ -5,7 +5,7 @@ type SuccessDialogParams = {
   tokenAmount: string, 
   tokenUsdValue: string,
   tokenAddr: string,
-  chainId: string,
+  // chainId: string,
   detailsUrl: string
 }
 

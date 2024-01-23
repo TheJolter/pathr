@@ -10,8 +10,10 @@ import { useStore } from "@/stores/hooks";
 export default observer(function SuccessDialog() {
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
+
+  const dialogParams = displayStore.successDialogParams
   return (
-<Modal isOpen={!!displayStore.successDialogParams} onOpenChange={()=>{}} closeButton={<></>}>
+<Modal isOpen={!!dialogParams} onOpenChange={()=>{}} closeButton={<></>}>
   <ModalContent>
     <ModalHeader></ModalHeader>
     <ModalBody className="pb-6">
@@ -20,14 +22,16 @@ export default observer(function SuccessDialog() {
       <div className="flex items-center justify-center">
         <ChainTokenIcon tokenAddr={rubicStore.toChainTokenAddr!} chainName={rubicStore.toChainName!} />
         <div className="ml-3">
-          <div className="text-2xl font-semibold">8.5023</div>
-          <div className="text-gray-400 text-xs">$8.50</div>
+          <div className="text-2xl font-semibold">{dialogParams?.tokenAmount}</div>
+          <div className="text-gray-400 text-xs">{dialogParams?.tokenUsdValue}</div>
         </div>
       </div>
       <MainButton fullWidth className="mt-2"
         onClick={()=>displayStore.setSuccessDialogParams(null)}
       >Done</MainButton>
-      <Button radius="full">See details</Button>
+      <Button radius="full"
+        onClick={()=>open(dialogParams?.detailsUrl)}
+      >See details</Button>
     </ModalBody>
   </ModalContent>
 </Modal>

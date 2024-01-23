@@ -19,9 +19,9 @@ export default observer(function SwapWindow(
   const inputStore = useStore('inputStore')
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
+  const evmWalletStore = useStore('evmWalletStore')
 
   const [boxBgStyle, setBoxBgStyle] = useState<CSSProperties>()
-  const [showProvider, setShowProvider] = useState(false)
 
   useEffect(()=>{
     console.log('displayStore.showChainTokenSelector', displayStore.showChainTokenSelector)
@@ -53,6 +53,10 @@ export default observer(function SwapWindow(
   ])
 
   useEffect(()=>{
+    displayStore.setShowPreview(false)
+  }, [displayStore, evmWalletStore.address])
+
+  useEffect(()=>{
     if (theme==='dark') {
       setBoxBgStyle({background: '#1E2D23'})
       return
@@ -69,21 +73,22 @@ export default observer(function SwapWindow(
     // className={`grid gap-6 ${showProvider?'grid-cols-2':'grid-cols-1'} ${props.className}`}
     className={`${props.className} flex justify-center`}
   >
-    { !displayStore.showChainTokenSelector && !displayStore.showReview && 
-      <>
-        <div className={`flex ${displayStore.showProviders?'justify-end':'justify-center'}`}>
-          <Exchange style={boxBgStyle} />
-        </div>
-        
-        <div className={`transform transition-transform duration-500 ease-in-out ${displayStore.showProviders ? "visible scale-100 ml-6" : "invisible scale-0 h-0 w-0"}`}>
-          <Providers style={boxBgStyle} />
-        </div>
-      </>
-    }
-
-    { displayStore.showChainTokenSelector && !displayStore.showReview &&
-      <ChainTokenSelector style={boxBgStyle} />
-    }
+    
+    <div className="flex justify-center"
+      style={{display: (!displayStore.showChainTokenSelector && !displayStore.showReview)?undefined:'none' }}
+    >
+      <div className={`flex ${displayStore.showProviders?'justify-end':'justify-center'}`}>
+        <Exchange style={boxBgStyle} />
+      </div>
+      
+      <div className={`transform transition-transform duration-500 ease-in-out ${displayStore.showProviders ? "visible scale-100 ml-6" : "invisible scale-0 h-0 w-0"}`}>
+        <Providers style={boxBgStyle} />
+      </div>
+    </div>
+    
+    <ChainTokenSelector style={{...boxBgStyle,
+      display: (displayStore.showChainTokenSelector && !displayStore.showReview)?undefined:'none'
+    }} />
 
     { displayStore.showReview &&
       <Review style={boxBgStyle} />

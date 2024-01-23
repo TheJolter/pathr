@@ -56,7 +56,11 @@ export default observer(function Exchange(props: {
 
     {rubicStore.fromChainTokenAddr && rubicStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) &&
       <MainButton fullWidth className="mt-4"
-        onClick={()=>displayStore.setShowProviders(true)}
+        disabled={rubicStore.calculating}
+        onClick={()=>{
+          rubicStore.updateRouterCalcTime()
+          displayStore.setShowProviders(true)
+        }}
       >Calculate Routers</MainButton>
     }
     
