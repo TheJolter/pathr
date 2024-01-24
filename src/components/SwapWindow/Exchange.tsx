@@ -39,9 +39,9 @@ export default observer(function Exchange(props: {
       {/* <Button isIconOnly className="bg-opacity" size="md" radius="full">
         <FontAwesomeIcon icon={faArrowsRotate} spin size="lg" />
       </Button> */}
-      <Button isIconOnly className="bg-opacity" size="md" radius="full">
+      {/* <Button isIconOnly className="bg-opacity" size="md" radius="full">
         <FontAwesomeIcon icon={faBars} size="lg" />
-      </Button>
+      </Button> */}
     </div>
 
     <div className="relative">

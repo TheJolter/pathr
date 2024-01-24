@@ -63,8 +63,8 @@ export default observer(function Provider(props: {
         { bn(trade?.to?.weiAmount.toString()||0).div(bn(10).pow(trade?.to?.decimals||0)).toFormat(6)} {trade?.to?.symbol}
       </div>
       <div className="flex items-center text-gray-400 text-sm">
-        <div className="mr-1">$123.45</div>
-        <div className="mr-1">·</div>
+        {/* <div className="mr-1">$123.45</div>
+        <div className="mr-1">·</div> */}
         <Avatar className="w-4 h-4 mr-1" name={tradeType?.[0]?.toUpperCase()} />
         <div>
           {tradeType}
@@ -77,14 +77,14 @@ export default observer(function Provider(props: {
     </Button> */}
   </div>
   <div className="flex items-center justify-between mt-4">
-    <div className="flex items-center mr-4">
+    {/* <div className="flex items-center mr-4">
       <FontAwesomeIcon icon={faGasPump} className="text-gray-400 mr-2" />
       <div>$0.01</div>
     </div>
     <div className="flex items-center">
       <FontAwesomeIcon icon={faSackDollar} className="text-gray-400 mr-2" />
       <div>$0.01</div>
-    </div>
+    </div> */}
     <div className="flex items-center grow justify-end">
       <FontAwesomeIcon icon={faClock} className="text-gray-400 mr-2" />
       <div>1m</div>
