@@ -66,7 +66,9 @@ export default observer(function Review(props: {
     try {
       gasPrice = await blockchainAdapter.getGasPrice()
     } catch (err:any) {
-      displayStore.setWarningDialogParams({title: 'Failed to get Gas', content: err.toString()})
+      displayStore.setWarningDialogParams({
+        title: 'Failed to get Gas', 
+        content: err.message || err.toString()})
       setIsBusy(false)
       return
     }
@@ -89,7 +91,7 @@ export default observer(function Review(props: {
         console.error('trade.approve error', err)
         displayStore.setWarningDialogParams({
           title: 'Failed to approve',
-          content: `❌ trade.approve failed: ${err.toString()}`,
+          content: `${err.message || err.toString()}`,
         })
       })
       return
@@ -97,15 +99,6 @@ export default observer(function Review(props: {
 
     trade.swap({
       onConfirm:(hash)=>{
-        // dialogStore.setDialogParams({
-        //   title: '✅ Swap transaction sent',
-        //   content: <>
-        //     <Button onClick={()=>{
-        //       window.open(`${BlockchainInfo[fromChainName].explorer}/tx/${hash}`)
-        //     }}>Click here</Button>to view details
-        //   </>,
-        //   isShow: true
-        // })
       }, 
       gasPrice // required
     }).then(hash=>{
@@ -117,15 +110,6 @@ export default observer(function Review(props: {
         tokenUsdValue: '',
         detailsUrl: `${chainInfo.explorer}/tx/${hash}`
       })
-      // displayStore.setSuccessDialogParams({
-      //   title: '✅ Swap transaction sent',
-      //   content: <>
-      //     <Button onClick={()=>{
-      //       window.open(`${BlockchainInfo[fromChainName].explorer}/tx/${hash}`)
-      //     }}>Click here</Button>to view details
-      //   </>,
-      //   isShow: true
-      // })
       if (evmWalletStore.address) {
         // getAndSotreBalance
         getAndSotreBalance({
@@ -140,7 +124,7 @@ export default observer(function Review(props: {
       console.log('trade.swap error', err, 'gasPrice', gasPrice)
       displayStore.setWarningDialogParams({
         title: 'Swap failed',
-        content: `${err.toString()}`,
+        content: `${err.message || err.toString()}`,
       })
     })
   }
