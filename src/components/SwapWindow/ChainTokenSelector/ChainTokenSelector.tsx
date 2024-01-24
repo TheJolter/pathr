@@ -8,6 +8,7 @@ import TokenButton from "./TokenButton"
 import TokenInfoCard from "./TokenInfoCard"
 import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
 import allTokens from '@/configs/rubic/all-tokens.json'
+import { ADDR0 } from "@/configs/rubic/tokens"
 
 export default observer(function ChainTokenSelector(props: {
   style?: CSSProperties
@@ -61,7 +62,10 @@ export default observer(function ChainTokenSelector(props: {
 >
   <div className="flex items-center">
     <BackBtn onClick={()=>displayStore.setShowChainTokenSelector(undefined)} />
-    <div className="grow text-center text-lg font-semibold">Exchange {displayStore.showChainTokenSelector}</div>
+    <div className="grow text-center text-lg font-semibold">
+      Exchange {displayStore.showChainTokenSelector}
+      {displayStore.selectedMenu==='gas'&&'(Gas token)'}
+    </div>
     <BackBtn className="pointer-events-none opacity-0" />
   </div>
 
@@ -83,6 +87,13 @@ export default observer(function ChainTokenSelector(props: {
 
   <ScrollShadow className="max-h-[400px]">
     {tokens.map((tokenInfo, index)=>{
+      if (
+        displayStore.selectedMenu==='gas'
+        && tokenInfo.address!==ADDR0
+        && displayStore.showChainTokenSelector==='to'
+      ) {
+        return <></>
+      }
       return <TokenInfoCard tokenInfo={tokenInfo} key={`token-info-${index}`} />
     })}
   </ScrollShadow>
