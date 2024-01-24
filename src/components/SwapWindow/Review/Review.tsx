@@ -15,6 +15,7 @@ import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
 import getEthereum from "@/utils/getEthereum"
 import evmSwitchChain from "@/utils/evmSwitchChain"
 import getAndSotreBalance from "@/utils/get-and-store-balance"
+import { bigNumberCeil } from "@/utils/bigNumberCeilFloor"
 
 export default observer(function Review(props: {
   style?: CSSProperties
@@ -37,14 +38,31 @@ export default observer(function Review(props: {
     )
   })
 
+  const nativeTokenInfo = allTokens.find(item=>{
+    return (
+      item.address===ADDR0
+      && item.blockchainName === rubicStore.fromChainName
+    )
+  })
+
   let trade = rubicStore.trades[displayStore.selectedProiveder] as CrossChainTrade|OnChainTrade
   // console.log('trade', trade) // fee, gas, amounts in routers
-  const onChainTradeType = (trade as OnChainTrade).type
+  const onChainTradeType = (trade as OnChainTrade)?.type
   const onChainSubtype = (rubicStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade?.onChainSubtype
   const crossChainTradeType = (rubicStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).tradeType
   if (rubicStore.fromChainName !== rubicStore.toChainName) {
     trade = (rubicStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade as CrossChainTrade|OnChainTrade
   }
+
+  const chainIdString = chainInfo.id.toString(16)
+  const balanceKeyForGas = `${chainIdString}-${ADDR0}-${evmWalletStore.address}`.toLowerCase()
+  const gasWanted = bn(trade?.feeInfo?.rubicProxy?.fixedFee?.amount?.toString()||0)
+  let gasBalance = balanceStore.balances[balanceKeyForGas]?.amount
+  if (rubicStore.fromChainTokenAddr===ADDR0) {
+    gasBalance = gasBalance.minus(inputStore.tokenAmout)
+  }
+  console.log({gasWanted: gasWanted.toString(), gasBalance: gasBalance.toString()})
+  const isGasSufficient = bn(gasWanted).gt(gasBalance)
 
   async function handleSwap() {
     if (!evmWalletStore.address) {
@@ -57,6 +75,13 @@ export default observer(function Review(props: {
       evmSwitchChain(`0x${chainInfo.id.toString(16)}`).then(()=>{
         handleSwap()
       })
+      return
+    }
+
+    if (isGasSufficient) {
+      displayStore.setWarningDialogParams({title: 'Insufficient gas', 
+      content: `You don't have enough gas to complete the transaction. 
+      You need to add at least: ${bigNumberCeil(gasWanted.minus(gasBalance), 6).toFixed()} ${nativeTokenInfo?.symbol} on ${rubicStore.fromChainName}`})
       return
     }
 
@@ -199,7 +224,10 @@ export default observer(function Review(props: {
   </div>
 
   <MainButton fullWidth className="my-4"
-    disabled={isBusy}
+    disabled={
+      isBusy
+      // || isGasSufficient
+    }
     onClick={()=>{
       handleSwap()
     }}
