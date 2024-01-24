@@ -3,10 +3,16 @@
 import { useTheme } from "next-themes"
 import { CSSProperties, useEffect, useState } from "react"
 import MainButton from "./MainButton"
+import { observer } from "mobx-react-lite"
+import { useStore } from "@/stores/hooks"
 
-export default function Menu() {
+export default observer(function Menu() {
   const { theme } = useTheme()
+  const displayStore = useStore('displayStore')
+  const selectedMenu = displayStore.selectedMenu
+  const rubicStore = useStore('rubicStore')
   const [menuBgStyle, setMenuBgStyle] = useState<CSSProperties>()
+  const noneSelectedStyle = {background: 'rgba(0,0,0,0)', color: '#9FA8AB'}
 
   useEffect(()=>{
     if (theme==='dark') {
@@ -24,12 +30,22 @@ export default function Menu() {
   return (<>
 <div className="relative">
   <div className="relative z-10 px-[6px] flex items-center h-[58px]">
-    <MainButton className="h-[46px] font-semibold text-lg" fullWidth>Swap</MainButton>
-    <MainButton className="h-[46px] font-semibold text-lg" fullWidth style={{background: 'rgba(0,0,0,0)', color: '#9FA8AB'}}>Gas</MainButton>
+    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+      onClick={()=>displayStore.setSelectedMenu('swap')}
+      style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
+    >Swap</MainButton>
+    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+      onClick={()=>{
+        rubicStore.setToChainTokenAddr(null)
+        displayStore.setShowPreview(false)
+        displayStore.setSelectedMenu('gas')
+      }}
+      style={selectedMenu!=='gas'?noneSelectedStyle:undefined}
+    >Gas</MainButton>
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 
     style={menuBgStyle}
   ></div>
 </div>
 </>)
-}
+})
