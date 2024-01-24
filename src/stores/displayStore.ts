@@ -62,4 +62,11 @@ export default class DisplayStore {
     this.showProviders = showProviders
   }
 
+  @observable
+  selectedMenu: 'swap'|'gas' = 'swap'
+  @action
+  setSelectedMenu(selectedMenu: 'swap'|'gas') {
+    this.selectedMenu = selectedMenu
+  }
+
 }
