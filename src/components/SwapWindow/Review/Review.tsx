@@ -57,7 +57,7 @@ export default observer(function Review(props: {
   const chainIdString = chainInfo.id.toString(16)
   const balanceKeyForGas = `${chainIdString}-${ADDR0}-${evmWalletStore.address}`.toLowerCase()
   const gasWanted = bn(trade?.feeInfo?.rubicProxy?.fixedFee?.amount?.toString()||0)
-  let gasBalance = balanceStore.balances[balanceKeyForGas]?.amount
+  let gasBalance = balanceStore.balances[balanceKeyForGas]?.amount || bn(0)
   if (rubicStore.fromChainTokenAddr===ADDR0) {
     gasBalance = gasBalance.minus(inputStore.tokenAmout)
   }
