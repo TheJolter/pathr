@@ -8,6 +8,9 @@ import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import { OnChainTrade, WrappedCrossChainTrade } from "rubic-sdk"
 import bn from "@/utils/bn"
+import allTokens from '@/configs/rubic/all-tokens.json'
+import { ADDR0 } from "@/configs/rubic/tokens"
+import { bigNumberCeil } from "@/utils/bigNumberCeilFloor"
 
 export default observer(function Provider(props: {
   className?: string,
@@ -19,6 +22,9 @@ export default observer(function Provider(props: {
 
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
+
+  const toNativeToken = allTokens.find(item=>{return item.address===ADDR0 && item.blockchainName===rubicStore.toChainName})
+  const fromNativeToken = allTokens.find(item=>{return item.address===ADDR0 && item.blockchainName===rubicStore.fromChainName})
 
   // let trade: OnChainTrade|WrappedCrossChainTrade
   let trade:any = rubicStore.trades?.[providerIndex]
@@ -77,17 +83,21 @@ export default observer(function Provider(props: {
     </Button> */}
   </div>
   <div className="flex items-center justify-between mt-4">
-    {/* <div className="flex items-center mr-4">
+    <div className="flex items-center mr-4">
       <FontAwesomeIcon icon={faGasPump} className="text-gray-400 mr-2" />
-      <div>$0.01</div>
+      <div className="text-gray-400">
+        { bigNumberCeil(trade?.feeInfo?.rubicProxy?.fixedFee?.amount?.toString()||0, 6).toFormat()} {fromNativeToken?.symbol}
+      </div>
     </div>
-    <div className="flex items-center">
+    {/* {trade?.feeInfo?.provider&&<div className="flex items-center">
       <FontAwesomeIcon icon={faSackDollar} className="text-gray-400 mr-2" />
-      <div>$0.01</div>
-    </div> */}
+      <div>
+        { bigNumberCeil(trade?.feeInfo?.provider?.cryptoFee?.amount?.toString()||0, 6).toFormat()} {toNativeToken?.symbol}
+      </div>
+    </div>} */}
     <div className="flex items-center grow justify-end">
       <FontAwesomeIcon icon={faClock} className="text-gray-400 mr-2" />
-      <div>1m</div>
+      <div>≈3m</div>
     </div>
   </div>
 </div>
