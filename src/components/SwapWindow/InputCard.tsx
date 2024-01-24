@@ -50,6 +50,16 @@ export default observer(function InputCard(props: {
   }, [rubicStore.fromChainName, rubicStore.fromChainTokenAddr, evmWalletStore.address, balanceStore])
 
   if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
+
+  function handleMaxClick() {
+    const chainIdString = BlockchainInfo[rubicStore.fromChainName!].id.toString(16)
+    const balanceKey = `${chainIdString}-${rubicStore.fromChainTokenAddr}-${evmWalletStore.address}`.toLowerCase()
+    const balancesInfo = balanceStore.balances[balanceKey]
+    if (balancesInfo) {
+      inputStore.setTokenAmount(bigNumberFloor(balancesInfo.amount, balancesInfo.decimals).toFixed())
+    }
+  }
+
   return (
 <div style={{background, ...props.style}} 
   className={`h-[100px] rounded-xl border-[#35593F] border-1 ${props.className}
@@ -68,7 +78,9 @@ export default observer(function InputCard(props: {
             inputStore.setTokenAmount(e.target.value)
           }}
         />
-        <Chip size="sm" color="success" className="cursor-pointer">Max</Chip>
+        <Chip size="sm" color="success" className="cursor-pointer"
+          onClick={handleMaxClick}
+        >Max</Chip>
       </div>
       <div className="items-center justify-between text-xs text-gray-400">
         {/* <div>$123.45</div> */}
