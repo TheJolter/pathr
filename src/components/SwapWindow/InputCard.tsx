@@ -10,6 +10,7 @@ import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
 import allTokens from '@/configs/rubic/all-tokens.json'
 import getAndSotreBalance from "@/utils/get-and-store-balance"
 import { bigNumberFloor } from "@/utils/bigNumberCeilFloor"
+import bn from "@/utils/bn"
 
 export default observer(function InputCard(props: {
   style?: CSSProperties,
@@ -52,8 +53,8 @@ export default observer(function InputCard(props: {
   if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
 
   function handleMaxClick() {
-    const chainIdString = BlockchainInfo[rubicStore.fromChainName!].id.toString(16)
-    const balanceKey = `${chainIdString}-${rubicStore.fromChainTokenAddr}-${evmWalletStore.address}`.toLowerCase()
+    // const chainIdString = BlockchainInfo[rubicStore.fromChainName!].id.toString(16)
+    // const balanceKey = `${chainIdString}-${rubicStore.fromChainTokenAddr}-${evmWalletStore.address}`.toLowerCase()
     const balancesInfo = balanceStore.balances[balanceKey]
     if (balancesInfo) {
       inputStore.setTokenAmount(bigNumberFloor(balancesInfo.amount, balancesInfo.decimals).toFixed())
@@ -84,7 +85,11 @@ export default observer(function InputCard(props: {
       </div>
       <div className="items-center justify-between text-xs text-gray-400">
         {/* <div>$123.45</div> */}
-        <div>/ {bigNumberFloor(balanceStore.balances[balanceKey]?.amount||0 ,6).toFormat()}</div>
+        {evmWalletStore.address&&<div
+          style={{color: bn(balanceStore.balances[balanceKey]?.amount||0).lt(inputStore.tokenAmout)?'red':undefined}}
+        >
+          / {bigNumberFloor(balanceStore.balances[balanceKey]?.amount||0 ,6).toFormat()}
+        </div>}
       </div>
     </div>
   </div>
