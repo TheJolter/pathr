@@ -53,8 +53,6 @@ export default observer(function InputCard(props: {
   if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
 
   function handleMaxClick() {
-    // const chainIdString = BlockchainInfo[rubicStore.fromChainName!].id.toString(16)
-    // const balanceKey = `${chainIdString}-${rubicStore.fromChainTokenAddr}-${evmWalletStore.address}`.toLowerCase()
     const balancesInfo = balanceStore.balances[balanceKey]
     if (balancesInfo) {
       inputStore.setTokenAmount(bigNumberFloor(balancesInfo.amount, balancesInfo.decimals).toFixed())
@@ -69,11 +67,11 @@ export default observer(function InputCard(props: {
 >
   <div className="font-semibold mb-2">You pay</div>
   <div id="input-card-icon-input-amout" className="flex">
-    <div><ChainTokenIcon chainName={rubicStore.fromChainName} tokenAddr={rubicStore.fromChainTokenAddr} /></div>
-    <div className="grow ml-4">
+    <ChainTokenIcon chainName={rubicStore.fromChainName} tokenAddr={rubicStore.fromChainTokenAddr} />
+    <div className=" ml-4">
       <div className="flex items-center mb-1">
         <input placeholder="0" value={inputStore.tokenAmout}
-          className="grow text-lg font-semibold mr-3 bg-transparent focus:outline-none border-none"
+          className="text-lg font-semibold mr-3 bg-transparent focus:outline-none border-none w-full"
           onChange={(e)=>{
             if (! /^\d?(\d+[\.]?\d*)?$/.test(e.target.value) ) return
             inputStore.setTokenAmount(e.target.value)
