@@ -1,9 +1,9 @@
-import { Avatar, Button, Chip } from "@nextui-org/react"
+import { Avatar, Chip, Tooltip } from "@nextui-org/react"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 import ChainTokenIcon from "./ChainTokenIcon"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faGasPump, faClock, faSackDollar } from '@fortawesome/free-solid-svg-icons'
+import { faClock, faSackDollar } from '@fortawesome/free-solid-svg-icons'
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import { OnChainTrade, WrappedCrossChainTrade } from "rubic-sdk"
@@ -84,7 +84,9 @@ export default observer(function Provider(props: {
   </div>
   <div className="flex items-center justify-between mt-4">
     <div className="flex items-center mr-4">
-      <FontAwesomeIcon icon={faGasPump} className="text-gray-400 mr-2" />
+      <Tooltip content="Protocol Fee" showArrow>
+        <FontAwesomeIcon icon={faSackDollar} className="text-gray-400 mr-2" />
+      </Tooltip>
       <div className="text-gray-400">
         { bigNumberCeil(trade?.feeInfo?.rubicProxy?.fixedFee?.amount?.toString()||0, 6).toFormat()} {fromNativeToken?.symbol}
       </div>
