@@ -67,7 +67,9 @@ export default observer(function InputCard(props: {
 >
   <div className="font-semibold mb-2">You pay</div>
   <div id="input-card-icon-input-amout" className="flex">
-    <ChainTokenIcon chainName={rubicStore.fromChainName} tokenAddr={rubicStore.fromChainTokenAddr} />
+    <div>
+      <ChainTokenIcon chainName={rubicStore.fromChainName} tokenAddr={rubicStore.fromChainTokenAddr} />
+    </div>
     <div className=" ml-4">
       <div className="flex items-center mb-1">
         <input placeholder="0" value={inputStore.tokenAmout}
