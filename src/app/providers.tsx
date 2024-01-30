@@ -15,7 +15,7 @@ export function Providers({children}: { children: React.ReactNode }) {
   return (
     <NextUIProvider>
       <NextThemesProvider attribute="class" defaultTheme="dark">
-        <div className='z-10 relative'>
+        <div className='z-10 relative pb-5 h-screen overflow-auto'>
           <Header />
           {children}
         </div>
