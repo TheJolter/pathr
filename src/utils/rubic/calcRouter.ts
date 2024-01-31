@@ -68,7 +68,7 @@ export default function calcRouter(params: {
       }
     ).then(wrappedCrossChainTrade=>{
       const _trades = wrappedCrossChainTrade.filter(item=>{return !('error' in item)})
-      rubicStore.setTrades(_trades.slice().reverse())
+      rubicStore.setTrades(_trades)
       resolve()
     }).catch((err)=>{
       console.error('err sdk.crossChainManager.calculateTrade', err)
