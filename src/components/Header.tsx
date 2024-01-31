@@ -27,7 +27,7 @@ export default function Header() {
       <NavbarContent justify="end">
         <div className="flex items-center justify-end">
           <EvmWalletButton />
-          <span className="hidden lg:block">
+          <span className="hidden lg:block ml-2">
             <ThemeSwitcher />
             <Button isIconOnly radius="full" className="ml-2"
               onClick={()=>open(`https://twitter.com/PathR_DeFi`)}
