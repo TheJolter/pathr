@@ -156,7 +156,7 @@ export default observer(function Review(props: {
   
   return (
 <div style={props.style}
-  className="w-[392px] rounded-xl px-6 pt-4" 
+  className="w-[392px] rounded-xl px-6 pt-4 mx-2" 
 >
   <div className="flex items-center">
     <BackBtn onClick={()=>displayStore.setShowPreview(false)} />

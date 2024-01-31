@@ -32,7 +32,9 @@ export default observer(function Provider(props: {
   //   trade = rubicStore.trades[providerIndex] as WrappedCrossChainTrade
   // }
   let tradeType: string = (trade as OnChainTrade).type
+  let onChain = true
   if (rubicStore.fromChainName !== rubicStore.toChainName) {
+    onChain = false
     tradeType = (trade as WrappedCrossChainTrade).tradeType
     trade = trade.trade
   }
@@ -99,7 +101,7 @@ export default observer(function Provider(props: {
     </div>} */}
     <div className="flex items-center grow justify-end">
       <FontAwesomeIcon icon={faClock} className="text-gray-400 mr-2" />
-      <div>≈3m</div>
+      <div>{onChain?'<1m':'≈3m'}</div>
     </div>
   </div>
 </div>

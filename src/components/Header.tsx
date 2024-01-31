@@ -1,26 +1,63 @@
-import MainButton from "./MainButton"
-import { ThemeSwitcher } from "./ThemeSwitcher"
-import Logo from "./Logo/Logo"
-import Menu from "./Menu"
-import EvmWalletButton from "./EvmWalletButton/EvmWalletButton"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { Button } from "@nextui-org/react"
+import React from "react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
+import Logo from "./Logo/Logo";
+import Menu from "./Menu";
+import EvmWalletButton from "./EvmWalletButton/EvmWalletButton";
+import { ThemeSwitcher } from "./ThemeSwitcher";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   return (
-<div className="grid-cols-3 mt-3 mx-7 hidden lg:grid">
-  <div><Logo /></div>
-  <div><Menu /></div>
-  <div className="flex items-center justify-end">
-    <EvmWalletButton />
-    <ThemeSwitcher />
-    <Button isIconOnly radius="full" className="ml-2"
-      onClick={()=>open(`https://twitter.com/PathR_DeFi`)}
-    >
-      <FontAwesomeIcon icon={faTwitter} />
-    </Button>
-  </div>
-</div>
-  )
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent">
+      <NavbarContent>
+        <NavbarBrand>
+          <Logo />
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent id="nav-menu" justify="center"
+        className="hidden md:flex"
+      >
+        <Menu />
+      </NavbarContent>
+
+      <NavbarContent justify="end">
+        <div className="flex items-center justify-end">
+          <EvmWalletButton />
+          <span className="hidden lg:block">
+            <ThemeSwitcher />
+            <Button isIconOnly radius="full" className="ml-2"
+              onClick={()=>open(`https://twitter.com/PathR_DeFi`)}
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </Button>
+          </span>
+        </div>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="md:hidden"
+        />
+      </NavbarContent>
+
+      <NavbarMenu>
+        <NavbarMenuItem>
+          <Menu />
+        </NavbarMenuItem>
+        {/* <NavbarMenuItem>
+          <EvmWalletButton />
+        </NavbarMenuItem> */}
+        <NavbarMenuItem>
+          <ThemeSwitcher />
+          <Button isIconOnly radius="full" className="ml-2"
+            onClick={()=>open(`https://twitter.com/PathR_DeFi`)}
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </Button>
+        </NavbarMenuItem>
+      </NavbarMenu>
+    </Navbar>
+  );
 }

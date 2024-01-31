@@ -58,7 +58,7 @@ export default observer(function ChainTokenSelector(props: {
   
   return (
 <div style={props.style}
-  className="w-[392px] min-h-[320px] rounded-xl px-6 pt-4" 
+  className="w-[392px] min-h-[320px] rounded-xl px-6 pt-4 mx-2" 
 >
   <div className="flex items-center">
     <BackBtn onClick={()=>displayStore.setShowChainTokenSelector(undefined)} />

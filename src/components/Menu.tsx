@@ -28,7 +28,7 @@ export default observer(function Menu() {
     })
   }, [theme])
   return (<>
-<div className="relative">
+<div id="menu-buttons" className="relative min-w-[300px]">
   <div className="relative z-10 px-[6px] flex items-center h-[58px]">
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>displayStore.setSelectedMenu('swap')}
