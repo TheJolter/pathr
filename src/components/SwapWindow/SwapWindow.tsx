@@ -74,14 +74,14 @@ export default observer(function SwapWindow(
     className={`${props.className} flex justify-center`}
   >
     
-    <div className="flex justify-center"
+    <div className="w-full flex flex-col justify-center lg:flex-row"
       style={{display: (!displayStore.showChainTokenSelector && !displayStore.showReview)?undefined:'none' }}
     >
       <div className={`flex ${displayStore.showProviders?'justify-end':'justify-center'}`}>
         <Exchange style={boxBgStyle} />
       </div>
       
-      <div className={`transform transition-transform duration-500 ease-in-out ${displayStore.showProviders ? "visible scale-100 ml-6" : "invisible scale-0 h-0 w-0"}`}>
+      <div className={`transform transition-transform duration-500 ease-in-out ${displayStore.showProviders ? "visible scale-100 mt-6 lg:mt-0 lg:ml-6" : "invisible scale-0 h-0 w-0"}`}>
         <Providers style={boxBgStyle} />
       </div>
     </div>

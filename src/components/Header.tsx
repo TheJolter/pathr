@@ -9,13 +9,13 @@ import { Button } from "@nextui-org/react"
 
 export default function Header() {
   return (
-<div className="grid grid-cols-3 mt-3 mx-7">
+<div className="grid-cols-3 mt-3 mx-7 hidden lg:grid">
   <div><Logo /></div>
-  <Menu />
+  <div><Menu /></div>
   <div className="flex items-center justify-end">
     <EvmWalletButton />
     <ThemeSwitcher />
-    <Button isIconOnly radius="full" size="lg" className="ml-2"
+    <Button isIconOnly radius="full" className="ml-2"
       onClick={()=>open(`https://twitter.com/PathR_DeFi`)}
     >
       <FontAwesomeIcon icon={faTwitter} />

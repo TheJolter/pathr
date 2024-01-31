@@ -17,8 +17,6 @@ export default observer(function Exchange(props: {
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
   const inputStore = useStore('inputStore')
-  const evmWalletStore = useStore('evmWalletStore')
-  const balanceStore = useStore('balanceStore')
 
   function handleToggle() {
     const _fromChainName = rubicStore.fromChainName
@@ -32,7 +30,7 @@ export default observer(function Exchange(props: {
   return (
 <div>
   <div style={props.style}
-    className="w-[392px] rounded-xl px-6 py-4" 
+    className="max-w-[392px] w-full rounded-xl px-6 py-4" 
   >
     <div className="flex items-center">
       <div className="font-semibold text-2xl grow">Exchange</div>

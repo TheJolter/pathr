@@ -23,7 +23,7 @@ export default observer(function EvmWalletButton() {
 
   return (
 <>
-  {!evmWalletStore.address&&<MainButton className="mr-4 h-[50px] text-lg"
+  {!evmWalletStore.address&&<MainButton className="mr-3 h-[50px] text-lg"
     onClick={()=>connectEvmWallet({evmWalletStore})}
   >
     {formatEvmAddr(evmWalletStore.address)||'Connect Wallet'}

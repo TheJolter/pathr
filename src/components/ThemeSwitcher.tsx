@@ -24,7 +24,7 @@ export function ThemeSwitcher() {
   }
 
   return (
-<Button isIconOnly radius="full" className="w-12 h-12" onClick={handleSwitch}>
+<Button isIconOnly radius="full" onClick={handleSwitch}>
   <FontAwesomeIcon icon={theme==='light'?faMoon:faSun} size="lg" />
 </Button>
   )

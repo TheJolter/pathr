@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   description: 'Swap tokens on or cross chain',
 }
 
-export const viewport: Viewport = {
-  initialScale: 0.4
-}
+// export const viewport: Viewport = {
+//   initialScale: 0.4
+// }
 
 export default function RootLayout({
   children,

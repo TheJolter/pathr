@@ -30,7 +30,7 @@ export default observer(function Providers(
   }, [inputStore.tokenAmout, displayStore, rubicStore])
 
   return (
-<div className={`w-[392px] min-h-[100px] rounded-xl py-4 px-6 ${props.className}`} 
+<div className={`max-w-[392px] w-full min-h-[100px] rounded-xl py-4 px-6 ${props.className}`} 
   style={{...props.style}}
 >
   <div className="flex items-center mb-4">
