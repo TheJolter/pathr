@@ -9,6 +9,7 @@ export default function connectEvmWallet(params: {
   return new Promise((resolve, reject)=>{
     if (!ethereum) {
       reject({code: 202312061712, msg: 'wallet not found'})
+      location.href = `https://metamask.app.link/dapp/app.pathr.io`
       return
     }
     ethereum.request({ method: 'eth_requestAccounts' }).then((accounts: string[])=>{ // use eth_requestAccounts, not eth_accounts

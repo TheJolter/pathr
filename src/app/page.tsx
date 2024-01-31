@@ -11,7 +11,7 @@ export default function Page() {
   if(!mounted) return null
   return (
     <main>
-      <SwapWindow className="mt-9" />
+      <SwapWindow className="mt-9 w-full" />
     </main>
   )
 }

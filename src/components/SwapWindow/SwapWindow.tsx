@@ -68,23 +68,25 @@ export default observer(function SwapWindow(
   }, [theme])
 
   return (
-<div>
+<div className="w-full">
   <div {...props}
     // className={`grid gap-6 ${showProvider?'grid-cols-2':'grid-cols-1'} ${props.className}`}
-    className={`${props.className} flex justify-center`}
+    className={`${props.className} flex justify-center w-full`}
   >
     
     <div 
-      className={`grid grid-cols-1 gap-5 mx-2
+      className={`grid grid-cols-1 gap-5 mx-2 w-full
         ${displayStore.showProviders?`md:grid-cols-2`:`md:grid-cols-1`}
       `}
       style={{display: (!displayStore.showChainTokenSelector && !displayStore.showReview)?undefined:'none' }}
     >
-      <div className={`flex ${displayStore.showProviders?'justify-end':'justify-center'}`}>
+      <div id='container-of-exchange' className={`flex ${displayStore.showProviders?'justify-end':'justify-center'} w-full`}>
         <Exchange style={boxBgStyle} />
       </div>
       
-      <div className={`transform transition-transform duration-500 ease-in-out ${displayStore.showProviders ? "visible scale-100" : "invisible scale-0 h-0 w-0"}`}>
+      <div className={`transform transition-transform duration-500 ease-in-out ${displayStore.showProviders ? "visible scale-100" : "invisible scale-0 h-0 w-0"}
+        flex md:block justify-center
+      `}>
         <Providers style={boxBgStyle} />
       </div>
     </div>

@@ -27,14 +27,14 @@ export default function Header() {
       <NavbarContent justify="end">
         <div className="flex items-center justify-end">
           <EvmWalletButton />
-          <span className="hidden lg:block ml-2">
+          <div className="hidden lg:flex items-center ml-2">
             <ThemeSwitcher />
             <Button isIconOnly radius="full" className="ml-2"
               onClick={()=>open(`https://twitter.com/PathR_DeFi`)}
             >
               <FontAwesomeIcon icon={faTwitter} />
             </Button>
-          </span>
+          </div>
         </div>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -50,12 +50,14 @@ export default function Header() {
           <EvmWalletButton />
         </NavbarMenuItem> */}
         <NavbarMenuItem>
-          <ThemeSwitcher />
-          <Button isIconOnly radius="full" className="ml-2"
-            onClick={()=>open(`https://twitter.com/PathR_DeFi`)}
-          >
-            <FontAwesomeIcon icon={faTwitter} />
-          </Button>
+          <div className="flex items-center">
+            <ThemeSwitcher />
+            <Button isIconOnly radius="full" className="ml-2"
+              onClick={()=>open(`https://twitter.com/PathR_DeFi`)}
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </Button>
+          </div>
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
