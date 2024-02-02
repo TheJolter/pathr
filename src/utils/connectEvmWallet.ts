@@ -5,7 +5,7 @@ export default function connectEvmWallet(params: {
   evmWalletStore: EvmWalletStore
 }): Promise<any> {
   const {evmWalletStore} = params
-  const ethereum = getEthereum()
+  const ethereum = getEthereum({evmWalletStore})
   return new Promise((resolve, reject)=>{
     if (!ethereum) {
       reject({code: 202312061712, msg: 'wallet not found'})

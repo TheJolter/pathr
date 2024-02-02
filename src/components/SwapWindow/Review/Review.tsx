@@ -66,14 +66,16 @@ export default observer(function Review(props: {
 
   async function handleSwap() {
     if (!evmWalletStore.address) {
-      connectEvmWallet({evmWalletStore})
+      // connectEvmWallet({evmWalletStore})
+      evmWalletStore.updateLastWeb3Onboard()
       return
     }
-    const ethereum = getEthereum()
-
-    if (Number(ethereum.chainId)!==chainInfo.id) {
-      evmSwitchChain(`0x${chainInfo.id.toString(16)}`).then(()=>{
+    const ethereum:any = getEthereum({evmWalletStore})
+    console.log('handleSwap chainId', ethereum.chainId)
+    if (Number(ethereum.chainId||-1)!==chainInfo.id) {
+      evmSwitchChain(`0x${chainInfo.id.toString(16)}`, {evmWalletStore}).then(()=>{
         handleSwap()
+        // evmWalletStore.updateLastWeb3Onboard()
       })
       return
     }

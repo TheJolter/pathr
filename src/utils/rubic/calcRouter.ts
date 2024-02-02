@@ -27,7 +27,9 @@ export default function calcRouter(params: {
       return
     }
 
-    const core = getEthereum()
+    const core:any = getEthereum({evmWalletStore})
+    console.log('core', core)
+    console.log('ethereum', window.ethereum)
     let walletProvider = undefined
     if (core && evmWalletStore.address) {
       walletProvider = {[CHAIN_TYPE.EVM]: {core, address: evmWalletStore.address}}

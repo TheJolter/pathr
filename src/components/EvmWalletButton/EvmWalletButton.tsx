@@ -9,11 +9,34 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import MainButton from "../MainButton";
 import { useEffect } from "react";
 import getAndStoreBalances from "@/utils/get-and-store-balances";
+import { useTheme } from "next-themes";
+import Onboard from '@web3-onboard/core';
+import injectedModule from '@web3-onboard/injected-wallets'
+import metamaskSDK from '@web3-onboard/metamask'
+import transactionPreviewModule from '@web3-onboard/transaction-preview'
+import {Chain} from '@web3-onboard/common'
+import { BlockchainInfo } from "@/configs/rubic/blockchain-info";
 
 export default observer(function EvmWalletButton() {
 
   const evmWalletStore = useStore('evmWalletStore')
   const balanceStore = useStore('balanceStore')
+  const { theme } = useTheme()
+  const injected = injectedModule()
+  const metamaskSDKWallet = metamaskSDK({options: {}})
+  const transactionPreview = transactionPreviewModule({})
+
+  let chains:Chain[] = []
+  for (const key in BlockchainInfo) {
+    chains.push({id: `0x${BlockchainInfo[key].id.toString(16)}`})
+  }
+
+  const onboard = Onboard({
+    transactionPreview,
+    theme: theme==='dark'?'dark':'light',
+    wallets: [injected, metamaskSDKWallet],
+    chains
+  })
 
   useEffect(()=>{
     if (!evmWalletStore.address) return
@@ -21,10 +44,34 @@ export default observer(function EvmWalletButton() {
     getAndStoreBalances({balanceStore, account: evmWalletStore.address})
   }, [evmWalletStore.address, balanceStore])
 
+  useEffect(()=>{
+    if (evmWalletStore.lastWeb3OnboardDate>0) {
+      handleConnect()
+    }
+  }, [evmWalletStore.lastWeb3OnboardDate])
+
+  function handleConnect() {
+    onboard.connectWallet().then(connectedWallets=>{
+      console.log('connectedWallets', connectedWallets)
+      evmWalletStore.setWeb3OnboardWallets(connectedWallets)
+      evmWalletStore.login(connectedWallets[0]?.accounts?.[0]?.address)
+      const provider = connectedWallets[0].provider
+      console.log('provider.chainId', (provider as any).chainId)
+      // swatchChain(1)
+    })
+  }
+
+  function swatchChain(chainId: string|number) {
+    onboard.setChain({chainId})
+  }
+
   return (
 <>
   {!evmWalletStore.address&&<MainButton className="h-[50px] text-lg"
-    onClick={()=>connectEvmWallet({evmWalletStore})}
+    onClick={()=>{
+      // connectEvmWallet({evmWalletStore})
+      handleConnect()
+    }}
   >
     {formatEvmAddr(evmWalletStore.address)||'Connect Wallet'}
   </MainButton>}

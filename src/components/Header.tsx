@@ -11,7 +11,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent">
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent py-2">
       <NavbarContent>
         <NavbarBrand>
           <Logo />
