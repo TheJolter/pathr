@@ -23,7 +23,12 @@ export default observer(function EvmWalletButton() {
   const balanceStore = useStore('balanceStore')
   const { theme } = useTheme()
   const injected = injectedModule()
-  const metamaskSDKWallet = metamaskSDK({options: {}})
+  const metamaskSDKWallet = metamaskSDK({options: {
+    dappMetadata: { // required to connect metamask app on mobile browser
+      name: 'Pathr',
+      url: 'https://app.pathr.io/' // can not use `${location.protocol}//${location.host}`
+    }
+  }})
   const transactionPreview = transactionPreviewModule({})
 
   let chains:Chain[] = []
@@ -34,7 +39,10 @@ export default observer(function EvmWalletButton() {
   const onboard = Onboard({
     transactionPreview,
     theme: theme==='dark'?'dark':'light',
-    wallets: [injected, metamaskSDKWallet],
+    wallets: [
+      injected,
+      metamaskSDKWallet, // after injected, to use extenstion first on browser, if extenstion not exits, use SDK
+    ],
     chains
   })
 

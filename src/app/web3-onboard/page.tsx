@@ -9,15 +9,23 @@ import { useTheme } from 'next-themes'
 export default function Web3onboard() {
   const { theme } = useTheme()
   const injected = injectedModule()
+  // const url = `${location?.protocol}//${location?.host}`
+  const url = 'http://localhost:1320'
+  console.log('url', url)
   const metamaskSDKWallet = metamaskSDK({options: {
-    preferDesktop: true,
-    openDeeplink: (arg)=>{console.log('openDeeplink arg', arg)}
+    dappMetadata: { // required to connect metamask app on mobile browser
+      name: 'Pathr',
+      url
+    }
   }})
   const apiKey = '1730eff0-9d50-4382-a3fe-89f0d34a2070'
   const onboard = Onboard({
     // apiKey,
     theme: theme==='dark'?'dark':'light',
-    wallets: [metamaskSDKWallet, injected],
+    wallets: [
+      injected,
+      metamaskSDKWallet
+    ],
     chains: [
       {
         id: 56,

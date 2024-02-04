@@ -19,15 +19,16 @@ export default function Web3OnboardReact() {
     setPrimaryWallet // function that can set the primary wallet and/or primary account within that wallet. The wallet that is set needs to be passed in for the first parameter and if you would like to set the primary account, the address of that account also needs to be passed in
   ] = useConnectWallet()
 
-  setWalletModules([
-    // injectedModule(),
-    metamaskSDK({options: {
-      // preferDesktop: true,
-      useDeeplink: false,
-      communicationLayerPreference: CommunicationLayerPreference.SOCKET,
-      // openDeeplink: (arg)=>{console.log('openDeeplink arg', arg)}
-    }})
-  ])
+  // setWalletModules([
+  //   injectedModule(),
+  //   metamaskSDK({options: {
+  //     dappMetadata: { // required to connect metamask app on mobile browser
+  //       name: 'Pathr',
+  //       url: `${location.protocol}//${location.host}`,
+  //       // base64Icon: `${location.protocol}//${location.host}/favicon.ico`,
+  //     }
+  //   }})
+  // ])
 
   return (
 <div className="flex flex-col items-center justify-center min-h-screen">
