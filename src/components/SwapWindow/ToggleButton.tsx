@@ -27,7 +27,7 @@ export default function ToggleButton(props: {
   style={{background}}
   onClick={onClick}
 >
-  <FontAwesomeIcon icon='arrow-right-arrow-left' size="lg" />
+  <FontAwesomeIcon icon='arrow-right-arrow-left' size="lg" className="rotate-90" />
 </Button>
   )
 }

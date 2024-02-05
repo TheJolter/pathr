@@ -68,7 +68,7 @@ export default observer(function SwapWindow(
   }, [theme])
 
   return (
-<div className="w-full">
+<div className="w-full relative z-10">
   <div {...props}
     // className={`grid gap-6 ${showProvider?'grid-cols-2':'grid-cols-1'} ${props.className}`}
     className={`${props.className} flex justify-center w-full`}

@@ -42,6 +42,10 @@ export function Providers({children}: { children: React.ReactNode }) {
           <div className='relative pb-5 h-screen overflow-auto' style={{zIndex: 1}}>
             <Header />
             {children}
+            <div className='fixed bottom-4 right-4 z-0'>
+              <span className='text-sm text-gray-400'>Powered by</span>
+              <span className='ml-1 font-bold'>Pathr</span>
+            </div>
           </div>
         {/* </Web3OnboardProvider> */}
         <MainBackground />

@@ -46,10 +46,10 @@ export default observer(function Exchange(props: {
       </div>
 
       <div className="relative w-full">
-        <div className="absolute z-10 text-center w-full top-7 pointer-events-none">
+        <div className="absolute z-10 text-center w-full top-[88px] pointer-events-none">
           <ToggleButton onClick={handleToggle} />
         </div>
-        <div className="grid grid-cols-2 gap-4 mt-4">
+        <div className="grid grid-cols-1 gap-4 mt-4">
           <ChainTokenCard direction="from" onClick={()=>{displayStore.setShowChainTokenSelector('from')}} />
           <ChainTokenCard direction="to" onClick={()=>displayStore.setShowChainTokenSelector('to')} />
         </div>
@@ -57,15 +57,18 @@ export default observer(function Exchange(props: {
 
       <InputCard className="mt-4 p-4" />
 
-      {rubicStore.fromChainTokenAddr && rubicStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) &&
+      {/* {rubicStore.fromChainTokenAddr && rubicStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) && */}
         <MainButton fullWidth className="mt-4"
           disabled={rubicStore.calculating}
           onClick={()=>{
+            if (! ( rubicStore.fromChainTokenAddr && rubicStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) ) ) {
+              return
+            }
             rubicStore.updateRouterCalcTime()
             displayStore.setShowProviders(true)
           }}
         >Calculate Routers</MainButton>
-      }
+      {/* } */}
       
     </div>
   </div>

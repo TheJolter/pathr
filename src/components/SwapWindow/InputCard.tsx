@@ -50,7 +50,7 @@ export default observer(function InputCard(props: {
     })
   }, [rubicStore.fromChainName, rubicStore.fromChainTokenAddr, evmWalletStore.address, balanceStore])
 
-  if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
+  // if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
 
   function handleMaxClick() {
     const balancesInfo = balanceStore.balances[balanceKey]
@@ -68,7 +68,7 @@ export default observer(function InputCard(props: {
   <div className="font-semibold mb-2">You pay</div>
   <div id="input-card-icon-input-amout" className="flex">
     <div>
-      <ChainTokenIcon chainName={rubicStore.fromChainName} tokenAddr={rubicStore.fromChainTokenAddr} />
+      <ChainTokenIcon chainName={rubicStore.fromChainName!} tokenAddr={rubicStore.fromChainTokenAddr!} />
     </div>
     <div className=" ml-4">
       <div className="flex items-center mb-1">

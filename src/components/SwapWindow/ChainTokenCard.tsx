@@ -42,16 +42,21 @@ export default observer(function ChainTokenCard(props: {
   style={{background}}
   onClick={()=>onClick(direction)}
 >
-  <div className="flex flex-col justify-between">
+  <div className="flex flex-col justify-between w-full p-4">
     <div className="font-bold capitalize">{direction}</div>
-    {tokenInfo?.symbol&&tokenAddr&&chainName&&<div className="flex items-center">
-      <ChainTokenIcon chainName={chainName} tokenAddr={tokenAddr} />
-      <div className="ml-4">
-        <div>{tokenInfo?.symbol}</div>
-        <div className="text-xs text-gray-400">On {tokenInfo?.blockchainName}</div>
+    {/* {tokenInfo?.symbol&&tokenAddr&&chainName&& */}
+      <div className="flex items-center">
+        <ChainTokenIcon chainName={chainName!} tokenAddr={tokenAddr!} />
+        <div className="ml-4">
+          <div>{tokenInfo?.symbol}</div>
+          {tokenInfo?.blockchainName&&<div className="text-xs text-gray-400">On {tokenInfo?.blockchainName}</div>}
+          {!tokenInfo?.blockchainName&&<div className="text-xs text-gray-400">
+            Please select chain and token
+          </div>}
+        </div>
       </div>
-    </div>}
-    {!tokenInfo?.symbol&&<div>Please Select</div>}
+    {/* } */}
+    {/* {!tokenInfo?.symbol&&<div>Please select chain and token</div>} */}
   </div>
 </Button>
   )
