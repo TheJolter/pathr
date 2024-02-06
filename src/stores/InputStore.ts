@@ -11,4 +11,11 @@ export default class InputStore {
   setTokenAmount(tokenAmout: string) {
     this.tokenAmout = tokenAmout
   }
+
+  @observable
+  isAmountInputFocus = false
+  @action
+  setIsAmountInputFocus(isAmountInputFocus: boolean) {
+    this.isAmountInputFocus = isAmountInputFocus
+  }
 }

@@ -16,6 +16,8 @@ export default observer(function ChainTokenCard(props: {
 
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
+  const inputStore = useStore('inputStore')
+
   let tokenAddr = rubicStore.fromChainTokenAddr
   let chainName = rubicStore.fromChainName
   if (direction==='to') {
@@ -40,7 +42,17 @@ export default observer(function ChainTokenCard(props: {
   return (
 <Button className="h-[100px] rounded-xl border-[#35593F] border-1 p-0 m-0 text-left"
   style={{background}}
-  onClick={()=>onClick(direction)}
+  onClick={()=>{
+    console.log('inputStore.isAmountInputFocus', inputStore.isAmountInputFocus)
+    console.log(`navigator.userAgent.includes('Mobile')`, navigator.userAgent.includes('Mobile'))
+    if (
+      inputStore.isAmountInputFocus
+      && navigator.userAgent.includes('Mobile')
+    ) {
+      return
+    }
+    onClick(direction)
+  }}
 >
   <div className="flex flex-col justify-between w-full p-4">
     <div className="font-bold capitalize">{direction}</div>

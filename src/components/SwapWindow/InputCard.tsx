@@ -78,6 +78,12 @@ export default observer(function InputCard(props: {
             if (! /^\d?(\d+[\.]?\d*)?$/.test(e.target.value) ) return
             inputStore.setTokenAmount(e.target.value)
           }}
+          onBlur={()=>{
+            setTimeout(()=>{
+              inputStore.setIsAmountInputFocus(false)
+            }, 100)
+          }}
+          onFocus={()=>inputStore.setIsAmountInputFocus(true)}
         />
         <Chip size="sm" color="success" className="cursor-pointer"
           onClick={handleMaxClick}
