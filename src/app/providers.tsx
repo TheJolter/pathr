@@ -44,7 +44,7 @@ export function Providers({children}: { children: React.ReactNode }) {
             {children}
             <div className='fixed bottom-4 right-4 z-0'>
               <span className='text-sm text-gray-400'>Powered by</span>
-              <span className='ml-1 font-bold'>Pathr</span>
+              <span className='ml-1 font-bold'>Joltify</span>
             </div>
           </div>
         {/* </Web3OnboardProvider> */}
