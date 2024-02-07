@@ -13,7 +13,7 @@ import { useTheme } from "next-themes";
 import Onboard from '@web3-onboard/core';
 import injectedModule from '@web3-onboard/injected-wallets'
 import metamaskSDK from '@web3-onboard/metamask'
-import transactionPreviewModule from '@web3-onboard/transaction-preview'
+// import transactionPreviewModule from '@web3-onboard/transaction-preview'
 import {Chain} from '@web3-onboard/common'
 import { BlockchainInfo } from "@/configs/rubic/blockchain-info";
 
@@ -29,7 +29,7 @@ export default observer(function EvmWalletButton() {
       url: 'https://app.pathr.io/' // can not use `${location.protocol}//${location.host}`
     }
   }})
-  const transactionPreview = transactionPreviewModule({})
+  // const transactionPreview = transactionPreviewModule({}) // required ethers v5?
 
   let chains:Chain[] = []
   for (const key in BlockchainInfo) {
@@ -37,7 +37,7 @@ export default observer(function EvmWalletButton() {
   }
 
   const onboard = Onboard({
-    transactionPreview,
+    // transactionPreview,
     theme: theme==='dark'?'dark':'light',
     wallets: [
       injected,
