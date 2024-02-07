@@ -83,8 +83,11 @@ function App() {
 
   const handleSendTransaction = async () => {
     if (!wallet?.provider) return
-    const ethersProvider = new ethers.providers.Web3Provider(wallet.provider)
-    const signer = ethersProvider.getSigner()
+    
+    // const ethersProvider = new ethers.BrowserProvider(wallet.provider) // v6
+    const ethersProvider = new ethers.providers.Web3Provider(wallet.provider) // v5
+
+    const signer =  ethersProvider.getSigner()
     const txn = await signer.sendTransaction({
       to: wallet.accounts[0].address,
       value: 1
@@ -116,6 +119,14 @@ function App() {
         onClick={handleSendTransaction}
       >
         sendTransaction
+      </Button>
+
+      <Button
+        onClick={()=>{
+          location.href='dapp://app.pathr.io'
+        }}
+      >
+        metamask scheme
       </Button>
     </>
   )

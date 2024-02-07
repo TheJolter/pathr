@@ -21,7 +21,7 @@
     "@web3-onboard/metamask": "^2.0.2",
     "@web3-onboard/react": "^2.8.13",
     "@web3-onboard/transaction-preview": "^2.0.8",
-    "ethers": "^5.7.2",
+    "ethers": "^5",
     "framer-motion": "^10.17.0",
     "mobx": "^6.12.0",
     "mobx-react-lite": "^4.0.5",
