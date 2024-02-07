@@ -6,10 +6,15 @@ import {CircularProgress} from "@nextui-org/react"
 import { useStore } from "@/stores/hooks"
 import { observer } from "mobx-react-lite"
 import calcRouter from "@/utils/rubic/calcRouter"
+import { useConnectWallet } from "@web3-onboard/react"
 
 export default observer(function Providers(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 ) {
+  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet()
+  const address = wallet?.accounts?.[0]?.address
+  const provider = wallet?.provider
+  
   const rubicStore = useStore('rubicStore')
   const inputStore = useStore('inputStore')
   const evmWalletStore = useStore('evmWalletStore')
@@ -17,11 +22,12 @@ export default observer(function Providers(
   // const [calculating, setCalculating] = useState(false)
 
   useEffect(()=>{
-    calcRouter({rubicStore, inputStore, evmWalletStore}).finally(()=>{ // need real Promise to kown if calc completed
+    // if (!provider) return
+    calcRouter({rubicStore, inputStore, address, provider}).finally(()=>{ // need real Promise to kown if calc completed
       rubicStore.setCalculating(false);
     })
   }, [ // should not input inputStore.tokenAmout here, otherwise it will recalc every time amount change
-    rubicStore.routerCalcTime, rubicStore, inputStore, evmWalletStore.address, evmWalletStore
+    rubicStore.routerCalcTime, rubicStore, inputStore, address, provider
   ])
 
   useEffect(()=>{

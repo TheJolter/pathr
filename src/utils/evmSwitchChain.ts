@@ -1,9 +1,11 @@
 import EvmWalletStore from "@/stores/EvmWalletStore"
-import getEthereum from "./getEthereum"
+import { EIP1193Provider } from "@web3-onboard/core"
 
-export default function evmSwitchChain(chainId: string, params: {evmWalletStore: EvmWalletStore}): Promise<any> {
-  const {evmWalletStore} = params
-  const ethereum = getEthereum({evmWalletStore})
+export default function evmSwitchChain(chainId: string, params: {
+  provider?: EIP1193Provider
+}): Promise<any> {
+  const {provider} = params
+  const ethereum = provider
   return new Promise((resolve, reject)=>{
     if (!ethereum) {
       reject({code: 202312061635, msg: 'Wallet not found'})

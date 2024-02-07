@@ -9,22 +9,24 @@ import MainButton from "@/components/MainButton"
 import { CrossChainTrade, EvmBlockchainName, EvmWeb3Public, Injector, OnChainTrade, WrappedCrossChainTrade } from "rubic-sdk"
 import bn from "@/utils/bn"
 import allTokens from '@/configs/rubic/all-tokens.json'
-import connectEvmWallet from "@/utils/connectEvmWallet"
+// import connectEvmWallet from "@/utils/connectEvmWallet"
 import { ADDR0 } from "@/configs/rubic/tokens"
 import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
-import getEthereum from "@/utils/getEthereum"
 import evmSwitchChain from "@/utils/evmSwitchChain"
 import getAndSotreBalance from "@/utils/get-and-store-balance"
 import { bigNumberCeil } from "@/utils/bigNumberCeilFloor"
+import { useConnectWallet } from "@web3-onboard/react"
 
 export default observer(function Review(props: {
   style?: CSSProperties
 }) {
+  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet()
+  const address = wallet?.accounts?.[0]?.address
+  const provider = wallet?.provider
 
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
   const inputStore = useStore('inputStore')
-  const evmWalletStore = useStore('evmWalletStore')
   const balanceStore = useStore('balanceStore')
 
   const [isBusy, setIsBusy] = useState(false)
@@ -55,7 +57,7 @@ export default observer(function Review(props: {
   }
 
   const chainIdString = chainInfo.id.toString(16)
-  const balanceKeyForGas = `${chainIdString}-${ADDR0}-${evmWalletStore.address}`.toLowerCase()
+  const balanceKeyForGas = `${chainIdString}-${ADDR0}-${address}`.toLowerCase()
   const gasWanted = bn(trade?.feeInfo?.rubicProxy?.fixedFee?.amount?.toString()||0)
   let gasBalance = balanceStore.balances[balanceKeyForGas]?.amount || bn(0)
   if (rubicStore.fromChainTokenAddr===ADDR0) {
@@ -65,17 +67,19 @@ export default observer(function Review(props: {
   const isGasSufficient = bn(gasWanted).gt(gasBalance)
 
   async function handleSwap() {
-    if (!evmWalletStore.address) {
-      // connectEvmWallet({evmWalletStore})
-      evmWalletStore.updateLastWeb3Onboard()
+    if (!address) {
+      const node = document.querySelector('onboard-v2') as HTMLElement
+      if (node) node.style.display = 'block'
+      connect().then(()=>{
+        if (node) node.style.display = 'none'
+      })
       return
     }
-    const ethereum:any = getEthereum({evmWalletStore})
+    const ethereum:any = provider
     console.log('handleSwap chainId', ethereum.chainId)
     if (Number(ethereum.chainId||-1)!==chainInfo.id) {
-      evmSwitchChain(`0x${chainInfo.id.toString(16)}`, {evmWalletStore}).then(()=>{
+      evmSwitchChain(`0x${chainInfo.id.toString(16)}`, {provider}).then(()=>{
         handleSwap()
-        // evmWalletStore.updateLastWeb3Onboard()
       })
       return
     }
@@ -137,13 +141,13 @@ export default observer(function Review(props: {
         tokenUsdValue: '',
         detailsUrl: `${chainInfo.explorer}/tx/${hash}`
       })
-      if (evmWalletStore.address) {
+      if (address) {
         // getAndSotreBalance
         getAndSotreBalance({
           balanceStore,
           chainId: chainInfo.id,
           tokenAddress: rubicStore.fromChainTokenAddr!,
-          account: evmWalletStore.address
+          account: address
         })
       }
     }).catch(err=>{
@@ -234,7 +238,7 @@ export default observer(function Review(props: {
       handleSwap()
     }}
   >
-    {evmWalletStore.address?'Start Swap':'Conect Wallet'}
+    {address?'Start Swap':'Conect Wallet'}
     {isBusy&&<CircularProgress size="sm" color="default" />}
   </MainButton>
 </div>

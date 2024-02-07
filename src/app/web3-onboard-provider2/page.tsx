@@ -1,55 +1,16 @@
 'use client'
+import { Button } from '@nextui-org/react'
 
-import { Button } from '@nextui-org/react';
-import metamaskSDK from '@web3-onboard/metamask';
-import { init, useConnectWallet } from '@web3-onboard/react';
-import { ethers } from 'ethers';
-import injectedModule from '@web3-onboard/injected-wallets'
+import { useConnectWallet } from '@web3-onboard/react'
+import { ethers } from 'ethers'
 
 interface RPCError {
   code: number;
   message: string;
 }
 
-const chains = [
-  {
-    id: '0x1',
-    // token: 'ETH',
-    // label: 'Ethereum Mainnet',
-    // rpcUrl: `https://rpc.ankr.com/eth`,
-  },
-  {
-    id: '0x38',
-    // token: 'BNB',
-    // label: 'Binance Smart Chain',
-    // rpcUrl: `https://bsc-dataseed.binance.org`,
-  },
-];
-
-// initialize the module with options
-const metamaskSDKWallet = metamaskSDK({options: {
-  // extensionOnly: false,
-  // logging: {
-  //   developerMode: true,
-  // },
-  dappMetadata: {
-    name: 'Demo Web3Onboard'
-  }
-}})
-
-init({
-  // ... other Onboard options
-  wallets: [
-    injectedModule(),
-    metamaskSDKWallet
-    //... other wallets
-  ],
-  chains
-});
-
-function App() {
+export default function Page() {
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet()
-
   const switchChain = async (hexChainId: string) => {
     try {
       const result = await wallet?.provider.request({
@@ -97,7 +58,7 @@ function App() {
     const receipt = txn.wait()
     console.log('receipt', receipt)
   }
-
+  
   return (
     <>
     <div>
@@ -133,5 +94,3 @@ function App() {
     </>
   )
 }
-
-export default App

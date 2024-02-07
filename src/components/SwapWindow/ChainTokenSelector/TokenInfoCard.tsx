@@ -8,10 +8,14 @@ import allTokens from '@/configs/rubic/all-tokens.json'
 import { formatEvmAddr } from '@/components/EvmWalletButton/EvmWalletButton'
 import { BlockchainInfo } from '@/configs/rubic/blockchain-info'
 import { bigNumberFloor } from '@/utils/bigNumberCeilFloor'
+import { useConnectWallet } from '@web3-onboard/react'
 
 export default observer(function TokenInfoCard(props: {
   tokenInfo: typeof allTokens[number]
 }) {
+  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet()
+  const address = wallet?.accounts?.[0]?.address
+  
   const {tokenInfo} = props
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
@@ -19,7 +23,7 @@ export default observer(function TokenInfoCard(props: {
   const balanceStore = useStore('balanceStore')
 
   const chainIdString = BlockchainInfo[tokenInfo.blockchainName].id.toString(16)
-  const balanceKey = `${chainIdString}-${tokenInfo.address}-${evmWalletStore.address}`.toLowerCase()
+  const balanceKey = `${chainIdString}-${tokenInfo.address}-${address}`.toLowerCase()
 
   return (
 <div className="flex items-center rounded-xl px-3 py-2 mt-4 border hover:border-gray-400 cursor-pointer"

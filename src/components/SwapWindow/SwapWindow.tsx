@@ -11,15 +11,18 @@ import Review from "./Review/Review"
 import SuccessDialog from "./SuccessDialog"
 import WarningDialog from "./WarningDialog"
 import bn from "@/utils/bn"
+import { useConnectWallet } from "@web3-onboard/react"
 
 export default observer(function SwapWindow(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 ) {
+  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet()
+  const address = wallet?.accounts?.[0]?.address
+  
   const { theme } = useTheme()
   const inputStore = useStore('inputStore')
   const displayStore = useStore('displayStore')
   const rubicStore = useStore('rubicStore')
-  const evmWalletStore = useStore('evmWalletStore')
 
   const [boxBgStyle, setBoxBgStyle] = useState<CSSProperties>()
 
@@ -54,7 +57,7 @@ export default observer(function SwapWindow(
 
   useEffect(()=>{
     displayStore.setShowPreview(false)
-  }, [displayStore, evmWalletStore.address])
+  }, [displayStore, address])
 
   useEffect(()=>{
     if (theme==='dark') {

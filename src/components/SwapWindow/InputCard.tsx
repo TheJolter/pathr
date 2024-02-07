@@ -12,14 +12,19 @@ import getAndSotreBalance from "@/utils/get-and-store-balance"
 import { bigNumberFloor } from "@/utils/bigNumberCeilFloor"
 import bn from "@/utils/bn"
 
+import { useConnectWallet } from '@web3-onboard/react'
+
 export default observer(function InputCard(props: {
   style?: CSSProperties,
   className?: string
 }) {
+  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet()
+  const address = wallet?.accounts?.[0]?.address
+
   const { theme } = useTheme()
   const inputStore = useStore('inputStore')
   const rubicStore = useStore('rubicStore')
-  const evmWalletStore = useStore('evmWalletStore')
+  // const evmWalletStore = useStore('evmWalletStore')
   const balanceStore = useStore('balanceStore')
 
   const [background, setBackground] = useState('')
@@ -35,20 +40,20 @@ export default observer(function InputCard(props: {
 
   useEffect(()=>{
     setBalanceKey('')
-    // console.log({fromChainName, fromTokenName, account: evmWalletStore.address})
+    // console.log({fromChainName, fromTokenName, account: address})
     const chainId = BlockchainInfo[rubicStore.fromChainName||'']?.id
     const fromToken = allTokens.find(item=>{return item.address===rubicStore.fromChainTokenAddr && item.blockchainName===rubicStore.fromChainName})
-    if (!fromToken || !evmWalletStore.address) return
+    if (!fromToken || !address) return
     getAndSotreBalance({
       balanceStore,
       chainId,
       tokenAddress: fromToken.address,
-      account: evmWalletStore.address,
+      account: address,
       getBakanceKey: (_balanceKey: string) => {
         setBalanceKey(_balanceKey)
       }
     })
-  }, [rubicStore.fromChainName, rubicStore.fromChainTokenAddr, evmWalletStore.address, balanceStore])
+  }, [rubicStore.fromChainName, rubicStore.fromChainTokenAddr, address, balanceStore])
 
   // if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
 
@@ -91,7 +96,7 @@ export default observer(function InputCard(props: {
       </div>
       <div className="items-center justify-between text-xs text-gray-400">
         {/* <div>$123.45</div> */}
-        {evmWalletStore.address&&<div
+        {address&&<div
           style={{color: bn(balanceStore.balances[balanceKey]?.amount||0).lt(inputStore.tokenAmout)?'red':undefined}}
         >
           / {bigNumberFloor(balanceStore.balances[balanceKey]?.amount||0 ,6).toFormat()}
