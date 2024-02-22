@@ -2,13 +2,13 @@ import { EVM_BLOCKCHAIN_NAME } from "rubic-sdk";
 
 export const ADDR0 = '0x0000000000000000000000000000000000000000'
 
-// export type RubicToken = {
+// export type PathrToken = {
 //     address: string,
 //     name: string,
 //     blockchain: string
 // }
 
-export type RubicToken = {
+export type PathrToken = {
   "address": string,
   "name": string,
   "symbol": string,

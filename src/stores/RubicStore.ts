@@ -2,7 +2,7 @@ import { ADDR0 } from "@/configs/rubic/tokens";
 import { action, makeObservable, observable } from "mobx";
 import { CrossChainTrade, EVM_BLOCKCHAIN_NAME, OnChainTrade, OnChainTradeError, WrappedCrossChainTrade } from "rubic-sdk";
 
-export default class RubicStore {
+export default class PathrStore {
   constructor() {
     makeObservable(this)
   }

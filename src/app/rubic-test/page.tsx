@@ -68,7 +68,7 @@ const configuration:Configuration = {
   // }
 }
 
-export default function RubicTest() {
+export default function PathrTest() {
   useEffect(()=>{
     (async ()=>{
       const sdk = await SDK.createSDK(configuration)
@@ -87,6 +87,6 @@ export default function RubicTest() {
     })()
   }, [])
   return (
-<div>RubicTest</div>
+<div>PathrTest</div>
   )
 }
