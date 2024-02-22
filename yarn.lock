@@ -9491,9 +9491,9 @@ rollup-plugin-visualizer@^5.9.2:
     source-map "^0.7.4"
     yargs "^17.5.1"
 
-"rubic-sdk@github:github:EasonTheJolter/rubic-sdk#master":
+"rubic-sdk@github:github:EasonTheJolter/rubic-sdk#pathr":
   version "4.39.2"
-  resolved "https://codeload.github.com/EasonTheJolter/rubic-sdk/tar.gz/84fa85058557cc9f96f37623eea812a91baf16b3"
+  resolved "https://codeload.github.com/EasonTheJolter/rubic-sdk/tar.gz/093286d931e708ad777917b0883b627be6b91c07"
   dependencies:
     "@1inch/limit-order-protocol-utils" "3.0.1"
     "@arbitrum/sdk" "^3.1.3"
