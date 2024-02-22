@@ -10,7 +10,7 @@ export default observer(function Menu() {
   const { theme } = useTheme()
   const displayStore = useStore('displayStore')
   const selectedMenu = displayStore.selectedMenu
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
   const [menuBgStyle, setMenuBgStyle] = useState<CSSProperties>()
   const noneSelectedStyle = {background: 'rgba(0,0,0,0)', color: '#9FA8AB'}
 
@@ -36,7 +36,7 @@ export default observer(function Menu() {
     >Swap</MainButton>
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
-        rubicStore.setToChainTokenAddr(null)
+        pathrStore.setToChainTokenAddr(null)
         displayStore.setShowPreview(false)
         displayStore.setSelectedMenu('gas')
       }}

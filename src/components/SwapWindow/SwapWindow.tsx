@@ -22,7 +22,7 @@ export default observer(function SwapWindow(
   const { theme } = useTheme()
   const inputStore = useStore('inputStore')
   const displayStore = useStore('displayStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
 
   const [boxBgStyle, setBoxBgStyle] = useState<CSSProperties>()
 
@@ -49,10 +49,10 @@ export default observer(function SwapWindow(
   }, [
     displayStore,
     inputStore,
-    rubicStore.fromChainTokenAddr, 
-    rubicStore.toChainTokenAddr,
-    rubicStore.fromChainName,
-    rubicStore.toChainName,
+    pathrStore.fromChainTokenAddr, 
+    pathrStore.toChainTokenAddr,
+    pathrStore.fromChainName,
+    pathrStore.toChainName,
   ])
 
   useEffect(()=>{

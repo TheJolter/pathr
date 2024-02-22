@@ -9,7 +9,7 @@ import { useStore } from "@/stores/hooks";
 
 export default observer(function SuccessDialog() {
   const displayStore = useStore('displayStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
 
   const dialogParams = displayStore.successDialogParams
   return (
@@ -20,7 +20,7 @@ export default observer(function SuccessDialog() {
       <FontAwesomeIcon icon={faCheckCircle} className="text-green-500 text-6xl" />
       <div className="font-semibold text-center">Swap Submited</div>
       <div className="flex items-center justify-center">
-        <ChainTokenIcon tokenAddr={rubicStore.toChainTokenAddr!} chainName={rubicStore.toChainName!} />
+        <ChainTokenIcon tokenAddr={pathrStore.toChainTokenAddr!} chainName={pathrStore.toChainName!} />
         <div className="ml-3">
           <div className="text-2xl font-semibold">{dialogParams?.tokenAmount}</div>
           <div className="text-gray-400 text-xs">{dialogParams?.tokenUsdValue}</div>

@@ -1,23 +1,23 @@
 import InputStore from "@/stores/InputStore";
-import RubicStore from "@/stores/RubicStore";
+import PathrStore from "@/stores/PathrStore";
 import bn from "../bn";
-import { configuration } from "@/configs/rubic/sdk-config";
-import { BlockchainName, CHAIN_TYPE, SDK } from "rubic-sdk";
+import { configuration } from "@/configs/pathr/sdk-config";
+import { BlockchainName, CHAIN_TYPE, SDK } from "pathr-sdk";
 // import getEthereum from "../getEthereum";
 import EvmWalletStore from "@/stores/EvmWalletStore";
 import { EIP1193Provider } from "@web3-onboard/core";
 
 export default function calcRouter(params: {
-  rubicStore: RubicStore,
+  pathrStore: PathrStore,
   inputStore: InputStore,
   // evmWalletStore: EvmWalletStore
   address?: string,
   provider?: EIP1193Provider
 }) : Promise<void> {
-  const {rubicStore, inputStore, address, provider} = params
-  rubicStore?.setTrades([])
-  rubicStore.setCalculating(true);
-  const {fromChainName, fromChainTokenAddr, toChainName, toChainTokenAddr} = rubicStore
+  const {pathrStore, inputStore, address, provider} = params
+  pathrStore?.setTrades([])
+  pathrStore.setCalculating(true);
+  const {fromChainName, fromChainTokenAddr, toChainName, toChainTokenAddr} = pathrStore
   return new Promise(async (resolve, reject)=>{
     if (
       bn(inputStore.tokenAmout||0).lte(0)
@@ -52,7 +52,7 @@ export default function calcRouter(params: {
         toChainTokenAddr
       ).then(onChainTrade=>{
         const _trades = onChainTrade.filter(item=>{return item &&!('error' in item)})
-        rubicStore.setTrades(_trades.slice().reverse())
+        pathrStore.setTrades(_trades.slice().reverse())
         resolve()
       }).catch((err)=>{
         console.error('err sdk.onChainManager.calculateTrade', err)
@@ -73,7 +73,7 @@ export default function calcRouter(params: {
       }
     ).then(wrappedCrossChainTrade=>{
       const _trades = wrappedCrossChainTrade.filter(item=>{return !('error' in item)})
-      rubicStore.setTrades(_trades)
+      pathrStore.setTrades(_trades)
       resolve()
     }).catch((err)=>{
       console.error('err sdk.crossChainManager.calculateTrade', err)

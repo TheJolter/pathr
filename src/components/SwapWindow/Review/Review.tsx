@@ -6,12 +6,12 @@ import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import ChainTokenIcon from "../ChainTokenIcon"
 import MainButton from "@/components/MainButton"
-import { CrossChainTrade, EvmBlockchainName, EvmWeb3Public, Injector, OnChainTrade, WrappedCrossChainTrade } from "rubic-sdk"
+import { CrossChainTrade, EvmBlockchainName, EvmWeb3Public, Injector, OnChainTrade, WrappedCrossChainTrade } from "pathr-sdk"
 import bn from "@/utils/bn"
-import allTokens from '@/configs/rubic/all-tokens.json'
+import allTokens from '@/configs/pathr/all-tokens.json'
 // import connectEvmWallet from "@/utils/connectEvmWallet"
-import { ADDR0 } from "@/configs/rubic/tokens"
-import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
+import { ADDR0 } from "@/configs/pathr/tokens"
+import { BlockchainInfo } from "@/configs/pathr/blockchain-info"
 import evmSwitchChain from "@/utils/evmSwitchChain"
 import getAndSotreBalance from "@/utils/get-and-store-balance"
 import { bigNumberCeil } from "@/utils/bigNumberCeilFloor"
@@ -25,42 +25,42 @@ export default observer(function Review(props: {
   const provider = wallet?.provider
 
   const displayStore = useStore('displayStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
   const inputStore = useStore('inputStore')
   const balanceStore = useStore('balanceStore')
 
   const [isBusy, setIsBusy] = useState(false)
 
-  const chainInfo = BlockchainInfo[rubicStore.fromChainName!]
+  const chainInfo = BlockchainInfo[pathrStore.fromChainName!]
 
   const tokenInfo = allTokens.find(item=>{
     return (
-      item.address===rubicStore.fromChainTokenAddr
-      && item.blockchainName === rubicStore.fromChainName
+      item.address===pathrStore.fromChainTokenAddr
+      && item.blockchainName === pathrStore.fromChainName
     )
   })
 
   const nativeTokenInfo = allTokens.find(item=>{
     return (
       item.address===ADDR0
-      && item.blockchainName === rubicStore.fromChainName
+      && item.blockchainName === pathrStore.fromChainName
     )
   })
 
-  let trade = rubicStore.trades[displayStore.selectedProiveder] as CrossChainTrade|OnChainTrade
+  let trade = pathrStore.trades[displayStore.selectedProiveder] as CrossChainTrade|OnChainTrade
   // console.log('trade', trade) // fee, gas, amounts in routers
   const onChainTradeType = (trade as OnChainTrade)?.type
-  const onChainSubtype = (rubicStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade?.onChainSubtype
-  const crossChainTradeType = (rubicStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).tradeType
-  if (rubicStore.fromChainName !== rubicStore.toChainName) {
-    trade = (rubicStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade as CrossChainTrade|OnChainTrade
+  const onChainSubtype = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade?.onChainSubtype
+  const crossChainTradeType = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).tradeType
+  if (pathrStore.fromChainName !== pathrStore.toChainName) {
+    trade = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade as CrossChainTrade|OnChainTrade
   }
 
   const chainIdString = chainInfo.id.toString(16)
   const balanceKeyForGas = `${chainIdString}-${ADDR0}-${address}`.toLowerCase()
-  const gasWanted = bn(trade?.feeInfo?.rubicProxy?.fixedFee?.amount?.toString()||0)
+  const gasWanted = bn(trade?.feeInfo?.pathrProxy?.fixedFee?.amount?.toString()||0)
   let gasBalance = balanceStore.balances[balanceKeyForGas]?.amount || bn(0)
-  if (rubicStore.fromChainTokenAddr===ADDR0) {
+  if (pathrStore.fromChainTokenAddr===ADDR0) {
     gasBalance = gasBalance.minus(inputStore.tokenAmout)
   }
   console.log({gasWanted: gasWanted.toString(), gasBalance: gasBalance.toString()})
@@ -87,11 +87,11 @@ export default observer(function Review(props: {
     if (isGasSufficient) {
       displayStore.setWarningDialogParams({title: 'Insufficient gas', 
       content: `You don't have enough gas to complete the transaction. 
-      You need to add at least: ${bigNumberCeil(gasWanted.minus(gasBalance), 6).toFixed()} ${nativeTokenInfo?.symbol} on ${rubicStore.fromChainName}`})
+      You need to add at least: ${bigNumberCeil(gasWanted.minus(gasBalance), 6).toFixed()} ${nativeTokenInfo?.symbol} on ${pathrStore.fromChainName}`})
       return
     }
 
-    const blockchainAdapter: EvmWeb3Public = Injector.web3PublicService.getWeb3Public(rubicStore.fromChainName as EvmBlockchainName)
+    const blockchainAdapter: EvmWeb3Public = Injector.web3PublicService.getWeb3Public(pathrStore.fromChainName as EvmBlockchainName)
     setIsBusy(true)
     let gasPrice = '0'
     try {
@@ -136,7 +136,7 @@ export default observer(function Review(props: {
       setIsBusy(false)
       displayStore.setSuccessDialogParams({
         title: 'Swap Success',
-        tokenAddr: rubicStore.toChainTokenAddr!,
+        tokenAddr: pathrStore.toChainTokenAddr!,
         tokenAmount: bn(trade.to?.weiAmount.toString()||0).div(bn(10).pow(trade.to?.decimals||0)).toFormat(6),
         tokenUsdValue: '',
         detailsUrl: `${chainInfo.explorer}/tx/${hash}`
@@ -146,7 +146,7 @@ export default observer(function Review(props: {
         getAndSotreBalance({
           balanceStore,
           chainId: chainInfo.id,
-          tokenAddress: rubicStore.fromChainTokenAddr!,
+          tokenAddress: pathrStore.fromChainTokenAddr!,
           account: address
         })
       }
@@ -174,13 +174,13 @@ export default observer(function Review(props: {
     className={`min-h-[64px] rounded-xl border-[#35593F] border-1 p-3`}
   >
     <div className="flex items-center mb-2">
-      <ChainTokenIcon chainName={rubicStore.fromChainName!} tokenAddr={rubicStore.fromChainTokenAddr!} />
+      <ChainTokenIcon chainName={pathrStore.fromChainName!} tokenAddr={pathrStore.fromChainTokenAddr!} />
       <div className="grow ml-3">
         <div className="text-base font-semibold">
           {/* 12345.6789 USDC */}
           {inputStore.tokenAmout} {tokenInfo?.symbol}
         </div>
-        <div className="text-xs text-gray-400">on {rubicStore.fromChainName}</div>
+        <div className="text-xs text-gray-400">on {pathrStore.fromChainName}</div>
       </div>
     </div>
 
@@ -217,13 +217,13 @@ export default observer(function Review(props: {
     </div>}
 
     <div className="flex items-center mt-2">
-      <ChainTokenIcon chainName={rubicStore.toChainName!} tokenAddr={rubicStore.toChainTokenAddr!} />
+      <ChainTokenIcon chainName={pathrStore.toChainName!} tokenAddr={pathrStore.toChainTokenAddr!} />
       <div className="grow ml-3">
         <div className="text-base font-semibold">
           {/* 12345.6789 USDC */}
           { bn(trade.to?.weiAmount.toString()||0).div(bn(10).pow(trade.to?.decimals||0)).toFormat(6)} {trade.to?.symbol}
         </div>
-        <div className="text-xs text-gray-400">on {rubicStore.toChainName}</div>
+        <div className="text-xs text-gray-400">on {pathrStore.toChainName}</div>
       </div>
     </div>
     

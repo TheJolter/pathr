@@ -1,4 +1,4 @@
-import { EVM_BLOCKCHAIN_NAME, CHAIN_TYPE } from 'rubic-sdk';
+import { EVM_BLOCKCHAIN_NAME, CHAIN_TYPE } from 'pathr-sdk';
 
 type Configuration = {
   rpcProviders: Record<string, {

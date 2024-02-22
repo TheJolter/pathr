@@ -6,8 +6,8 @@ import ChainTokenIcon from "./ChainTokenIcon"
 import { Chip } from "@nextui-org/react"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
-import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
-import allTokens from '@/configs/rubic/all-tokens.json'
+import { BlockchainInfo } from "@/configs/pathr/blockchain-info"
+import allTokens from '@/configs/pathr/all-tokens.json'
 import getAndSotreBalance from "@/utils/get-and-store-balance"
 import { bigNumberFloor } from "@/utils/bigNumberCeilFloor"
 import bn from "@/utils/bn"
@@ -23,7 +23,7 @@ export default observer(function InputCard(props: {
 
   const { theme } = useTheme()
   const inputStore = useStore('inputStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
   // const evmWalletStore = useStore('evmWalletStore')
   const balanceStore = useStore('balanceStore')
 
@@ -41,8 +41,8 @@ export default observer(function InputCard(props: {
   useEffect(()=>{
     setBalanceKey('')
     // console.log({fromChainName, fromTokenName, account: address})
-    const chainId = BlockchainInfo[rubicStore.fromChainName||'']?.id
-    const fromToken = allTokens.find(item=>{return item.address===rubicStore.fromChainTokenAddr && item.blockchainName===rubicStore.fromChainName})
+    const chainId = BlockchainInfo[pathrStore.fromChainName||'']?.id
+    const fromToken = allTokens.find(item=>{return item.address===pathrStore.fromChainTokenAddr && item.blockchainName===pathrStore.fromChainName})
     if (!fromToken || !address) return
     getAndSotreBalance({
       balanceStore,
@@ -53,9 +53,9 @@ export default observer(function InputCard(props: {
         setBalanceKey(_balanceKey)
       }
     })
-  }, [rubicStore.fromChainName, rubicStore.fromChainTokenAddr, address, balanceStore])
+  }, [pathrStore.fromChainName, pathrStore.fromChainTokenAddr, address, balanceStore])
 
-  // if (!rubicStore.fromChainName||!rubicStore.fromChainTokenAddr) return <></>
+  // if (!pathrStore.fromChainName||!pathrStore.fromChainTokenAddr) return <></>
 
   function handleMaxClick() {
     const balancesInfo = balanceStore.balances[balanceKey]
@@ -73,7 +73,7 @@ export default observer(function InputCard(props: {
   <div className="font-semibold mb-2">You pay</div>
   <div id="input-card-icon-input-amout" className="flex">
     <div>
-      <ChainTokenIcon chainName={rubicStore.fromChainName!} tokenAddr={rubicStore.fromChainTokenAddr!} />
+      <ChainTokenIcon chainName={pathrStore.fromChainName!} tokenAddr={pathrStore.fromChainTokenAddr!} />
     </div>
     <div className=" ml-4">
       <div className="flex items-center mb-1">

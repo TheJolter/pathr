@@ -1,6 +1,6 @@
 'use client'
 
-import { BlockchainInfo } from "@/configs/rubic/blockchain-info";
+import { BlockchainInfo } from "@/configs/pathr/blockchain-info";
 import { useStore } from "@/stores/hooks";
 import { Button, Tooltip } from "@nextui-org/react";
 import { observer } from "mobx-react-lite";
@@ -11,14 +11,14 @@ export default observer(function TokenButton(props: {
 }) {
   const {chainName} = props
 
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
   const displayStore = useStore('displayStore')
 
   const direction = displayStore.showChainTokenSelector
   const chainInfo = BlockchainInfo[chainName]
 
 
-  let selected = (direction==='from'&&rubicStore.fromChainName===chainName) || (direction==='to'&&rubicStore.toChainName===chainName)
+  let selected = (direction==='from'&&pathrStore.fromChainName===chainName) || (direction==='to'&&pathrStore.toChainName===chainName)
 
   return (
 <>
@@ -29,11 +29,11 @@ export default observer(function TokenButton(props: {
         style={{background: selected?'rgba(50, 202, 98, 0.4)':undefined}}
         onClick={()=>{
           if (direction==='from') {
-            rubicStore.setFromChainName(chainName)
-            rubicStore.setFromChainTokenAddr(null)
+            pathrStore.setFromChainName(chainName)
+            pathrStore.setFromChainTokenAddr(null)
           } else if (direction==='to') {
-            rubicStore.setToChainName(chainName)
-            rubicStore.setToChainTokenAddr(null)
+            pathrStore.setToChainName(chainName)
+            pathrStore.setToChainTokenAddr(null)
           }
         }}
       >

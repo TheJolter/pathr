@@ -11,7 +11,7 @@ import MainBackground from '@/components/MainBackground';
 import { Web3OnboardProvider, init } from '@web3-onboard/react'
 import injectedModule from '@web3-onboard/injected-wallets'
 import { Chain } from '@web3-onboard/common';
-import { BlockchainInfo } from '@/configs/rubic/blockchain-info';
+import { BlockchainInfo } from '@/configs/pathr/blockchain-info';
 import metamaskSDK from '@web3-onboard/metamask'
 
 

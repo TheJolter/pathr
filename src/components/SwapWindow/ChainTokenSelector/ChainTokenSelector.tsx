@@ -6,26 +6,26 @@ import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import TokenButton from "./TokenButton"
 import TokenInfoCard from "./TokenInfoCard"
-import { BlockchainInfo } from "@/configs/rubic/blockchain-info"
-import allTokens from '@/configs/rubic/all-tokens.json'
-import { ADDR0 } from "@/configs/rubic/tokens"
+import { BlockchainInfo } from "@/configs/pathr/blockchain-info"
+import allTokens from '@/configs/pathr/all-tokens.json'
+import { ADDR0 } from "@/configs/pathr/tokens"
 
 export default observer(function ChainTokenSelector(props: {
   style?: CSSProperties
 }) {
   const displayStore = useStore('displayStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
 
   const [searchText, setSearchText] = useState('')
   const [tokens, setTokens] = useState<typeof allTokens>([])
 
-  let chainName = rubicStore.fromChainName
-  let oppositeChainName = rubicStore.toChainName
-  let oppositeTokenAddr = rubicStore.toChainTokenAddr
+  let chainName = pathrStore.fromChainName
+  let oppositeChainName = pathrStore.toChainName
+  let oppositeTokenAddr = pathrStore.toChainTokenAddr
   if (displayStore.showChainTokenSelector==='to') {
-    chainName = rubicStore.toChainName
-    oppositeChainName = rubicStore.fromChainName
-    oppositeTokenAddr = rubicStore.fromChainTokenAddr
+    chainName = pathrStore.toChainName
+    oppositeChainName = pathrStore.fromChainName
+    oppositeTokenAddr = pathrStore.fromChainTokenAddr
   }
   // console.log({oppositeChainName, oppositeTokenAddr})
   // const chainInfo = BlockchainInfo[chainName!]

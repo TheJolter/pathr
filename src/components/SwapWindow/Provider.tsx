@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faSackDollar } from '@fortawesome/free-solid-svg-icons'
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
-import { OnChainTrade, WrappedCrossChainTrade } from "rubic-sdk"
+import { OnChainTrade, WrappedCrossChainTrade } from "pathr-sdk"
 import bn from "@/utils/bn"
-import allTokens from '@/configs/rubic/all-tokens.json'
-import { ADDR0 } from "@/configs/rubic/tokens"
+import allTokens from '@/configs/pathr/all-tokens.json'
+import { ADDR0 } from "@/configs/pathr/tokens"
 import { bigNumberCeil } from "@/utils/bigNumberCeilFloor"
 
 export default observer(function Provider(props: {
@@ -21,19 +21,19 @@ export default observer(function Provider(props: {
   const {className, isBest, selected, providerIndex} = props
 
   const displayStore = useStore('displayStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
 
-  const toNativeToken = allTokens.find(item=>{return item.address===ADDR0 && item.blockchainName===rubicStore.toChainName})
-  const fromNativeToken = allTokens.find(item=>{return item.address===ADDR0 && item.blockchainName===rubicStore.fromChainName})
+  const toNativeToken = allTokens.find(item=>{return item.address===ADDR0 && item.blockchainName===pathrStore.toChainName})
+  const fromNativeToken = allTokens.find(item=>{return item.address===ADDR0 && item.blockchainName===pathrStore.fromChainName})
 
   // let trade: OnChainTrade|WrappedCrossChainTrade
-  let trade:any = rubicStore.trades?.[providerIndex]
-  // if (rubicStore.fromChainName !== rubicStore.toChainName) {
-  //   trade = rubicStore.trades[providerIndex] as WrappedCrossChainTrade
+  let trade:any = pathrStore.trades?.[providerIndex]
+  // if (pathrStore.fromChainName !== pathrStore.toChainName) {
+  //   trade = pathrStore.trades[providerIndex] as WrappedCrossChainTrade
   // }
   let tradeType: string = (trade as OnChainTrade).type
   let onChain = true
-  if (rubicStore.fromChainName !== rubicStore.toChainName) {
+  if (pathrStore.fromChainName !== pathrStore.toChainName) {
     onChain = false
     tradeType = (trade as WrappedCrossChainTrade).tradeType
     trade = trade.trade
@@ -64,7 +64,7 @@ export default observer(function Provider(props: {
   {selected&&<div className="font-semibold mb-2">You get</div>}
 
   <div className="flex items-center justify-between">
-    <ChainTokenIcon tokenAddr={rubicStore.toChainTokenAddr!} chainName={rubicStore.toChainName!} />
+    <ChainTokenIcon tokenAddr={pathrStore.toChainTokenAddr!} chainName={pathrStore.toChainName!} />
     <div className="grow ml-4">
       <div className="text-lg font-semibold">
         {/* 100 JOLT */}
@@ -90,7 +90,7 @@ export default observer(function Provider(props: {
         <FontAwesomeIcon icon={faSackDollar} className="text-gray-400 mr-2" />
       </Tooltip>
       <div className="text-gray-400">
-        { bigNumberCeil(trade?.feeInfo?.rubicProxy?.fixedFee?.amount?.toString()||0, 6).toFormat()} {fromNativeToken?.symbol}
+        { bigNumberCeil(trade?.feeInfo?.pathrProxy?.fixedFee?.amount?.toString()||0, 6).toFormat()} {fromNativeToken?.symbol}
       </div>
     </div>
     {/* {trade?.feeInfo?.provider&&<div className="flex items-center">

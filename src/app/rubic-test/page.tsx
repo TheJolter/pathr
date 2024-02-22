@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from 'react'
-import { Configuration, EVM_BLOCKCHAIN_NAME } from 'rubic-sdk'
-import { SDK } from 'rubic-sdk'
+import { Configuration, EVM_BLOCKCHAIN_NAME } from 'pathr-sdk'
+import { SDK } from 'pathr-sdk'
 
 const configuration:Configuration = {
   rpcProviders: {

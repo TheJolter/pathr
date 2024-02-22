@@ -1,7 +1,7 @@
 import { Avatar, Badge } from "@nextui-org/react";
 import { observer } from "mobx-react-lite";
-import allTokens from '@/configs/rubic/all-tokens.json'
-import { BlockchainInfo } from "@/configs/rubic/blockchain-info";
+import allTokens from '@/configs/pathr/all-tokens.json'
+import { BlockchainInfo } from "@/configs/pathr/blockchain-info";
 
 export default observer(function ChainTokenIcon(props: {
   chainName: string,

@@ -15,16 +15,16 @@ export default observer(function Exchange(props: {
 }) {
 
   const displayStore = useStore('displayStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
   const inputStore = useStore('inputStore')
 
   function handleToggle() {
-    const _fromChainName = rubicStore.fromChainName
-    const _fromChainTokenAddr = rubicStore.fromChainTokenAddr
-    rubicStore.setFromChainName(rubicStore.toChainName)
-    rubicStore.setFromChainTokenAddr(rubicStore.toChainTokenAddr)
-    rubicStore.setToChainName(_fromChainName)
-    rubicStore.setToChainTokenAddr(_fromChainTokenAddr)
+    const _fromChainName = pathrStore.fromChainName
+    const _fromChainTokenAddr = pathrStore.fromChainTokenAddr
+    pathrStore.setFromChainName(pathrStore.toChainName)
+    pathrStore.setFromChainTokenAddr(pathrStore.toChainTokenAddr)
+    pathrStore.setToChainName(_fromChainName)
+    pathrStore.setToChainTokenAddr(_fromChainTokenAddr)
   }
 
   return (
@@ -57,14 +57,14 @@ export default observer(function Exchange(props: {
 
       <InputCard className="mt-4 p-4" />
 
-      {/* {rubicStore.fromChainTokenAddr && rubicStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) && */}
+      {/* {pathrStore.fromChainTokenAddr && pathrStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) && */}
         <MainButton fullWidth className="mt-4"
-          disabled={rubicStore.calculating}
+          disabled={pathrStore.calculating}
           onClick={()=>{
-            if (! ( rubicStore.fromChainTokenAddr && rubicStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) ) ) {
+            if (! ( pathrStore.fromChainTokenAddr && pathrStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) ) ) {
               return
             }
-            rubicStore.updateRouterCalcTime()
+            pathrStore.updateRouterCalcTime()
             displayStore.setShowProviders(true)
           }}
         >Calculate Routers</MainButton>

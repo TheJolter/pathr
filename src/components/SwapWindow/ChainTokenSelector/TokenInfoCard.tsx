@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '@/stores/hooks'
-import allTokens from '@/configs/rubic/all-tokens.json'
+import allTokens from '@/configs/pathr/all-tokens.json'
 import { formatEvmAddr } from '@/components/EvmWalletButton/EvmWalletButton'
-import { BlockchainInfo } from '@/configs/rubic/blockchain-info'
+import { BlockchainInfo } from '@/configs/pathr/blockchain-info'
 import { bigNumberFloor } from '@/utils/bigNumberCeilFloor'
 import { useConnectWallet } from '@web3-onboard/react'
 
@@ -18,7 +18,7 @@ export default observer(function TokenInfoCard(props: {
   
   const {tokenInfo} = props
   const displayStore = useStore('displayStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
   const evmWalletStore = useStore('evmWalletStore')
   const balanceStore = useStore('balanceStore')
 
@@ -29,9 +29,9 @@ export default observer(function TokenInfoCard(props: {
 <div className="flex items-center rounded-xl px-3 py-2 mt-4 border hover:border-gray-400 cursor-pointer"
   onClick={()=>{
     if (displayStore.showChainTokenSelector==='from') {
-      rubicStore.setFromChainTokenAddr(tokenInfo.address)
+      pathrStore.setFromChainTokenAddr(tokenInfo.address)
     } else if(displayStore.showChainTokenSelector==='to') {
-      rubicStore.setToChainTokenAddr(tokenInfo.address)
+      pathrStore.setToChainTokenAddr(tokenInfo.address)
     }
     displayStore.setShowChainTokenSelector(undefined)
   }}

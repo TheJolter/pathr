@@ -1,4 +1,4 @@
-import { EVM_BLOCKCHAIN_NAME } from "rubic-sdk";
+import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk";
 
 
 export const blockchainNetwork_blockchain = {
@@ -16,6 +16,6 @@ export const blockchainNetwork_blockchain = {
 }
 
 // from https://tokens.rubic.exchange/api/v1/tokens/?pageSize=200&network=ethereum res.results
-export const rubicTokens = [
+export const pathrTokens = [
   
 ]

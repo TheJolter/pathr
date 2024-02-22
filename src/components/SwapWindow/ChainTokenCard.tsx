@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react"
 import ChainTokenIcon from "./ChainTokenIcon"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
-import allTokens from '@/configs/rubic/all-tokens.json'
+import allTokens from '@/configs/pathr/all-tokens.json'
 
 export default observer(function ChainTokenCard(props: {
   onClick:(direction: 'from'|'to')=>void,
@@ -15,14 +15,14 @@ export default observer(function ChainTokenCard(props: {
   const {onClick, direction} = props
 
   const displayStore = useStore('displayStore')
-  const rubicStore = useStore('rubicStore')
+  const pathrStore = useStore('pathrStore')
   const inputStore = useStore('inputStore')
 
-  let tokenAddr = rubicStore.fromChainTokenAddr
-  let chainName = rubicStore.fromChainName
+  let tokenAddr = pathrStore.fromChainTokenAddr
+  let chainName = pathrStore.fromChainName
   if (direction==='to') {
-    tokenAddr = rubicStore.toChainTokenAddr
-    chainName = rubicStore.toChainName
+    tokenAddr = pathrStore.toChainTokenAddr
+    chainName = pathrStore.toChainName
   }
 
   const { theme } = useTheme()

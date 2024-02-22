@@ -1,6 +1,6 @@
-import { ADDR0 } from "@/configs/rubic/tokens";
+import { ADDR0 } from "@/configs/pathr/tokens";
 import { action, makeObservable, observable } from "mobx";
-import { CrossChainTrade, EVM_BLOCKCHAIN_NAME, OnChainTrade, OnChainTradeError, WrappedCrossChainTrade } from "rubic-sdk";
+import { CrossChainTrade, EVM_BLOCKCHAIN_NAME, OnChainTrade, OnChainTradeError, WrappedCrossChainTrade } from "pathr-sdk";
 
 export default class PathrStore {
   constructor() {

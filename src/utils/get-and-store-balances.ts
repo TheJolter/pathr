@@ -1,10 +1,10 @@
 import axios from "axios";
-import { BlockchainInfo } from "@/configs/rubic/blockchain-info";
+import { BlockchainInfo } from "@/configs/pathr/blockchain-info";
 import { BalanceStore } from "@/stores/BalanceStore";
-import tokens from '@/configs/rubic/all-tokens.json'
+import tokens from '@/configs/pathr/all-tokens.json'
 import BigNumber from "bignumber.js";
 import getAndSotreBalance from "./get-and-store-balance";
-import { ADDR0 } from "@/configs/rubic/tokens";
+import { ADDR0 } from "@/configs/pathr/tokens";
 
 const chainbaseIds = [1, 137, 56, 43114, 42161, 10, 8453, 324]
 

@@ -1,5 +1,5 @@
-import { BlockchainInfo } from "../configs/rubic/blockchain-info"
-import { configuration } from "../configs/rubic/sdk-config"
+import { BlockchainInfo } from "../configs/pathr/blockchain-info"
+import { configuration } from "../configs/pathr/sdk-config"
 
 export default function getRpcByChainId(chainId: number|string) {
   const chainIdNumber = typeof chainId==='number'?chainId:Number(chainId)

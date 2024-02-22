@@ -1,4 +1,4 @@
-import { EVM_BLOCKCHAIN_NAME } from "rubic-sdk";
+import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk";
 
 export const BlockchainInfo: Record<
   string,
