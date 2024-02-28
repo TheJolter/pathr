@@ -36,7 +36,7 @@ export default observer(function SwapWindow(
     }
     if (!inputStore.tokenAmout) {
       displayStore.setSelectedProvider(-1)
-      displayStore.setShowChainTokenSelector(undefined)
+      // displayStore.setShowChainTokenSelector(undefined)
     }
   }, [
     displayStore,
