@@ -49,7 +49,10 @@ export default function calcRouter(params: {
           blockchain: fromChainName as BlockchainName
         }, 
         inputStore.tokenAmout, 
-        toChainTokenAddr
+        toChainTokenAddr,
+        {
+          slippageTolerance: 0.01
+        }
       ).then(onChainTrade=>{
         const _trades = onChainTrade.filter(item=>{return item &&!('error' in item)}) as OnChainTrade[]
         _trades.sort((first, second)=>{
@@ -76,6 +79,11 @@ export default function calcRouter(params: {
       {
         address: toChainTokenAddr,
         blockchain: toChainName as BlockchainName
+      },
+      {
+        disabledProviders: ['multichain'],
+        lifiDisabledBridgeTypes: ['multichain'],
+        slippageTolerance: 0.02 // default 0.03 will result in lifi return empty routers
       }
     ).then(wrappedCrossChainTrade=>{
       const _trades = wrappedCrossChainTrade.filter(item=>{return !('error' in item)})
