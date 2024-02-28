@@ -1,15 +1,4 @@
-import { EVM_BLOCKCHAIN_NAME, CHAIN_TYPE } from 'pathr-sdk';
-
-type Configuration = {
-  rpcProviders: Record<string, {
-    rpcList: string[],
-    mainRpcTimeout: number
-  }>,
-  providerAddress?: Record<string, {
-    crossChain: string, // Address for cross chain fee
-    onChain: string // Address for on chain fee
-  }>
-}
+import { EVM_BLOCKCHAIN_NAME, CHAIN_TYPE, Configuration } from 'pathr-sdk';
 
 export const configuration:Configuration = {
   rpcProviders: {
