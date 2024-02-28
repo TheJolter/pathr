@@ -17,6 +17,8 @@ export default observer(function ChainTokenSelector(props: {
   const displayStore = useStore('displayStore')
   const pathrStore = useStore('pathrStore')
 
+  const hostname = (window as any).location?.hostname
+
   const [searchText, setSearchText] = useState('')
   const [tokens, setTokens] = useState<typeof allTokens>([])
 
@@ -74,6 +76,7 @@ export default observer(function ChainTokenSelector(props: {
     {Object.keys(BlockchainInfo).map((chainName: string, index)=>{
       if (
         displayStore.showChainTokenSelector==='from'
+        && !['localhost'].includes(hostname)
         && !([
           EVM_BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN, 
           EVM_BLOCKCHAIN_NAME.POLYGON
