@@ -79,7 +79,8 @@ export default observer(function ChainTokenSelector(props: {
         && !['localhost'].includes(hostname)
         && !([
           EVM_BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN, 
-          EVM_BLOCKCHAIN_NAME.POLYGON
+          EVM_BLOCKCHAIN_NAME.POLYGON,
+          EVM_BLOCKCHAIN_NAME.AVALANCHE
         ] as string[]).includes(chainName)
       ) return <></>
       return <TokenButton chainName={chainName} key={`BackBtn-${index}`} />
