@@ -25,7 +25,7 @@ export const configuration:Configuration = {
       mainRpcTimeout: 8000
     },
     [EVM_BLOCKCHAIN_NAME.ARBITRUM]: {
-      rpcList: ['https://arb1.arbitrum.io/rpc', ''],
+      rpcList: ['https://arb1.arbitrum.io/rpc'],
       mainRpcTimeout: 8000
     },
     [EVM_BLOCKCHAIN_NAME.FANTOM]: {
@@ -33,7 +33,13 @@ export const configuration:Configuration = {
       mainRpcTimeout: 8000
     },
     [EVM_BLOCKCHAIN_NAME.AVALANCHE]: {
-      rpcList: ['https://api.avax.network/ext/bc/C/rpc'],
+      rpcList: [
+        'https://avalanche.drpc.org',
+        'https://avax.meowrpc.com',
+        'https://1rpc.io/avax/c',
+        'https://avalanche.public-rpc.com',
+        'https://api.avax.network/ext/bc/C/rpc'
+      ],
       mainRpcTimeout: 8000
     },
     [EVM_BLOCKCHAIN_NAME.GNOSIS]: {
@@ -57,10 +63,10 @@ export const configuration:Configuration = {
     },
   },
 
-  // providerAddress: {
-  //   [CHAIN_TYPE.EVM]: {
-  //     crossChain: '0x32f71714709e2a9D411a03638a9aA920499BcB0A', // Address for cross chain fee
-  //     onChain: '0xbD8e73Dc667e8B5a231e525a6d5405c832B61030' // Address for on chain fee
-  //   }
-  // }
+  providerAddress: { // partner
+    [CHAIN_TYPE.EVM]: {
+      crossChain: '0xA71AeeAbA12f994a5B1B645F84273A6596d082b3', // Address for cross chain fee
+      onChain: '0x38b0216ab8D66D299cCf5787AAcb303C5581755B' // Address for on chain fee
+    }
+  }
 }
