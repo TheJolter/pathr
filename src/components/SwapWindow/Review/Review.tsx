@@ -108,6 +108,7 @@ export default observer(function Review(props: {
       needApprove = await trade.needApprove()
       console.log({needApprove})
     }
+    
     if (needApprove) {
       const tx = {
         onTransactionHash: (hash: string) => {
@@ -128,6 +129,7 @@ export default observer(function Review(props: {
       return
     }
 
+    console.log('gasPrice', gasPrice)
     trade.swap({
       onConfirm:(hash)=>{
       }, 
