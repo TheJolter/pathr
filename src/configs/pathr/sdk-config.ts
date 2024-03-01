@@ -38,7 +38,8 @@ export const configuration:Configuration = {
         // 'https://avalanche.drpc.org', // success local
         // 'https://avax.meowrpc.com', // failed to find router local
         // 'https://1rpc.io/avax/c', // success local
-        'https://avalanche.public-rpc.com', // success local
+        // 'https://avalanche.public-rpc.com', // success local
+        'https://avalanche-mainnet.infura.io/v3/ef4dbe71de9246879a56b21539f98ede'
       ],
       mainRpcTimeout: 8000
     },
