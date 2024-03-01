@@ -8864,7 +8864,7 @@ pathe@^1.1.0, pathe@^1.1.1, pathe@^1.1.2:
   resolved "https://registry.yarnpkg.com/pathe/-/pathe-1.1.2.tgz#6c4cb47a945692e48a1ddd6e4094d170516437ec"
   integrity sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==
 
-"pathr-sdk@github:github:EasonTheJolter/rubic-sdk#pathr":
+"pathr-sdk@github:github:EasonTheJolter/rubic-sdk#pathr-avax":
   version "4.39.2"
   resolved "https://codeload.github.com/EasonTheJolter/rubic-sdk/tar.gz/b34846b398e3a32420e9460309e8064db1a091a1"
   dependencies:
