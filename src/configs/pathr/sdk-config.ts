@@ -34,11 +34,11 @@ export const configuration:Configuration = {
     },
     [EVM_BLOCKCHAIN_NAME.AVALANCHE]: {
       rpcList: [
-        'https://avalanche.drpc.org',
-        'https://avax.meowrpc.com',
-        'https://1rpc.io/avax/c',
-        'https://avalanche.public-rpc.com',
-        'https://api.avax.network/ext/bc/C/rpc'
+        'https://avalanche.drpc.org', // success
+        // 'https://avax.meowrpc.com', // failed to find router
+        'https://1rpc.io/avax/c', // success
+        'https://avalanche.public-rpc.com', // success
+        'https://api.avax.network/ext/bc/C/rpc' // success
       ],
       mainRpcTimeout: 8000
     },
