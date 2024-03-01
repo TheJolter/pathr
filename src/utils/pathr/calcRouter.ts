@@ -54,6 +54,7 @@ export default function calcRouter(params: {
           slippageTolerance: 0.01
         }
       ).then(onChainTrade=>{
+        console.log('onChainTrade', onChainTrade)
         const _trades = onChainTrade.filter(item=>{return item &&!('error' in item)}) as OnChainTrade[]
         _trades.sort((first, second)=>{
           const firstValue = bn(first.to?.weiAmount?.toString()||0).div(bn(10).pow(first.to?.decimals||0))
@@ -86,6 +87,7 @@ export default function calcRouter(params: {
         slippageTolerance: 0.02 // default 0.03 will result in lifi return empty routers
       }
     ).then(wrappedCrossChainTrade=>{
+      console.log('wrappedCrossChainTrade', wrappedCrossChainTrade)
       const _trades = wrappedCrossChainTrade.filter(item=>{return !('error' in item)})
       _trades.sort((first, second)=>{
         const firstValue = bn(first.trade?.to?.weiAmount?.toString()||0).div(bn(10).pow(first.trade?.to?.decimals||0))
