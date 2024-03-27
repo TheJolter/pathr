@@ -1,5 +1,3 @@
-import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk";
-
 export const ADDR0 = '0x0000000000000000000000000000000000000000'
 
 // export type PathrToken = {
