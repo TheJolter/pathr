@@ -6,7 +6,7 @@ import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import ChainTokenIcon from "../ChainTokenIcon"
 import MainButton from "@/components/MainButton"
-import { CrossChainTrade, EvmBlockchainName, EvmWeb3Public, Injector, OnChainTrade, WrappedCrossChainTrade } from "pathr-sdk"
+import { CrossChainTrade, EvmBlockchainName, EvmWeb3Public, Injector as PathrInjector, OnChainTrade, WrappedCrossChainTrade } from "pathr-sdk"
 import bn from "@/utils/bn"
 import allTokens from '@/configs/pathr/all-tokens.json'
 // import connectEvmWallet from "@/utils/connectEvmWallet"
@@ -16,6 +16,8 @@ import evmSwitchChain from "@/utils/evmSwitchChain"
 import getAndSotreBalance from "@/utils/get-and-store-balance"
 import { bigNumberCeil } from "@/utils/bigNumberCeilFloor"
 import { useConnectWallet } from "@web3-onboard/react"
+import {Injector as RubicInjector} from 'rubic-sdk'
+import { OWN_CHAINS } from "@/configs/common"
 
 export default observer(function Review(props: {
   style?: CSSProperties
@@ -32,6 +34,11 @@ export default observer(function Review(props: {
   const [isBusy, setIsBusy] = useState(false)
 
   const chainInfo = BlockchainInfo[pathrStore.fromChainName!]
+
+  let Injector = RubicInjector
+  if (OWN_CHAINS.includes(pathrStore.fromChainName as any)) {
+    Injector = PathrInjector
+  }
 
   const tokenInfo = allTokens.find(item=>{
     return (

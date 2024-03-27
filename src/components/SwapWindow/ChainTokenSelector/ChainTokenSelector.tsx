@@ -9,7 +9,6 @@ import TokenInfoCard from "./TokenInfoCard"
 import { BlockchainInfo } from "@/configs/pathr/blockchain-info"
 import allTokens from '@/configs/pathr/all-tokens.json'
 import { ADDR0 } from "@/configs/pathr/tokens"
-import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
 
 export default observer(function ChainTokenSelector(props: {
   style?: CSSProperties
@@ -74,15 +73,15 @@ export default observer(function ChainTokenSelector(props: {
 
   <div className="grid grid-cols-6 gap-y-4">
     {Object.keys(BlockchainInfo).map((chainName: string, index)=>{
-      if (
-        displayStore.showChainTokenSelector==='from'
-        && !['localhost'].includes(hostname)
-        && !([
-          EVM_BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN, 
-          EVM_BLOCKCHAIN_NAME.POLYGON,
-          EVM_BLOCKCHAIN_NAME.AVALANCHE
-        ] as string[]).includes(chainName)
-      ) return <></>
+      // if (
+      //   displayStore.showChainTokenSelector==='from'
+      //   && !['localhost'].includes(hostname)
+      //   && !([
+      //     EVM_BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN, 
+      //     EVM_BLOCKCHAIN_NAME.POLYGON,
+      //     EVM_BLOCKCHAIN_NAME.AVALANCHE
+      //   ] as string[]).includes(chainName)
+      // ) return <></>
       return <TokenButton chainName={chainName} key={`BackBtn-${index}`} />
     })}
   </div>

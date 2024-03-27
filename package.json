@@ -30,6 +30,7 @@
     "pathr-sdk": "github:github:EasonTheJolter/rubic-sdk#pathr-avax",
     "react": "^18",
     "react-dom": "^18",
+    "rubic-sdk": "4.39.2",
     "web3": "^4.3.0"
   },
   "devDependencies": {
