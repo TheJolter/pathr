@@ -42,6 +42,12 @@ export default observer(function Menu() {
       }}
       style={selectedMenu!=='gas'?noneSelectedStyle:undefined}
     >Gas</MainButton>
+    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+      onClick={()=>{
+        window.open('https://usdc.pathr.io')
+      }}
+      style={noneSelectedStyle}
+    >USDC</MainButton>
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 
     style={menuBgStyle}
