@@ -32,7 +32,8 @@ export default observer(function Menu() {
   <div className="relative z-10 px-[6px] flex items-center h-[58px]">
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>displayStore.setSelectedMenu('swap')}
-      style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
+      // style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
+      style={noneSelectedStyle}
     >Swap</MainButton>
     {/* <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
@@ -46,7 +47,8 @@ export default observer(function Menu() {
       onClick={()=>{
         window.open('https://usdc.pathr.io')
       }}
-      style={noneSelectedStyle}
+      style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
+      // style={noneSelectedStyle}
     >USDC</MainButton>
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 
