@@ -8,28 +8,28 @@ export default class PathrStore {
   }
 
   @observable
-  fromChainName: string|null = EVM_BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN
+  fromChainName: string|null = EVM_BLOCKCHAIN_NAME.ARBITRUM
   @action
   setFromChainName(fromChainName: string|null) {
     this.fromChainName = fromChainName
   }
 
   @observable
-  toChainName: string|null = EVM_BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN
+  toChainName: string|null = EVM_BLOCKCHAIN_NAME.AVALANCHE
   @action
   setToChainName(toChainName: string|null) {
     this.toChainName = toChainName
   }
 
   @observable
-  fromChainTokenAddr: string|null = ADDR0
+  fromChainTokenAddr: string|null = '0x912ce59144191c1204e64559fe8253a0e49e6548' // ADDR0
   @action
   setFromChainTokenAddr(fromChainTokenAddr: string|null) {
     this.fromChainTokenAddr = fromChainTokenAddr
   }
 
   @observable
-  toChainTokenAddr: string|null = '0x7db21353a0c4659b6a9a0519066aa8d52639dfa5'
+  toChainTokenAddr: string|null = '0x9702230a8ea53601f5cd2dc00fdbc13d4df4a8c7'
   @action
   setToChainTokenAddr(toChainTokenAddr: string|null) {
     this.toChainTokenAddr = toChainTokenAddr

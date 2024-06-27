@@ -15,6 +15,7 @@ export default function getAndStoreCoingeckoTokens({apiDataStore}: {apiDataStore
   return new Promise(async (resolve)=>{
     let allTokens:CoingeckoToken[] = []
     for (const {coingeckoApiId} of CHAINS) {
+      if (!coingeckoApiId) continue
       try {
         const tokens = (await (await fetch(`https://tokens.coingecko.com/${coingeckoApiId}/all.json`)).json()).tokens as CoingeckoToken[]
         allTokens.push(...tokens)

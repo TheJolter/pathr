@@ -63,6 +63,11 @@ export const BlockchainInfo: Record<
     chainLabel: 'https://app.rubic.exchange/assets/images/icons/coins/zksync.svg',
     explorer: 'https://explorer.zksync.io'
   },
+  [EVM_BLOCKCHAIN_NAME.BASE]: {
+    id: 8453,
+    chainLabel: 'https://www.base.org/document/favicon-32x32.png',
+    explorer: 'https://base.blockscout.com'
+  },
 
   // [EVM_BLOCKCHAIN_NAME.KAVA]: {
   //   id: 2222,

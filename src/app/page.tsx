@@ -1,6 +1,6 @@
 'use client'
 
-import SwapWindow from "@/components/SwapWindow/SwapWindow"
+import SwapWindowCCTP from "@/components/SwapWindowCCTP/SwapWindowCCTP"
 import { useEffect, useState } from "react"
 
 export default function Page() {
@@ -11,7 +11,7 @@ export default function Page() {
   if(!mounted) return null
   return (
     <main>
-      <SwapWindow className="mt-9 w-full" />
+      <SwapWindowCCTP className="mt-9 w-full" />
     </main>
   )
 }
