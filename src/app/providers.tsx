@@ -1,6 +1,6 @@
 'use client'
 
-import {NextUIProvider} from '@nextui-org/react'
+import {Modal, ModalBody, ModalContent, ModalHeader, NextUIProvider} from '@nextui-org/react'
 import {ThemeProvider as NextThemesProvider, useTheme} from "next-themes"
 import { config, library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -13,12 +13,15 @@ import injectedModule from '@web3-onboard/injected-wallets'
 import { Chain } from '@web3-onboard/common';
 import { BlockchainInfo } from '@/configs/pathr/blockchain-info';
 import metamaskSDK from '@web3-onboard/metamask'
-
+import { observer } from 'mobx-react-lite';
+import { useStore } from '@/stores/hooks';
+import { useEffect } from 'react';
+import getAndStoreCoingeckoTokens from '@/utils/get-and-store-coingecko-tokens';
 
 config.autoAddCss = false; 
 library.add(fas)
 
-export function Providers({children}: { children: React.ReactNode }) {
+export default observer(function Providers({children}: { children: React.ReactNode }) {
 
   let chains:Chain[] = []
   for (const key in BlockchainInfo) {
@@ -33,6 +36,13 @@ export function Providers({children}: { children: React.ReactNode }) {
     }})
   ]
   const web3Onboard = init({wallets,chains, theme: 'light'})
+
+  const dialogStore =  useStore('dialogStore')
+  const apiDataStore = useStore('apiDataStore')
+
+  useEffect(()=>{
+    getAndStoreCoingeckoTokens({apiDataStore})
+  }, [])
   
   return (
     <NextUIProvider>
@@ -45,10 +55,20 @@ export function Providers({children}: { children: React.ReactNode }) {
               <span className='text-sm text-gray-400'>Powered by</span>
               <span className='ml-1 font-bold'>Joltify</span>
             </div>
+            <Modal isOpen={!!dialogStore.dialog} onOpenChange={()=>dialogStore.hideDialog()}>
+              <ModalContent>
+                {dialogStore.dialog?.title&&<ModalHeader className="flex flex-col gap-1">
+                  {dialogStore.dialog.title}
+                </ModalHeader>}
+                <ModalBody>
+                  {dialogStore.dialog?.content}
+                </ModalBody>
+              </ModalContent>
+            </Modal>
           </div>
         </Web3OnboardProvider>
         <MainBackground />
       </NextThemesProvider>
     </NextUIProvider>
   )
-}
+})
