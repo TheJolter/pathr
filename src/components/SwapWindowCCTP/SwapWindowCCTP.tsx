@@ -23,8 +23,12 @@ export default observer(function SwapWindow(
   const inputStore = useStore('inputStore')
   const displayStore = useStore('displayStore')
   const pathrStore = useStore('pathrStore')
+  const cctpStore = useStore('cctpStore')
 
   const [boxBgStyle, setBoxBgStyle] = useState<CSSProperties>()
+
+  // console.log('displayStore.showProviders', displayStore.showProviders)
+  // console.log('pathrStore.routerCalcTime', pathrStore.routerCalcTime)
 
   useEffect(()=>{
     console.log('displayStore.showChainTokenSelector', displayStore.showChainTokenSelector)
@@ -33,6 +37,7 @@ export default observer(function SwapWindow(
   useEffect(()=>{
     if (bn(inputStore.tokenAmout||0).lte(0)) {
       displayStore.setShowProviders(false)
+      cctpStore.setSwapInfo(null)
     }
     if (!inputStore.tokenAmout) {
       displayStore.setSelectedProvider(-1)
@@ -46,6 +51,7 @@ export default observer(function SwapWindow(
   useEffect(()=>{
     displayStore.setShowProviders(false)
     inputStore.setTokenAmount('')
+    cctpStore.setSwapInfo(null)
   }, [
     displayStore,
     inputStore,
@@ -56,7 +62,7 @@ export default observer(function SwapWindow(
   ])
 
   useEffect(()=>{
-    displayStore.setShowPreview(false)
+    // displayStore.setShowPreview(false)
   }, [displayStore, address])
 
   useEffect(()=>{

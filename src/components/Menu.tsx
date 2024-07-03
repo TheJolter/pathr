@@ -35,14 +35,6 @@ export default observer(function Menu() {
       style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
       // style={noneSelectedStyle}
     >Swap</MainButton>
-    {/* <MainButton className="h-[46px] font-semibold text-lg" fullWidth
-      onClick={()=>{
-        pathrStore.setToChainTokenAddr(null)
-        displayStore.setShowPreview(false)
-        displayStore.setSelectedMenu('gas')
-      }}
-      style={selectedMenu!=='gas'?noneSelectedStyle:undefined}
-    >Gas</MainButton> */}
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
         window.open('https://usdc.pathr.io')

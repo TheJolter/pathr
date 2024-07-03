@@ -6,6 +6,7 @@ import PathrStore from "./PathrStore";
 import { BalanceStore } from "./BalanceStore";
 import DialogStore from "./dialogStore";
 import ApiDataStore from "./ApiDataStore";
+import CCTPStore from "./CCTPStore";
 
 
 export const stores = Object.freeze({
@@ -15,7 +16,8 @@ export const stores = Object.freeze({
   pathrStore: new PathrStore(),
   balanceStore: new BalanceStore(),
   dialogStore: new DialogStore(),
-  apiDataStore: new ApiDataStore()
+  apiDataStore: new ApiDataStore(),
+  cctpStore: new CCTPStore()
 })
 
 export const storesContext = React.createContext(stores);

@@ -1,7 +1,7 @@
 import { CSSProperties, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { Avatar, Button, CircularProgress, ScrollShadow, input } from "@nextui-org/react"
+import { Avatar, Button, CircularProgress, Link, ScrollShadow, input } from "@nextui-org/react"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import ChainTokenIcon from "../ChainTokenIcon"
@@ -18,6 +18,11 @@ import { bigNumberCeil } from "@/utils/bigNumberCeilFloor"
 import { useConnectWallet } from "@web3-onboard/react"
 import {Injector as RubicInjector} from 'rubic-sdk'
 import { OWN_CHAINS } from "@/configs/common"
+import { getERC20Allowance } from "@/utils/erc20Allowance"
+import { CHAINS } from "@/configs/cctp/configs"
+import { approveERC20 } from "@/utils/erc20Approve"
+import { ethers } from "ethers"
+import { swapExactInputSingle } from "@/utils/swapExactInputSingle"
 
 export default observer(function Review(props: {
   style?: CSSProperties
@@ -30,6 +35,10 @@ export default observer(function Review(props: {
   const pathrStore = useStore('pathrStore')
   const inputStore = useStore('inputStore')
   const balanceStore = useStore('balanceStore')
+  const cctpStore = useStore('cctpStore')
+  const dialogStore = useStore('dialogStore')
+
+  const swapInfo = cctpStore.swapInfo
 
   const [isBusy, setIsBusy] = useState(false)
 
@@ -54,25 +63,6 @@ export default observer(function Review(props: {
     )
   })
 
-  let trade = pathrStore.trades[displayStore.selectedProiveder] as CrossChainTrade|OnChainTrade
-  // console.log('trade', trade) // fee, gas, amounts in routers
-  const onChainTradeType = (trade as OnChainTrade)?.type
-  const onChainSubtype = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade?.onChainSubtype
-  const crossChainTradeType = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).tradeType
-  if (pathrStore.fromChainName !== pathrStore.toChainName) {
-    trade = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade as CrossChainTrade|OnChainTrade
-  }
-
-  const chainIdString = chainInfo.id.toString(16)
-  const balanceKeyForGas = `${chainIdString}-${ADDR0}-${address}`.toLowerCase()
-  const gasWanted = bn(trade?.feeInfo?.pathrProxy?.fixedFee?.amount?.toString()||0)
-  let gasBalance = balanceStore.balances[balanceKeyForGas]?.amount || bn(0)
-  if (pathrStore.fromChainTokenAddr===ADDR0) {
-    gasBalance = gasBalance.minus(inputStore.tokenAmout)
-  }
-  console.log({gasWanted: gasWanted.toString(), gasBalance: gasBalance.toString()})
-  const isGasSufficient = bn(gasWanted).gt(gasBalance)
-
   async function handleSwap() {
     if (!address) {
       const node = document.querySelector('onboard-v2') as HTMLElement
@@ -91,81 +81,86 @@ export default observer(function Review(props: {
       return
     }
 
-    if (isGasSufficient) {
-      displayStore.setWarningDialogParams({title: 'Insufficient gas', 
-      content: `You don't have enough gas to complete the transaction. 
-      You need to add at least: ${bigNumberCeil(gasWanted.minus(gasBalance), 6).toFixed()} ${nativeTokenInfo?.symbol} on ${pathrStore.fromChainName}`})
+    if (!swapInfo) {
+      dialogStore.showDialog({
+        title: 'Faled',
+        content: `swapInfo not found`
+      })
       return
     }
 
-    const blockchainAdapter: EvmWeb3Public = Injector.web3PublicService.getWeb3Public(pathrStore.fromChainName as EvmBlockchainName)
+    const sourceChain = CHAINS.find(chain=>chain.chainName===pathrStore.fromChainName)
+    const targetChain = CHAINS.find(chain=>chain.chainName===pathrStore.toChainName)
+    if (!sourceChain?.bridgeAddress) {
+      dialogStore.showDialog({
+        title: 'Faled',
+        content: `bridge contract can not found on chain ${pathrStore.fromChainName}`
+      })
+      return
+    }
+    if (targetChain?.domain===undefined) {
+      dialogStore.showDialog({
+        title: 'Faled',
+        content: `domain not found on chain ${pathrStore.toChainName}`
+      })
+      return
+    }
+
+    const baseAmountIn = bn(swapInfo.amountIn).times(bn(10).pow(swapInfo.tokenIn.decimals)).toFixed(0)
     setIsBusy(true)
-    let gasPrice = '0'
     try {
-      gasPrice = await blockchainAdapter.getGasPrice()
-    } catch (err:any) {
-      displayStore.setWarningDialogParams({
-        title: 'Failed to get Gas', 
-        content: err.message || err.toString()})
-      setIsBusy(false)
-      return
-    }
-    let needApprove = false
-    if (trade.from.address!==ADDR0) {
-      needApprove = await trade.needApprove()
-      console.log({needApprove})
-    }
-    
-    if (needApprove) {
-      const tx = {
-        onTransactionHash: (hash: string) => {
-          console.log(`Approve transaction was sent.`, hash)
-        },
-        gasPrice // required!!
-      }
-      trade.approve(tx, false).then(()=>{
-        handleSwap()
-      }).catch((err)=>{
-        setIsBusy(false)
-        console.error('trade.approve error', err)
-        displayStore.setWarningDialogParams({
-          title: 'Failed to approve',
-          content: `${err.message || err.toString()}`,
+      const allowance = await getERC20Allowance({
+        tokenAddress: swapInfo.tokenIn.address,
+        ownerAddress: address,
+        spenderAddress: sourceChain.bridgeAddress,
+        rpcUrl: sourceChain.rpc
+      })
+      
+      if (allowance.lt(baseAmountIn)) {
+        await approveERC20({
+          tokenAddress: swapInfo.tokenIn.address,
+          spenderAddress: sourceChain.bridgeAddress,
+          amount: baseAmountIn,
         })
+        setTimeout(()=>{
+          handleSwap()
+        }, 5000)
+      }
+    } catch(error:any) {
+      setIsBusy(false)
+      dialogStore.showDialog({
+        title: 'Faled',
+        content: `approve failed: ${error?.message}`
       })
       return
     }
 
-    console.log('gasPrice', gasPrice)
-    trade.swap({
-      onConfirm:(hash)=>{
-      }, 
-      gasPrice // required
-    }).then(hash=>{
-      setIsBusy(false)
-      displayStore.setSuccessDialogParams({
-        title: 'Swap Success',
-        tokenAddr: pathrStore.toChainTokenAddr!,
-        tokenAmount: bn(trade.to?.weiAmount.toString()||0).div(bn(10).pow(trade.to?.decimals||0)).toFormat(6),
-        tokenUsdValue: '',
-        detailsUrl: `${chainInfo.explorer}/tx/${hash}`
+    swapExactInputSingle({
+      contractAddress: sourceChain.bridgeAddress,
+      amountIn: ethers.BigNumber.from(baseAmountIn),
+      inToken: swapInfo.tokenIn.address,
+      outToken: swapInfo.tokenOut.address,
+      targetChain: ethers.BigNumber.from(targetChain.domain),
+      receiver: address,
+      receiverContract: sourceChain.bridgeAddress
+    }).then(res=>{
+      dialogStore.showDialog({
+        title: 'Success 🎉',
+        content: (
+          <div>
+            <Link target="_blank"
+              href={`${sourceChain.explorer}/tx/${res.transactionHash}`}
+            >Click Here</Link> to view the transaction on Explorer.
+          </div>
+        )
       })
-      if (address) {
-        // getAndSotreBalance
-        getAndSotreBalance({
-          balanceStore,
-          chainId: chainInfo.id,
-          tokenAddress: pathrStore.fromChainTokenAddr!,
-          account: address
-        })
-      }
-    }).catch(err=>{
-      setIsBusy(false)
-      console.log('trade.swap error', err, 'gasPrice', gasPrice)
-      displayStore.setWarningDialogParams({
-        title: 'Swap failed',
-        content: `${err.message || err.toString()}`,
+    }).catch(error=>{
+      dialogStore.showDialog({
+        title: 'Faled',
+        content: `swap failed: ${error?.message}`
       })
+    }).finally(()=>{
+      setIsBusy(false)
     })
   }
   
@@ -186,51 +181,24 @@ export default observer(function Review(props: {
       <ChainTokenIcon chainName={pathrStore.fromChainName!} tokenAddr={pathrStore.fromChainTokenAddr!} />
       <div className="grow ml-3">
         <div className="text-base font-semibold">
-          {/* 12345.6789 USDC */}
-          {inputStore.tokenAmout} {tokenInfo?.symbol}
+          {swapInfo?.amountIn} {swapInfo?.tokenIn.symbol}
         </div>
         <div className="text-xs text-gray-400">on {pathrStore.fromChainName}</div>
       </div>
     </div>
 
-    {onChainTradeType&&<div className="flex items-center pl-6">
-      <Avatar name={onChainTradeType?.[0].toUpperCase()} className="w-6 h-6 text-base" />
+    <div className="flex items-center pl-6">
+      <Avatar size="sm" src="https://uniswap.org/favicon.ico" />
       <div className="grow ml-3">
-        <div className="text-base">Swap Via {onChainTradeType}</div>
-        {/* <div className="text-xs text-gray-400">123.456 USDC {`>`} 123.456 USDT</div> */}
+        <div className="text-base">Swap Via Uniswap</div>
       </div>
-    </div>}
-
-    {/* {onChainSubtype?.from&&<div className="flex items-center pl-6">
-      <Avatar name={onChainSubtype?.from?.[0].toUpperCase()} className="w-6 h-6 text-base" />
-      <div className="grow ml-3">
-        <div className="text-base">Swap Via {onChainSubtype?.from}</div>
-        <div className="text-xs text-gray-400">123.456 USDC {`>`} 123.456 USDT</div>
-      </div>
-    </div>} */}
-
-    {crossChainTradeType&&<div className="flex items-center pl-6">
-      <Avatar name={crossChainTradeType[0].toUpperCase()} className="w-6 h-6 text-base" />
-      <div className="grow ml-3">
-        <div className="text-base">Swap Via {crossChainTradeType}</div>
-        {/* <div className="text-xs text-gray-400">123.456 USDC {`>`} 123.456 USDT</div> */}
-      </div>
-    </div>}
-
-    {onChainSubtype?.to&&<div className="flex items-center pl-6">
-      <Avatar name={onChainSubtype?.to?.[0].toUpperCase()} className="w-6 h-6 text-base" />
-      <div className="grow ml-3">
-        <div className="text-base">Bridge Via {onChainSubtype?.to}</div>
-        {/* <div className="text-xs text-gray-400">123.456 USDC {`>`} 123.456 USDT</div> */}
-      </div>
-    </div>}
+    </div>
 
     <div className="flex items-center mt-2">
       <ChainTokenIcon chainName={pathrStore.toChainName!} tokenAddr={pathrStore.toChainTokenAddr!} />
       <div className="grow ml-3">
         <div className="text-base font-semibold">
-          {/* 12345.6789 USDC */}
-          { bn(trade.to?.weiAmount.toString()||0).div(bn(10).pow(trade.to?.decimals||0)).toFormat(6)} {trade.to?.symbol}
+          {swapInfo?.amountOut} {swapInfo?.tokenOut.symbol}
         </div>
         <div className="text-xs text-gray-400">on {pathrStore.toChainName}</div>
       </div>

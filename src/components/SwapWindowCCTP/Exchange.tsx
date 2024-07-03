@@ -27,6 +27,8 @@ export default observer(function Exchange(props: {
     pathrStore.setToChainTokenAddr(_fromChainTokenAddr)
   }
 
+  console.log('pathrStore.calculating', pathrStore.calculating)
+
   return (
 <div 
   className={`w-full flex ${displayStore.showProviders?'justify-center md:justify-end':'justify-center'}`}
@@ -62,9 +64,23 @@ export default observer(function Exchange(props: {
 
       {/* {pathrStore.fromChainTokenAddr && pathrStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) && */}
         <MainButton fullWidth className="mt-4"
-          disabled={pathrStore.calculating}
+          // disabled={pathrStore.calculating}
           onClick={()=>{
-            if (! ( pathrStore.fromChainTokenAddr && pathrStore.toChainTokenAddr && bn(inputStore.tokenAmout||0).gt(0) ) ) {
+            if (
+              !( 
+                pathrStore.fromChainTokenAddr 
+                && pathrStore.toChainTokenAddr 
+                && bn(inputStore.tokenAmout||0).gt(0) 
+                && !pathrStore.calculating
+              ) 
+            ) {
+              console.log({
+                fromChainTokenAddr: pathrStore.fromChainTokenAddr,
+                toChainTokenAddr: pathrStore.toChainTokenAddr,
+                tokenAmout: inputStore.tokenAmout,
+                calculating: pathrStore.calculating,
+                showProviders: displayStore.showProviders,
+              })
               return
             }
             pathrStore.updateRouterCalcTime()

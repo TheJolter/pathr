@@ -5,8 +5,12 @@ import Provider from "./Provider"
 import {CircularProgress} from "@nextui-org/react"
 import { useStore } from "@/stores/hooks"
 import { observer } from "mobx-react-lite"
-import calcRouter from "@/utils/pathr/calcRouter"
 import { useConnectWallet } from "@web3-onboard/react"
+import calcRouter from "@/utils/cctp/calcRouter"
+import { Token } from "@uniswap/sdk-core"
+import { CHAINS } from "@/configs/cctp/configs"
+import { getSwapInfo } from "@/utils/cctp/uniswap-v3-calc"
+import ProviderCCTP from "./ProviderCCTP"
 
 export default observer(function Providers(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -19,20 +23,64 @@ export default observer(function Providers(
   const inputStore = useStore('inputStore')
   const evmWalletStore = useStore('evmWalletStore')
   const displayStore = useStore('displayStore')
+  const apiDataStore = useStore('apiDataStore')
+  const cctpStore = useStore('cctpStore')
+  const dialogStore = useStore('dialogStore')
   // const [calculating, setCalculating] = useState(false)
 
   useEffect(()=>{
-    // if (!provider) return
-    calcRouter({pathrStore, inputStore, address, provider}).finally(()=>{ // need real Promise to kown if calc completed
-      pathrStore.setCalculating(false);
+    if (!pathrStore.fromChainTokenAddr || !pathrStore.toChainTokenAddr) return
+    // calc here
+    const sourceChain = CHAINS.find(chain=>chain.chainName===pathrStore.fromChainName)
+    if (!sourceChain) return
+    const sourceToken = apiDataStore.coingeckoTokens.find((token)=>token.address.toLowerCase()===pathrStore?.fromChainTokenAddr?.toLowerCase())
+    if (!sourceToken) return
+    const tokenIn = new Token(sourceChain.chainId, pathrStore.fromChainTokenAddr, sourceToken.decimals, sourceToken.symbol)
+    const targetChain = CHAINS.find(chain=>chain.chainName===pathrStore.toChainName)
+    if (!targetChain) return
+    const targetToken = apiDataStore.coingeckoTokens.find(token=>token.address.toLowerCase()===pathrStore?.toChainTokenAddr?.toLowerCase())
+    if (!targetToken) return
+    const tokenOut = new Token(targetChain.chainId, pathrStore.toChainTokenAddr, targetToken.decimals, targetToken.symbol)
+    pathrStore.setCalculating(true)
+    console.log({
+      amountIn: inputStore.tokenAmout,
+      tokenIn,
+      tokenOut,
+      apiDataStore
+    })
+    calcRouter({
+      amountIn: inputStore.tokenAmout,
+      tokenIn,
+      tokenOut,
+      apiDataStore
+    }).then((result)=>{
+      console.log('amountOut', result.amountOut)
+      cctpStore.setSwapInfo({
+        amountIn: inputStore.tokenAmout,
+        tokenIn,
+        tokenOut,
+        amountOut: result.amountOut,
+        fee: result.fee,
+        slippage: result.slippage
+      })
+    }).catch(error=>{
+      console.error('error calcRouter', error, error.message)
+      dialogStore.showDialog({
+        title: 'Error',
+        content: error.message
+      })
+    })
+    .finally(()=>{
+      pathrStore.setCalculating(false)
     })
   }, [ // should not input inputStore.tokenAmout here, otherwise it will recalc every time amount change
-    pathrStore.routerCalcTime, pathrStore, inputStore, address, provider
+    pathrStore.routerCalcTime, pathrStore, inputStore, address, provider, pathrStore.fromChainTokenAddr
   ])
 
   useEffect(()=>{
     pathrStore.setTrades([])
     displayStore.setShowProviders(false)
+    cctpStore.setSwapInfo(null)
   }, [inputStore.tokenAmout, displayStore, pathrStore])
 
   return (
@@ -44,15 +92,7 @@ export default observer(function Providers(
     {pathrStore.calculating&&<CircularProgress className="text-[8px]" color="success" />}
   </div>
 
-  {/* <Provider providerIndex={-1} isBest />
-  <Provider providerIndex={-1} className="mt-4" /> */}
-
-  {pathrStore.trades?.map((_, index)=>{
-    if (0===index) {
-      return <Provider providerIndex={index} isBest key={`trade-${index}`} />
-    }
-    return <Provider providerIndex={index} className="mt-4" key={`trade-${index}`} />
-  })}
+  {cctpStore.swapInfo&&<ProviderCCTP />}
 
   {pathrStore.calculating&& <div>Calculating Routers...</div>}
 </div>
