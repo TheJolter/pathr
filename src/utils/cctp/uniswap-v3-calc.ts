@@ -1,28 +1,40 @@
+import { CHAINS } from '@/configs/cctp/configs'
 import { Token, CurrencyAmount } from '@uniswap/sdk-core'
 import { Pool, Route, Trade, FeeAmount, nearestUsableTick, TickMath, TICK_SPACINGS } from '@uniswap/v3-sdk'
 import { ethers } from 'ethers'
 
-const FACTORY_ADDRESS = '0x1F98431c8aD98523631AE4a59f267346ea31F984'
-
-async function getPoolFee(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): Promise<FeeAmount> {
+async function getPoolFeeAddr(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): Promise<{
+  fee:FeeAmount,
+  poolAddress: string
+}> {
+  const chain = CHAINS.find(chain => chain.chainId === tokenA.chainId)
+  if (!chain) {
+    throw new Error(`Chain info not found for ${tokenA.chainId}`)
+  }
+  console.log('uniswapV3Factory', chain.uniswapV3Factory)
   const factoryContract = new ethers.Contract(
-    FACTORY_ADDRESS,
+    chain.uniswapV3Factory,
     ['function getPool(address tokenA, address tokenB, uint24 fee) external view returns (address pool)'],
     provider
   )
 
   const feeTiers = [
     // FeeAmount.LOWEST, // might get a pool with 0 liquidity
-    FeeAmount.LOW, 
-    FeeAmount.MEDIUM, 
+    FeeAmount.LOW,
+    FeeAmount.MEDIUM,
     FeeAmount.HIGH
   ]
 
   for (const fee of feeTiers) {
     try {
-      const poolAddress = await factoryContract.getPool(tokenA.address, tokenB.address, fee)
+      const poolAddress = await factoryContract.getPool(
+        tokenA.address, 
+        tokenB.address, 
+        fee
+      )
+      console.log('poolAddress', poolAddress)
       if (poolAddress !== ethers.constants.AddressZero) {
-        return fee
+        return {fee, poolAddress}
       }
     } catch (error) {
       console.log('error factoryContract.getPool', {
@@ -34,13 +46,16 @@ async function getPoolFee(tokenA: Token, tokenB: Token, provider: ethers.provide
     }
   }
 
-  throw new Error(`No pool found for token pair ${tokenA.symbol}/${tokenB.symbol}`)
+  throw new Error(`No pool found for token pair ${tokenA.symbol}/${tokenB.symbol} on ${tokenA.chainId}`)
 }
 
-async function getPool(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): Promise<Pool> {
-  const fee = await getPoolFee(tokenA, tokenB, provider)
-  const poolAddress = Pool.getAddress(tokenA, tokenB, fee)
-  console.log('poolAddress', poolAddress)
+export async function getPool(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): Promise<Pool> {
+  const {fee, poolAddress} = await getPoolFeeAddr(tokenA, tokenB, provider)
+  console.log('Pool.getAddress', {
+    tokenA,
+    tokenB,
+    fee
+  })
 
   const poolContract = new ethers.Contract(
       poolAddress,
@@ -104,11 +119,13 @@ export async function getSwapInfo({
   rpcURL
 }: SwapParams): Promise<SwapInfo> {
   const provider = new ethers.providers.JsonRpcProvider(rpcURL)
+  console.log('rpcURL', rpcURL)
   const pool = await getPool(tokenIn, tokenOut, provider)
   console.log('pool', pool)
 
   const route = new Route([pool], tokenIn, tokenOut)
 
+  console.log('tokenIn.decimals', tokenIn.decimals)
   const amountInWei = ethers.utils.parseUnits(amountIn, tokenIn.decimals)
   const trade = await Trade.exactIn(
       route,

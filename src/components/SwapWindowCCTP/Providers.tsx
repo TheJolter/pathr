@@ -11,6 +11,7 @@ import { Token } from "@uniswap/sdk-core"
 import { CHAINS } from "@/configs/cctp/configs"
 import { getSwapInfo } from "@/utils/cctp/uniswap-v3-calc"
 import ProviderCCTP from "./ProviderCCTP"
+import { isGreaterThanZero } from "@/utils/isStringPositiveNumber"
 
 export default observer(function Providers(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -29,7 +30,10 @@ export default observer(function Providers(
   // const [calculating, setCalculating] = useState(false)
 
   useEffect(()=>{
-    if (!pathrStore.fromChainTokenAddr || !pathrStore.toChainTokenAddr) return
+    if (
+      !pathrStore.fromChainTokenAddr || !pathrStore.toChainTokenAddr
+      || !isGreaterThanZero(inputStore.tokenAmout)
+    ) return
     // calc here
     const sourceChain = CHAINS.find(chain=>chain.chainName===pathrStore.fromChainName)
     if (!sourceChain) return
@@ -61,12 +65,13 @@ export default observer(function Providers(
         tokenOut,
         amountOut: result.amountOut,
         fee: result.fee,
-        slippage: result.slippage
+        slippage: result.slippage,
+        targetFee: result.targetFee
       })
     }).catch(error=>{
       console.error('error calcRouter', error, error.message)
       dialogStore.showDialog({
-        title: 'Error',
+        title: 'Error code 1610',
         content: error.message
       })
     })

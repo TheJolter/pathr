@@ -37,7 +37,7 @@ export default observer(function Providers({children}: { children: React.ReactNo
   ]
   const web3Onboard = init({wallets,chains, theme: 'light'})
 
-  const dialogStore =  useStore('dialogStore')
+  
   const apiDataStore = useStore('apiDataStore')
 
   useEffect(()=>{
@@ -55,16 +55,6 @@ export default observer(function Providers({children}: { children: React.ReactNo
               <span className='text-sm text-gray-400'>Powered by</span>
               <span className='ml-1 font-bold'>Joltify</span>
             </div>
-            <Modal isOpen={!!dialogStore.dialog} onOpenChange={()=>dialogStore.hideDialog()}>
-              <ModalContent>
-                {dialogStore.dialog?.title&&<ModalHeader className="flex flex-col gap-1">
-                  {dialogStore.dialog.title}
-                </ModalHeader>}
-                <ModalBody>
-                  {dialogStore.dialog?.content}
-                </ModalBody>
-              </ModalContent>
-            </Modal>
           </div>
         </Web3OnboardProvider>
         <MainBackground />

@@ -22,15 +22,17 @@ export default function calcRouter({
   apiDataStore: ApiDataStore
 }): Promise<{
   amountOut: string,
-  fee: number,
-  slippage: number
+  fee: number, // fee in source chain
+  slippage: number,
+  targetFee: number
 }> {
   return new Promise((resolve, reject)=>{
     if (isUsdc(tokenIn) && isUsdc(tokenOut)) {
       resolve({
         amountOut: amountIn,
         fee: 0,
-        slippage: 0
+        slippage: 0,
+        targetFee: 0
       })
       return
     }
@@ -52,8 +54,9 @@ export default function calcRouter({
       getSwapInfo({amountIn, tokenIn: USDCTokenTarget, tokenOut, rpcURL: chainOut.rpc}).then(swapInfo=>{
         resolve({
           amountOut: swapInfo.amountOut,
-          fee: swapInfo.fee,
-          slippage: swapInfo.slippage
+          fee: 0, // only swap in target chain, no fee in source chain
+          slippage: swapInfo.slippage,
+          targetFee: swapInfo.fee
         })
       }).catch(error=>{
         reject(error)
@@ -78,7 +81,8 @@ export default function calcRouter({
         resolve({
           amountOut: swapInfo.amountOut,
           fee: swapInfo.fee,
-          slippage: swapInfo.slippage
+          slippage: swapInfo.slippage,
+          targetFee: 0 // only swap in source chain, no fee in target chain
         })
       }).catch(error=>{
         reject(error)
@@ -94,8 +98,9 @@ export default function calcRouter({
       getSwapInfo({amountIn: swapInfo.amountOut, tokenIn: USDCTokenTarget, tokenOut, rpcURL: chainOut.rpc}).then(swapInfo=>{
         resolve({
           amountOut: swapInfo.amountOut,
-          fee: fee1 + swapInfo.fee,
-          slippage: slippage1 + swapInfo.slippage
+          fee: fee1,
+          slippage: slippage1 + swapInfo.slippage,
+          targetFee: swapInfo.fee
         })
       }).catch(error=>{
         reject(error)

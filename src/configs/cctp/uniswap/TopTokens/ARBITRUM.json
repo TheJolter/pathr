@@ -1,0 +1,1041 @@
+{
+  "data": {
+      "topTokens": [
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg4MmFmNDk0NDdkOGEwN2UzYmQ5NWJkMGQ1NmYzNTI0MTUyM2ZiYWIx",
+              "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+              "chain": "ARBITRUM",
+              "symbol": "WETH",
+              "name": "Wrapped Ethereum",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YzAyYWFhMzliMjIzZmU4ZDBhMGU1YzRmMjdlYWQ5MDgzYzc1NmNjMl9XRVRI",
+                  "name": "WETH",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhDMDJhYUEzOWIyMjNGRThEMEEwZTVDNEYyN2VBRDkwODNDNzU2Q2MyL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhhZjg4ZDA2NWU3N2M4Y2MyMjM5MzI3YzVlZGIzYTQzMjI2OGU1ODMx",
+              "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+              "chain": "ARBITRUM",
+              "symbol": "USDC",
+              "name": "USD Coin",
+              "decimals": 6,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YTBiODY5OTFjNjIxOGIzNmMxZDE5ZDRhMmU5ZWIwY2UzNjA2ZWI0OF9VU0QgQ29pbg==",
+                  "name": "USD Coin",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhBMGI4Njk5MWM2MjE4YjM2YzFkMTlENGEyZTlFYjBjRTM2MDZlQjQ4L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhmZDA4NmJjN2NkNWM0ODFkY2M5Yzg1ZWJlNDc4YTFjMGI2OWZjYmI5",
+              "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+              "chain": "ARBITRUM",
+              "symbol": "USDT",
+              "name": "Tether USD",
+              "decimals": 6,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4ZGFjMTdmOTU4ZDJlZTUyM2EyMjA2MjA2OTk0NTk3YzEzZDgzMWVjN19BcmJpdHJ1bSBCcmlkZ2VkIFVTRFQgKEFyYml0cnVtKQ==",
+                  "name": "Arbitrum Bridged USDT (Arbitrum)",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhkQUMxN0Y5NThEMmVlNTIzYTIyMDYyMDY5OTQ1OTdDMTNEODMxZWM3L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhmZjk3MGE2MWEwNGIxY2ExNDgzNGE0M2Y1ZGU0NTMzZWJkZGI1Y2M4",
+              "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+              "chain": "ARBITRUM",
+              "symbol": "USDC.e",
+              "name": "Bridged USDC",
+              "decimals": 6,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YTBiODY5OTFjNjIxOGIzNmMxZDE5ZDRhMmU5ZWIwY2UzNjA2ZWI0OF9CcmlkZ2VkIFVTREM=",
+                  "name": "Bridged USDC",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8zMDY5MS9sYXJnZS91c2RjLnBuZz8xNjk2NTI5NTYw",
+                      "url": "https://coin-images.coingecko.com/coins/images/30691/large/usdc.png?1696529560",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/30691/large/usdc.png?1696529560",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgyZjJhMjU0M2I3NmE0MTY2NTQ5ZjdhYWIyZTc1YmVmMGFlZmM1YjBm",
+              "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+              "chain": "ARBITRUM",
+              "symbol": "WBTC",
+              "name": "Wrapped BTC",
+              "decimals": 8,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MjI2MGZhYzVlNTU0MmE3NzNhYTQ0ZmJjZmVkZjdjMTkzYmMyYzU5OV9XcmFwcGVkIEJpdGNvaW4=",
+                  "name": "Wrapped Bitcoin",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHgyMjYwRkFDNUU1NTQyYTc3M0FhNDRmQkNmZURmN0MxOTNiYzJDNTk5L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg5MTJjZTU5MTQ0MTkxYzEyMDRlNjQ1NTlmZTgyNTNhMGU0OWU2NTQ4",
+              "address": "0x912CE59144191C1204E64559FE8253a0e49E6548",
+              "chain": "ARBITRUM",
+              "symbol": "ARB",
+              "name": "Arbitrum",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YjUwNzIxYmNmOGQ2NjRjMzA0MTJjZmJjNmNmN2ExNTE0NTIzNGFkMV9BcmJpdHJ1bQ==",
+                  "name": "Arbitrum",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhCNTA3MjFCQ2Y4ZDY2NGMzMDQxMkNmYmM2Y2Y3YTE1MTQ1MjM0YWQxL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg2OTg1ODg0YzQzOTJkMzQ4NTg3YjE5Y2I5ZWFhZjE1N2YxMzI3MWNk",
+              "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+              "chain": "ARBITRUM",
+              "symbol": "ZRO",
+              "name": "LayerZero",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4Njk4NTg4NGM0MzkyZDM0ODU4N2IxOWNiOWVhYWYxNTdmMTMyNzFjZF9MYXllclplcm8=",
+                  "name": "LayerZero",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8yODIwNi9sYXJnZS9mdHhHOV9USl80MDB4NDAwLmpwZWc/MTY5NjUyNzIwOA==",
+                      "url": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhkYTEwMDA5Y2JkNWQwN2RkMGNlY2M2NjE2MWZjOTNkN2M5MDAwZGEx",
+              "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+              "chain": "ARBITRUM",
+              "symbol": "DAI",
+              "name": "Dai Stablecoin",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NmIxNzU0NzRlODkwOTRjNDRkYTk4Yjk1NGVlZGVhYzQ5NTI3MWQwZl9EYWk=",
+                  "name": "Dai",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg2QjE3NTQ3NEU4OTA5NEM0NERhOThiOTU0RWVkZUFDNDk1MjcxZDBGL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhmYzVhMWE2ZWIwNzZhMmM3YWQwNmVkMjJjOTBkN2U3MTBlMzVhZDBh",
+              "address": "0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a",
+              "chain": "ARBITRUM",
+              "symbol": "GMX",
+              "name": "GMX",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkFSQklUUlVNXzB4ZmM1YTFhNmViMDc2YTJjN2FkMDZlZDIyYzkwZDdlNzEwZTM1YWQwYV9HTVg=",
+                  "name": "GMX",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9hcmJpdHJ1bS9hc3NldHMvMHhmYzVBMUE2RUIwNzZhMkM3YUQwNmVEMjJDOTBkN0U3MTBFMzVhZDBhL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/arbitrum/assets/0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/arbitrum/assets/0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgxM2FkNTFlZDRmMWI3ZTlkYzE2OGQ4YTAwY2IzZjRkZGQ4NWVmYTYw",
+              "address": "0x13Ad51ed4F1B7e9Dc168d8a00cB3f4dDD85EfA60",
+              "chain": "ARBITRUM",
+              "symbol": "LDO",
+              "name": "Lido DAO",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NWE5OGZjYmVhNTE2Y2YwNjg1NzIxNTc3OWZkODEyY2EzYmVmMWIzMl9MaWRvIERBTw==",
+                  "name": "Lido DAO",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg1QTk4RmNCRUE1MTZDZjA2ODU3MjE1Nzc5RmQ4MTJDQTNiZUYxQjMyL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhmOTdmNGRmNzUxMTdhNzhjMWE1YTBkYmI4MTRhZjkyNDU4NTM5ZmI0",
+              "address": "0xf97f4df75117a78c1A5a0DBb814Af92458539FB4",
+              "chain": "ARBITRUM",
+              "symbol": "LINK",
+              "name": "ChainLink Token",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NTE0OTEwNzcxYWY5Y2E2NTZhZjg0MGRmZjgzZTgyNjRlY2Y5ODZjYV9DaGFpbmxpbms=",
+                  "name": "Chainlink",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg1MTQ5MTA3NzFBRjlDYTY1NmFmODQwZGZmODNFODI2NEVjRjk4NkNBL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgyODliYTE3MDFjMmYwODhjZjBmYWY4YjM3MDUyNDYzMzFjYjhhODM5",
+              "address": "0x289ba1701C2F088cf0faf8B3705246331cB8A839",
+              "chain": "ARBITRUM",
+              "symbol": "LPT",
+              "name": "Livepeer Token",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NThiNmE4YTMzMDIzNjlkYWVjMzgzMzM0NjcyNDA0ZWU3MzNhYjIzOV9MaXZlcGVlcg==",
+                  "name": "Livepeer",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg1OGI2QThBMzMwMjM2OURBRWMzODMzMzQ2NzI0MDRFZTczM2FCMjM5L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x58b6A8A3302369DAEc383334672404Ee733aB239/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x58b6A8A3302369DAEc383334672404Ee733aB239/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhiYTVkZGQxZjlkN2Y1NzBkYzk0YTUxNDc5YTAwMGUzYmNlOTY3MTk2",
+              "address": "0xba5DdD1f9d7F570dc94a51479a000E3BCE967196",
+              "chain": "ARBITRUM",
+              "symbol": "AAVE",
+              "name": "Aave",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4N2ZjNjY1MDBjODRhNzZhZDdlOWM5MzQzN2JmYzVhYzMzZTJkZGFlOV9BYXZl",
+                  "name": "Aave",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg3RmM2NjUwMGM4NEE3NkFkN2U5YzkzNDM3YkZjNUFjMzNFMkREYUU5L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg5NjIzMDYzMzc3YWQxYjI3NTQ0Yzk2NWNjZDczNDJmN2VhN2U4OGM3",
+              "address": "0x9623063377AD1B27544C965cCd7342f7EA7e88C7",
+              "chain": "ARBITRUM",
+              "symbol": "GRT",
+              "name": "Graph Token",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4Yzk0NGU5MGM2NGIyYzA3NjYyYTI5MmJlNjI0NGJkZjA1Y2RhNDRhN19UaGUgR3JhcGg=",
+                  "name": "The Graph",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhjOTQ0RTkwQzY0QjJjMDc2NjJBMjkyYmU2MjQ0QkRmMDVDZGE0NGE3L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc944E90C64B2c07662A292be6244BDf05Cda44a7/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc944E90C64B2c07662A292be6244BDf05Cda44a7/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhmYTdmODk4MGIwZjFlNjRhMjA2Mjc5MWNjM2IwODcxNTcyZjFmN2Yw",
+              "address": "0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0",
+              "chain": "ARBITRUM",
+              "symbol": "UNI",
+              "name": "Uniswap",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MWY5ODQwYTg1ZDVhZjViZjFkMTc2MmY5MjViZGFkZGM0MjAxZjk4NF9Vbmlzd2Fw",
+                  "name": "Uniswap",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHgxZjk4NDBhODVkNWFGNWJmMUQxNzYyRjkyNUJEQURkQzQyMDFGOTg0L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgxMWNkYjQyYjBlYjQ2ZDk1Zjk5MGJlZGQ0Njk1YTZlM2ZhMDM0OTc4",
+              "address": "0x11cDb42B0EB46D95f990BeDD4695A6e3fA034978",
+              "chain": "ARBITRUM",
+              "symbol": "CRV",
+              "name": "Curve DAO Token",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4ZDUzM2E5NDk3NDBiYjMzMDZkMTE5Y2M3NzdmYTkwMGJhMDM0Y2Q1Ml9DdXJ2ZSBEQU8=",
+                  "name": "Curve DAO",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhENTMzYTk0OTc0MGJiMzMwNmQxMTlDQzc3N2ZhOTAwYkEwMzRjZDUyL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgyNWQ4ODdjZTdhMzUxNzJjNjJmZWJmZDY3YTE4NTZmMjBmYWViYjAw",
+              "address": "0x25d887Ce7a35172C62FeBFD67a1856F20FaEbB00",
+              "chain": "ARBITRUM",
+              "symbol": "PEPE",
+              "name": "Pepe",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4Njk4MjUwODE0NTQ1NGNlMzI1ZGRiZTQ3YTI1ZDRlYzNkMjMxMTkzM19QZXBl",
+                  "name": "Pepe",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8yOTg1MC9sYXJnZS9wZXBlLXRva2VuLmpwZWc/MTY5NjUyODc3Ng==",
+                      "url": "https://coin-images.coingecko.com/coins/images/29850/large/pepe-token.jpeg?1696528776",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/29850/large/pepe-token.jpeg?1696528776",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg5ZDJmMjk5NzE1ZDk0ZDhhN2U2ZjVlYWE4ZTY1NGU4Yzc0YTk4OGE3",
+              "address": "0x9d2F299715D94d8A7E6F5eaa8E654E8c74a988A7",
+              "chain": "ARBITRUM",
+              "symbol": "FXS",
+              "name": "Frax Share",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MzQzMmI2YTYwZDIzY2EwZGZjYTc3NjFiN2FiNTY0NTlkOWM5NjRkMF9GcmF4IFNoYXJl",
+                  "name": "Frax Share",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8xMzQyMy9sYXJnZS9GcmF4X1NoYXJlc19pY29uLnBuZz8xNjk2NTEzMTgz",
+                      "url": "https://coin-images.coingecko.com/coins/images/13423/large/Frax_Shares_icon.png?1696513183",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/13423/large/Frax_Shares_icon.png?1696513183",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg2Njk0MzQwZmMwMjBjNWU2Yjk2NTY3ODQzZGEyZGYwMWIyY2UxZWI2",
+              "address": "0x6694340fc020c5E6B96567843da2df01b2CE1eb6",
+              "chain": "ARBITRUM",
+              "symbol": "STG",
+              "name": "StargateToken",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YWY1MTkxYjBkZTI3OGM3Mjg2ZDZjN2NjNmFiNmJiOGE3M2JhMmNkNl9TdGFyZ2F0ZSBGaW5hbmNl",
+                  "name": "Stargate Finance",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8yNDQxMy9sYXJnZS9TVEdfTE9HTy5wbmc/MTY5NjUyMzU5NQ==",
+                      "url": "https://coin-images.coingecko.com/coins/images/24413/large/STG_LOGO.png?1696523595",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/24413/large/STG_LOGO.png?1696523595",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg2Yzg0YThmMWMyOTEwOGY0N2E3OTk2NGI1ZmU4ODhkNGY0ZDBkZTQw",
+              "address": "0x6c84a8f1c29108F47a79964b5Fe888D4f4D0dE40",
+              "chain": "ARBITRUM",
+              "symbol": "TBTC",
+              "name": "tBTC",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MTgwODRmYmE2NjZhMzNkMzc1OTJmYTI2MzNmZDQ5YTc0ZGQ5M2E4OF90QlRD",
+                  "name": "tBTC",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8xMTIyNC9sYXJnZS8weDE4MDg0ZmJhNjY2YTMzZDM3NTkyZmEyNjMzZmQ0OWE3NGRkOTNhODgucG5nPzE2OTY1MTExNTU=",
+                      "url": "https://coin-images.coingecko.com/coins/images/11224/large/0x18084fba666a33d37592fa2633fd49a74dd93a88.png?1696511155",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/11224/large/0x18084fba666a33d37592fa2633fd49a74dd93a88.png?1696511155",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgxZGViZDczZTc1MmJlYWY3OTg2NWZkNjQ0NmIwYzk3MGVhZTc3MzJm",
+              "address": "0x1DEBd73E752bEaF79865Fd6446b0c970EaE7732f",
+              "chain": "ARBITRUM",
+              "symbol": "cbETH",
+              "name": "Coinbase Wrapped Staked ETH",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YmU5ODk1MTQ2ZjdhZjQzMDQ5Y2ExYzFhZTM1OGIwNTQxZWE0OTcwNF9Db2luYmFzZSBXcmFwcGVkIFN0YWtlZCBFVEg=",
+                  "name": "Coinbase Wrapped Staked ETH",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8yNzAwOC9sYXJnZS9jYmV0aC5wbmc/MTcwOTE4Njk4OQ==",
+                      "url": "https://coin-images.coingecko.com/coins/images/27008/large/cbeth.png?1709186989",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/27008/large/cbeth.png?1709186989",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhmYTVlZDU2YTIwMzQ2NmNiYmMyNDMwYTQzYzY2YjlkODcyMzUyOGU3",
+              "address": "0xFA5Ed56A203466CbBC2430a43c66b9D8723528E7",
+              "chain": "ARBITRUM",
+              "symbol": "agEUR",
+              "name": "agEur",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MWE3ZTRlNjM3NzhiNGYxMmExOTljMDYyZjNlZmRkMjg4YWZjYmNlOF9FVVJB",
+                  "name": "EURA",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8xOTQ3OS9sYXJnZS9hZ0VVUi00LnBuZz8xNzEwNzI2MjE4",
+                      "url": "https://coin-images.coingecko.com/coins/images/19479/large/agEUR-4.png?1710726218",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/19479/large/agEUR-4.png?1710726218",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg1NjE4NzdiNmIzZGQ3NjUxMzEzNzk0ZTVmMjg5NGIyZjE4YmUwNzY2",
+              "address": "0x561877b6b3DD7651313794e5F2894B2F18bE0766",
+              "chain": "ARBITRUM",
+              "symbol": "MATIC",
+              "name": "Polygon",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4N2QxYWZhN2I3MThmYjg5M2RiMzBhM2FiYzBjZmM2MDhhYWNmZWJiMF9Qb2x5Z29u",
+                  "name": "Polygon",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg3RDFBZkE3QjcxOGZiODkzZEIzMEEzYUJjMENmYzYwOEFhQ2ZlQkIwL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhmOTI5ZGU1MWQ5MWM3N2U0MmY1MDkwMDY5ZTBhZDdhMDllNTEzYzcz",
+              "address": "0xf929de51D91C77E42f5090069E0AD7A09e513c73",
+              "chain": "ARBITRUM",
+              "symbol": "FOX",
+              "name": "ShapeShift FOX Token",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4Yzc3MGVlZmFkMjA0YjUxODBkZjZhMTRlZTE5N2Q5OWQ4MDhlZTUyZF9TaGFwZVNoaWZ0IEZPWCBUb2tlbg==",
+                  "name": "ShapeShift FOX Token",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhjNzcwRUVmQWQyMDRCNTE4MGRGNmExNEVlMTk3RDk5ZDgwOGVlNTJkL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgyZTlhNmRmNzhlNDJhMzA3MTJjMTBhOWRjNGIxYzg2NTZmOGYyODc5",
+              "address": "0x2e9a6Df78E42a30712c10a9Dc4b1C8656f8F2879",
+              "chain": "ARBITRUM",
+              "symbol": "MKR",
+              "name": "Maker",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4OWY4ZjcyYWE5MzA0YzhiNTkzZDU1NWYxMmVmNjU4OWNjM2E1NzlhMl9NYWtlcg==",
+                  "name": "Maker",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg5ZjhGNzJhQTkzMDRjOEI1OTNkNTU1RjEyZUY2NTg5Y0MzQTU3OUEyL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgzNTRhNmRhM2ZjZGUwOThmODM4OWNhZDg0YjAxODI3MjVjNmM5MWRl",
+              "address": "0x354A6dA3fcde098F8389cad84b0182725c6C91dE",
+              "chain": "ARBITRUM",
+              "symbol": "COMP",
+              "name": "Compound",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YzAwZTk0Y2I2NjJjMzUyMDI4MmU2ZjU3MTcyMTQwMDRhN2YyNjg4OF9Db21wb3VuZA==",
+                  "name": "Compound",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhjMDBlOTRDYjY2MkMzNTIwMjgyRTZmNTcxNzIxNDAwNEE3ZjI2ODg4L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgwN2Q2NWMxOGNlY2JhNDIzMjk4YzBhZWI1ZDJiZWRlZDRkZmQ1NzM2",
+              "address": "0x07D65C18CECbA423298c0aEB5d2BeDED4DFd5736",
+              "chain": "ARBITRUM",
+              "symbol": "ETHFI",
+              "name": "Ether.fi",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4ZmUwYzMwMDY1YjM4NGYwNTc2MWYxNWQwY2M4OTlkNGY5ZjljYzBlYl9FdGhlci5maQ==",
+                  "name": "Ether.fi",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9hc3NldHMuY29pbmdlY2tvLmNvbS9jb2lucy9pbWFnZXMvMzU5NTgvc3RhbmRhcmQvZXRoZXJmaS5qcGVn",
+                      "url": "https://assets.coingecko.com/coins/images/35958/standard/etherfi.jpeg",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://assets.coingecko.com/coins/images/35958/standard/etherfi.jpeg",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgxN2ZjMDAyYjQ2NmVlYzQwZGFlODM3ZmM0YmU1YzY3OTkzZGRiZDZm",
+              "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+              "chain": "ARBITRUM",
+              "symbol": "FRAX",
+              "name": "Frax",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4ODUzZDk1NWFjZWY4MjJkYjA1OGViODUwNTkxMWVkNzdmMTc1Yjk5ZV9GcmF4",
+                  "name": "Frax",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8xMzQyMi9sYXJnZS9GUkFYX2ljb24ucG5nPzE2OTY1MTMxODI=",
+                      "url": "https://coin-images.coingecko.com/coins/images/13422/large/FRAX_icon.png?1696513182",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/13422/large/FRAX_icon.png?1696513182",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg0ZTUxYWM0OWJjNWUyZDg3ZTBlZjcxM2U5ZTVhYjJkNzFlZjRmMzM2",
+              "address": "0x4E51aC49bC5e2d87e0EF713E9e5AB2D71EF4F336",
+              "chain": "ARBITRUM",
+              "symbol": "CELO",
+              "name": "Celo native asset (Wormhole)",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MzI5NDM5NWU2MmY0ZWI2YWYzZjFmY2Y4OWY1NjAyZDkwZmIzZWY2OV9DZWxvIChXb3JtaG9sZSk=",
+                  "name": "Celo (Wormhole)",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8zMjQwMC9sYXJnZS9jZWxvX3doLnBuZz8xNjk4MDU1MzUy",
+                      "url": "https://coin-images.coingecko.com/coins/images/32400/large/celo_wh.png?1698055352",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/32400/large/celo_wh.png?1698055352",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgwODBmNmFlZDMyZmM0NzRkZDU3MTcxMDVkYmE1ZWE1NzI2OGY0NmVi",
+              "address": "0x080F6AEd32Fc474DD5717105Dba5ea57268F46eb",
+              "chain": "ARBITRUM",
+              "symbol": "SYN",
+              "name": "Synapse",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MGYyZDcxOTQwN2ZkYmVmZjA5ZDg3NTU3YWJiNzIzMjYwMWZkOWYyOV9TeW5hcHNl",
+                  "name": "Synapse",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8xODAyNC9sYXJnZS9zeW5hcHNlX3NvY2lhbF9pY29uLnBuZz8xNjk2NTE3NTQw",
+                      "url": "https://coin-images.coingecko.com/coins/images/18024/large/synapse_social_icon.png?1696517540",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/18024/large/synapse_social_icon.png?1696517540",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgzNWU2YTU5Zjc4NmQ5MjY2Yzc5NjFlYTI4YzdiNzY4YjMzOTU5Y2Ji",
+              "address": "0x35E6A59F786d9266c7961eA28c7b768B33959cbB",
+              "chain": "ARBITRUM",
+              "symbol": "PEPE",
+              "name": "Pepe",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4Njk4MjUwODE0NTQ1NGNlMzI1ZGRiZTQ3YTI1ZDRlYzNkMjMxMTkzM19QZXBl",
+                  "name": "Pepe",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg2OTgyNTA4MTQ1NDU0Q2UzMjVkRGJFNDdhMjVkNGVjM2QyMzExOTMzL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6982508145454Ce325dDbE47a25d4ec3d2311933/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6982508145454Ce325dDbE47a25d4ec3d2311933/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhjOGE0ZWVhMzFlOWI2YjYxYzQwNmRmMDEzZGQ0ZmVjNzZmMjFlMjc5",
+              "address": "0xC8a4EeA31E9B6b61c406DF013DD4FEc76f21E279",
+              "chain": "ARBITRUM",
+              "symbol": "RNDR",
+              "name": "Render Token",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NmRlMDM3ZWY5YWQyNzI1ZWI0MDExOGJiMTcwMmViYjI3ZTRhZWIyNF9SZW5kZXIgVG9rZW4=",
+                  "name": "Render Token",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg2RGUwMzdlZjlhRDI3MjVFQjQwMTE4QmIxNzAyRUJiMjdlNEFlYjI0L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhhMDUyNDVhZGUyNWNjMTA2M2VlNTBjZjdjMDgzYjQ1MjRjMWM0MzAy",
+              "address": "0xa05245Ade25cC1063EE50Cf7c083B4524c1C4302",
+              "chain": "ARBITRUM",
+              "symbol": "XSGD",
+              "name": "XSGD",
+              "decimals": 6,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NzBlOGRlNzNjZTUzOGRhMmJlZWQzNWQxNDE4N2Y2OTU5YThlY2E5Nl9YU0dE",
+                  "name": "XSGD",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg3MGU4ZEU3M2NFNTM4REEyYkVFZDM1ZDE0MTg3RjY5NTlhOGVjQTk2L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x70e8dE73cE538DA2bEEd35d14187F6959a8ecA96/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x70e8dE73cE538DA2bEEd35d14187F6959a8ecA96/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg3ZjlhN2RiODUzY2E4MTZiOWExMzhhZWUzMzgwZWYzNGM0MzdkZWUw",
+              "address": "0x7f9a7DB853Ca816B9A138AEe3380Ef34c437dEe0",
+              "chain": "ARBITRUM",
+              "symbol": "GTC",
+              "name": "Gitcoin",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4ZGUzMGRhMzljNDYxMDQ3OThiYjVhYTNmZThiOWUwZTFmMzQ4MTYzZl9HaXRjb2lu",
+                  "name": "Gitcoin",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhEZTMwZGEzOWM0NjEwNDc5OGJCNWFBM2ZlOEI5ZTBlMUYzNDgxNjNGL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xDe30da39c46104798bB5aA3fe8B9e0e1F348163F/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xDe30da39c46104798bB5aA3fe8B9e0e1F348163F/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgzZTY2NDhjNWE3MGExNTBhODhiY2U2NWY0YWQ0ZDUwNmZlMTVkMmFm",
+              "address": "0x3E6648C5a70A150A88bCE65F4aD4d506Fe15d2AF",
+              "chain": "ARBITRUM",
+              "symbol": "SPELL",
+              "name": "Spell Token",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MDkwMTg1ZjIxMzUzMDhiYWQxNzUyNzAwNDM2NGViY2MyZDM3ZTVmNl9TcGVsbA==",
+                  "name": "Spell",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHgwOTAxODVmMjEzNTMwOEJhRDE3NTI3MDA0MzY0ZUJjQzJEMzdlNUY2L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x090185f2135308BaD17527004364eBcC2D37e5F6/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x090185f2135308BaD17527004364eBcC2D37e5F6/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhkNGQ0MmYwYjZkZWY0Y2UwMzgzNjM2NzcwZWY3NzMzOTBkODVjNjFh",
+              "address": "0xd4d42F0b6DEF4CE0383636770eF773390d85c61A",
+              "chain": "ARBITRUM",
+              "symbol": "SUSHI",
+              "name": "Sushi",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NmIzNTk1MDY4Nzc4ZGQ1OTJlMzlhMTIyZjRmNWE1Y2YwOWM5MGZlMl9TdXNoaQ==",
+                  "name": "Sushi",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg2QjM1OTUwNjg3NzhERDU5MmUzOUExMjJmNGY1YTVjRjA5QzkwZkUyL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhmYjllNWQ5NTZkODg5ZDkxYTgyNzM3YjliZmNkYWMxZGNlM2UxNDQ5",
+              "address": "0xfb9E5D956D889D91a82737B9bFCDaC1DCE3e1449",
+              "chain": "ARBITRUM",
+              "symbol": "LQTY",
+              "name": "Liquity",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NmRlYTgxYzgxNzFkMGJhNTc0NzU0ZWY2ZjhiNDEyZjJlZDg4YzU0ZF9MaXF1aXR5",
+                  "name": "Liquity",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg2REVBODFDODE3MUQwYkE1NzQ3NTRFRjZGOGI0MTJGMkVkODhjNTREL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg5M2IzNDZiNmJjMjU0OGRhNmExZTdkOThlOWE0MjFiNDI1NDE0MjVi",
+              "address": "0x93b346b6BC2548dA6A1E7d98E9a421B42541425b",
+              "chain": "ARBITRUM",
+              "symbol": "LUSD",
+              "name": "Liquity USD",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NWY5ODgwNWE0ZThiZTI1NWEzMjg4MGZkZWM3ZjY3MjhjNjU2OGJhMF9MaXF1aXR5IFVTRA==",
+                  "name": "Liquity USD",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg1Zjk4ODA1QTRFOGJlMjU1YTMyODgwRkRlQzdGNjcyOEM2NTY4YkEwL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5f98805A4E8be255a32880FDeC7F6728C6568bA0/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5f98805A4E8be255a32880FDeC7F6728C6568bA0/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgwOTQ1Y2FlM2FlNDdjYjM4NGIyZDQ3YmM0NDhkYzZhOWRlYzIxZjU1",
+              "address": "0x0945Cae3ae47cb384b2d47BC448Dc6A9dEC21F55",
+              "chain": "ARBITRUM",
+              "symbol": "T",
+              "name": "Threshold Network",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4Y2RmNzAyOGNlYWI4MWZhMGM2OTcxMjA4ZTgzZmE3ODcyOTk0YmVlNV9UaHJlc2hvbGQgTmV0d29yaw==",
+                  "name": "Threshold Network",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhDZEY3MDI4Y2VBQjgxZkEwQzY5NzEyMDhlODNmYTc4NzI5OTRiZUU1L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xCdF7028ceAB81fA0C6971208e83fa7872994beE5/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xCdF7028ceAB81fA0C6971208e83fa7872994beE5/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg3NDg4NWI0ZDUyNGQ0OTcyNjEyNTliMzg5MDBmNTRlNmRiYWQyMjEw",
+              "address": "0x74885b4D524d497261259B38900f54e6dbAd2210",
+              "chain": "ARBITRUM",
+              "symbol": "APE",
+              "name": "ApeCoin",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NGQyMjQ0NTI4MDFhY2VkOGIyZjBhZWJlMTU1Mzc5YmI1ZDU5NDM4MV9BcGVDb2lu",
+                  "name": "ApeCoin",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg0ZDIyNDQ1MjgwMUFDRWQ4QjJGMGFlYkUxNTUzNzliYjVENTk0MzgxL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4d224452801ACEd8B2F0aebE155379bb5D594381/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4d224452801ACEd8B2F0aebE155379bb5D594381/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg1ODlkMzU2NTY2NDFkNmFiNTdhNTQ1ZjA4Y2Y0NzNlY2Q5YjZkNWY3",
+              "address": "0x589d35656641d6aB57A545F08cf473eCD9B6D5F7",
+              "chain": "ARBITRUM",
+              "symbol": "GYEN",
+              "name": "GYEN",
+              "decimals": 6,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YzA4NTEyOTI3ZDEyMzQ4ZjY2MjBhNjk4MTA1ZTFiYWFjNmVjZDkxMV9HWUVO",
+                  "name": "GYEN",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhDMDg1MTI5MjdEMTIzNDhGNjYyMGE2OTgxMDVlMUJBYWM2RWNEOTExL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC08512927D12348F6620a698105e1BAac6EcD911/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC08512927D12348F6620a698105e1BAac6EcD911/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgwNDBkMWVkYzk1NjlkNGJhYjJkMTUyODdkYzVhNGYxMGY1NmE1NmI4",
+              "address": "0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8",
+              "chain": "ARBITRUM",
+              "symbol": "BAL",
+              "name": "Balancer",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YmExMDAwMDA2MjVhMzc1NDQyMzk3OGE2MGM5MzE3YzU4YTQyNGUzZF9CYWxhbmNlcg==",
+                  "name": "Balancer",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhiYTEwMDAwMDYyNWEzNzU0NDIzOTc4YTYwYzkzMTdjNThhNDI0ZTNEL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xba100000625a3754423978a60c9317c58a424e3D/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xba100000625a3754423978a60c9317c58a424e3D/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHg2MzE0YzMxYTdhMTY1MmNlNDgyY2ZmZTI0N2U5Y2I3YzNmNGJiOWFm",
+              "address": "0x6314C31A7a1652cE482cffe247E9CB7c3f4BB9aF",
+              "chain": "ARBITRUM",
+              "symbol": "1INCH",
+              "name": "1inch",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MTExMTExMTExMTE3ZGMwYWE3OGI3NzBmYTZhNzM4MDM0MTIwYzMwMl8xaW5jaA==",
+                  "name": "1inch",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHgxMTExMTExMTExMTdkQzBhYTc4Yjc3MGZBNkE3MzgwMzQxMjBDMzAyL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x111111111117dC0aa78b770fA6A738034120C302/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x111111111117dC0aa78b770fA6A738034120C302/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHhkNDI3ODVkMzIzZTYwOGI5ZTk5ZmE1NDJiZDhiMTAwMGQ0YzJkZjM3",
+              "address": "0xd42785D323e608B9E99fa542bd8b1000D4c2Df37",
+              "chain": "ARBITRUM",
+              "symbol": "FTM",
+              "name": "Fantom",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NGUxNTM2MWZkNmI0YmI2MDlmYTYzYzgxYTJiZTE5ZDg3MzcxNzg3MF9GYW50b20=",
+                  "name": "Fantom",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg0RTE1MzYxRkQ2YjRCQjYwOUZhNjNDODFBMmJlMTlkODczNzE3ODcwL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4E15361FD6b4BB609Fa63C81A2be19d873717870/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4E15361FD6b4BB609Fa63C81A2be19d873717870/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVJCSVRSVU1fMHgzYThiNzg3Zjc4ZDc3NWFlY2ZlZWExNTcwNmQ0MjIxYjQwZjM0NWFi",
+              "address": "0x3a8B787f78D775AECFEEa15706D4221B40F345AB",
+              "chain": "ARBITRUM",
+              "symbol": "CELR",
+              "name": "Celer Network",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4NGY5MjU0YzgzZWI1MjVmOWZjZjM0NjQ5MGJiYjNlZDI4YTgxYzY2N19DZWxlciBOZXR3b3Jr",
+                  "name": "Celer Network",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg0RjkyNTRDODNFQjUyNWY5RkNmMzQ2NDkwYmJiM2VkMjhhODFDNjY3L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4F9254C83EB525f9FCf346490bbb3ed28a81C667/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4F9254C83EB525f9FCf346490bbb3ed28a81C667/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          }
+      ]
+  }
+}

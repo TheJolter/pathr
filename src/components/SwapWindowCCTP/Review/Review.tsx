@@ -106,6 +106,14 @@ export default observer(function Review(props: {
       return
     }
 
+    if (!targetChain.receiverContract) {
+      dialogStore.showDialog({
+        title: 'Faled',
+        content: `receiver contract not found on chain ${pathrStore.toChainName}`
+      })
+      return
+    }
+
     const baseAmountIn = bn(swapInfo.amountIn).times(bn(10).pow(swapInfo.tokenIn.decimals)).toFixed(0)
     setIsBusy(true)
     try {
@@ -142,7 +150,9 @@ export default observer(function Review(props: {
       outToken: swapInfo.tokenOut.address,
       targetChain: ethers.BigNumber.from(targetChain.domain),
       receiver: address,
-      receiverContract: sourceChain.bridgeAddress
+      receiverContract: targetChain.receiverContract,
+      poolFee: ethers.BigNumber.from(Math.round(swapInfo.fee*1000000)),
+      destPoolFee: ethers.BigNumber.from(Math.round(swapInfo.targetFee*1000000))
     }).then(res=>{
       dialogStore.showDialog({
         title: 'Success 🎉',

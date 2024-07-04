@@ -15,14 +15,17 @@ declare let window: any;
  * @returns The transaction response.
  */
 export async function swapExactInputSingle(
-  {contractAddress, amountIn, inToken, outToken, targetChain, receiver, receiverContract}:
+  {contractAddress, amountIn, inToken, outToken, targetChain, receiver, receiverContract, poolFee, destPoolFee}:
   {contractAddress: string,
   amountIn: ethers.BigNumber,
   inToken: string,
   outToken: string,
   targetChain: ethers.BigNumber,
   receiver: string,
-  receiverContract: string}
+  receiverContract: string,
+  poolFee: ethers.BigNumber,
+  destPoolFee: ethers.BigNumber
+}
 ): Promise<ethers.providers.TransactionReceipt> {
   // Ensure window.ethereum is available
   if (!window.ethereum) {
@@ -37,12 +40,46 @@ export async function swapExactInputSingle(
   const abi = [
     {
       "inputs": [
-        {"internalType": "uint256", "name": "_amountIn", "type": "uint256"},
-        {"internalType": "address", "name": "_inToken", "type": "address"},
-        {"internalType": "address", "name": "_outToken", "type": "address"},
-        {"internalType": "uint32", "name": "_targetChain", "type": "uint32"},
-        {"internalType": "address", "name": "_receiver", "type": "address"},
-        {"internalType": "address", "name": "_receiverContract", "type": "address"}
+        {
+          "internalType": "uint256",
+          "name": "_amountIn",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_inToken",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_outToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint24",
+          "name": "_poolFee",
+          "type": "uint24"
+        },
+        {
+          "internalType": "uint24",
+          "name": "_destPoolFee",
+          "type": "uint24"
+        },
+        {
+          "internalType": "uint32",
+          "name": "_targetChain",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiverContract",
+          "type": "address"
+        }
       ],
       "name": "swapExactInputSingle",
       "outputs": [],
@@ -56,7 +93,12 @@ export async function swapExactInputSingle(
 
   // Call the `swapExactInputSingle` function
   const transactionResponse = await contract.swapExactInputSingle(
-    amountIn, inToken, outToken, targetChain, receiver, receiverContract
+    amountIn, inToken, outToken, 
+    poolFee,
+    destPoolFee,
+    targetChain, 
+    receiver, 
+    receiverContract
   );
 
   // return transactionResponse as ethers.ContractTransaction

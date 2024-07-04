@@ -1,0 +1,190 @@
+{
+  "data": {
+      "topTokens": [
+          {
+              "id": "VG9rZW46QVZBTEFOQ0hFXzB4Yjk3ZWY5ZWY4NzM0YzcxOTA0ZDgwMDJmOGI2YmM2NmRkOWM0OGE2ZQ==",
+              "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+              "chain": "AVALANCHE",
+              "symbol": "USDC",
+              "name": "USD Coin",
+              "decimals": 6,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YTBiODY5OTFjNjIxOGIzNmMxZDE5ZDRhMmU5ZWIwY2UzNjA2ZWI0OF9VU0RD",
+                  "name": "USDC",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhBMGI4Njk5MWM2MjE4YjM2YzFkMTlENGEyZTlFYjBjRTM2MDZlQjQ4L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVZBTEFOQ0hFXzB4OTcwMjIzMGE4ZWE1MzYwMWY1Y2QyZGMwMGZkYmMxM2Q0ZGY0YThjNw==",
+              "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+              "chain": "AVALANCHE",
+              "symbol": "USDt",
+              "name": "TetherToken",
+              "decimals": 6,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4ZGFjMTdmOTU4ZDJlZTUyM2EyMjA2MjA2OTk0NTk3YzEzZDgzMWVjN19UZXRoZXI=",
+                  "name": "Tether",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhkQUMxN0Y5NThEMmVlNTIzYTIyMDYyMDY5OTQ1OTdDMTNEODMxZWM3L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVZBTEFOQ0hFXzB4YjMxZjY2YWEzYzFlNzg1MzYzZjA4NzVhMWI3NGUyN2I4NWZkNjZjNw==",
+              "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+              "chain": "AVALANCHE",
+              "symbol": "WAVAX",
+              "name": "Wrapped AVAX",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OlBPTFlHT05fMHgyYzg5YmJjOTJiZDg2ZjgwNzVkMWRlY2M1OGM3ZjRlMDEwN2YyODZiX1dyYXBwZWQgQVZBWA==",
+                  "name": "Wrapped AVAX",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8xNTA3NS9sYXJnZS93cmFwcGVkLWF2YXgucG5nPzE2OTY1MTQ3MzQ=",
+                      "url": "https://coin-images.coingecko.com/coins/images/15075/large/wrapped-avax.png?1696514734",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/15075/large/wrapped-avax.png?1696514734",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVZBTEFOQ0hFXzB4NDlkNWMyYmRmZmFjNmNlMmJmZGI2NjQwZjRmODBmMjI2YmMxMGJhYg==",
+              "address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
+              "chain": "AVALANCHE",
+              "symbol": "WETH.e",
+              "name": "Wrapped Ether",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4YzAyYWFhMzliMjIzZmU4ZDBhMGU1YzRmMjdlYWQ5MDgzYzc1NmNjMl9XRVRI",
+                  "name": "WETH",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHhDMDJhYUEzOWIyMjNGRThEMEEwZTVDNEYyN2VBRDkwODNDNzU2Q2MyL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVZBTEFOQ0hFXzB4YTdkNzA3OWIwZmVhZDkxZjNlNjVmODZlODkxNWNiNTljMWE0YzY2NA==",
+              "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+              "chain": "AVALANCHE",
+              "symbol": "USDC.e",
+              "name": "Bridged USDC",
+              "decimals": 6,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkFWQUxBTkNIRV8weGE3ZDcwNzliMGZlYWQ5MWYzZTY1Zjg2ZTg5MTVjYjU5YzFhNGM2NjRfQnJpZGdlZCBVU0RD",
+                  "name": "Bridged USDC",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8yMzI2My9sYXJnZS8zNDA4LnBuZz8xNjk2NTIyNDgz",
+                      "url": "https://coin-images.coingecko.com/coins/images/23263/large/3408.png?1696522483",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/23263/large/3408.png?1696522483",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVZBTEFOQ0hFXzB4NTBiNzU0NTYyN2E1MTYyZjgyYTk5MmMzM2I4N2FkYzc1MTg3YjIxOA==",
+              "address": "0x50b7545627a5162F82A992c33b87aDc75187B218",
+              "chain": "AVALANCHE",
+              "symbol": "WBTC",
+              "name": "Wrapped BTC",
+              "decimals": 8,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4MjI2MGZhYzVlNTU0MmE3NzNhYTQ0ZmJjZmVkZjdjMTkzYmMyYzU5OV9XcmFwcGVkIEJpdGNvaW4=",
+                  "name": "Wrapped Bitcoin",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHgyMjYwRkFDNUU1NTQyYTc3M0FhNDRmQkNmZURmN0MxOTNiYzJDNTk5L2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVZBTEFOQ0hFXzB4Njk4NTg4NGM0MzkyZDM0ODU4N2IxOWNiOWVhYWYxNTdmMTMyNzFjZA==",
+              "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+              "chain": "AVALANCHE",
+              "symbol": "ZRO",
+              "name": "LayerZero",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4Njk4NTg4NGM0MzkyZDM0ODU4N2IxOWNiOWVhYWYxNTdmMTMyNzFjZF9MYXllclplcm8=",
+                  "name": "LayerZero",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9jb2luLWltYWdlcy5jb2luZ2Vja28uY29tL2NvaW5zL2ltYWdlcy8yODIwNi9sYXJnZS9mdHhHOV9USl80MDB4NDAwLmpwZWc/MTY5NjUyNzIwOA==",
+                      "url": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          },
+          {
+              "id": "VG9rZW46QVZBTEFOQ0hFXzB4MTMwOTY2NjI4ODQ2YmZkMzZmZjMxYTgyMjcwNTc5NmU4Y2I4YzE4ZA==",
+              "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+              "chain": "AVALANCHE",
+              "symbol": "MIM",
+              "name": "Magic Internet Money",
+              "decimals": 18,
+              "standard": "ERC20",
+              "project": {
+                  "id": "VG9rZW5Qcm9qZWN0OkVUSEVSRVVNXzB4OTlkOGE5YzQ1YjJlY2E4ODY0MzczYTI2ZDE0NTllM2RmZjFlMTdmM19NYWdpYyBJbnRlcm5ldCBNb25leSAoQXZhbGFuY2hlKQ==",
+                  "name": "Magic Internet Money (Avalanche)",
+                  "logo": {
+                      "id": "SW1hZ2U6aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1VuaXN3YXAvYXNzZXRzL21hc3Rlci9ibG9ja2NoYWlucy9ldGhlcmV1bS9hc3NldHMvMHg5OUQ4YTlDNDViMmVjQTg4NjQzNzNBMjZEMTQ1OWUzRGZmMWUxN0YzL2xvZ28ucG5n",
+                      "url": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x99D8a9C45b2ecA8864373A26D1459e3Dff1e17F3/logo.png",
+                      "__typename": "Image"
+                  },
+                  "safetyLevel": "VERIFIED",
+                  "logoUrl": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x99D8a9C45b2ecA8864373A26D1459e3Dff1e17F3/logo.png",
+                  "isSpam": false,
+                  "__typename": "TokenProject"
+              },
+              "__typename": "Token"
+          }
+      ]
+  }
+}

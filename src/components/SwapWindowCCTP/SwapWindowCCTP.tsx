@@ -12,6 +12,7 @@ import SuccessDialog from "./SuccessDialog"
 import WarningDialog from "./WarningDialog"
 import bn from "@/utils/bn"
 import { useConnectWallet } from "@web3-onboard/react"
+import { Button } from "@nextui-org/react"
 
 export default observer(function SwapWindow(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -24,6 +25,7 @@ export default observer(function SwapWindow(
   const displayStore = useStore('displayStore')
   const pathrStore = useStore('pathrStore')
   const cctpStore = useStore('cctpStore')
+  const dialogStore = useStore('dialogStore')
 
   const [boxBgStyle, setBoxBgStyle] = useState<CSSProperties>()
 
