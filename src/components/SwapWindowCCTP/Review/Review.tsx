@@ -22,7 +22,7 @@ import { getERC20Allowance } from "@/utils/erc20Allowance"
 import { CHAINS } from "@/configs/cctp/configs"
 import { approveERC20 } from "@/utils/erc20Approve"
 import { ethers } from "ethers"
-import { swapExactInputSingle } from "@/utils/swapExactInputSingle"
+import { swapExactInputSingle } from "@/utils/cctp/swapExactInputSingle"
 
 export default observer(function Review(props: {
   style?: CSSProperties
