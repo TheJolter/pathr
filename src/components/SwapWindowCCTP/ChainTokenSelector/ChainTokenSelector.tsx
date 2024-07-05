@@ -11,6 +11,7 @@ import allTokens from '@/configs/pathr/all-tokens.json'
 import { ADDR0 } from "@/configs/pathr/tokens"
 import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
 import { CHAINS } from "@/configs/cctp/configs"
+import usdcPools from '@/configs/cctp/usdc-pools.json'
 
 export default observer(function ChainTokenSelector(props: {
   style?: CSSProperties
@@ -104,6 +105,10 @@ export default observer(function ChainTokenSelector(props: {
       if (tokenInfo.address===ADDR0) {
         return <></>
       }
+      // const chain = CHAINS.find(item=>item.chainName===tokenInfo.blockchainName)
+      // if(!usdcPools.find(item=>{
+      //   return item.chainID===chain?.chainId && item.address===tokenInfo.address
+      // })) return <></>
       return <TokenInfoCard tokenInfo={tokenInfo} key={`token-info-${index}`} />
     })}
   </ScrollShadow>

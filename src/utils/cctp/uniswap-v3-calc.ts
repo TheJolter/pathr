@@ -3,7 +3,7 @@ import { Token, CurrencyAmount } from '@uniswap/sdk-core'
 import { Pool, Route, Trade, FeeAmount, nearestUsableTick, TickMath, TICK_SPACINGS } from '@uniswap/v3-sdk'
 import { ethers } from 'ethers'
 
-async function getPoolFeeAddr(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): Promise<{
+export async function getPoolFeeAddr(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): Promise<{
   fee:FeeAmount,
   poolAddress: string
 }> {
