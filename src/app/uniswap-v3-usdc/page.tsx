@@ -12,7 +12,7 @@ import { Token } from '@uniswap/sdk-core'
 import { EVM_BLOCKCHAIN_NAME } from 'pathr-sdk'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '@/stores/hooks'
-import { getPoolFeeAddr, getSwapInfo } from '@/utils/cctp/uniswap-v3-calc'
+import { getPoolFeeAddrs, getSwapInfo } from '@/utils/cctp/uniswap-v3-calc'
 import { ethers } from 'ethers'
 
 export default observer(function UniswapV3USDC() {
@@ -43,7 +43,7 @@ export default observer(function UniswapV3USDC() {
       const token0 = new Token(chain.chainId, token.address, token.decimals, token.symbol)
       try {
         const provider = new ethers.providers.JsonRpcProvider(chain.rpc)
-        const swapInfo = await getPoolFeeAddr(token0, tokenUSDC, provider)
+        const swapInfo = await getPoolFeeAddrs(token0, tokenUSDC, provider)
         await new Promise(resolve => setTimeout(resolve, 100))
         usdcPools.push({
           chainID: chain.chainId,

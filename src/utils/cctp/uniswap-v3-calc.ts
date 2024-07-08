@@ -3,10 +3,13 @@ import { Token, CurrencyAmount } from '@uniswap/sdk-core'
 import { Pool, Route, Trade, FeeAmount, nearestUsableTick, TickMath, TICK_SPACINGS } from '@uniswap/v3-sdk'
 import { ethers } from 'ethers'
 
-export async function getPoolFeeAddr(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): Promise<{
+type FeePool = {
   fee:FeeAmount,
   poolAddress: string
-}> {
+}
+
+export async function getPoolFeeAddrs(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): 
+Promise<FeePool[]> {
   const chain = CHAINS.find(chain => chain.chainId === tokenA.chainId)
   if (!chain) {
     throw new Error(`Chain info not found for ${tokenA.chainId}`)
@@ -19,12 +22,13 @@ export async function getPoolFeeAddr(tokenA: Token, tokenB: Token, provider: eth
   )
 
   const feeTiers = [
-    // FeeAmount.LOWEST, // might get a pool with 0 liquidity
+    FeeAmount.LOWEST, // might get a pool with 0 liquidity
     FeeAmount.LOW,
     FeeAmount.MEDIUM,
     FeeAmount.HIGH
   ]
 
+  let feePools: FeePool[] = []
   for (const fee of feeTiers) {
     try {
       const poolAddress = await factoryContract.getPool(
@@ -34,7 +38,7 @@ export async function getPoolFeeAddr(tokenA: Token, tokenB: Token, provider: eth
       )
       console.log('poolAddress', poolAddress)
       if (poolAddress !== ethers.constants.AddressZero) {
-        return {fee, poolAddress}
+        feePools.push({fee, poolAddress})
       }
     } catch (error) {
       console.log('error factoryContract.getPool', {
@@ -45,51 +49,62 @@ export async function getPoolFeeAddr(tokenA: Token, tokenB: Token, provider: eth
       continue
     }
   }
+  if (feePools.length>0) return feePools
 
   throw new Error(`No pool found for token pair ${tokenA.symbol}/${tokenB.symbol} on ${tokenA.chainId}`)
 }
 
 export async function getPool(tokenA: Token, tokenB: Token, provider: ethers.providers.Provider): Promise<Pool> {
-  const {fee, poolAddress} = await getPoolFeeAddr(tokenA, tokenB, provider)
-  console.log('Pool.getAddress', {
-    tokenA,
-    tokenB,
-    fee
-  })
+  const feePools = await getPoolFeeAddrs(tokenA, tokenB, provider)
+  console.log('feePools', feePools)
 
-  const poolContract = new ethers.Contract(
-      poolAddress,
-      [
-          'function slot0() external view returns (uint160 sqrtPriceX96, int24 tick, uint16 observationIndex, uint16 observationCardinality, uint16 observationCardinalityNext, uint8 feeProtocol, bool unlocked)',
-          'function liquidity() external view returns (uint128)'
-      ],
-      provider
-  )
+  let _fee = FeeAmount.LOW
+  let _sqrtPriceX96 = ethers.BigNumber.from(0)
+  let _liquidity = ethers.BigNumber.from(0)
+  let _tick = 0
 
-  const [slot0, liquidity] = await Promise.all([
-      poolContract.slot0(),
-      poolContract.liquidity()
-  ])
+  for (const feePool of feePools) {
+    const poolContract = new ethers.Contract(
+        feePool.poolAddress,
+        [
+            'function slot0() external view returns (uint160 sqrtPriceX96, int24 tick, uint16 observationIndex, uint16 observationCardinality, uint16 observationCardinalityNext, uint8 feeProtocol, bool unlocked)',
+            'function liquidity() external view returns (uint128)'
+        ],
+        provider
+    )
 
-  const [sqrtPriceX96, tick] = [slot0[0], slot0[1]]
+    const [slot0, liquidity] = await Promise.all([
+        poolContract.slot0(),
+        poolContract.liquidity()
+    ])
+
+    const [sqrtPriceX96, tick] = [slot0[0], slot0[1]]
+
+    if (_liquidity.lt(liquidity)) {
+        _fee = feePool.fee
+        _sqrtPriceX96 = sqrtPriceX96
+        _liquidity = liquidity
+        _tick = tick
+    }
+  }
 
   return new Pool(
       tokenA,
       tokenB,
-      fee,
-      sqrtPriceX96.toString(),
-      liquidity.toString(),
-      tick,
+      _fee,
+      _sqrtPriceX96.toString(),
+      _liquidity.toString(),
+      _tick,
       [
           {
-              index: nearestUsableTick(TickMath.MIN_TICK, TICK_SPACINGS[fee]),
-              liquidityNet: liquidity.toString(),
-              liquidityGross: liquidity.toString()
+              index: nearestUsableTick(TickMath.MIN_TICK, TICK_SPACINGS[_fee]),
+              liquidityNet: _liquidity.toString(),
+              liquidityGross: _liquidity.toString()
           },
           {
-              index: nearestUsableTick(TickMath.MAX_TICK, TICK_SPACINGS[fee]),
-              liquidityNet: liquidity.mul(-1).toString(),
-              liquidityGross: liquidity.toString()
+              index: nearestUsableTick(TickMath.MAX_TICK, TICK_SPACINGS[_fee]),
+              liquidityNet: _liquidity.mul(-1).toString(),
+              liquidityGross: _liquidity.toString()
           }
       ]
   )

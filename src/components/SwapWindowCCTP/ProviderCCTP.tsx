@@ -58,11 +58,11 @@ export default observer(function ProviderCCTP(props: {
   </div>
   <div className="flex items-center justify-between mt-4">
     <div className="flex items-center mr-4">
-      <Tooltip content="Protocol Fee" showArrow>
+      {/* <Tooltip content="Protocol Fee" showArrow>
         <FontAwesomeIcon icon={faSackDollar} className="text-gray-400 mr-2" />
-      </Tooltip>
+      </Tooltip> */}
       <div className="text-gray-400">
-        {((swapInfo?.fee||0)+(swapInfo?.targetFee||0))*100}%
+        Fee: {(((swapInfo?.fee||0)+(swapInfo?.targetFee||0))*100).toFixed(2)}%
       </div>
     </div>
     <div className="flex items-center grow justify-end">

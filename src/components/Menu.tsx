@@ -42,6 +42,13 @@ export default observer(function Menu() {
       // style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
       style={noneSelectedStyle}
     >USDC</MainButton>
+    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+      onClick={()=>{
+        window.open('https://bridge.joltify.io')
+      }}
+      // style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
+      style={noneSelectedStyle}
+    >JOLT</MainButton>
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 
     style={menuBgStyle}

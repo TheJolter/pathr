@@ -79,6 +79,7 @@ export default observer(function ChainTokenSelector(props: {
       if (
         chainName!==EVM_BLOCKCHAIN_NAME.ARBITRUM
         && displayStore.showChainTokenSelector==='from'
+        && false
       ) return
       const chainID = BlockchainInfo[chainName].id
       if (!CHAINS.find(item=>item.chainId===chainID)) return

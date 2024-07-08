@@ -99,7 +99,7 @@ export default observer(function InputCard(props: {
         {address&&<div
           style={{color: bn(balanceStore.balances[balanceKey]?.amount||0).lt(inputStore.tokenAmout)?'red':undefined}}
         >
-          / {bigNumberFloor(balanceStore.balances[balanceKey]?.amount||0 ,6).toFormat()}
+          Balance: {bigNumberFloor(balanceStore.balances[balanceKey]?.amount||0 ,6).toFormat()}
         </div>}
       </div>
     </div>
