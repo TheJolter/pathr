@@ -79,7 +79,7 @@ export default observer(function Providers(
       pathrStore.setCalculating(false)
     })
   }, [ // should not input inputStore.tokenAmout here, otherwise it will recalc every time amount change
-    pathrStore.routerCalcTime, pathrStore, inputStore, address, provider, pathrStore.fromChainTokenAddr
+    pathrStore.routerCalcTime, pathrStore, inputStore, address, provider
   ])
 
   useEffect(()=>{
