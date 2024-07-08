@@ -23,6 +23,7 @@ import { CHAINS } from "@/configs/cctp/configs"
 import { approveERC20 } from "@/utils/erc20Approve"
 import { ethers } from "ethers"
 import { swapExactInputSingle } from "@/utils/cctp/swapExactInputSingle"
+import ProgressDialogContent from "./ProgressDialogContent"
 
 export default observer(function Review(props: {
   style?: CSSProperties
@@ -155,13 +156,9 @@ export default observer(function Review(props: {
       destPoolFee: ethers.BigNumber.from(Math.round(swapInfo.targetFee*1000000))
     }).then(res=>{
       dialogStore.showDialog({
-        title: 'Success 🎉',
+        title: 'Transaction Sent',
         content: (
-          <div>
-            <Link target="_blank"
-              href={`${sourceChain.explorer}/tx/${res.transactionHash}`}
-            >Click Here</Link> to view the transaction on Explorer.
-          </div>
+          <ProgressDialogContent sourceTxHash={res.transactionHash} />
         )
       })
     }).catch(error=>{

@@ -13,6 +13,7 @@ import WarningDialog from "./WarningDialog"
 import bn from "@/utils/bn"
 import { useConnectWallet } from "@web3-onboard/react"
 import { Button } from "@nextui-org/react"
+import ProgressDialogContent from "./Review/ProgressDialogContent"
 
 export default observer(function SwapWindow(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -26,6 +27,7 @@ export default observer(function SwapWindow(
   const pathrStore = useStore('pathrStore')
   const cctpStore = useStore('cctpStore')
   const dialogStore = useStore('dialogStore')
+  const [targetTxHash, setTargetTxHash] = useState<string>()
 
   const [boxBgStyle, setBoxBgStyle] = useState<CSSProperties>()
 
@@ -114,6 +116,13 @@ export default observer(function SwapWindow(
 
     <WarningDialog />
   </div>
+
+  {/* <Button onClick={()=>{
+    dialogStore.showDialog({
+      title: 'Swap Submited',
+      content: <ProgressDialogContent sourceTxHash='s' />,
+    })
+  }}>Dialog Test</Button> */}
 </div>
 )
 })
