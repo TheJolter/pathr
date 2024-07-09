@@ -2,7 +2,8 @@ import { action, makeObservable, observable } from "mobx";
 
 type Dialog = {
   title?: string,
-  content: React.ReactNode
+  content: React.ReactNode,
+  forbidClose?: boolean,
 }
 
 export default class DialogStore {

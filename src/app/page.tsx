@@ -16,7 +16,10 @@ export default observer(function Page() {
   return (
     <main>
       <SwapWindowCCTP className="mt-9 w-full" />
-      <Modal isOpen={!!dialogStore.dialog} onOpenChange={()=>dialogStore.hideDialog()}>
+      <Modal isOpen={!!dialogStore.dialog} onOpenChange={()=>{
+        if (dialogStore.dialog?.forbidClose) return
+        dialogStore.hideDialog()
+      }}>
         <ModalContent>
           {dialogStore.dialog?.title&&<ModalHeader className="flex flex-col gap-1">
             {dialogStore.dialog.title}

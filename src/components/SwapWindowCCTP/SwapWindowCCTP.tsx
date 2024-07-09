@@ -119,8 +119,11 @@ export default observer(function SwapWindow(
 
   {/* <Button onClick={()=>{
     dialogStore.showDialog({
-      title: 'Swap Submited',
-      content: <ProgressDialogContent sourceTxHash='s' />,
+      forbidClose: true,
+      title: 'Do not close this dialog',
+      content: <ProgressDialogContent 
+      sourceTxHash='0x66f39329afca97c3e2a4f0bc995ff06df28c54fb5fe95cb2e7ac139ca39e38cb' 
+    />,
     })
   }}>Dialog Test</Button> */}
 </div>

@@ -156,7 +156,8 @@ export default observer(function Review(props: {
       destPoolFee: ethers.BigNumber.from(Math.round(swapInfo.targetFee*1000000))
     }).then(res=>{
       dialogStore.showDialog({
-        title: 'Transaction Sent',
+        forbidClose: true,
+        title: 'Do not close this dialog',
         content: (
           <ProgressDialogContent sourceTxHash={res.transactionHash} />
         )
