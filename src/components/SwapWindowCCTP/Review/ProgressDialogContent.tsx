@@ -6,17 +6,20 @@ import { observer } from 'mobx-react-lite'
 import { useStore } from '@/stores/hooks'
 import { Link } from '@nextui-org/react'
 import { useEffect, useState } from 'react'
+import { Dialog } from '@/stores/dialogStore'
 
 export default observer(function ProgressDialogContent({sourceTxHash}:{
   sourceTxHash: string
 }) {
   const pathrStore = useStore('pathrStore')
+  const dialogStore = useStore('dialogStore')
 
   const [targetTxHash, setTargetTxHash] = useState<string>()
   const [attestationGenerated, setAttestationGenerated] = useState(false)
 
   const sourceChain = CHAINS.find(chain=>chain.chainName===pathrStore.fromChainName)
   const targetChain = CHAINS.find(chain=>chain.chainName===pathrStore.toChainName)
+  
 
   useEffect(()=>{
     if (!attestationGenerated) return
@@ -27,6 +30,10 @@ export default observer(function ProgressDialogContent({sourceTxHash}:{
         if (_targetTxHash) {
           setTargetTxHash(_targetTxHash)
           clearInterval(interval)
+          dialogStore.showDialog({
+            ...dialogStore.dialog as Dialog,
+            forbidClose: false
+          })
         }
       })
     }, 5000)

@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from "mobx";
 
-type Dialog = {
+export type Dialog = {
   title?: string,
   content: React.ReactNode,
   forbidClose?: boolean,
