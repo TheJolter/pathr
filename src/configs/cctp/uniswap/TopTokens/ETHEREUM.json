@@ -4,7 +4,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhjMDJhYWEzOWIyMjNmZThkMGEwZTVjNGYyN2VhZDkwODNjNzU2Y2My",
               "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "WETH",
               "name": "Wrapped Ether",
               "decimals": 18,
@@ -27,7 +27,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhhMGI4Njk5MWM2MjE4YjM2YzFkMTlkNGEyZTllYjBjZTM2MDZlYjQ4",
               "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "USDC",
               "name": "USD Coin",
               "decimals": 6,
@@ -50,7 +50,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhkYWMxN2Y5NThkMmVlNTIzYTIyMDYyMDY5OTQ1OTdjMTNkODMxZWM3",
               "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "USDT",
               "name": "Tether USD",
               "decimals": 6,
@@ -73,7 +73,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgyMjYwZmFjNWU1NTQyYTc3M2FhNDRmYmNmZWRmN2MxOTNiYzJjNTk5",
               "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "WBTC",
               "name": "Wrapped BTC",
               "decimals": 8,
@@ -96,7 +96,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2YjE3NTQ3NGU4OTA5NGM0NGRhOThiOTU0ZWVkZWFjNDk1MjcxZDBm",
               "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "DAI",
               "name": "Dai Stablecoin",
               "decimals": 18,
@@ -119,7 +119,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg5ZjhmNzJhYTkzMDRjOGI1OTNkNTU1ZjEyZWY2NTg5Y2MzYTU3OWEy",
               "address": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "MKR",
               "name": "Maker",
               "decimals": 18,
@@ -142,7 +142,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2OTgyNTA4MTQ1NDU0Y2UzMjVkZGJlNDdhMjVkNGVjM2QyMzExOTMz",
               "address": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "PEPE",
               "name": "Pepe",
               "decimals": 18,
@@ -165,7 +165,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg1N2UxMTRiNjkxZGI3OTBjMzUyMDdiMmU2ODVkNGE0MzE4MWU2MDYx",
               "address": "0x57e114B691Db790C35207b2e685D4A43181e6061",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ENA",
               "name": "ENA",
               "decimals": 18,
@@ -188,7 +188,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgxZjk4NDBhODVkNWFmNWJmMWQxNzYyZjkyNWJkYWRkYzQyMDFmOTg0",
               "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "UNI",
               "name": "Uniswap",
               "decimals": 18,
@@ -211,7 +211,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2OTg1ODg0YzQzOTJkMzQ4NTg3YjE5Y2I5ZWFhZjE1N2YxMzI3MWNk",
               "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ZRO",
               "name": "LayerZero",
               "decimals": 18,
@@ -234,7 +234,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhmYWJhNmY4ZTRhNWU4YWI4MmY2MmZlN2MzOTg1OWZhNTc3MjY5YmUz",
               "address": "0xfAbA6f8e4a5E8Ab82F62fe7C39859FA577269BE3",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ONDO",
               "name": "Ondo",
               "decimals": 18,
@@ -257,7 +257,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhjMTgzNjAyMTdkOGY3YWI1ZTdjNTE2NTY2NzYxZWExMmNlN2Y5ZDcy",
               "address": "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ENS",
               "name": "Ethereum Name Service",
               "decimals": 18,
@@ -280,7 +280,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhkMzFhNTljODVhZTlkOGVkZWZlYzQxMWQ0NDhmOTA4NDE1NzFiODlj",
               "address": "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "SOL",
               "name": "Wrapped SOL (Wormhole)",
               "decimals": 9,
@@ -303,7 +303,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2MmQwYTg0NThlZDc3MTlmZGFmOTc4ZmU1OTI5YzZkMzQyYjBiZmNl",
               "address": "0x62D0A8458eD7719FDAF978fe5929C6D342B0bFcE",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "BEAM",
               "name": "Beam",
               "decimals": 18,
@@ -326,7 +326,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhiMjNkODBmNWZlZmNkZGFhMjEyMjEyZjAyODAyMWI0MWRlZDQyOGNm",
               "address": "0xb23d80f5FefcDDaa212212F028021B41DEd428CF",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "PRIME",
               "name": "Prime",
               "decimals": 18,
@@ -349,7 +349,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhkNTMzYTk0OTc0MGJiMzMwNmQxMTljYzc3N2ZhOTAwYmEwMzRjZDUy",
               "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "CRV",
               "name": "Curve DAO Token",
               "decimals": 18,
@@ -372,7 +372,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg1MTQ5MTA3NzFhZjljYTY1NmFmODQwZGZmODNlODI2NGVjZjk4NmNh",
               "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "LINK",
               "name": "ChainLink Token",
               "decimals": 18,
@@ -395,7 +395,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2ZGVhODFjODE3MWQwYmE1NzQ3NTRlZjZmOGI0MTJmMmVkODhjNTRk",
               "address": "0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "LQTY",
               "name": "LQTY",
               "decimals": 18,
@@ -418,7 +418,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhhZWE0NmE2MDM2OGE3YmQwNjBlZWM3ZGY4Y2JhNDNiN2VmNDFhZDg1",
               "address": "0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "FET",
               "name": "Fetch",
               "decimals": 18,
@@ -441,7 +441,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0Njc3MTlhZDA5MDI1ZmNjNmNmNmY4MzExNzU1ODA5ZDQ1YTVlNWYz",
               "address": "0x467719aD09025FcC6cF6F8311755809d45a5E5f3",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "AXL",
               "name": "Axelar",
               "decimals": 6,
@@ -464,7 +464,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgzMWM4ZWFjYmZmZGQ4NzVjNzRiOTRiMDc3ODk1YmQ3OGNmMWU2NGEz",
               "address": "0x31c8EAcBFFdD875c74b94b077895Bd78CF1E64A3",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "RAD",
               "name": "Radicle",
               "decimals": 18,
@@ -487,7 +487,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2ZGUwMzdlZjlhZDI3MjVlYjQwMTE4YmIxNzAyZWJiMjdlNGFlYjI0",
               "address": "0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "RNDR",
               "name": "Render Token",
               "decimals": 18,
@@ -510,7 +510,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhmZTBjMzAwNjViMzg0ZjA1NzYxZjE1ZDBjYzg5OWQ0ZjlmOWNjMGVi",
               "address": "0xFe0c30065B384F05761f15d0CC899D4F9F9Cc0eB",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ETHFI",
               "name": "ether.fi governance token",
               "decimals": 18,
@@ -533,7 +533,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhhZjUxOTFiMGRlMjc4YzcyODZkNmM3Y2M2YWI2YmI4YTczYmEyY2Q2",
               "address": "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "STG",
               "name": "StargateToken",
               "decimals": 18,
@@ -556,7 +556,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg3NDIwYjRiOWEwMTEwY2RjNzFmYjcyMDkwODM0MGMwM2Y5YmMwM2Vj",
               "address": "0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "JASMY",
               "name": "JasmyCoin",
               "decimals": 18,
@@ -579,7 +579,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg3ZmM2NjUwMGM4NGE3NmFkN2U5YzkzNDM3YmZjNWFjMzNlMmRkYWU5",
               "address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "AAVE",
               "name": "Aave Token",
               "decimals": 18,
@@ -602,7 +602,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg1Zjk4ODA1YTRlOGJlMjU1YTMyODgwZmRlYzdmNjcyOGM2NTY4YmEw",
               "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "LUSD",
               "name": "LUSD Stablecoin",
               "decimals": 18,
@@ -625,7 +625,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgwOTU0OTA2ZGEwYmYzMmQ1NDc5ZTI1ZjQ2MDU2ZDIyZjA4NDY0Y2Fi",
               "address": "0x0954906da0Bf32d5479e25f46056d22f08464cab",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "INDEX",
               "name": "Index",
               "decimals": 18,
@@ -648,7 +648,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgxODA4NGZiYTY2NmEzM2QzNzU5MmZhMjYzM2ZkNDlhNzRkZDkzYTg4",
               "address": "0x18084fbA666a33d37592fA2633fD49a74DD93a88",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "tBTC",
               "name": "tBTC v2",
               "decimals": 18,
@@ -671,7 +671,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0NTgwNDg4MGRlMjI5MTNkYWZlMDlmNDk4MDg0OGVjZTZlY2JhZjc4",
               "address": "0x45804880De22913dAFE09f4980848ECE6EcbAf78",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "PAXG",
               "name": "Paxos Gold",
               "decimals": 18,
@@ -694,7 +694,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhjOTQ0ZTkwYzY0YjJjMDc2NjJhMjkyYmU2MjQ0YmRmMDVjZGE0NGE3",
               "address": "0xc944E90C64B2c07662A292be6244BDf05Cda44a7",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "GRT",
               "name": "Graph Token",
               "decimals": 18,
@@ -717,7 +717,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg4NTNkOTU1YWNlZjgyMmRiMDU4ZWI4NTA1OTExZWQ3N2YxNzViOTll",
               "address": "0x853d955aCEf822Db058eb8505911ED77F175b99e",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "FRAX",
               "name": "Frax",
               "decimals": 18,
@@ -740,7 +740,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhmNTdlN2U3YzIzOTc4YzNjYWVjM2MzNTQ4ZTNkNjE1YzM0NmU3OWZm",
               "address": "0xF57e7e7C23978C3cAEC3C3548E3D615c346e79fF",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "IMX",
               "name": "Immutable X",
               "decimals": 18,
@@ -763,7 +763,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0ZTE1MzYxZmQ2YjRiYjYwOWZhNjNjODFhMmJlMTlkODczNzE3ODcw",
               "address": "0x4E15361FD6b4BB609Fa63C81A2be19d873717870",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "FTM",
               "name": "Fantom Token",
               "decimals": 18,
@@ -786,7 +786,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhmYjdiNDU2NDQwMmU1NTAwZGI1YmI2ZDYzYWU2NzEzMDI3NzdjNzVh",
               "address": "0xfB7B4564402E5500dB5bB6d63Ae671302777C75a",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "DEXT",
               "name": "DEXTools",
               "decimals": 18,
@@ -809,7 +809,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg1YTk4ZmNiZWE1MTZjZjA2ODU3MjE1Nzc5ZmQ4MTJjYTNiZWYxYjMy",
               "address": "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "LDO",
               "name": "Lido DAO Token",
               "decimals": 18,
@@ -832,7 +832,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0MTU0NWY4Yjk0NzJkNzU4YmI2NjllZDhlYWVlZWNkN2E5YzRlYzI5",
               "address": "0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "FORT",
               "name": "Forta",
               "decimals": 18,
@@ -855,7 +855,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgxYmJlOTczYmVmM2E5NzdmYzUxY2JlZDcwM2U4ZmZkZWZlMDAxZmVk",
               "address": "0x1Bbe973BeF3a977Fc51CbED703E8ffDEfE001Fed",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "PORTAL",
               "name": "PORTAL",
               "decimals": 18,
@@ -878,7 +878,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg5ZTMyYjEzY2U3ZjJlODBhMDE5MzJiNDI1NTM2NTJlMDUzZDZlZDhl",
               "address": "0x9E32b13ce7f2E80A01932B42553652E053D6ed8e",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "Metis",
               "name": "Metis Token",
               "decimals": 18,
@@ -901,7 +901,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhlMjhiM2IzMmI2YzM0NWEzNGZmNjQ2NzQ2MDYxMjRkZDVhY2VjYTMw",
               "address": "0xe28b3B32B6c345A34Ff64674606124Dd5Aceca30",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "INJ",
               "name": "Injective Token",
               "decimals": 18,
@@ -924,7 +924,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg5NWFkNjFiMGExNTBkNzkyMTlkY2Y2NGUxZTZjYzAxZjBiNjRjNGNl",
               "address": "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "SHIB",
               "name": "SHIBA INU",
               "decimals": 18,
@@ -947,7 +947,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhiOThkNGM5NzQyNWQ5OTA4ZTY2ZTUzYTZmZGY2NzNhY2NhMGJlOTg2",
               "address": "0xB98d4C97425d9908E66E53A6fDf673ACcA0BE986",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ABT",
               "name": "ArcBlock",
               "decimals": 18,
@@ -970,7 +970,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2MTIzYjAwNDlmOTA0ZDczMGRiM2MzNmEzMTE2N2Q5ZDQxMjFmYTZi",
               "address": "0x6123B0049F904d730dB3C36a31167D9d4121fA6B",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "RBN",
               "name": "Ribbon",
               "decimals": 18,
@@ -993,7 +993,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg5NjdkYTQwNDhjZDA3YWIzNzg1NWMwOTBhYWYzNjZlNGNlMWI5ZjQ4",
               "address": "0x967da4048cD07aB37855c090aAF366e4ce1b9F48",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "OCEAN",
               "name": "Ocean Token",
               "decimals": 18,
@@ -1016,7 +1016,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhmY2E1OWNkODE2YWIxZWFkNjY1MzRkODJiYzIxZTc1MTVjZTQ0MWNm",
               "address": "0xFca59Cd816aB1eaD66534D82bc21E7515cE441CF",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "RARI",
               "name": "Rarible",
               "decimals": 18,
@@ -1039,7 +1039,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg1ZmFhOTg5YWY5NmFmODUzODRiOGE5MzhjMmVkZTRhNzM3OGQ5ODc1",
               "address": "0x5fAa989Af96Af85384b8a938c2EdE4A7378D9875",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "GAL",
               "name": "Project Galaxy",
               "decimals": 18,
@@ -1062,7 +1062,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgwYmIyMTdlNDBmOGE1Y2I3OWFkZjA0ZTFhYWI2MGU1YWJkMGRmYzFl",
               "address": "0x0bb217E40F8a5Cb79Adf04E1aAb60E5abd0dfC1e",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "SWFTC",
               "name": "SwftCoin",
               "decimals": 8,
@@ -1085,7 +1085,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg1NzMyMDQ2YTg4MzcwNDQwNGYyODRjZTQxZmZhZGQ1YjAwN2ZkNjY4",
               "address": "0x5732046A883704404F284Ce41FfADd5b007FD668",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "BLZ",
               "name": "Bluzelle Token",
               "decimals": 18,
@@ -1108,7 +1108,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0NjkxOTM3YTc1MDg4NjBmODc2YzljMGEyYTYxN2U3ZDllOTQ1ZDRi",
               "address": "0x4691937a7508860F876c9c0a2a617E7d9E945D4B",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "WOO",
               "name": "Wootrade Network",
               "decimals": 18,
@@ -1131,7 +1131,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgzNDcyYTVhNzE5NjU0OTlhY2Q4MTk5N2E1NGJiYThkODUyYzZlNTNk",
               "address": "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "BADGER",
               "name": "Badger",
               "decimals": 18,
@@ -1154,7 +1154,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0YTIyMGU2MDk2YjI1ZWFkYjg4MzU4Y2I0NDA2OGEzMjQ4MjU0Njc1",
               "address": "0x4a220E6096B25EADb88358cb44068A3248254675",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "QNT",
               "name": "Quant",
               "decimals": 18,
@@ -1177,7 +1177,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgwMzdhNTRhYWIwNjI2MjhjOWJiYWUxZmRiMTU4M2MxOTU1ODVmZTQx",
               "address": "0x037A54AaB062628C9Bbae1FDB1583c195585fe41",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "LCX",
               "name": "LCX",
               "decimals": 18,
@@ -1200,7 +1200,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2ZTJhNDNiZTBiMWQzM2I3MjZmMGNhM2I4ZGU2MGIzNDgyYjhiMDUw",
               "address": "0x6E2a43be0B1d33b726f0CA3b8de60b3482b8b050",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ARKM",
               "name": "Arkham",
               "decimals": 18,
@@ -1223,7 +1223,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0ZDIyNDQ1MjgwMWFjZWQ4YjJmMGFlYmUxNTUzNzliYjVkNTk0Mzgx",
               "address": "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "APE",
               "name": "ApeCoin",
               "decimals": 18,
@@ -1246,7 +1246,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhkMWQyZWIxYjFlOTBiNjM4NTg4NzI4YjQxMzAxMzdkMjYyYzg3Y2Fl",
               "address": "0xd1d2Eb1B1e90B638588728b4130137D262C87cae",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "GALA",
               "name": "Gala",
               "decimals": 8,
@@ -1269,7 +1269,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgwM2FiNDU4NjM0OTEwYWFkMjBlZjVmMWM4ZWU5NmYxZDZhYzU0OTE5",
               "address": "0x03ab458634910AaD20eF5f1C8ee96F1D6ac54919",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "RAI",
               "name": "Rai Reflex Index",
               "decimals": 18,
@@ -1292,7 +1292,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgxOGFhYTcxMTU3MDVlOGJlOTRiZmZlYmRlNTdhZjliZmMyNjViOTk4",
               "address": "0x18aAA7115705e8be94bfFEBDE57Af9BFc265B998",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "AUDIO",
               "name": "Audius",
               "decimals": 18,
@@ -1315,7 +1315,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgwYjM4MjEwZWExMTQxMTU1N2MxMzQ1N2Q0ZGE3ZGM2ZWE3MzFiODhh",
               "address": "0x0b38210ea11411557c13457D4dA7dC6ea731B88a",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "API3",
               "name": "API3",
               "decimals": 18,
@@ -1338,7 +1338,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgwOGQ5NjdiYjAxMzRmMmQwN2Y3Y2ZiNmUyNDY2ODBjNTM5MjdkZDMw",
               "address": "0x08d967bb0134F2d07f7cfb6E246680c53927DD30",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "MATH",
               "name": "MATH Token",
               "decimals": 18,
@@ -1361,7 +1361,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2MjZlODAzNmRlYjMzM2I0MDhiZTQ2OGY5NTFiZGI0MjQzM2NiZjE4",
               "address": "0x626E8036dEB333b408Be468F951bdB42433cBF18",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "AIOZ",
               "name": "AIOZ Network",
               "decimals": 18,
@@ -1384,7 +1384,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhkYWIzOTZjY2YzZDg0Y2YyZDA3YzQ0NTRlMTBjOGE2ZjViMDA4ZDJi",
               "address": "0xdab396cCF3d84Cf2D07C4454e10C8A6F5b008D2b",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "GFI",
               "name": "Goldfinch",
               "decimals": 18,
@@ -1407,7 +1407,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhjMDBlOTRjYjY2MmMzNTIwMjgyZTZmNTcxNzIxNDAwNGE3ZjI2ODg4",
               "address": "0xc00e94Cb662C3520282E6f5717214004A7f26888",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "COMP",
               "name": "Compound",
               "decimals": 18,
@@ -1430,7 +1430,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg1NTI5NmY2OWY0MGVhNmQyMGU0Nzg1MzNjMTVhNmIwOGI2NTRlNzU4",
               "address": "0x55296f69f40Ea6d20E478533C15A6B08B654E758",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "XYO",
               "name": "XY Oracle",
               "decimals": 18,
@@ -1453,7 +1453,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhmYjVjNjgxNWNhM2FjNzJjZTlmNTAwNjg2OWFlNjdmMThiZjc3MDA2",
               "address": "0xfB5c6815cA3AC72Ce9F5006869AE67f18bF77006",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "PSTAKE",
               "name": "pSTAKE Finance",
               "decimals": 18,
@@ -1476,7 +1476,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg3ZDFhZmE3YjcxOGZiODkzZGIzMGEzYWJjMGNmYzYwOGFhY2ZlYmIw",
               "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "MATIC",
               "name": "Matic Token",
               "decimals": 18,
@@ -1499,7 +1499,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhhYTdhOWNhODdkMzY5NGI1NzU1ZjIxM2I1ZDA0MDk0YjhkMGYwYTZm",
               "address": "0xaA7a9CA87d3694B5755f213B5D04094b8d0F0A6F",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "TRAC",
               "name": "Trace Token",
               "decimals": 18,
@@ -1522,7 +1522,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhkZGIzNDIyNDk3ZTYxZTEzNTQzYmVhMDY5ODljMDc4OTExNzU1NWM1",
               "address": "0xDDB3422497E61e13543BeA06989C0789117555c5",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "COTI",
               "name": "COTI Token",
               "decimals": 18,
@@ -1545,7 +1545,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2YjBiM2E5ODJiNDYzNGFjNjhkZDgzYTRkYmYwMjMxMWNlMzI0MTgx",
               "address": "0x6B0b3a982b4634aC68dD83a4DBF02311cE324181",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ALI",
               "name": "Artificial Liquid Intelligence Token",
               "decimals": 18,
@@ -1568,7 +1568,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2OWFmODFlNzNhNzNiNDBhZGY0ZjNkNDIyM2NkOWIxZWNlNjIzMDc0",
               "address": "0x69af81e73A73B40adF4f3d4223Cd9b1ECE623074",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "MASK",
               "name": "Mask Network",
               "decimals": 18,
@@ -1591,7 +1591,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgxYTdlNGU2Mzc3OGI0ZjEyYTE5OWMwNjJmM2VmZGQyODhhZmNiY2U4",
               "address": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "agEUR",
               "name": "agEUR",
               "decimals": 18,
@@ -1614,7 +1614,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg3N2ZiYTE3OWM3OWRlNWI3NjUzZjY4YjUwMzlhZjk0MGFkYTYwY2Uw",
               "address": "0x77FbA179C79De5B7653F68b5039Af940AdA60ce0",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "FORTH",
               "name": "Ampleforth Governance",
               "decimals": 18,
@@ -1637,7 +1637,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhlYzY3MDA1YzRlNDk4ZWM3ZjU1ZTA5MmJkMWQzNWNiYzQ3YzkxODky",
               "address": "0xec67005c4E498Ec7f55E092bd1d35cbC47C91892",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "MLN",
               "name": "Melon Token",
               "decimals": 18,
@@ -1660,7 +1660,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgzNmU2NmZiYmNlNTFlNGNkNWJkM2M2MmI2MzdlYjQxMWIxODk0OWQ0",
               "address": "0x36E66fbBce51e4cD5bd3C62B637Eb411b18949D4",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "OMNI",
               "name": "Omni Network",
               "decimals": 18,
@@ -1683,7 +1683,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgyNzcwMmEyNjEyNmUwYjM3MDJhZjYzZWUwOWFjNGQxYTA4NGVmNjI4",
               "address": "0x27702a26126e0B3702af63Ee09aC4d1A084EF628",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ALEPH",
               "name": "aleph.im v2",
               "decimals": 18,
@@ -1706,7 +1706,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhlNTNlYzcyN2RiZGViOWUyZDU0NTZjM2JlNDBjZmYwMzFhYjQwYTU1",
               "address": "0xe53EC727dbDEB9E2d5456c3be40cFF031AB40A55",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "SUPER",
               "name": "SuperFarm",
               "decimals": 18,
@@ -1729,7 +1729,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhiZTk4OTUxNDZmN2FmNDMwNDljYTFjMWFlMzU4YjA1NDFlYTQ5NzA0",
               "address": "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "cbETH",
               "name": "Coinbase Wrapped Staked ETH",
               "decimals": 18,
@@ -1752,7 +1752,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg1YWZlMzg1NTM1OGUxMTJiNTY0N2I5NTI3MDllNjE2NWUxYzFlZWVl",
               "address": "0x5aFE3855358E112B5647B952709E6165e1c1eEEe",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "SAFE",
               "name": "Safe Token",
               "decimals": 18,
@@ -1775,7 +1775,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhlNDFkMjQ4OTU3MWQzMjIxODkyNDZkYWZhNWViZGUxZjQ2OTlmNDk4",
               "address": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ZRX",
               "name": "0x Protocol Token",
               "decimals": 18,
@@ -1798,7 +1798,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg3NjFkMzhlNWRkZjZjY2Y2Y2Y3YzU1NzU5ZDUyMTA3NTBiNWQ2MGYz",
               "address": "0x761D38e5ddf6ccf6Cf7c55759d5210750B5D60F3",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ELON",
               "name": "Dogelon",
               "decimals": 18,
@@ -1821,7 +1821,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhhZGUwMGMyODI0NGQ1Y2UxN2Q3MmU0MDMzMGIxYzMxOGNkMTJiN2Mz",
               "address": "0xADE00C28244d5CE17D72E40330B1c318cD12B7c3",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ADX",
               "name": "AdEx Network",
               "decimals": 18,
@@ -1844,7 +1844,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhmNjI5Y2JkOTRkMzc5MWM5MjUwMTUyYmQ4ZGZiZGYzODBlMmEzYjlj",
               "address": "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ENJ",
               "name": "Enjin Coin",
               "decimals": 18,
@@ -1867,7 +1867,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhjMjIxYjdlNjVmZmM4MGRlMjM0YmJiNjY2N2FiZGQ0NjU5M2QzNGYw",
               "address": "0xc221b7E65FfC80DE234bbB6667aBDd46593D34F0",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "wCFG",
               "name": "Wrapped Centrifuge",
               "decimals": 18,
@@ -1890,7 +1890,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg2YzNlYTkwMzY0MDY4NTIwMDYyOTA3NzBiZWRmY2FiYTBlMjNhMGU4",
               "address": "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "PYUSD",
               "name": "PayPal USD",
               "decimals": 6,
@@ -1913,7 +1913,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgxNzc2ZTFmMjZmOThiMWE1ZGY5Y2QzNDc5NTNhMjZkZDNjYjQ2Njcx",
               "address": "0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "NMR",
               "name": "Numeraire",
               "decimals": 18,
@@ -1936,7 +1936,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhhMmNkM2Q0M2M3NzU5NzhhOTZiZGJmMTJkNzMzZDVhMWVkOTRmYjE4",
               "address": "0xA2cd3D43c775978A96BdBf12d733D5A1ED94fb18",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "XCN",
               "name": "Chain",
               "decimals": 18,
@@ -1959,7 +1959,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgwNTZmZDQwOWUxZDdhMTI0YmQ3MDE3NDU5ZGZlYTJmMzg3YjZkNWNk",
               "address": "0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "GUSD",
               "name": "Gemini Dollar",
               "decimals": 2,
@@ -1982,7 +1982,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhmMWY5NTUwMTZlY2JjZDczMjFjNzI2NmJjY2ZiOTZjNjhlYTVlNDli",
               "address": "0xf1f955016EcbCd7321c7266BccFB96c68ea5E49b",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "RLY",
               "name": "Rally",
               "decimals": 18,
@@ -2005,7 +2005,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhjNzI4M2I2NmViMWViNWZiODYzMjdmMDhlMWI1ODE2YjA3MjAyMTJi",
               "address": "0xc7283b66Eb1EB5FB86327f08e1B5816b0720212B",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "TRIBE",
               "name": "Tribe",
               "decimals": 18,
@@ -2028,7 +2028,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg4ZjgyMjFhZmJiMzM5OThkODU4NGEyYjA1NzQ5YmE3M2MzN2E5Mzhh",
               "address": "0x8f8221aFbB33998d8584A2B05749bA73c37a938a",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "REQ",
               "name": "Request Token",
               "decimals": 18,
@@ -2051,7 +2051,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0MmJiZmEyZTc3NzU3YzY0NWVlYWFkMTY1NWUwOTExYTc1NTNlZmJj",
               "address": "0x42bBFa2e77757C645eeaAd1655E0911a7553Efbc",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "BOBA",
               "name": "Boba Token",
               "decimals": 18,
@@ -2074,7 +2074,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhiYzM5NjY4OTg5M2QwNjVmNDFiYzJjNmVjYmVlNWUwMDg1MjMzNDQ3",
               "address": "0xbC396689893D065F41bc2C6EcbeE5e0085233447",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "PERP",
               "name": "Perpetual",
               "decimals": 18,
@@ -2097,7 +2097,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg4MjA3YzFmZmM1YjY4MDRmNjAyNDMyMmNjZjM0ZjI5YzM1NDFhZTI2",
               "address": "0x8207c1FfC5B6804F6024322CcF34F29c3541Ae26",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "OGN",
               "name": "OriginToken",
               "decimals": 18,
@@ -2120,7 +2120,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg3MWFiNzdiN2RiYjRmYTdlMDE3YmMxNTA5MGIyMTYzMjIxNDIwMjgy",
               "address": "0x71Ab77b7dbB4fa7e017BC15090b2163221420282",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "HIGH",
               "name": "Highstreet token",
               "decimals": 18,
@@ -2143,7 +2143,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgxMTExMTExMTExMTdkYzBhYTc4Yjc3MGZhNmE3MzgwMzQxMjBjMzAy",
               "address": "0x111111111117dC0aa78b770fA6A738034120C302",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "1INCH",
               "name": "1INCH Token",
               "decimals": 18,
@@ -2166,7 +2166,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhiYjBlMTdlZjY1ZjgyYWIwMThkOGVkZDc3NmU4ZGQ5NDAzMjdiMjhi",
               "address": "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "AXS",
               "name": "Axie Infinity",
               "decimals": 18,
@@ -2189,7 +2189,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgwYmM1MjljMDBjNjQwMWFlZjZkMjIwYmU4YzZlYTE2NjdmNmFkOTNl",
               "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "YFI",
               "name": "yearn.finance",
               "decimals": 18,
@@ -2212,7 +2212,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhiNTA3MjFiY2Y4ZDY2NGMzMDQxMmNmYmM2Y2Y3YTE1MTQ1MjM0YWQx",
               "address": "0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "ARB",
               "name": "Arbitrum",
               "decimals": 18,
@@ -2235,7 +2235,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHg0ZTNmYmQ1NmNkNTZjM2U3MmMxNDAzZTEwM2I0NWRiOWRhNWI5ZDJi",
               "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "CVX",
               "name": "Convex Finance",
               "decimals": 18,
@@ -2258,7 +2258,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHgzMzM0OWIyODIwNjViMDI4NGQ3NTZmMDU3N2ZiMzljMTU4ZjkzNWU2",
               "address": "0x33349B282065b0284d756F0577FB39c158F935e6",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "MPL",
               "name": "Maple Token",
               "decimals": 18,
@@ -2281,7 +2281,7 @@
           {
               "id": "VG9rZW46RVRIRVJFVU1fMHhiNTI4ZWRiZWYwMTNhZmY4NTVhYzNjNTBiMzgxZjI1M2FmMTNiOTk3",
               "address": "0xB528edBef013aff855ac3c50b381f253aF13b997",
-              "chain": "ETHEREUM",
+              "chain": "ETH",
               "symbol": "AEVO",
               "name": "Aevo",
               "decimals": 18,

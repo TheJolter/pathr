@@ -23,7 +23,9 @@ export default observer(function TokenButton(props: {
   return (
 <>
   <div className="token-button-container flex justify-center items-start">
-    <Tooltip showArrow={true} content={chainName}>
+    <Tooltip showArrow={true} content={chainName}
+      placement="bottom"
+    >
       <Button isIconOnly size="md" fullWidth
         className={`${selected?`border-2 border-[#32CA62]`:''}`}
         style={{background: selected?'rgba(50, 202, 98, 0.4)':undefined}}

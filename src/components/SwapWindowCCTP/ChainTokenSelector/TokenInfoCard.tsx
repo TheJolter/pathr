@@ -9,6 +9,7 @@ import { formatEvmAddr } from '@/components/EvmWalletButton/EvmWalletButton'
 import { BlockchainInfo } from '@/configs/pathr/blockchain-info'
 import { bigNumberFloor } from '@/utils/bigNumberCeilFloor'
 import { useConnectWallet } from '@web3-onboard/react'
+import getTokenImg from '@/utils/get-token-img'
 
 export default observer(function TokenInfoCard(props: {
   tokenInfo: typeof allTokens[number]
@@ -25,6 +26,10 @@ export default observer(function TokenInfoCard(props: {
   const chainIdString = BlockchainInfo[tokenInfo.blockchainName].id.toString(16)
   const balanceKey = `${chainIdString}-${tokenInfo.address}-${address}`.toLowerCase()
 
+  const chainID = BlockchainInfo[tokenInfo.blockchainName].id
+  const tokenAddress = tokenInfo.address
+  const tokenImg = getTokenImg({chainID, tokenAddress})
+
   return (
 <div className="flex items-center rounded-xl px-3 py-2 mt-4 border hover:border-gray-400 cursor-pointer"
   onClick={()=>{
@@ -37,7 +42,7 @@ export default observer(function TokenInfoCard(props: {
   }}
 >
   <img width='32px' height='32px' alt="" className='rounded-full'
-    src={`https://assets.rubic.exchange/assets/${tokenInfo.blockchainNetwork}/${tokenInfo.address}/logo.png`}
+    src={tokenImg}
   />
   <div className="grow flex flex-col justify-between ml-3">
     <div className="flex items-center text-lg">

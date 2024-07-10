@@ -2,6 +2,7 @@ import { Avatar, Badge } from "@nextui-org/react";
 import { observer } from "mobx-react-lite";
 import allTokens from '@/configs/pathr/all-tokens.json'
 import { BlockchainInfo } from "@/configs/pathr/blockchain-info";
+import getTokenImg from "@/utils/get-token-img";
 
 export default observer(function ChainTokenIcon(props: {
   chainName: string,
@@ -10,6 +11,7 @@ export default observer(function ChainTokenIcon(props: {
   const {chainName, tokenAddr} = props
   const tokenInfo = allTokens.find(item=>{return item.address===tokenAddr&&item.blockchainName===chainName})
   const chainInfo = BlockchainInfo[chainName]
+  const tokenImg = getTokenImg({chainID: BlockchainInfo[chainName].id, tokenAddress: tokenAddr})
   return (
 <Badge
   isOneChar
@@ -22,7 +24,7 @@ export default observer(function ChainTokenIcon(props: {
 >
   {!tokenInfo&&<Avatar name=" " className="w-8 h-8 text-large" />}
   {!!tokenInfo&&<img alt="" width='32px' height='32px' className='rounded-full'
-    src={`https://assets.rubic.exchange/assets/${tokenInfo?.blockchainNetwork}/${tokenInfo?.address}/logo.png`}
+    src={tokenImg}
   />}
 </Badge>
   )

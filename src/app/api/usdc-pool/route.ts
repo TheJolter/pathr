@@ -14,6 +14,7 @@ export async function GET(request:NextRequest) {
   const filteredPools = []
   for (const usdcPool of usdcPools) {
     const pool = pools.find(pool => pool.address.toLowerCase() === usdcPool.address.toLowerCase())
+
     filteredPools.push({
       "address": usdcPool.address,
       "name": pool?.name,
@@ -21,9 +22,9 @@ export async function GET(request:NextRequest) {
       "blockchainNetwork": pool?.chain,
       "decimals": pool?.decimals,
       "image": pool?.project.logoUrl,
-      "blockchainName": 'xxx'
+      "blockchainName": pool?.chain
     })
   }
 
-  return NextResponse.json(usdcPools);
+  return NextResponse.json(filteredPools);
 }
