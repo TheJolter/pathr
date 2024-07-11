@@ -48,7 +48,7 @@ export default observer(function Menu() {
       }}
       // style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
       style={noneSelectedStyle}
-    >JOLT</MainButton>
+    >Bridge</MainButton>
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 
     style={menuBgStyle}
