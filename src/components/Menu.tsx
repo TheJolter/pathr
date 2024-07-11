@@ -44,7 +44,7 @@ export default observer(function Menu() {
     >USDC</MainButton>
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
-        window.open('https://bridge.joltify.io')
+        window.open('https://bridge.pathr.io')
       }}
       // style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
       style={noneSelectedStyle}
