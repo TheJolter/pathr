@@ -11,9 +11,9 @@ type Chain = {
   domain: number,
   usdc: string,
   rpc: string,
-  bridgeAddress?: string, // if not set, don't show in source chain selection list
+  bridgeAddress?: string, // pathrOut, if not set, don't show in source chain selection list
   explorer: string,
-  receiverContract?: string, // if not set, don't show in target chain selection list
+  receiverContract?: string, // pathrIn, if not set, don't show in target chain selection list
   uniswapV3Factory: string, // https://docs.uniswap.org/contracts/v3/reference/deployments/base-deployments
 }
 export const CHAINS:Chain[] = [
@@ -41,7 +41,9 @@ export const CHAINS:Chain[] = [
     usdc: '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E',
     rpc: 'https://api.avax.network/ext/bc/C/rpc',
     explorer: 'https://snowtrace.io',
-    uniswapV3Factory: '0x740b1c1de25031C31FF4fC9A62f554A55cdC1baD'
+    uniswapV3Factory: '0x740b1c1de25031C31FF4fC9A62f554A55cdC1baD',
+    // bridgeAddress: ,
+    // receiverContract: ,
   },
   {
     chainName: EVM_BLOCKCHAIN_NAME.ETHEREUM,
@@ -54,6 +56,8 @@ export const CHAINS:Chain[] = [
     rpc: 'https://rpc.ankr.com/eth',
     explorer: 'https://etherscan.io',
     uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984',
+    // bridgeAddress: ,
+    // receiverContract: ,
   },
 
   {
@@ -66,7 +70,9 @@ export const CHAINS:Chain[] = [
     usdc: '0x0b2c639c533813f4aa9d7837caf62653d097ff85',
     rpc: 'https://mainnet.optimism.io',
     explorer: 'https://optimistic.etherscan.io',
-    uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+    uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984',
+    bridgeAddress: '0x32284883b927e060Bd6650911658D081b6b0D38E',
+    receiverContract: '0xA491552e80e7D3F2C728c7422e6509e9E88b75d9',
   },
 
   {
@@ -94,6 +100,8 @@ export const CHAINS:Chain[] = [
     usdc: '0x3c499c542cef5e3811e1192ce70d8cc03d5c3359',
     rpc: 'https://polygon-rpc.com',
     explorer: 'https://polygonscan.com',
-    uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+    uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984',
+    bridgeAddress: '0x2911445aF5144402839284ddC2E1a3B7B580DC99',
+    receiverContract: '0x9b8C3bf7bC255F5a4F05BfF19Cb74A2EB2fafEc7',
   },
 ]
