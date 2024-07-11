@@ -43,6 +43,11 @@ export default observer(function TokenInfoCard(props: {
 >
   <img width='32px' height='32px' alt="" className='rounded-full'
     src={tokenImg}
+    onError={(event) => {
+      const target = event.target as HTMLImageElement;
+      target.onerror = null;
+      target.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png'
+    }}
   />
   <div className="grow flex flex-col justify-between ml-3">
     <div className="flex items-center text-lg">

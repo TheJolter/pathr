@@ -25,6 +25,11 @@ export default observer(function ChainTokenIcon(props: {
   {!tokenInfo&&<Avatar name=" " className="w-8 h-8 text-large" />}
   {!!tokenInfo&&<img alt="" width='32px' height='32px' className='rounded-full'
     src={tokenImg}
+    onError={(event) => {
+      const target = event.target as HTMLImageElement;
+      target.onerror = null;
+      target.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png'
+    }}
   />}
 </Badge>
   )
