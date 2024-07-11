@@ -144,6 +144,18 @@ export default observer(function Review(props: {
       return
     }
 
+    console.log('swapExactInputSingle', {
+      contractAddress: sourceChain.bridgeAddress,
+      amountIn: ethers.BigNumber.from(baseAmountIn),
+      inToken: swapInfo.tokenIn.address,
+      outToken: swapInfo.tokenOut.address,
+      targetChain: ethers.BigNumber.from(targetChain.domain),
+      receiver: address,
+      receiverContract: targetChain.receiverContract,
+      poolFee: ethers.BigNumber.from(Math.round(swapInfo.fee*1000000)),
+      destPoolFee: ethers.BigNumber.from(Math.round(swapInfo.targetFee*1000000))
+    })
+
     swapExactInputSingle({
       contractAddress: sourceChain.bridgeAddress,
       amountIn: ethers.BigNumber.from(baseAmountIn),
