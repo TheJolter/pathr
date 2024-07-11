@@ -1,0 +1,1802 @@
+[
+  {
+    "address": "0x4200000000000000000000000000000000000006",
+    "name": "Wrapped Ether",
+    "symbol": "WETH",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
+    "name": "USD Base Coin",
+    "symbol": "USDbC",
+    "blockchainNetwork": "BASE",
+    "decimals": 6,
+    "image": "https://coin-images.coingecko.com/coins/images/31164/large/baseusdc.jpg?1696529993",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x940181a94A35A4569E4529A3CDfB74e38FD98631",
+    "name": "Aerodrome",
+    "symbol": "AERO",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/31745/large/token.png?1696530564",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+    "name": "LayerZero",
+    "symbol": "ZRO",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22",
+    "name": "Coinbase Wrapped Staked ETH",
+    "symbol": "cbETH",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/27008/large/cbeth.png?1709186989",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
+    "name": "Dai Stablecoin",
+    "symbol": "DAI",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0xfA980cEd6895AC314E7dE34Ef1bFAE90a5AdD21b",
+    "name": "Prime",
+    "symbol": "PRIME",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/29053/large/prime-logo-small-border_%282%29.png?1696528020",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x236aa50979D5f3De3Bd1Eeb40E81137F22ab794b",
+    "name": "Base tBTC v2",
+    "symbol": "tBTC",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x18084fbA666a33d37592fA2633fD49a74DD93a88/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x18dD5B087bCA9920562aFf7A0199b96B9230438b",
+    "name": "Propy",
+    "symbol": "PRO",
+    "blockchainNetwork": "BASE",
+    "decimals": 8,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x226bb599a12C826476e3A771454697EA52E9E220/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0xc3De830EA07524a0761646a6a4e4be0e114a3C83",
+    "name": "Uniswap",
+    "symbol": "UNI",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0xc5fecC3a29Fb57B5024eEc8a2239d4621e111CBE",
+    "name": "1INCH Token",
+    "symbol": "1INCH",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x111111111117dC0aa78b770fA6A738034120C302/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0xD08a2917653d4E460893203471f0000826fb4034",
+    "name": "FARM Reward Token",
+    "symbol": "FARM",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xa0246c9032bC3A600820415aE600c6388619A14D/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x9e1028F5F1D5eDE59748FFceE5532509976840E0",
+    "name": "Compound",
+    "symbol": "COMP",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x22e6966B799c4D5B13BE962E1D117b56327FDa66",
+    "name": "Synthetix Network Token",
+    "symbol": "SNX",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x4158734D47Fc9692176B5085E0F52ee0Da5d47F1",
+    "name": "Balancer",
+    "symbol": "BAL",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xba100000625a3754423978a60c9317c58a424e3D/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x8Ee73c484A26e0A5df2Ee2a4960B789967dd0415",
+    "name": "Curve DAO Token",
+    "symbol": "CRV",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+    "name": "Wrapped Ethereum",
+    "symbol": "WETH",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+    "name": "Tether USD",
+    "symbol": "USDT",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+    "name": "Bridged USDC",
+    "symbol": "USDC.e",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 6,
+    "image": "https://coin-images.coingecko.com/coins/images/30691/large/usdc.png?1696529560",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+    "name": "Wrapped BTC",
+    "symbol": "WBTC",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 8,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x912CE59144191C1204E64559FE8253a0e49E6548",
+    "name": "Arbitrum",
+    "symbol": "ARB",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+    "name": "LayerZero",
+    "symbol": "ZRO",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+    "name": "Dai Stablecoin",
+    "symbol": "DAI",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a",
+    "name": "GMX",
+    "symbol": "GMX",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/arbitrum/assets/0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x13Ad51ed4F1B7e9Dc168d8a00cB3f4dDD85EfA60",
+    "name": "Lido DAO",
+    "symbol": "LDO",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xf97f4df75117a78c1A5a0DBb814Af92458539FB4",
+    "name": "ChainLink Token",
+    "symbol": "LINK",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x289ba1701C2F088cf0faf8B3705246331cB8A839",
+    "name": "Livepeer Token",
+    "symbol": "LPT",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x58b6A8A3302369DAEc383334672404Ee733aB239/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xba5DdD1f9d7F570dc94a51479a000E3BCE967196",
+    "name": "Aave",
+    "symbol": "AAVE",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x9623063377AD1B27544C965cCd7342f7EA7e88C7",
+    "name": "Graph Token",
+    "symbol": "GRT",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc944E90C64B2c07662A292be6244BDf05Cda44a7/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xFa7F8980b0f1E64A2062791cc3b0871572f1F7f0",
+    "name": "Uniswap",
+    "symbol": "UNI",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x11cDb42B0EB46D95f990BeDD4695A6e3fA034978",
+    "name": "Curve DAO Token",
+    "symbol": "CRV",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x25d887Ce7a35172C62FeBFD67a1856F20FaEbB00",
+    "name": "Pepe",
+    "symbol": "PEPE",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/29850/large/pepe-token.jpeg?1696528776",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x9d2F299715D94d8A7E6F5eaa8E654E8c74a988A7",
+    "name": "Frax Share",
+    "symbol": "FXS",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/13423/large/Frax_Shares_icon.png?1696513183",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x6694340fc020c5E6B96567843da2df01b2CE1eb6",
+    "name": "StargateToken",
+    "symbol": "STG",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/24413/large/STG_LOGO.png?1696523595",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x6c84a8f1c29108F47a79964b5Fe888D4f4D0dE40",
+    "name": "tBTC",
+    "symbol": "TBTC",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/11224/large/0x18084fba666a33d37592fa2633fd49a74dd93a88.png?1696511155",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xFA5Ed56A203466CbBC2430a43c66b9D8723528E7",
+    "name": "agEur",
+    "symbol": "agEUR",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/19479/large/agEUR-4.png?1710726218",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x561877b6b3DD7651313794e5F2894B2F18bE0766",
+    "name": "Polygon",
+    "symbol": "MATIC",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x2e9a6Df78E42a30712c10a9Dc4b1C8656f8F2879",
+    "name": "Maker",
+    "symbol": "MKR",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x354A6dA3fcde098F8389cad84b0182725c6C91dE",
+    "name": "Compound",
+    "symbol": "COMP",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
+    "name": "Frax",
+    "symbol": "FRAX",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/13422/large/FRAX_icon.png?1696513182",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x35E6A59F786d9266c7961eA28c7b768B33959cbB",
+    "name": "Pepe",
+    "symbol": "PEPE",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6982508145454Ce325dDbE47a25d4ec3d2311933/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xC8a4EeA31E9B6b61c406DF013DD4FEc76f21E279",
+    "name": "Render Token",
+    "symbol": "RNDR",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xa05245Ade25cC1063EE50Cf7c083B4524c1C4302",
+    "name": "XSGD",
+    "symbol": "XSGD",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x70e8dE73cE538DA2bEEd35d14187F6959a8ecA96/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xd4d42F0b6DEF4CE0383636770eF773390d85c61A",
+    "name": "Sushi",
+    "symbol": "SUSHI",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x93b346b6BC2548dA6A1E7d98E9a421B42541425b",
+    "name": "Liquity USD",
+    "symbol": "LUSD",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5f98805A4E8be255a32880FDeC7F6728C6568bA0/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x74885b4D524d497261259B38900f54e6dbAd2210",
+    "name": "ApeCoin",
+    "symbol": "APE",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4d224452801ACEd8B2F0aebE155379bb5D594381/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x589d35656641d6aB57A545F08cf473eCD9B6D5F7",
+    "name": "GYEN",
+    "symbol": "GYEN",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC08512927D12348F6620a698105e1BAac6EcD911/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8",
+    "name": "Balancer",
+    "symbol": "BAL",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xba100000625a3754423978a60c9317c58a424e3D/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x6314C31A7a1652cE482cffe247E9CB7c3f4BB9aF",
+    "name": "1inch",
+    "symbol": "1INCH",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x111111111117dC0aa78b770fA6A738034120C302/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+    "name": "TetherToken",
+    "symbol": "USDt",
+    "blockchainNetwork": "AVALANCHE",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+    "blockchainName": "AVALANCHE"
+  },
+  {
+    "address": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+    "name": "Wrapped AVAX",
+    "symbol": "WAVAX",
+    "blockchainNetwork": "AVALANCHE",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/15075/large/wrapped-avax.png?1696514734",
+    "blockchainName": "AVALANCHE"
+  },
+  {
+    "address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
+    "name": "Wrapped Ether",
+    "symbol": "WETH.e",
+    "blockchainNetwork": "AVALANCHE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+    "blockchainName": "AVALANCHE"
+  },
+  {
+    "address": "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+    "name": "Bridged USDC",
+    "symbol": "USDC.e",
+    "blockchainNetwork": "AVALANCHE",
+    "decimals": 6,
+    "image": "https://coin-images.coingecko.com/coins/images/23263/large/3408.png?1696522483",
+    "blockchainName": "AVALANCHE"
+  },
+  {
+    "address": "0x50b7545627a5162F82A992c33b87aDc75187B218",
+    "name": "Wrapped BTC",
+    "symbol": "WBTC",
+    "blockchainNetwork": "AVALANCHE",
+    "decimals": 8,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+    "blockchainName": "AVALANCHE"
+  },
+  {
+    "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+    "name": "LayerZero",
+    "symbol": "ZRO",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x130966628846BFd36ff31a822705796e8cb8C18D",
+    "name": "Magic Internet Money",
+    "symbol": "MIM",
+    "blockchainNetwork": "AVALANCHE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x99D8a9C45b2ecA8864373A26D1459e3Dff1e17F3/logo.png",
+    "blockchainName": "AVALANCHE"
+  },
+  {
+    "address": "0x4200000000000000000000000000000000000006",
+    "name": "Wrapped Ether",
+    "symbol": "WETH",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+    "name": "Bridged USDC",
+    "symbol": "USDC.e",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+    "name": "Tether USD",
+    "symbol": "USDT",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x4200000000000000000000000000000000000042",
+    "name": "Optimism",
+    "symbol": "OP",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/optimism/assets/0x4200000000000000000000000000000000000042/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x68f180fcCe6836688e9084f035309E29Bf0A2095",
+    "name": "Wrapped BTC",
+    "symbol": "WBTC",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 8,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+    "name": "Dai Stablecoin",
+    "symbol": "DAI",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+    "name": "LayerZero",
+    "symbol": "ZRO",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x8700dAec35aF8Ff88c16BdF0418774CB3D7599B4",
+    "name": "Synthetix Network Token",
+    "symbol": "SNX",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6",
+    "name": "ChainLink Token",
+    "symbol": "LINK",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x76FB31fb4af56892A25e32cFC43De717950c9278",
+    "name": "Aave",
+    "symbol": "AAVE",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x9e1028F5F1D5eDE59748FFceE5532509976840E0",
+    "name": "Compound",
+    "symbol": "COMP",
+    "blockchainNetwork": "BASE",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+    "blockchainName": "BASE"
+  },
+  {
+    "address": "0x6c84a8f1c29108F47a79964b5Fe888D4f4D0dE40",
+    "name": "tBTC",
+    "symbol": "TBTC",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/11224/large/0x18084fba666a33d37592fa2633fd49a74dd93a88.png?1696511155",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x0994206dfE8De6Ec6920FF4D779B0d950605Fb53",
+    "name": "Curve DAO Token",
+    "symbol": "CRV",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db",
+    "name": "Velodrome Finance",
+    "symbol": "VELO",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/25783/large/velo.png?1696524870",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x2E3D870790dC77A83DD1d18184Acc7439A53f475",
+    "name": "Frax",
+    "symbol": "FRAX",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x853d955aCEf822Db058eb8505911ED77F175b99e/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x7FB688CCf682d58f86D7e38e03f9D22e7705448B",
+    "name": "Rai Reflex Index",
+    "symbol": "RAI",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x03ab458634910AaD20eF5f1C8ee96F1D6ac54919/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x6fd9d7AD17242c41f7131d257212c54A0e816691",
+    "name": "Uniswap",
+    "symbol": "UNI",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x65559aA14915a70190438eF90104769e5E890A00",
+    "name": "Ethereum Name Service",
+    "symbol": "ENS",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x1EBA7a6a72c894026Cd654AC5CDCF83A46445B08",
+    "name": "Gitcoin",
+    "symbol": "GTC",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xDe30da39c46104798bB5aA3fe8B9e0e1F348163F/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0xFdb794692724153d1488CcdBE0C56c252596735F",
+    "name": "Lido DAO",
+    "symbol": "LDO",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0xc40F949F8a4e094D1b49a23ea9241D289B7b2819",
+    "name": "Liquity USD",
+    "symbol": "LUSD",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5f98805A4E8be255a32880FDeC7F6728C6568bA0/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x5A5fFf6F753d7C11A56A52FE47a177a87e431655",
+    "name": "Synapse",
+    "symbol": "SYN",
+    "blockchainNetwork": "OPTIMISM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/18024/large/synapse_social_icon.png?1696517540",
+    "blockchainName": "OPTIMISM"
+  },
+  {
+    "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+    "name": "Bridged USDC",
+    "symbol": "USDC.e",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+    "name": "Wrapped Matic",
+    "symbol": "WMATIC",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/polygon/assets/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+    "name": "Wrapped Ether",
+    "symbol": "WETH",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+    "name": "(PoS) Tether USD",
+    "symbol": "USDT",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6",
+    "name": "(PoS) Wrapped BTC",
+    "symbol": "WBTC",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 8,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+    "name": "(PoS) Dai Stablecoin",
+    "symbol": "DAI",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x53E0bca35eC356BD5ddDFebbD1Fc0fD03FaBad39",
+    "name": "ChainLink Token",
+    "symbol": "LINK",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xD6DF932A45C0f255f85145f286eA0b292B21C90B",
+    "name": "Aave (PoS)",
+    "symbol": "AAVE",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x61299774020dA444Af134c82fa83E3810b309991",
+    "name": "Render Token",
+    "symbol": "RNDR",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xC3C7d422809852031b44ab29EEC9F1EfF2A58756",
+    "name": "Lido DAO Token (PoS)",
+    "symbol": "LDO",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xDC3326e71D45186F113a2F448984CA0e8D201995",
+    "name": "XSGD",
+    "symbol": "XSGD",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x70e8dE73cE538DA2bEEd35d14187F6959a8ecA96/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xb33EaAd8d922B1083446DC23f610c2567fB5180f",
+    "name": "Uniswap (PoS)",
+    "symbol": "UNI",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
+    "name": "Stargate Finance",
+    "symbol": "STG",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/24413/large/STG_LOGO.png?1696523595",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xd93f7E271cB87c23AaA73edC008A79646d1F9912",
+    "name": "Wrapped SOL (Wormhole)",
+    "symbol": "SOL",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 9,
+    "image": "https://coin-images.coingecko.com/coins/images/22876/large/SOL_wh_small.png?1696522175",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xBbba073C31bF03b8ACf7c28EF0738DeCF3695683",
+    "name": "SAND",
+    "symbol": "SAND",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x3845badAde8e6dFF049820680d1F14bD3903a5d0/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xd0258a3fD00f38aa8090dfee343f10A9D4d30D3F",
+    "name": "VOXEL Token",
+    "symbol": "VOXEL",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/polygon/assets/0xd0258a3fD00f38aa8090dfee343f10A9D4d30D3F/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a",
+    "name": "Sushi",
+    "symbol": "SUSHI",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x00e5646f60AC6Fb446f621d146B6E1886f002905",
+    "name": "Rai Reflex Index (PoS)",
+    "symbol": "RAI",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x03ab458634910AaD20eF5f1C8ee96F1D6ac54919/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x172370d5Cd63279eFa6d502DAB29171933a610AF",
+    "name": "CRV (PoS)",
+    "symbol": "CRV",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x6f7C932e7684666C9fd1d44527765433e01fF61d",
+    "name": "MAKER (PoS)",
+    "symbol": "MKR",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x0B220b82F3eA3B7F6d9A1D8ab58930C064A2b5Bf",
+    "name": "Golem Network Token (PoS)",
+    "symbol": "GLM",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7DD9c5Cba05E151C895FDe1CF355C9A1D5DA6429/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+    "name": "LayerZero",
+    "symbol": "ZRO",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0x9a71012B13CA4d3D0Cdc72A177DF3ef03b0E76A3",
+    "name": "Balancer",
+    "symbol": "BAL",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xba100000625a3754423978a60c9317c58a424e3D/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89",
+    "name": "Frax",
+    "symbol": "FRAX",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/13422/large/FRAX_icon.png?1696513182",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x553d3D295e0f695B9228246232eDF400ed3560B5",
+    "name": "Paxos Gold (PoS)",
+    "symbol": "PAXG",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x45804880De22913dAFE09f4980848ECE6EcbAf78/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xE0B52e49357Fd4DAf2c15e02058DCE6BC0057db4",
+    "name": "agEur",
+    "symbol": "agEUR",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/19479/large/agEUR-4.png?1710726218",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x5fe2B58c013d7601147DcdD68C143A77499f5531",
+    "name": "Graph Token (PoS)",
+    "symbol": "GRT",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc944E90C64B2c07662A292be6244BDf05Cda44a7/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x9ff62d1FC52A907B6DCbA8077c2DDCA6E6a9d3e1",
+    "name": "Forta",
+    "symbol": "FORT",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x50B728D8D964fd00C2d0AAD81718b71311feF68a",
+    "name": "Synthetix Network Token",
+    "symbol": "SNX",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xA1c57f48F0Deb89f569dFbE6E2B7f46D33606fD4",
+    "name": "(PoS) Decentraland MANA",
+    "symbol": "MANA",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x0F5D2fB29fb7d3CFeE444a200298f468908cC942/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x6f8a06447Ff6FcF75d803135a7de15CE88C1d4ec",
+    "name": "SHIBA INU (PoS)",
+    "symbol": "SHIB",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x8505b9d2254A7Ae468c0E9dd10Ccea3A837aef5c",
+    "name": "Compound",
+    "symbol": "COMP",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x104592a158490a9228070E0A8e5343B499e125D0",
+    "name": "Frax",
+    "symbol": "FRAX",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x853d955aCEf822Db058eb8505911ED77F175b99e/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x385Eeac5cB85A38A9a07A70c73e0a3271CfB54A7",
+    "name": "Aavegotchi",
+    "symbol": "GHST",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x3F382DbD960E3a9bbCeaE22651E88158d2791550/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x7583FEDDbceFA813dc18259940F76a02710A8905",
+    "name": "Fetch ai",
+    "symbol": "FET",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x9c2C5fd7b07E95EE044DDeba0E97a665F142394f",
+    "name": "1inch",
+    "symbol": "1INCH",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x111111111117dC0aa78b770fA6A738034120C302/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xE0339c80fFDE91F3e20494Df88d4206D86024cdF",
+    "name": "Dogelon Mars",
+    "symbol": "ELON",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x761D38e5ddf6ccf6Cf7c55759d5210750B5D60F3/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x282d8efCe846A88B159800bd4130ad77443Fa1A1",
+    "name": "Ocean Protocol",
+    "symbol": "OCEAN",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x967da4048cD07aB37855c090aAF366e4ce1b9F48/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xB7b31a6BC18e48888545CE79e83E06003bE70930",
+    "name": "ApeCoin",
+    "symbol": "APE",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4d224452801ACEd8B2F0aebE155379bb5D594381/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x101A023270368c0D50BFfb62780F4aFd4ea79C35",
+    "name": "Ankr",
+    "symbol": "ANKR",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xf8F9efC0db77d8881500bb06FF5D6ABc3070E695",
+    "name": "Synapse",
+    "symbol": "SYN",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/18024/large/synapse_social_icon.png?1696517540",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0x831753DD7087CaC61aB5644b308642cc1c33Dc13",
+    "name": "Quickswap",
+    "symbol": "QUICK",
+    "blockchainNetwork": "POLYGON",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6c28AeF8977c9B773996d0e8376d2EE379446F2f/logo.png",
+    "blockchainName": "POLYGON"
+  },
+  {
+    "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "name": "Wrapped Ether",
+    "symbol": "WETH",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "name": "Tether USD",
+    "symbol": "USDT",
+    "blockchainNetwork": "ETH",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "name": "Wrapped BTC",
+    "symbol": "WBTC",
+    "blockchainNetwork": "ETH",
+    "decimals": 8,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "name": "Dai Stablecoin",
+    "symbol": "DAI",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
+    "name": "Maker",
+    "symbol": "MKR",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+    "name": "Pepe",
+    "symbol": "PEPE",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6982508145454Ce325dDbE47a25d4ec3d2311933/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x57e114B691Db790C35207b2e685D4A43181e6061",
+    "name": "ENA",
+    "symbol": "ENA",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/36530/large/ethena.png?1711701436",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+    "name": "Uniswap",
+    "symbol": "UNI",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6985884C4392D348587B19cb9eAAf157F13271cd",
+    "name": "LayerZero",
+    "symbol": "ZRO",
+    "blockchainNetwork": "ARBITRUM",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/28206/large/ftxG9_TJ_400x400.jpeg?1696527208",
+    "blockchainName": "ARBITRUM"
+  },
+  {
+    "address": "0xfAbA6f8e4a5E8Ab82F62fe7C39859FA577269BE3",
+    "name": "Ondo",
+    "symbol": "ONDO",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/26580/large/ONDO.png?1696525656",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72",
+    "name": "Ethereum Name Service",
+    "symbol": "ENS",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
+    "name": "Wrapped SOL (Wormhole)",
+    "symbol": "SOL",
+    "blockchainNetwork": "ETH",
+    "decimals": 9,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xD31a59c85aE9D8edEFeC411D448f90841571b89c/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x62D0A8458eD7719FDAF978fe5929C6D342B0bFcE",
+    "name": "Beam",
+    "symbol": "BEAM",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/32417/large/chain-logo.png?1698114384",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xb23d80f5FefcDDaa212212F028021B41DEd428CF",
+    "name": "Prime",
+    "symbol": "PRIME",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/29053/large/prime-logo-small-border_%282%29.png?1696528020",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+    "name": "Curve DAO Token",
+    "symbol": "CRV",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xD533a949740bb3306d119CC777fa900bA034cd52/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    "name": "ChainLink Token",
+    "symbol": "LINK",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D",
+    "name": "LQTY",
+    "symbol": "LQTY",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85",
+    "name": "Fetch",
+    "symbol": "FET",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xaea46A60368A7bD060eec7DF8CBa43b7EF41Ad85/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x467719aD09025FcC6cF6F8311755809d45a5E5f3",
+    "name": "Axelar",
+    "symbol": "AXL",
+    "blockchainNetwork": "ETH",
+    "decimals": 6,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x467719aD09025FcC6cF6F8311755809d45a5E5f3/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x31c8EAcBFFdD875c74b94b077895Bd78CF1E64A3",
+    "name": "Radicle",
+    "symbol": "RAD",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x31c8EAcBFFdD875c74b94b077895Bd78CF1E64A3/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24",
+    "name": "Render Token",
+    "symbol": "RNDR",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6De037ef9aD2725EB40118Bb1702EBb27e4Aeb24/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xFe0c30065B384F05761f15d0CC899D4F9F9Cc0eB",
+    "name": "ether.fi governance token",
+    "symbol": "ETHFI",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/35958/large/etherfi.jpeg?1710254562",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6",
+    "name": "StargateToken",
+    "symbol": "STG",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+    "name": "Aave Token",
+    "symbol": "AAVE",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+    "name": "LUSD Stablecoin",
+    "symbol": "LUSD",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5f98805A4E8be255a32880FDeC7F6728C6568bA0/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x0954906da0Bf32d5479e25f46056d22f08464cab",
+    "name": "Index",
+    "symbol": "INDEX",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x0954906da0Bf32d5479e25f46056d22f08464cab/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x18084fbA666a33d37592fA2633fD49a74DD93a88",
+    "name": "tBTC v2",
+    "symbol": "tBTC",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x18084fbA666a33d37592fA2633fD49a74DD93a88/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x45804880De22913dAFE09f4980848ECE6EcbAf78",
+    "name": "Paxos Gold",
+    "symbol": "PAXG",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x45804880De22913dAFE09f4980848ECE6EcbAf78/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xc944E90C64B2c07662A292be6244BDf05Cda44a7",
+    "name": "Graph Token",
+    "symbol": "GRT",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc944E90C64B2c07662A292be6244BDf05Cda44a7/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x853d955aCEf822Db058eb8505911ED77F175b99e",
+    "name": "Frax",
+    "symbol": "FRAX",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x853d955aCEf822Db058eb8505911ED77F175b99e/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xF57e7e7C23978C3cAEC3C3548E3D615c346e79fF",
+    "name": "Immutable X",
+    "symbol": "IMX",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xF57e7e7C23978C3cAEC3C3548E3D615c346e79fF/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x4E15361FD6b4BB609Fa63C81A2be19d873717870",
+    "name": "Fantom Token",
+    "symbol": "FTM",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4E15361FD6b4BB609Fa63C81A2be19d873717870/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xfB7B4564402E5500dB5bB6d63Ae671302777C75a",
+    "name": "DEXTools",
+    "symbol": "DEXT",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xfB7B4564402E5500dB5bB6d63Ae671302777C75a/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32",
+    "name": "Lido DAO Token",
+    "symbol": "LDO",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5A98FcBEA516Cf06857215779Fd812CA3beF1B32/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29",
+    "name": "Forta",
+    "symbol": "FORT",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x41545f8b9472D758bB669ed8EaEEEcD7a9C4Ec29/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x9E32b13ce7f2E80A01932B42553652E053D6ed8e",
+    "name": "Metis Token",
+    "symbol": "Metis",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x9E32b13ce7f2E80A01932B42553652E053D6ed8e/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+    "name": "SHIBA INU",
+    "symbol": "SHIB",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6123B0049F904d730dB3C36a31167D9d4121fA6B",
+    "name": "Ribbon",
+    "symbol": "RBN",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6123B0049F904d730dB3C36a31167D9d4121fA6B/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x967da4048cD07aB37855c090aAF366e4ce1b9F48",
+    "name": "Ocean Token",
+    "symbol": "OCEAN",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x967da4048cD07aB37855c090aAF366e4ce1b9F48/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xFca59Cd816aB1eaD66534D82bc21E7515cE441CF",
+    "name": "Rarible",
+    "symbol": "RARI",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xFca59Cd816aB1eaD66534D82bc21E7515cE441CF/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x5fAa989Af96Af85384b8a938c2EdE4A7378D9875",
+    "name": "Project Galaxy",
+    "symbol": "GAL",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5fAa989Af96Af85384b8a938c2EdE4A7378D9875/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x5732046A883704404F284Ce41FfADd5b007FD668",
+    "name": "Bluzelle Token",
+    "symbol": "BLZ",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x5732046A883704404F284Ce41FfADd5b007FD668/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x4691937a7508860F876c9c0a2a617E7d9E945D4B",
+    "name": "Wootrade Network",
+    "symbol": "WOO",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4691937a7508860F876c9c0a2a617E7d9E945D4B/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
+    "name": "Badger",
+    "symbol": "BADGER",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x3472A5A71965499acd81997a54BBA8D852C6E53d/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x4a220E6096B25EADb88358cb44068A3248254675",
+    "name": "Quant",
+    "symbol": "QNT",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4a220E6096B25EADb88358cb44068A3248254675/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x037A54AaB062628C9Bbae1FDB1583c195585fe41",
+    "name": "LCX",
+    "symbol": "LCX",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x037A54AaB062628C9Bbae1FDB1583c195585fe41/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6E2a43be0B1d33b726f0CA3b8de60b3482b8b050",
+    "name": "Arkham",
+    "symbol": "ARKM",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/30929/large/Arkham_Logo_CG.png?1696529771",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+    "name": "ApeCoin",
+    "symbol": "APE",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4d224452801ACEd8B2F0aebE155379bb5D594381/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xd1d2Eb1B1e90B638588728b4130137D262C87cae",
+    "name": "Gala",
+    "symbol": "GALA",
+    "blockchainNetwork": "ETH",
+    "decimals": 8,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xd1d2Eb1B1e90B638588728b4130137D262C87cae/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x03ab458634910AaD20eF5f1C8ee96F1D6ac54919",
+    "name": "Rai Reflex Index",
+    "symbol": "RAI",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x03ab458634910AaD20eF5f1C8ee96F1D6ac54919/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x18aAA7115705e8be94bfFEBDE57Af9BFc265B998",
+    "name": "Audius",
+    "symbol": "AUDIO",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x18aAA7115705e8be94bfFEBDE57Af9BFc265B998/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xdab396cCF3d84Cf2D07C4454e10C8A6F5b008D2b",
+    "name": "Goldfinch",
+    "symbol": "GFI",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdab396cCF3d84Cf2D07C4454e10C8A6F5b008D2b/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xc00e94Cb662C3520282E6f5717214004A7f26888",
+    "name": "Compound",
+    "symbol": "COMP",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc00e94Cb662C3520282E6f5717214004A7f26888/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x55296f69f40Ea6d20E478533C15A6B08B654E758",
+    "name": "XY Oracle",
+    "symbol": "XYO",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x55296f69f40Ea6d20E478533C15A6B08B654E758/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xfB5c6815cA3AC72Ce9F5006869AE67f18bF77006",
+    "name": "pSTAKE Finance",
+    "symbol": "PSTAKE",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xfB5c6815cA3AC72Ce9F5006869AE67f18bF77006/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
+    "name": "Matic Token",
+    "symbol": "MATIC",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6B0b3a982b4634aC68dD83a4DBF02311cE324181",
+    "name": "Artificial Liquid Intelligence Token",
+    "symbol": "ALI",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x6B0b3a982b4634aC68dD83a4DBF02311cE324181/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x69af81e73A73B40adF4f3d4223Cd9b1ECE623074",
+    "name": "Mask Network",
+    "symbol": "MASK",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x69af81e73A73B40adF4f3d4223Cd9b1ECE623074/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8",
+    "name": "agEUR",
+    "symbol": "agEUR",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/19479/large/agEUR-4.png?1710726218",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xec67005c4E498Ec7f55E092bd1d35cbC47C91892",
+    "name": "Melon Token",
+    "symbol": "MLN",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xec67005c4E498Ec7f55E092bd1d35cbC47C91892/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x27702a26126e0B3702af63Ee09aC4d1A084EF628",
+    "name": "aleph.im v2",
+    "symbol": "ALEPH",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x27702a26126e0B3702af63Ee09aC4d1A084EF628/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xe53EC727dbDEB9E2d5456c3be40cFF031AB40A55",
+    "name": "SuperFarm",
+    "symbol": "SUPER",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xe53EC727dbDEB9E2d5456c3be40cFF031AB40A55/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
+    "name": "Coinbase Wrapped Staked ETH",
+    "symbol": "cbETH",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/27008/large/cbeth.png?1709186989",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x5aFE3855358E112B5647B952709E6165e1c1eEEe",
+    "name": "Safe Token",
+    "symbol": "SAFE",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://coin-images.coingecko.com/coins/images/27032/large/Artboard_1_copy_8circle-1.png?1696526084",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
+    "name": "0x Protocol Token",
+    "symbol": "ZRX",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xE41d2489571d322189246DaFA5ebDe1F4699F498/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x761D38e5ddf6ccf6Cf7c55759d5210750B5D60F3",
+    "name": "Dogelon",
+    "symbol": "ELON",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x761D38e5ddf6ccf6Cf7c55759d5210750B5D60F3/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c",
+    "name": "Enjin Coin",
+    "symbol": "ENJ",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xc221b7E65FfC80DE234bbB6667aBDd46593D34F0",
+    "name": "Wrapped Centrifuge",
+    "symbol": "wCFG",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc221b7E65FfC80DE234bbB6667aBDd46593D34F0/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8",
+    "name": "PayPal USD",
+    "symbol": "PYUSD",
+    "blockchainNetwork": "ETH",
+    "decimals": 6,
+    "image": "https://coin-images.coingecko.com/coins/images/31212/large/PYUSD_Logo_%282%29.png?1696530039",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671",
+    "name": "Numeraire",
+    "symbol": "NMR",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1776e1F26f98b1A5dF9cD347953a26dd3Cb46671/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd",
+    "name": "Gemini Dollar",
+    "symbol": "GUSD",
+    "blockchainNetwork": "ETH",
+    "decimals": 2,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xc7283b66Eb1EB5FB86327f08e1B5816b0720212B",
+    "name": "Tribe",
+    "symbol": "TRIBE",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xc7283b66Eb1EB5FB86327f08e1B5816b0720212B/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x42bBFa2e77757C645eeaAd1655E0911a7553Efbc",
+    "name": "Boba Token",
+    "symbol": "BOBA",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x42bBFa2e77757C645eeaAd1655E0911a7553Efbc/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xbC396689893D065F41bc2C6EcbeE5e0085233447",
+    "name": "Perpetual",
+    "symbol": "PERP",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xbC396689893D065F41bc2C6EcbeE5e0085233447/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x111111111117dC0aa78b770fA6A738034120C302",
+    "name": "1INCH Token",
+    "symbol": "1INCH",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x111111111117dC0aa78b770fA6A738034120C302/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
+    "name": "Axie Infinity",
+    "symbol": "AXS",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
+    "name": "yearn.finance",
+    "symbol": "YFI",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1",
+    "name": "Arbitrum",
+    "symbol": "ARB",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+    "name": "Convex Finance",
+    "symbol": "CVX",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B/logo.png",
+    "blockchainName": "ETH"
+  },
+  {
+    "address": "0x33349B282065b0284d756F0577FB39c158F935e6",
+    "name": "Maple Token",
+    "symbol": "MPL",
+    "blockchainNetwork": "ETH",
+    "decimals": 18,
+    "image": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x33349B282065b0284d756F0577FB39c158F935e6/logo.png",
+    "blockchainName": "ETH"
+  }
+]

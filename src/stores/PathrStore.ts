@@ -22,7 +22,7 @@ export default class PathrStore {
   }
 
   @observable
-  fromChainTokenAddr: string|null = '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9' // ADDR0
+  fromChainTokenAddr: string|null = '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9'.toLowerCase() // ADDR0
   @action
   setFromChainTokenAddr(fromChainTokenAddr: string|null) {
     this.fromChainTokenAddr = fromChainTokenAddr

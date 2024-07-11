@@ -76,17 +76,24 @@ export default observer(function ChainTokenSelector(props: {
 
   <div className="grid grid-cols-6 gap-y-4">
     {Object.keys(BlockchainInfo).map((chainName: string, index)=>{
+
+      // only show Arbitrum chain
       if (
         chainName!==EVM_BLOCKCHAIN_NAME.ARBITRUM
         && displayStore.showChainTokenSelector==='from'
         && false
       ) return
-      const chainID = BlockchainInfo[chainName].id
-      if (!CHAINS.find(item=>item.chainId===chainID)) return
-      if (
-        displayStore.showChainTokenSelector==='to'
-        && chainName===pathrStore.fromChainName
-      ) return
+
+      // only show CCTP chains
+      // const chainID = BlockchainInfo[chainName].id
+      // if (!CHAINS.find(item=>item.chainId===chainID)) return
+
+      // only show the target chain that is not the same as the source chain
+      // if (
+      //   displayStore.showChainTokenSelector==='to'
+      //   && chainName===pathrStore.fromChainName
+      // ) return
+
       return <TokenButton chainName={chainName} key={`BackBtn-${index}`} />
     })}
   </div>
