@@ -26,7 +26,8 @@ export const CHAINS:Chain[] = [
     domain: 3,
     usdc: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
     rpc: 'https://arb1.arbitrum.io/rpc',
-    bridgeAddress: '0x3AE6a19b84Dec3d7a3725360D0d06494006894A3',
+    bridgeAddress: '0x5050ce315492080ed93b398479f3cE5c1A4f6300',
+    receiverContract: '0xa8B9DF47Ea16aB48ecf212B48a1F84b9DD4Fd0F0',
     explorer: 'https://arbiscan.io',
     uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
   },
@@ -78,7 +79,8 @@ export const CHAINS:Chain[] = [
     usdc: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
     rpc: 'https://1rpc.io/base', // 'https://mainnet.base.org', // 'https://1rpc.io/base',
     explorer: 'https://base.blockscout.com',
-    receiverContract: '0x30E0b14AF367Ed65c45c889C6531Bdb584B71278',
+    bridgeAddress: '0x4602B7DcA8fD3005F57d7710ba70a689F87Ee1c3',
+    receiverContract: '0x76ad9e4aE5c4Eb3e52A8D23636fbaa04E63a9601',
     uniswapV3Factory: '0x33128a8fC17869897dcE68Ed026d694621f6FDfD',
   },
 
