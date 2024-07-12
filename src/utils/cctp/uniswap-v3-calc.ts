@@ -49,6 +49,7 @@ Promise<FeePool[]> {
       continue
     }
   }
+  console.log('feePools', feePools)
   if (feePools.length>0) return feePools
 
   throw new Error(`No pool found for token pair ${tokenA.symbol}/${tokenB.symbol} on ${tokenA.chainId}`)
@@ -79,6 +80,13 @@ export async function getPool(tokenA: Token, tokenB: Token, provider: ethers.pro
     ])
 
     const [sqrtPriceX96, tick] = [slot0[0], slot0[1]]
+
+    console.log({
+      fee: feePool.fee,
+      sqrtPriceX96: sqrtPriceX96.toString(),
+      liquidity: liquidity.toString(),
+      tick
+    })
 
     if (_liquidity.lt(liquidity)) {
         _fee = feePool.fee

@@ -7,7 +7,7 @@ import { EIP1193Provider } from "@web3-onboard/core";
 import { SDK as RubicSDK } from "rubic-sdk";
 import { OWN_CHAINS } from "@/configs/common";
 
-export default function calcRouter(params: {
+export default function calcRouterPathr(params: {
   pathrStore: PathrStore,
   inputStore: InputStore,
   // evmWalletStore: EvmWalletStore

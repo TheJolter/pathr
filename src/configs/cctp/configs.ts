@@ -42,8 +42,8 @@ export const CHAINS:Chain[] = [
     rpc: 'https://api.avax.network/ext/bc/C/rpc',
     explorer: 'https://snowtrace.io',
     uniswapV3Factory: '0x740b1c1de25031C31FF4fC9A62f554A55cdC1baD',
-    // bridgeAddress: ,
-    // receiverContract: ,
+    bridgeAddress: '0x32284883b927e060Bd6650911658D081b6b0D38E',
+    receiverContract: '0xA491552e80e7D3F2C728c7422e6509e9E88b75d9',
   },
   {
     chainName: EVM_BLOCKCHAIN_NAME.ETHEREUM,
