@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSackDollar } from '@fortawesome/free-solid-svg-icons'
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
+import { CHAINS } from "@/configs/cctp/configs"
+import { bigNumberFloor } from "@/utils/bigNumberCeilFloor"
 
 export default observer(function ProviderCCTP(props: {
   className?: string,
@@ -17,11 +19,16 @@ export default observer(function ProviderCCTP(props: {
   const displayStore = useStore('displayStore')
   const pathrStore = useStore('pathrStore')
   const cctpStore = useStore('cctpStore')
+  const apiDataStore = useStore('apiDataStore')
   const swapInfo = cctpStore.swapInfo
 
   const { theme } = useTheme()
 
   const [background, setBackground] = useState('')
+
+  const targetChain =  CHAINS.find(chain=>chain.chainName===pathrStore.toChainName)
+  let platformFee = apiDataStore.platformFees.find(fee=>fee.chainID===targetChain?.chainId)?.feeUSDC || '0'
+  platformFee = bigNumberFloor(platformFee, 2).toFixed()
 
   useEffect(()=>{
     if (theme==='dark') {
@@ -62,7 +69,7 @@ export default observer(function ProviderCCTP(props: {
         <FontAwesomeIcon icon={faSackDollar} className="text-gray-400 mr-2" />
       </Tooltip> */}
       <div className="text-gray-400">
-        Fee: {(((swapInfo?.fee||0)+(swapInfo?.targetFee||0))*100).toFixed(2)}%
+        Fee: {(((swapInfo?.fee||0)+(swapInfo?.targetFee||0))*100).toFixed(2)}% + {platformFee} USDC
       </div>
     </div>
     <div className="flex items-center grow justify-end">

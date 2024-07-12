@@ -4,6 +4,7 @@ import { isUsdc } from "./isUsdc";
 import { CHAINS } from "@/configs/cctp/configs";
 import ApiDataStore from "@/stores/ApiDataStore";
 import { getSwapInfo } from "./uniswap-v3-calc";
+import bn from "../bn";
 
 // source token is USDC, target token is not USDC: only calc on target chain, usdc -> tokenOut
 // source and target token is not USDC: calc: in source chian, tokenIn -> usdc, in target chain, usdc -> tokenOut
@@ -26,12 +27,17 @@ export default function calcRouter({
   slippage: number,
   targetFee: number
 }> {
+  const feeUSDC = apiDataStore.platformFees.find(fee=>fee.chainID===tokenOut.chainId)?.feeUSDC || '0'
   return new Promise((resolve, reject)=>{
     if (isUsdc(tokenIn) && isUsdc(tokenOut)) {
+      let _amountOut = bn(amountIn).minus(feeUSDC)
+      if (_amountOut.lt(0)) {
+        _amountOut = bn(0)
+      }
       resolve({
-        amountOut: amountIn,
+        amountOut: _amountOut.toFixed(),
         fee: 0,
-        slippage: 0,
+        slippage: 0, // _amountOut.minus(amountIn).div(amountIn).toNumber(),
         targetFee: 0
       })
       return
@@ -51,7 +57,14 @@ export default function calcRouter({
     if (isUsdc(tokenIn) && !isUsdc(tokenOut)) {
       // only calc on target chain, usdc -> tokenOut
       console.log({amountIn, USDCTokenTarget, tokenOut, rpc: chainOut.rpc})
-      getSwapInfo({amountIn, tokenIn: USDCTokenTarget, tokenOut, rpcURL: chainOut.rpc}).then(swapInfo=>{
+      let _tokenIn = bn(amountIn).minus(feeUSDC)
+      if (_tokenIn.lt(0)) {
+        _tokenIn = bn(0)
+      }
+      getSwapInfo({
+        amountIn: _tokenIn.toFixed(),
+        tokenIn: USDCTokenTarget, tokenOut, rpcURL: chainOut.rpc
+      }).then(swapInfo=>{
         resolve({
           amountOut: swapInfo.amountOut,
           fee: 0, // only swap in target chain, no fee in source chain
@@ -78,8 +91,12 @@ export default function calcRouter({
       // calc: in source chain, tokenIn -> usdc
       const USDCTokenSource = new Token(tokenIn.chainId, usdcFrom.address, usdcFrom.decimals, usdcFrom.symbol)
       getSwapInfo({amountIn, tokenIn, tokenOut: USDCTokenSource, rpcURL: chainIn.rpc}).then(swapInfo=>{
+        let _amountOut = bn(swapInfo.amountOut).minus(feeUSDC)
+        if (_amountOut.lt(0)) {
+          _amountOut = bn(0)
+        }
         resolve({
-          amountOut: swapInfo.amountOut,
+          amountOut: _amountOut.toFixed(),
           fee: swapInfo.fee,
           slippage: swapInfo.slippage,
           targetFee: 0 // only swap in source chain, no fee in target chain
@@ -95,7 +112,15 @@ export default function calcRouter({
     getSwapInfo({amountIn, tokenIn, tokenOut: USDCTokenSource, rpcURL: chainIn.rpc}).then(swapInfo=>{
       const fee1 = swapInfo.fee
       const slippage1 = swapInfo.slippage
-      getSwapInfo({amountIn: swapInfo.amountOut, tokenIn: USDCTokenTarget, tokenOut, rpcURL: chainOut.rpc}).then(swapInfo=>{
+      console.log({
+        'swapInfo.amountOut': swapInfo.amountOut,
+        feeUSDC
+      })
+      let _tokenIn = bn(swapInfo.amountOut).minus(feeUSDC)
+      if (_tokenIn.lt(0)) {
+        _tokenIn = bn(0)
+      }
+      getSwapInfo({amountIn: _tokenIn.toFixed(), tokenIn: USDCTokenTarget, tokenOut, rpcURL: chainOut.rpc}).then(swapInfo=>{
         resolve({
           amountOut: swapInfo.amountOut,
           fee: fee1,

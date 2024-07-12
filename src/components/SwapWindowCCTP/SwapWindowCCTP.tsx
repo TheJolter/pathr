@@ -14,6 +14,7 @@ import bn from "@/utils/bn"
 import { useConnectWallet } from "@web3-onboard/react"
 import { Button } from "@nextui-org/react"
 import ProgressDialogContent from "./Review/ProgressDialogContent"
+import { getAndStorePlatformFees } from "@/utils/cctp/get-and-store-platform-fee"
 
 export default observer(function SwapWindow(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -27,12 +28,17 @@ export default observer(function SwapWindow(
   const pathrStore = useStore('pathrStore')
   const cctpStore = useStore('cctpStore')
   const dialogStore = useStore('dialogStore')
+  const apiDataStore = useStore('apiDataStore')
   const [targetTxHash, setTargetTxHash] = useState<string>()
 
   const [boxBgStyle, setBoxBgStyle] = useState<CSSProperties>()
 
   // console.log('displayStore.showProviders', displayStore.showProviders)
   // console.log('pathrStore.routerCalcTime', pathrStore.routerCalcTime)
+
+  useEffect(()=>{
+    getAndStorePlatformFees({apiDataStore})
+  }, [])
 
   useEffect(()=>{
     console.log('displayStore.showChainTokenSelector', displayStore.showChainTokenSelector)
