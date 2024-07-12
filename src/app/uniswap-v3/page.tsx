@@ -9,10 +9,10 @@ import { useStore } from "@/stores/hooks";
 export default observer(function UniswapV3() {
   const dialogStore = useStore('dialogStore')
   async function handleCalc() {
-    const CHAIN_ID = 1; // Mainnet
-    const tokenIn = new Token(CHAIN_ID, '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599', 8, 'WBTC')
-    const tokenOut = new Token(CHAIN_ID, '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', 6, 'USDC')
-    const rpcURL = 'https://rpc.ankr.com/eth'
+    const CHAIN_ID = 8453 // 8453 base
+    const tokenIn = new Token(CHAIN_ID, '0x4200000000000000000000000000000000000006', 8, 'WETH')
+    const tokenOut = new Token(CHAIN_ID, '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913', 6, 'USDC')
+    const rpcURL = 'https://1rpc.io/base'
     const amountIn = '0.01'
     getSwapInfo({amountIn, tokenIn, tokenOut, rpcURL}).then((swapInfo) => {
         dialogStore.showDialog({

@@ -20,7 +20,7 @@ export default observer(function UniswapV3USDC() {
 
   async function handler() {
     const chainName = EVM_BLOCKCHAIN_NAME.ETHEREUM
-    const topTokens = topTokensETHEREUM
+    const topTokens = topTokensBase
     
     const chain = CHAINS.find(chain => chain.chainName === chainName)
     if (!chain) {

@@ -50,15 +50,17 @@ export default observer(function ChainTokenSelector(props: {
       )
       return
     }
-    setTokens(
-      allTokens.filter(item=>{return item.blockchainName===chainName})
-      .filter(item=>{
-        return (
-          item.address!==oppositeTokenAddr && item.blockchainName===oppositeChainName
-          || item.blockchainName!==oppositeChainName
-        )
-      })
-    )
+    const _allTokens = allTokens.filter(item=>{return item.blockchainName===chainName})
+    .filter(item=>{
+      return (
+        item.address!==oppositeTokenAddr && item.blockchainName===oppositeChainName
+        || item.blockchainName!==oppositeChainName
+      )
+    })
+    if (chainName===EVM_BLOCKCHAIN_NAME.BASE) {
+      console.log({_allTokens})
+    }
+    setTokens(_allTokens)
   }, [chainName, searchText])
   
   return (
@@ -110,9 +112,9 @@ export default observer(function ChainTokenSelector(props: {
 
   <ScrollShadow className="max-h-[400px]">
     {tokens.map((tokenInfo, index)=>{
-      if (tokenInfo.address===ADDR0) {
-        return <></>
-      }
+      // if (tokenInfo.address===ADDR0) {
+      //   return <></>
+      // }
       // const chain = CHAINS.find(item=>item.chainName===tokenInfo.blockchainName)
       // if(!usdcPools.find(item=>{
       //   return item.chainID===chain?.chainId && item.address===tokenInfo.address
