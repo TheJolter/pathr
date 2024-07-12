@@ -32,7 +32,7 @@ export default observer(function Providers(
   const dialogStore = useStore('dialogStore')
 
   useEffect(()=>{
-    pathrStore.setCalculating(cctpCalculating && pathrCalculating)
+    pathrStore.setCalculating(cctpCalculating || pathrCalculating)
   }, [cctpCalculating, pathrCalculating])
 
   useEffect(()=>{
@@ -109,6 +109,8 @@ export default observer(function Providers(
     {pathrStore.calculating&&<CircularProgress className="text-[8px]" color="success" />}
   </div>
 
+  {pathrStore.calculating&& <div className="mb-4">Calculating Routers...</div>}
+
   {cctpStore.swapInfo&&<ProviderCCTP className="mb-4" />}
 
   {pathrStore.trades?.map((_, index)=>{
@@ -118,7 +120,6 @@ export default observer(function Providers(
     return <Provider providerIndex={index} className="mt-4" key={`trade-${index}`} />
   })}
 
-  {pathrStore.calculating&& <div>Calculating Routers...</div>}
 </div>
   )
 })
