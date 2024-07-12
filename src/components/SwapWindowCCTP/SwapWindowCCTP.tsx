@@ -15,6 +15,7 @@ import { useConnectWallet } from "@web3-onboard/react"
 import { Button } from "@nextui-org/react"
 import ProgressDialogContent from "./Review/ProgressDialogContent"
 import { getAndStorePlatformFees } from "@/utils/cctp/get-and-store-platform-fee"
+import ReviewPathr from "./ReviewPathr/Review"
 
 export default observer(function SwapWindow(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -97,7 +98,7 @@ export default observer(function SwapWindow(
       className={`grid grid-cols-1 gap-5 mx-2 w-full
         ${displayStore.showProviders?`md:grid-cols-2`:`md:grid-cols-1`}
       `}
-      style={{display: (!displayStore.showChainTokenSelector && !displayStore.showReview)?undefined:'none' }}
+      style={{display: (!displayStore.showChainTokenSelector && !displayStore.showReview && !displayStore.showReviewRubic)?undefined:'none' }}
     >
       <div id='container-of-exchange' className={`flex ${displayStore.showProviders?'justify-end':'justify-center'} w-full`}>
         <Exchange style={boxBgStyle} />
@@ -111,11 +112,15 @@ export default observer(function SwapWindow(
     </div>
     
     <ChainTokenSelector style={{...boxBgStyle,
-      display: (displayStore.showChainTokenSelector && !displayStore.showReview)?undefined:'none'
+      display: (displayStore.showChainTokenSelector && !displayStore.showReview && !displayStore.showReviewRubic)?undefined:'none'
     }} />
 
     { displayStore.showReview &&
       <Review style={boxBgStyle} />
+    }
+
+    { displayStore.showReviewRubic &&
+      <ReviewPathr style={boxBgStyle} />
     }
 
     <SuccessDialog />

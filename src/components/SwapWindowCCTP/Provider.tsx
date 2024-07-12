@@ -56,7 +56,7 @@ export default observer(function Provider(props: {
   className={`min-h-[64px] rounded-xl border-[#35593F] border-1 p-4 ${className} cursor-pointer`}
   onClick={()=>{
     displayStore.setSelectedProvider(providerIndex)
-    displayStore.setShowPreview(true)
+    displayStore.setShowPreviewRubic(true)
   }}
 >
   {isBest&&<Chip size="sm" className="mb-3" color="success">Best</Chip>}

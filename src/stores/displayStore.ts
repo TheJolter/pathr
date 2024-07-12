@@ -42,6 +42,13 @@ export default class DisplayStore {
   }
 
   @observable
+  showReviewRubic = false
+  @action
+  setShowPreviewRubic(showReviewRubic: boolean) {
+    this.showReviewRubic = showReviewRubic
+  }
+
+  @observable
   successDialogParams: SuccessDialogParams|null = null
   @action
   setSuccessDialogParams(successDialogParams: SuccessDialogParams|null) {

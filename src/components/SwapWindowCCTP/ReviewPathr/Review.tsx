@@ -174,7 +174,7 @@ export default observer(function ReviewPathr(props: {
   className="w-[392px] rounded-xl px-6 pt-4 mx-2" 
 >
   <div className="flex items-center">
-    <BackBtn onClick={()=>displayStore.setShowPreview(false)} />
+    <BackBtn onClick={()=>displayStore.setShowPreviewRubic(false)} />
     <div className="grow text-center text-lg font-semibold">Review Swap</div>
     <BackBtn className="pointer-events-none opacity-0" />
   </div>
