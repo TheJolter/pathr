@@ -12,6 +12,7 @@ import { CHAINS } from "@/configs/cctp/configs"
 import { getSwapInfo } from "@/utils/cctp/uniswap-v3-calc"
 import ProviderCCTP from "./ProviderCCTP"
 import { isGreaterThanZero } from "@/utils/isStringPositiveNumber"
+import calcRouterPathr from "@/utils/pathr/calcRouter"
 
 export default observer(function Providers(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -19,6 +20,8 @@ export default observer(function Providers(
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet()
   const address = wallet?.accounts?.[0]?.address
   const provider = wallet?.provider
+  const [cctpCalculating, setCctpCalculating] = useState(false)
+  const [pathrCalculating, setPathrCalculating] = useState(false)
   
   const pathrStore = useStore('pathrStore')
   const inputStore = useStore('inputStore')
@@ -27,7 +30,10 @@ export default observer(function Providers(
   const apiDataStore = useStore('apiDataStore')
   const cctpStore = useStore('cctpStore')
   const dialogStore = useStore('dialogStore')
-  // const [calculating, setCalculating] = useState(false)
+
+  useEffect(()=>{
+    pathrStore.setCalculating(cctpCalculating && pathrCalculating)
+  }, [cctpCalculating, pathrCalculating])
 
   useEffect(()=>{
     if (
@@ -45,7 +51,7 @@ export default observer(function Providers(
     const targetToken = apiDataStore.coingeckoTokens.find(token=>token.address.toLowerCase()===pathrStore?.toChainTokenAddr?.toLowerCase())
     if (!targetToken) return
     const tokenOut = new Token(targetChain.chainId, pathrStore.toChainTokenAddr, targetToken.decimals, targetToken.symbol)
-    pathrStore.setCalculating(true)
+    setCctpCalculating(true)
     console.log({
       amountIn: inputStore.tokenAmout,
       tokenIn,
@@ -76,8 +82,14 @@ export default observer(function Providers(
       })
     })
     .finally(()=>{
-      pathrStore.setCalculating(false)
+      setCctpCalculating(false)
     })
+
+    setPathrCalculating(true)
+    calcRouterPathr({pathrStore, inputStore, address, provider}).finally(()=>{ // need real Promise to kown if calc completed
+      setPathrCalculating(false);
+    })
+    
   }, [ // should not input inputStore.tokenAmout here, otherwise it will recalc every time amount change
     pathrStore.routerCalcTime, pathrStore, inputStore, address, provider
   ])
@@ -97,7 +109,14 @@ export default observer(function Providers(
     {pathrStore.calculating&&<CircularProgress className="text-[8px]" color="success" />}
   </div>
 
-  {cctpStore.swapInfo&&<ProviderCCTP />}
+  {cctpStore.swapInfo&&<ProviderCCTP className="mb-4" />}
+
+  {pathrStore.trades?.map((_, index)=>{
+    if (0===index) {
+      return <Provider providerIndex={index} key={`trade-${index}`} />
+    }
+    return <Provider providerIndex={index} className="mt-4" key={`trade-${index}`} />
+  })}
 
   {pathrStore.calculating&& <div>Calculating Routers...</div>}
 </div>

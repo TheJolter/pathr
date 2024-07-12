@@ -55,10 +55,13 @@ export const configuration:Configuration = {
       mainRpcTimeout: 8000
     },
 
-
-
     [EVM_BLOCKCHAIN_NAME.KAVA]: {
       rpcList: ['https://evm.kava.io', 'https://evm2.kava.io'],
+      mainRpcTimeout: 8000
+    },
+
+    [EVM_BLOCKCHAIN_NAME.BASE]: {
+      rpcList: ['https://1rpc.io/base', 'https://1rpc.io/base'],
       mainRpcTimeout: 8000
     },
   },
