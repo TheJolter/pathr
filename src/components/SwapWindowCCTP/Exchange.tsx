@@ -27,7 +27,7 @@ export default observer(function Exchange(props: {
     pathrStore.setToChainTokenAddr(_fromChainTokenAddr)
   }
 
-  console.log('pathrStore.calculating', pathrStore.calculating)
+  // console.log('pathrStore.calculating', pathrStore.calculating)
 
   return (
 <div 
