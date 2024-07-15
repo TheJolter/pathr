@@ -11,6 +11,8 @@ import { bigNumberFloor } from '@/utils/bigNumberCeilFloor'
 import { useConnectWallet } from '@web3-onboard/react'
 import getTokenImg from '@/utils/get-token-img'
 import { ADDR0 } from '@/configs/pathr/tokens'
+import tokensWithUSDCPool from '@/configs/cctp/usdc-pools.json'
+import { CCTP_CHAIN_NAMES } from '../Providers'
 
 export default observer(function TokenInfoCard(props: {
   tokenInfo: typeof allTokens[number]
@@ -32,6 +34,13 @@ export default observer(function TokenInfoCard(props: {
   const chainID = chainInfo.id
   const tokenAddress = tokenInfo.address
   const tokenImg = getTokenImg({chainID, tokenAddress})
+
+  if (
+    !tokensWithUSDCPool.find(item=>item.address.toLowerCase()===tokenInfo.address.toLowerCase())
+    && CCTP_CHAIN_NAMES.includes(tokenInfo.blockchainName as any)
+  ) {
+    return <></>
+  }
 
   return (
 <div className="flex items-center rounded-xl px-3 py-2 mt-4 border hover:border-gray-400 cursor-pointer"

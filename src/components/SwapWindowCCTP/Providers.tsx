@@ -13,6 +13,16 @@ import { getSwapInfo } from "@/utils/cctp/uniswap-v3-calc"
 import ProviderCCTP from "./ProviderCCTP"
 import { isGreaterThanZero } from "@/utils/isStringPositiveNumber"
 import calcRouterPathr from "@/utils/pathr/calcRouter"
+import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
+
+export const CCTP_CHAIN_NAMES = [
+  EVM_BLOCKCHAIN_NAME.ARBITRUM,
+  EVM_BLOCKCHAIN_NAME.AVALANCHE,
+  EVM_BLOCKCHAIN_NAME.ETHEREUM,
+  EVM_BLOCKCHAIN_NAME.OPTIMISM,
+  EVM_BLOCKCHAIN_NAME.BASE,
+  EVM_BLOCKCHAIN_NAME.POLYGON
+]
 
 export default observer(function Providers(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -31,16 +41,34 @@ export default observer(function Providers(
   const cctpStore = useStore('cctpStore')
   const dialogStore = useStore('dialogStore')
 
-  useEffect(()=>{
-    pathrStore.setCalculating(cctpCalculating || pathrCalculating)
-  }, [cctpCalculating, pathrCalculating])
+  // useEffect(()=>{
+  //   pathrStore.setCalculating(cctpCalculating || pathrCalculating)
+  // }, [cctpCalculating, pathrCalculating])
 
   useEffect(()=>{
     if (
       !pathrStore.fromChainTokenAddr || !pathrStore.toChainTokenAddr
       || !isGreaterThanZero(inputStore.tokenAmout)
     ) return
-    // calc here
+
+    // same chain, or one of the chain is not cctp chain, use rubic
+    console.log('pathrStore.fromChainName', pathrStore.fromChainName)
+    console.log('pathrStore.toChainName', pathrStore.toChainName)
+    if (
+      pathrStore.fromChainName===pathrStore.toChainName
+      || !CCTP_CHAIN_NAMES.includes(pathrStore.fromChainName as any)
+      || !CCTP_CHAIN_NAMES.includes(pathrStore.toChainName as any)
+    ) {
+      console.log('not cctp chain, using rubic')
+      // setPathrCalculating(true)
+      pathrStore.setCalculating(true)
+      calcRouterPathr({pathrStore, inputStore, address, provider}).finally(()=>{ // need real Promise to kown if calc completed
+        // setPathrCalculating(false);
+        pathrStore.setCalculating(false)
+      })
+      return
+    }
+
     const sourceChain = CHAINS.find(chain=>chain.chainName===pathrStore.fromChainName)
     if (!sourceChain) return
     const sourceToken = apiDataStore.coingeckoTokens.find((token)=>token.address.toLowerCase()===pathrStore?.fromChainTokenAddr?.toLowerCase())
@@ -51,13 +79,15 @@ export default observer(function Providers(
     const targetToken = apiDataStore.coingeckoTokens.find(token=>token.address.toLowerCase()===pathrStore?.toChainTokenAddr?.toLowerCase())
     if (!targetToken) return
     const tokenOut = new Token(targetChain.chainId, pathrStore.toChainTokenAddr, targetToken.decimals, targetToken.symbol)
-    setCctpCalculating(true)
+
     console.log({
       amountIn: inputStore.tokenAmout,
       tokenIn,
       tokenOut,
       apiDataStore
     })
+    // setCctpCalculating(true)
+    pathrStore.setCalculating(true)
     calcRouter({
       amountIn: inputStore.tokenAmout,
       tokenIn,
@@ -82,14 +112,10 @@ export default observer(function Providers(
       })
     })
     .finally(()=>{
-      setCctpCalculating(false)
+      // setCctpCalculating(false)
+      pathrStore.setCalculating(false)
     })
 
-    setPathrCalculating(true)
-    calcRouterPathr({pathrStore, inputStore, address, provider}).finally(()=>{ // need real Promise to kown if calc completed
-      setPathrCalculating(false);
-    })
-    
   }, [ // should not input inputStore.tokenAmout here, otherwise it will recalc every time amount change
     pathrStore.routerCalcTime, pathrStore, inputStore, address, provider
   ])
