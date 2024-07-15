@@ -51,6 +51,7 @@ export default observer(function Exchange(props: {
         <div className="absolute z-10 text-center w-full top-[88px] pointer-events-none">
           <ToggleButton onClick={()=>{
             // return
+            if (pathrStore.calculating) return
             handleToggle()
           }} />
         </div>
@@ -66,6 +67,7 @@ export default observer(function Exchange(props: {
         <MainButton fullWidth className="mt-4"
           // disabled={pathrStore.calculating}
           onClick={()=>{
+            if (pathrStore.calculating) return
             if (
               !( 
                 pathrStore.fromChainTokenAddr 

@@ -59,6 +59,7 @@ export default observer(function InputCard(props: {
   }, [pathrStore.fromChainName, fromChainTokenAddr, address, balanceStore])
 
   function handleMaxClick() {
+    if (pathrStore.calculating) return
     const balancesInfo = balanceStore.balances[balanceKey]
     if (balancesInfo) {
       inputStore.setTokenAmount(bigNumberFloor(balancesInfo.amount, balancesInfo.decimals).toFixed())
@@ -78,7 +79,7 @@ export default observer(function InputCard(props: {
     </div>
     <div className=" ml-4">
       <div className="flex items-center mb-1">
-        <input placeholder="0" value={inputStore.tokenAmout}
+        <input placeholder="0" value={inputStore.tokenAmout} disabled={pathrStore.calculating}
           className="text-lg font-semibold mr-3 bg-transparent focus:outline-none border-none w-full"
           onChange={(e)=>{
             if (! /^\d?(\d+[\.]?\d*)?$/.test(e.target.value) ) return

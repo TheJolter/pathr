@@ -70,6 +70,7 @@ export default observer(function ChainTokenCard(props: {
 <Button className="h-[100px] rounded-xl border-[#35593F] border-1 p-0 m-0 text-left"
   style={{background}}
   onClick={()=>{
+    if (pathrStore.calculating) return
     console.log('inputStore.isAmountInputFocus', inputStore.isAmountInputFocus)
     console.log(`navigator.userAgent.includes('Mobile')`, navigator.userAgent.includes('Mobile'))
     if (
