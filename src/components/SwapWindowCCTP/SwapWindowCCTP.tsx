@@ -73,7 +73,7 @@ export default observer(function SwapWindow(
   ])
 
   useEffect(()=>{
-    // displayStore.setShowPreview(false)
+    displayStore.setShowPreviewRubic(false)
   }, [displayStore, address])
 
   useEffect(()=>{
