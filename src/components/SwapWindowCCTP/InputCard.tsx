@@ -13,6 +13,7 @@ import { bigNumberFloor } from "@/utils/bigNumberCeilFloor"
 import bn from "@/utils/bn"
 
 import { useConnectWallet } from '@web3-onboard/react'
+import { DEFAULT_TOKENS } from "./ChainTokenCard"
 
 export default observer(function InputCard(props: {
   style?: CSSProperties,
@@ -30,6 +31,11 @@ export default observer(function InputCard(props: {
   const [background, setBackground] = useState('')
   const [balanceKey, setBalanceKey] = useState('')
 
+  let fromChainTokenAddr = pathrStore.fromChainTokenAddr
+  if (!fromChainTokenAddr) {
+    fromChainTokenAddr = DEFAULT_TOKENS[pathrStore.fromChainName!]
+  }
+
   useEffect(()=>{
     if (theme==='dark') {
       setBackground('#354439')
@@ -42,7 +48,7 @@ export default observer(function InputCard(props: {
     setBalanceKey('')
     // console.log({fromChainName, fromTokenName, account: address})
     const chainId = BlockchainInfo[pathrStore.fromChainName||'']?.id
-    const fromToken = allTokens.find(item=>{return item.address===pathrStore.fromChainTokenAddr && item.blockchainName===pathrStore.fromChainName})
+    const fromToken = allTokens.find(item=>{return item.address===fromChainTokenAddr && item.blockchainName===pathrStore.fromChainName})
     if (!fromToken || !address) return
     getAndSotreBalance({
       balanceStore,
@@ -53,9 +59,7 @@ export default observer(function InputCard(props: {
         setBalanceKey(_balanceKey)
       }
     })
-  }, [pathrStore.fromChainName, pathrStore.fromChainTokenAddr, address, balanceStore])
-
-  // if (!pathrStore.fromChainName||!pathrStore.fromChainTokenAddr) return <></>
+  }, [pathrStore.fromChainName, fromChainTokenAddr, address, balanceStore])
 
   function handleMaxClick() {
     const balancesInfo = balanceStore.balances[balanceKey]
@@ -73,7 +77,7 @@ export default observer(function InputCard(props: {
   <div className="font-semibold mb-2">You pay</div>
   <div id="input-card-icon-input-amout" className="flex">
     <div>
-      <ChainTokenIcon chainName={pathrStore.fromChainName!} tokenAddr={pathrStore.fromChainTokenAddr!} />
+      <ChainTokenIcon chainName={pathrStore.fromChainName!} tokenAddr={fromChainTokenAddr!} />
     </div>
     <div className=" ml-4">
       <div className="flex items-center mb-1">
