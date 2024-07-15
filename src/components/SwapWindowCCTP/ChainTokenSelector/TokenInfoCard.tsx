@@ -15,6 +15,7 @@ import tokensWithUSDCPool from '@/configs/cctp/usdc-pools.json'
 import { CCTP_CHAIN_NAMES } from '../Providers'
 import { useState } from 'react'
 import { TOKENS_WITHOUT_IMG } from '@/configs/tokens-without-img'
+import { CHAINS } from '@/configs/cctp/configs'
 
 export default observer(function TokenInfoCard(props: {
   tokenInfo: typeof allTokens[number]
@@ -40,7 +41,10 @@ export default observer(function TokenInfoCard(props: {
   const [hideCard, setHideCard] = useState(false)
 
   if (
-    !tokensWithUSDCPool.find(item=>item.address.toLowerCase()===tokenInfo.address.toLowerCase())
+    !(
+      tokensWithUSDCPool.find(item=>item.address.toLowerCase()===tokenInfo.address.toLowerCase())
+      || CHAINS.find(chain=>chain.usdc.toLowerCase()===tokenInfo.address.toLowerCase())
+    )
     && CCTP_CHAIN_NAMES.includes(tokenInfo.blockchainName as any)
   ) {
     return <></>
@@ -65,8 +69,8 @@ export default observer(function TokenInfoCard(props: {
   <img width='32px' height='32px' alt="" className='rounded-full'
     src={tokenImg}
     onError={(event) => {
-      console.log(tokenInfo.address)
-      setHideCard(true)
+      // console.log(tokenInfo.address)
+      // setHideCard(true)
       const target = event.target as HTMLImageElement;
       target.onerror = null;
       target.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png'
