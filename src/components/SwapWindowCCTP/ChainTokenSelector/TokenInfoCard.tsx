@@ -13,6 +13,8 @@ import getTokenImg from '@/utils/get-token-img'
 import { ADDR0 } from '@/configs/pathr/tokens'
 import tokensWithUSDCPool from '@/configs/cctp/usdc-pools.json'
 import { CCTP_CHAIN_NAMES } from '../Providers'
+import { useState } from 'react'
+import { TOKENS_WITHOUT_IMG } from '@/configs/tokens-without-img'
 
 export default observer(function TokenInfoCard(props: {
   tokenInfo: typeof allTokens[number]
@@ -35,6 +37,8 @@ export default observer(function TokenInfoCard(props: {
   const tokenAddress = tokenInfo.address
   const tokenImg = getTokenImg({chainID, tokenAddress})
 
+  const [hideCard, setHideCard] = useState(false)
+
   if (
     !tokensWithUSDCPool.find(item=>item.address.toLowerCase()===tokenInfo.address.toLowerCase())
     && CCTP_CHAIN_NAMES.includes(tokenInfo.blockchainName as any)
@@ -42,8 +46,13 @@ export default observer(function TokenInfoCard(props: {
     return <></>
   }
 
+  if (TOKENS_WITHOUT_IMG.toLowerCase().includes(tokenInfo.address.toLowerCase())){
+    return <></>
+  }
+
   return (
 <div className="flex items-center rounded-xl px-3 py-2 mt-4 border hover:border-gray-400 cursor-pointer"
+  style={{display: hideCard?'none':'flex'}}
   onClick={()=>{
     if (displayStore.showChainTokenSelector==='from') {
       pathrStore.setFromChainTokenAddr(tokenInfo.address)
@@ -56,6 +65,8 @@ export default observer(function TokenInfoCard(props: {
   <img width='32px' height='32px' alt="" className='rounded-full'
     src={tokenImg}
     onError={(event) => {
+      console.log(tokenInfo.address)
+      setHideCard(true)
       const target = event.target as HTMLImageElement;
       target.onerror = null;
       target.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png'
