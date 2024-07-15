@@ -18890,6 +18890,17 @@
     "image": "https://assets.rubic.exchange/assets/optimistic-ethereum/0x0000000000000000000000000000000000000000/logo.png",
     "blockchainName": "OPTIMISM"
   },
+
+  {
+    "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "blockchainNetwork": "optimistic-ethereum",
+    "decimals": 6,
+    "image": "https://assets.rubic.exchange/assets/optimistic-ethereum/0x0b2c639c533813f4aa9d7837caf62653d097ff85/logo.png",
+    "blockchainName": "OPTIMISM"
+  },
+
   {
     "address": "0x4200000000000000000000000000000000000006",
     "name": "Wrapped Ether",
@@ -18902,7 +18913,7 @@
   {
     "address": "0x7f5c764cbc14f9669b88837ca1490cca17c31607",
     "name": "USD Coin",
-    "symbol": "USDC",
+    "symbol": "USDC.e",
     "blockchainNetwork": "optimistic-ethereum",
     "decimals": 6,
     "image": "https://assets.rubic.exchange/assets/optimistic-ethereum/0x7f5c764cbc14f9669b88837ca1490cca17c31607/logo.png",
