@@ -37,14 +37,20 @@ export default observer(function ChainTokenCard(props: {
 
   let tokenAddr = pathrStore.fromChainTokenAddr
   let chainName = pathrStore.fromChainName
+  if (!tokenAddr) {
+    tokenAddr = DEFAULT_TOKENS[chainName!]
+    pathrStore.setFromChainTokenAddr(tokenAddr)
+  }
   if (direction==='to') {
     tokenAddr = pathrStore.toChainTokenAddr
     chainName = pathrStore.toChainName
+    if (!tokenAddr) {
+      tokenAddr = DEFAULT_TOKENS[chainName!]
+      pathrStore.setToChainTokenAddr(tokenAddr)
+    }
   }
 
-  if (!tokenAddr) {
-    tokenAddr = DEFAULT_TOKENS[chainName!]
-  }
+  
 
   const { theme } = useTheme()
 
@@ -83,7 +89,7 @@ export default observer(function ChainTokenCard(props: {
           <div>{tokenInfo?.symbol}</div>
           {tokenInfo?.blockchainName&&<div className="text-xs text-gray-400">On {tokenInfo?.blockchainName}</div>}
           {!tokenInfo?.blockchainName&&<div className="text-xs text-gray-400">
-            Please select chain and tokenxx
+            Please select chain and token
           </div>}
         </div>
       </div>

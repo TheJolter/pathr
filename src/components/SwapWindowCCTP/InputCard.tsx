@@ -32,9 +32,6 @@ export default observer(function InputCard(props: {
   const [balanceKey, setBalanceKey] = useState('')
 
   let fromChainTokenAddr = pathrStore.fromChainTokenAddr
-  if (!fromChainTokenAddr) {
-    fromChainTokenAddr = DEFAULT_TOKENS[pathrStore.fromChainName!]
-  }
 
   useEffect(()=>{
     if (theme==='dark') {
