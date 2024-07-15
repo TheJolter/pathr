@@ -19239,7 +19239,7 @@
   {
     "address": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
     "name": "USD Coin Arb1",
-    "symbol": "USDC",
+    "symbol": "USDC.e",
     "blockchainNetwork": "arbitrum",
     "decimals": 6,
     "image": "https://assets.rubic.exchange/assets/arbitrum/0xff970a61a04b1ca14834a43f5de4533ebddb5cc8/logo.png",
