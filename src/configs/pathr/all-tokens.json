@@ -16649,6 +16649,17 @@
     "image": "https://assets.rubic.exchange/assets/polygon/0x0000000000000000000000000000000000000000/logo.png",
     "blockchainName": "POLYGON"
   },
+
+  {
+    "address": "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
+    "name": "USD Coin",
+    "symbol": "USDC",
+    "blockchainNetwork": "polygon",
+    "decimals": 6,
+    "image": "https://assets.rubic.exchange/assets/polygon/0x3c499c542cef5e3811e1192ce70d8cc03d5c3359/logo.png",
+    "blockchainName": "POLYGON"
+  },
+
   {
     "address": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
     "name": "Wrapped Matic",
@@ -16661,7 +16672,7 @@
   {
     "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
     "name": "USD Coin (PoS)",
-    "symbol": "USDC",
+    "symbol": "USDC.e",
     "blockchainNetwork": "polygon",
     "decimals": 6,
     "image": "https://assets.rubic.exchange/assets/polygon/0x2791bca1f2de4661ed88a30c99a7a9449aa84174/logo.png",
