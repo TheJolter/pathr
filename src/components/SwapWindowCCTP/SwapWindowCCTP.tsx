@@ -74,6 +74,8 @@ export default observer(function SwapWindow(
 
   useEffect(()=>{
     displayStore.setShowPreviewRubic(false)
+    displayStore.setShowPreview(false)
+    cctpStore.setSwapInfo(null)
   }, [displayStore, address])
 
   useEffect(()=>{
