@@ -10,6 +10,7 @@ import { BlockchainInfo } from '@/configs/pathr/blockchain-info'
 import { bigNumberFloor } from '@/utils/bigNumberCeilFloor'
 import { useConnectWallet } from '@web3-onboard/react'
 import getTokenImg from '@/utils/get-token-img'
+import { ADDR0 } from '@/configs/pathr/tokens'
 
 export default observer(function TokenInfoCard(props: {
   tokenInfo: typeof allTokens[number]
@@ -23,10 +24,12 @@ export default observer(function TokenInfoCard(props: {
   const evmWalletStore = useStore('evmWalletStore')
   const balanceStore = useStore('balanceStore')
 
-  const chainIdString = BlockchainInfo[tokenInfo.blockchainName].id.toString(16)
+  const chainInfo = BlockchainInfo[tokenInfo.blockchainName]
+
+  const chainIdString = chainInfo.id.toString(16)
   const balanceKey = `${chainIdString}-${tokenInfo.address}-${address}`.toLowerCase()
 
-  const chainID = BlockchainInfo[tokenInfo.blockchainName].id
+  const chainID = chainInfo.id
   const tokenAddress = tokenInfo.address
   const tokenImg = getTokenImg({chainID, tokenAddress})
 
@@ -57,8 +60,14 @@ export default observer(function TokenInfoCard(props: {
       </div>
     </div>
     <div className="flex items-center text-xs text-gray-400">
-      <div>{formatEvmAddr(tokenInfo.address)}</div>
-      <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='ml-1' />
+      <div>{tokenInfo.address===ADDR0?'Native Token':formatEvmAddr(tokenInfo.address)}</div>
+      {tokenInfo.address!==ADDR0&&<FontAwesomeIcon icon={faArrowUpRightFromSquare} className='ml-1'
+        onClick={(event)=>{
+          if (tokenInfo.address===ADDR0) return
+          window.open(`${chainInfo.explorer}/address/${tokenInfo.address}`)
+          event.stopPropagation()
+        }}
+      />}
       {/* <div className="grow text-right">-$123.45678</div> */}
     </div>
   </div>
