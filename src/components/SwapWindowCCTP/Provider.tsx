@@ -38,6 +38,7 @@ export default observer(function Provider(props: {
     tradeType = (trade as WrappedCrossChainTrade).tradeType
     trade = trade.trade
   }
+  if (tradeType==='LIFI') return <></> // lifi always failed?
 
   const { theme } = useTheme()
 
