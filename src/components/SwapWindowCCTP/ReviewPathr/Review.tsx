@@ -57,10 +57,10 @@ export default observer(function ReviewPathr(props: {
   let trade = pathrStore.trades[displayStore.selectedProiveder] as CrossChainTrade|OnChainTrade
   // console.log('trade', trade) // fee, gas, amounts in routers
   const onChainTradeType = (trade as OnChainTrade)?.type
-  const onChainSubtype = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade?.onChainSubtype
-  const crossChainTradeType = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).tradeType
+  const onChainSubtype = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade)?.trade?.onChainSubtype
+  const crossChainTradeType = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade)?.tradeType
   if (pathrStore.fromChainName !== pathrStore.toChainName) {
-    trade = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade).trade as CrossChainTrade|OnChainTrade
+    trade = (pathrStore.trades[displayStore.selectedProiveder] as WrappedCrossChainTrade)?.trade as CrossChainTrade|OnChainTrade
   }
 
   const chainIdString = chainInfo.id.toString(16)
@@ -111,8 +111,8 @@ export default observer(function ReviewPathr(props: {
       return
     }
     let needApprove = false
-    if (trade.from.address!==ADDR0) {
-      needApprove = await trade.needApprove()
+    if (trade?.from.address!==ADDR0) {
+      needApprove = await trade?.needApprove()
       console.log({needApprove})
     }
     
@@ -123,11 +123,11 @@ export default observer(function ReviewPathr(props: {
         },
         gasPrice // required!!
       }
-      trade.approve(tx, false).then(()=>{
+      trade?.approve(tx, false).then(()=>{
         handleSwap()
       }).catch((err)=>{
         setIsBusy(false)
-        console.error('trade.approve error', err)
+        console.error('trade?.approve error', err)
         displayStore.setWarningDialogParams({
           title: 'Failed to approve',
           content: `${err.message || err.toString()}`,
@@ -137,7 +137,7 @@ export default observer(function ReviewPathr(props: {
     }
 
     console.log('gasPrice', gasPrice)
-    trade.swap({
+    trade?.swap({
       onConfirm:(hash)=>{
       }, 
       gasPrice // required
@@ -146,7 +146,7 @@ export default observer(function ReviewPathr(props: {
       displayStore.setSuccessDialogParams({
         title: 'Swap Success',
         tokenAddr: pathrStore.toChainTokenAddr!,
-        tokenAmount: bn(trade.to?.weiAmount.toString()||0).div(bn(10).pow(trade.to?.decimals||0)).toFormat(6),
+        tokenAmount: bn(trade?.to?.weiAmount.toString()||0).div(bn(10).pow(trade?.to?.decimals||0)).toFormat(6),
         tokenUsdValue: '',
         detailsUrl: `${chainInfo.explorer}/tx/${hash}`
       })
@@ -161,7 +161,7 @@ export default observer(function ReviewPathr(props: {
       }
     }).catch(err=>{
       setIsBusy(false)
-      console.log('trade.swap error', err, 'gasPrice', gasPrice)
+      console.log('trade?.swap error', err, 'gasPrice', gasPrice)
       displayStore.setWarningDialogParams({
         title: 'Swap failed',
         content: `${err.message || err.toString()}`,
@@ -230,7 +230,7 @@ export default observer(function ReviewPathr(props: {
       <div className="grow ml-3">
         <div className="text-base font-semibold">
           {/* 12345.6789 USDC */}
-          { bn(trade.to?.weiAmount.toString()||0).div(bn(10).pow(trade.to?.decimals||0)).toFormat(6)} {trade.to?.symbol}
+          { bn(trade?.to?.weiAmount.toString()||0).div(bn(10).pow(trade?.to?.decimals||0)).toFormat(6)} {trade?.to?.symbol}
         </div>
         <div className="text-xs text-gray-400">on {pathrStore.toChainName}</div>
       </div>
