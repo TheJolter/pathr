@@ -9,28 +9,30 @@ import { useStore } from "@/stores/hooks";
 export default observer(function UniswapV3() {
   const dialogStore = useStore('dialogStore')
   async function handleCalc() {
-    const CHAIN_ID = 8453 // 8453 base
-    const tokenIn = new Token(CHAIN_ID, '0x4200000000000000000000000000000000000006', 8, 'WETH')
-    const tokenOut = new Token(CHAIN_ID, '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913', 6, 'USDC')
-    const rpcURL = 'https://1rpc.io/base'
-    const amountIn = '0.01'
+    const CHAIN_ID = 42161 // 8453 base, 10 OPTIMISM, 42161 ARBITRUM
+    const tokenIn = new Token(CHAIN_ID, '0xaf88d065e77c8cC2239327C5EDb3A432268e5831', 6, 'USDC')
+    const tokenOut = new Token(CHAIN_ID, '0xd4d42f0b6def4ce0383636770ef773390d85c61a', 18, 'SUSHI')
+    const rpcURL = 'https://arb1.arbitrum.io/rpc'
+    const amountIn = '10000'
     getSwapInfo({amountIn, tokenIn, tokenOut, rpcURL}).then((swapInfo) => {
-        dialogStore.showDialog({
-          title: 'Uniswap V3',
-          content: (<>
-            <div>Amount In: {amountIn} {tokenIn.symbol};</div>
-            <div>Amount Out: {swapInfo.amountOut} {tokenOut.symbol};</div>
-            <div>Price Ratio: 1 {tokenIn.symbol} = {swapInfo.priceRatio} {tokenOut.symbol}; </div>
-            <div>Slippage: {swapInfo.slippage.toFixed(4)}</div>
-            <div>poolDepth: {JSON.stringify(swapInfo.poolDepth)}</div>
-          </>),
-        })
+      console.log('swapInfo:', swapInfo)
+      alert(JSON.stringify(swapInfo, null, 2))
+      dialogStore.showDialog({
+        title: 'Uniswap V3',
+        content: (<>
+          <div>Amount In: {amountIn} {tokenIn.symbol};</div>
+          <div>Amount Out: {swapInfo.amountOut} {tokenOut.symbol};</div>
+          <div>Price Ratio: 1 {tokenIn.symbol} = {swapInfo.priceRatio} {tokenOut.symbol}; </div>
+          <div>Slippage: {swapInfo.slippage.toFixed(4)}</div>
+          <div>poolDepth: {JSON.stringify(swapInfo.poolDepth)}</div>
+        </>),
+      })
     }).catch(error => {
         console.error('Error:', error)
     })
   }
   return (
-    <div>
+    <div className="text-center mt-40">
       <Button onClick={handleCalc}>calc</Button>
     </div>
   )
