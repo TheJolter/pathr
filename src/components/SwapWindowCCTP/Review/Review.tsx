@@ -116,6 +116,18 @@ export default observer(function Review(props: {
     }
 
     const baseAmountIn = bn(swapInfo.amountIn).times(bn(10).pow(swapInfo.tokenIn.decimals)).toFixed(0)
+    
+
+    // check balance before swap
+    const balanceKey = `${sourceChain.chainId}-${pathrStore.fromChainTokenAddr}-${address}`
+    const balance = balanceStore.balances[balanceKey]?.amount || 0
+    if (bn(balance).lt(inputStore.tokenAmout)) {
+      displayStore.setWarningDialogParams({
+        title: 'Insufficient Balance', 
+        content: `You don't have enough ${tokenInfo?.symbol} on ${pathrStore.fromChainName} to complete the transaction.`})
+      return
+    }
+
     setIsBusy(true)
     try {
       const allowance = await getERC20Allowance({

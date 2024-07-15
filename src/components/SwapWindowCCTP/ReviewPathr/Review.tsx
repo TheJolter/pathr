@@ -99,8 +99,20 @@ export default observer(function ReviewPathr(props: {
     }
 
     const blockchainAdapter: EvmWeb3Public = Injector.web3PublicService.getWeb3Public(pathrStore.fromChainName as EvmBlockchainName)
-    setIsBusy(true)
+    
+
+    // check balance
+    const balanceKey = `${chainIdString}-${pathrStore.fromChainTokenAddr}-${address}`.toLowerCase()
+    const balance = balanceStore.balances[balanceKey]?.amount || 0
+    if (bn(balance).lt(inputStore.tokenAmout)) {
+      displayStore.setWarningDialogParams({
+        title: 'Insufficient Balance', 
+        content: `You don't have enough ${tokenInfo?.symbol} on ${pathrStore.fromChainName} to complete the transaction.`})
+      return
+    }
+
     let gasPrice = '0'
+    setIsBusy(true)
     try {
       gasPrice = await blockchainAdapter.getGasPrice()
     } catch (err:any) {
