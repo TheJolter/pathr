@@ -84,7 +84,7 @@ export const CHAINS:Chain[] = [
     domain: 6,
     usdc: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
     rpc: 'https://1rpc.io/base', // 'https://mainnet.base.org', // 'https://1rpc.io/base',
-    explorer: 'https://base.blockscout.com',
+    explorer: 'https://basescan.org',
     bridgeAddress: '0x76ad9e4aE5c4Eb3e52A8D23636fbaa04E63a9601',
     receiverContract: '0xd99D4B158a7F5dcb09079fDA4EfDb4f21Cd68e69',
     uniswapV3Factory: '0x33128a8fC17869897dcE68Ed026d694621f6FDfD',

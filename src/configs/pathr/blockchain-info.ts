@@ -78,7 +78,7 @@ export const BlockchainInfo: Record<
   [EVM_BLOCKCHAIN_NAME.BASE]: {
     id: 8453,
     chainLabel: 'https://www.base.org/document/favicon-32x32.png',
-    explorer: 'https://base.blockscout.com',
+    explorer: 'https://basescan.org',
     imgKey: 'base'
   },
 
