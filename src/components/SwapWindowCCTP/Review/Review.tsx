@@ -119,7 +119,7 @@ export default observer(function Review(props: {
     
 
     // check balance before swap
-    const balanceKey = `${sourceChain.chainId}-${pathrStore.fromChainTokenAddr}-${address}`
+    const balanceKey = `${sourceChain.chainId.toString(16)}-${pathrStore.fromChainTokenAddr}-${address}`.toLowerCase()
     const balance = balanceStore.balances[balanceKey]?.amount || 0
     if (bn(balance).lt(inputStore.tokenAmout)) {
       displayStore.setWarningDialogParams({
