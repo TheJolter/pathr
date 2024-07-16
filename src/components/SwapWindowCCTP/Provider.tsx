@@ -1,3 +1,5 @@
+'use client'
+
 import { Avatar, Chip, Tooltip } from "@nextui-org/react"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
@@ -38,7 +40,7 @@ export default observer(function Provider(props: {
     tradeType = (trade as WrappedCrossChainTrade).tradeType
     trade = trade.trade
   }
-  if (tradeType==='LIFI') return <></> // lifi always failed?
+  
 
   const { theme } = useTheme()
 
@@ -52,6 +54,8 @@ export default observer(function Provider(props: {
     setBackground('#ffffff')
   }, [theme])
 
+  if (tradeType==='LIFI') return <></> // lifi always failed?
+  
   return (
 <div style={{background}}
   className={`min-h-[64px] rounded-xl border-[#35593F] border-1 p-4 ${className} cursor-pointer`}
