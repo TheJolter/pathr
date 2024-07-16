@@ -135,7 +135,7 @@ export default observer(function Providers(
     {pathrStore.calculating&&<CircularProgress className="text-[8px]" color="success" />}
   </div>
 
-  {pathrStore.calculating&& <div className="mb-4">Calculating Routers...</div>}
+  {pathrStore.calculating&& <div className="mb-4">Calculating Routes...</div>}
 
   {cctpStore.swapInfo&&<ProviderCCTP className="mb-4" />}
 

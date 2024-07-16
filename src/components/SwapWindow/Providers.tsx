@@ -54,7 +54,7 @@ export default observer(function Providers(
     return <Provider providerIndex={index} className="mt-4" key={`trade-${index}`} />
   })}
 
-  {pathrStore.calculating&& <div>Calculating Routers...</div>}
+  {pathrStore.calculating&& <div>Calculating Routes...</div>}
 </div>
   )
 })
