@@ -12,6 +12,7 @@ import { ADDR0 } from "@/configs/pathr/tokens"
 import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
 import { CHAINS } from "@/configs/cctp/configs"
 import usdcPools from '@/configs/cctp/usdc-pools.json'
+import { HOT_TOKEN_SYMBOLS } from "@/configs/hot-token-symbles"
 
 export default observer(function ChainTokenSelector(props: {
   style?: CSSProperties
@@ -50,17 +51,34 @@ export default observer(function ChainTokenSelector(props: {
       )
       return
     }
-    const _allTokens = allTokens.filter(item=>{return item.blockchainName===chainName})
+
+    const allTokensHot = allTokens.filter(item=>{
+      return (
+        item.blockchainName===chainName
+        && HOT_TOKEN_SYMBOLS.includes(item.symbol)
+      )
+    })
     .filter(item=>{
       return (
         item.address!==oppositeTokenAddr && item.blockchainName===oppositeChainName
         || item.blockchainName!==oppositeChainName
       )
     })
-    if (chainName===EVM_BLOCKCHAIN_NAME.BASE) {
-      console.log({_allTokens})
-    }
-    setTokens(_allTokens)
+
+    const allTokensNotHot = allTokens.filter(item=>{
+      return (
+        item.blockchainName===chainName
+        && !HOT_TOKEN_SYMBOLS.includes(item.symbol)
+      )
+    })
+    .filter(item=>{
+      return (
+        item.address!==oppositeTokenAddr && item.blockchainName===oppositeChainName
+        || item.blockchainName!==oppositeChainName
+      )
+    })
+    
+    setTokens([...allTokensHot, ...allTokensNotHot])
   }, [chainName, searchText])
   
   return (
