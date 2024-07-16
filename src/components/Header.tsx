@@ -1,17 +1,27 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
+import {
+  // Navbar, 
+  // NavbarBrand, NavbarContent, NavbarItem, 
+  Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
 import Logo from "./Logo/Logo";
 import Menu from "./Menu";
 import EvmWalletButton from "./EvmWalletButton/EvmWalletButton";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import CosmosWalletButton from "./CosmosWalletButton/CosmosWalletButton";
+import {
+  Navbar,
+  NavbarContent,
+  NavbarBrand,
+  NavbarItem,
+} from "@nextui-org/navbar";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent py-2">
+    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl" position="sticky" className="bg-transparent py-2">
       <NavbarContent>
         <NavbarBrand>
           <Logo />
@@ -27,6 +37,8 @@ export default function Header() {
       <NavbarContent justify="end">
         <div className="flex items-center justify-end">
           <EvmWalletButton />
+          <span className="ml-2"><CosmosWalletButton /></span>
+          
           <div className="hidden lg:flex items-center ml-2">
             <ThemeSwitcher />
             <Button isIconOnly radius="full" className="ml-2"

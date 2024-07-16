@@ -50,25 +50,27 @@ export default observer(function EvmWalletButton() {
 
   return (
 <>
-  {!address&&<MainButton className="h-[50px] text-lg"
+  {!address&&<Button color="warning"
+    // className="h-[50px] text-lg"
     onClick={()=>{
       // connectEvmWallet({evmWalletStore})
       handleConnect()
     }}
   >
-    {formatEvmAddr(address||'')||'Connect Wallet'}
-  </MainButton>}
+    {formatEvmAddr(address||'')||'Connect Metamask'}
+  </Button>}
 
   {address&&<Dropdown>
     <DropdownTrigger>
-      <Button radius="full" className="mr-4 h-[50px] text-lg"
-        style={{
-          background: 'linear-gradient(90deg, #32CA62 0%, #EAF83F 100%)',
-          color: '#333333',
-          fontWeight: 600
-        }}
+      <Button color="warning"
+        // radius="full" className="mr-4 h-[50px] text-lg"
+        // style={{
+        //   background: 'linear-gradient(90deg, #32CA62 0%, #EAF83F 100%)',
+        //   color: '#333333',
+        //   fontWeight: 600
+        // }}
       >
-        {formatEvmAddr(address)||'Connect Wallet'}
+        {formatEvmAddr(address)||'Connect Metamask'}
         <FontAwesomeIcon icon={faChevronDown} />
       </Button>
     </DropdownTrigger>
