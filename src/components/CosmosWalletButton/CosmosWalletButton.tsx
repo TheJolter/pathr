@@ -8,6 +8,8 @@ import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org
 // import cosmosAddrConvertor from "@/utils/cosmosAddrConvertor";
 import { useEffect } from "react";
 import { Keplr } from "@keplr-wallet/types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default observer(function CosmosWalletButton() {
   const cosmosWalletStore = useStore('cosmosWalletStore')
@@ -53,13 +55,15 @@ export default observer(function CosmosWalletButton() {
       <Dropdown>
         <DropdownTrigger>
           <Button color="primary">
-            Keplr Connected
+            {/* Keplr Connected */}
+            {formatAddress(cosmosWalletStore.address)}
+            <FontAwesomeIcon icon={faChevronDown} />
           </Button>
         </DropdownTrigger>
         <DropdownMenu>
-          <DropdownItem>
+          {/* <DropdownItem>
             Joltify: {formatAddress(cosmosWalletStore.address)}
-          </DropdownItem>
+          </DropdownItem> */}
           {/* <DropdownItem>
             Noble: {formatAddress(cosmosAddrConvertor(cosmosWalletStore.address, 'noble'))}
           </DropdownItem> */}

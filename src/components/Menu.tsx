@@ -35,6 +35,15 @@ export default observer(function Menu() {
       style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
       // style={noneSelectedStyle}
     >Swap</MainButton>
+    
+    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+      onClick={()=>{
+        // window.open('https://bridge.pathr.io')
+        displayStore.setSelectedMenu('bridge')
+      }}
+      style={selectedMenu!=='bridge'?noneSelectedStyle:undefined}
+    >Bridge</MainButton>
+
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
         window.open('https://usdc.pathr.io')
@@ -42,13 +51,6 @@ export default observer(function Menu() {
       // style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
       style={noneSelectedStyle}
     >USDC</MainButton>
-    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
-      onClick={()=>{
-        window.open('https://bridge.pathr.io')
-      }}
-      // style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
-      style={noneSelectedStyle}
-    >Bridge</MainButton>
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 
     style={menuBgStyle}
