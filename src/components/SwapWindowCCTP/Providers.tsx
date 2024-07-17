@@ -14,6 +14,7 @@ import ProviderCCTP from "./ProviderCCTP"
 import { isGreaterThanZero } from "@/utils/isStringPositiveNumber"
 import calcRouterPathr from "@/utils/pathr/calcRouter"
 import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
+import tokensWithUsdcPools from '@/configs/cctp/usdc-pools.json'
 
 export const CCTP_CHAIN_NAMES = [
   EVM_BLOCKCHAIN_NAME.ARBITRUM,
@@ -41,9 +42,9 @@ export default observer(function Providers(
   const cctpStore = useStore('cctpStore')
   const dialogStore = useStore('dialogStore')
 
-  // useEffect(()=>{
-  //   pathrStore.setCalculating(cctpCalculating || pathrCalculating)
-  // }, [cctpCalculating, pathrCalculating])
+  useEffect(()=>{
+    pathrStore.setCalculating(cctpCalculating || pathrCalculating)
+  }, [cctpCalculating, pathrCalculating])
 
   useEffect(()=>{
     if (
@@ -55,67 +56,81 @@ export default observer(function Providers(
     console.log('pathrStore.fromChainName', pathrStore.fromChainName)
     console.log('pathrStore.toChainName', pathrStore.toChainName)
     if (
+      true ||
       pathrStore.fromChainName===pathrStore.toChainName
       || !CCTP_CHAIN_NAMES.includes(pathrStore.fromChainName as any)
       || !CCTP_CHAIN_NAMES.includes(pathrStore.toChainName as any)
     ) {
       console.log('not cctp chain, using rubic')
-      // setPathrCalculating(true)
-      pathrStore.setCalculating(true)
+      setPathrCalculating(true)
+      // pathrStore.setCalculating(true)
       calcRouterPathr({pathrStore, inputStore, address, provider}).finally(()=>{ // need real Promise to kown if calc completed
-        // setPathrCalculating(false);
-        pathrStore.setCalculating(false)
+        setPathrCalculating(false);
+        // pathrStore.setCalculating(false)
       })
-      return
+      // return
     }
 
-    const sourceChain = CHAINS.find(chain=>chain.chainName===pathrStore.fromChainName)
-    if (!sourceChain) return
-    const sourceToken = apiDataStore.coingeckoTokens.find((token)=>token.address.toLowerCase()===pathrStore?.fromChainTokenAddr?.toLowerCase())
-    if (!sourceToken) return
-    const tokenIn = new Token(sourceChain.chainId, pathrStore.fromChainTokenAddr, sourceToken.decimals, sourceToken.symbol)
-    const targetChain = CHAINS.find(chain=>chain.chainName===pathrStore.toChainName)
-    if (!targetChain) return
-    const targetToken = apiDataStore.coingeckoTokens.find(token=>token.address.toLowerCase()===pathrStore?.toChainTokenAddr?.toLowerCase())
-    if (!targetToken) return
-    const tokenOut = new Token(targetChain.chainId, pathrStore.toChainTokenAddr, targetToken.decimals, targetToken.symbol)
+    // source and target chain are cctp chain
+    // source and target token is USDC or in the usdc pools
+    // source and target chain are different
+    if (
+      CCTP_CHAIN_NAMES.includes(pathrStore.fromChainName as any) // source chain is cctp chain
+      && CCTP_CHAIN_NAMES.includes(pathrStore.toChainName as any) // target chain is cctp chain
+      && pathrStore.fromChainName!==pathrStore.toChainName // source and target chain are different
+      && ( // source and target token is USDC or in the usdc pools
+        CHAINS.find(chain=>chain.chainName===pathrStore.fromChainName)?.usdc.toLowerCase() === pathrStore.fromChainTokenAddr.toLowerCase()
+        || CHAINS.find(chain=>chain.chainName===pathrStore.toChainName)?.usdc.toLowerCase() === pathrStore.toChainTokenAddr.toLowerCase()
+        || tokensWithUsdcPools.find(token=>token.address.toLowerCase()===pathrStore.fromChainTokenAddr?.toLowerCase())
+      )
+    ) {
+      const sourceChain = CHAINS.find(chain=>chain.chainName===pathrStore.fromChainName)
+      if (!sourceChain) return
+      const sourceToken = apiDataStore.coingeckoTokens.find((token)=>token.address.toLowerCase()===pathrStore?.fromChainTokenAddr?.toLowerCase())
+      if (!sourceToken) return
+      const tokenIn = new Token(sourceChain.chainId, pathrStore.fromChainTokenAddr, sourceToken.decimals, sourceToken.symbol)
+      const targetChain = CHAINS.find(chain=>chain.chainName===pathrStore.toChainName)
+      if (!targetChain) return
+      const targetToken = apiDataStore.coingeckoTokens.find(token=>token.address.toLowerCase()===pathrStore?.toChainTokenAddr?.toLowerCase())
+      if (!targetToken) return
+      const tokenOut = new Token(targetChain.chainId, pathrStore.toChainTokenAddr, targetToken.decimals, targetToken.symbol)
 
-    console.log({
-      amountIn: inputStore.tokenAmout,
-      tokenIn,
-      tokenOut,
-      apiDataStore
-    })
-    // setCctpCalculating(true)
-    pathrStore.setCalculating(true)
-    calcRouter({
-      amountIn: inputStore.tokenAmout,
-      tokenIn,
-      tokenOut,
-      apiDataStore
-    }).then((result)=>{
-      console.log('amountOut', result.amountOut)
-      cctpStore.setSwapInfo({
+      console.log({
         amountIn: inputStore.tokenAmout,
         tokenIn,
         tokenOut,
-        amountOut: result.amountOut,
-        fee: result.fee,
-        slippage: result.slippage,
-        targetFee: result.targetFee
+        apiDataStore
       })
-    }).catch(error=>{
-      console.error('error calcRouter', error, error.message)
-      dialogStore.showDialog({
-        title: 'Error code 1610',
-        content: error.message
+      setCctpCalculating(true)
+      // pathrStore.setCalculating(true)
+      calcRouter({
+        amountIn: inputStore.tokenAmout,
+        tokenIn,
+        tokenOut,
+        apiDataStore
+      }).then((result)=>{
+        console.log('amountOut', result.amountOut)
+        cctpStore.setSwapInfo({
+          amountIn: inputStore.tokenAmout,
+          tokenIn,
+          tokenOut,
+          amountOut: result.amountOut,
+          fee: result.fee,
+          slippage: result.slippage,
+          targetFee: result.targetFee
+        })
+      }).catch(error=>{
+        console.error('error calcRouter', error, error.message)
+        dialogStore.showDialog({
+          title: 'Error code 1610',
+          content: error.message
+        })
       })
-    })
-    .finally(()=>{
-      // setCctpCalculating(false)
-      pathrStore.setCalculating(false)
-    })
-
+      .finally(()=>{
+        setCctpCalculating(false)
+        // pathrStore.setCalculating(false)
+      })
+    }
   }, [ // should not input inputStore.tokenAmout here, otherwise it will recalc every time amount change
     pathrStore.routerCalcTime, pathrStore, inputStore, address, provider
   ])

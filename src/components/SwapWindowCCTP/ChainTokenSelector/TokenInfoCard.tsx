@@ -47,7 +47,7 @@ export default observer(function TokenInfoCard(props: {
     )
     && CCTP_CHAIN_NAMES.includes(tokenInfo.blockchainName as any)
   ) {
-    return <></>
+    // return <></> // show all tokens, not only usdc and pool with usdc
   }
 
   if (TOKENS_WITHOUT_IMG.toLowerCase().includes(tokenInfo.address.toLowerCase())){
@@ -69,7 +69,7 @@ export default observer(function TokenInfoCard(props: {
   <img width='32px' height='32px' alt="" className='rounded-full'
     src={tokenImg}
     onError={(event) => {
-      // console.log(tokenInfo.address)
+      console.log(tokenInfo.address)
       // setHideCard(true)
       const target = event.target as HTMLImageElement;
       target.onerror = null;
