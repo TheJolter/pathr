@@ -28821,7 +28821,7 @@
   {
     "address": "0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
     "name": "Liquid staked Base 2.0",
-    "symbol": "USDBC",
+    "symbol": "Bridged USDC",
     "blockchainNetwork": "base",
     "decimals": 6,
     "image": "https://assets.coingecko.com/coins/images/31164/thumb/baseusdc.jpg?1696529993",
