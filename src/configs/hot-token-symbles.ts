@@ -6,5 +6,6 @@ export const HOT_TOKEN_SYMBOLS = [
   'MATIC',
   'BNB',
   'AVAX',
-  'DAI.e'
+  'DAI.e',
+  'JOLT'
 ]
