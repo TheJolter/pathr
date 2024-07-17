@@ -5,6 +5,7 @@ import { CSSProperties, useEffect, useState } from "react"
 import MainButton from "./MainButton"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
+import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
 
 export default observer(function Menu() {
   const { theme } = useTheme()
@@ -13,6 +14,15 @@ export default observer(function Menu() {
   const pathrStore = useStore('pathrStore')
   const [menuBgStyle, setMenuBgStyle] = useState<CSSProperties>()
   const noneSelectedStyle = {background: 'rgba(0,0,0,0)', color: '#9FA8AB'}
+
+  useEffect(()=>{
+    if (selectedMenu==='bridge') {
+      pathrStore.setFromChainName(EVM_BLOCKCHAIN_NAME.ARBITRUM)
+      pathrStore.setToChainName(EVM_BLOCKCHAIN_NAME.BASE)
+      pathrStore.setFromChainTokenAddr('0xaf88d065e77c8cC2239327C5EDb3A432268e5831'.toLowerCase())
+      pathrStore.setToChainTokenAddr('0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'.toLowerCase())
+    }
+  }, [selectedMenu])
 
   useEffect(()=>{
     if (theme==='dark') {
@@ -38,11 +48,17 @@ export default observer(function Menu() {
     
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
-        // window.open('https://bridge.pathr.io')
         displayStore.setSelectedMenu('bridge')
       }}
       style={selectedMenu!=='bridge'?noneSelectedStyle:undefined}
     >Bridge</MainButton>
+
+    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+      onClick={()=>{
+        displayStore.setSelectedMenu('jolt')
+      }}
+      style={selectedMenu!=='jolt'?noneSelectedStyle:undefined}
+    >JOLT</MainButton>
 
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{

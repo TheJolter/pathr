@@ -404,6 +404,7 @@ export default observer(function JOLTBridge() {
             </MainButton>
             
           </div>
+          <div>Just for testing, it will be merged into Bridge later</div>
         </div>
       </div>
       </div>

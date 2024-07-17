@@ -70,9 +70,9 @@ export default class DisplayStore {
   }
 
   @observable
-  selectedMenu: 'swap'|'gas'|'bridge'|'usdc' = 'swap'
+  selectedMenu: 'swap'|'gas'|'bridge'|'usdc'|'jolt' = 'swap'
   @action
-  setSelectedMenu(selectedMenu: 'swap'|'gas'|'bridge'|'usdc') {
+  setSelectedMenu(selectedMenu: 'swap'|'gas'|'bridge'|'usdc'|'jolt') {
     this.selectedMenu = selectedMenu
   }
 

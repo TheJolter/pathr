@@ -5,6 +5,7 @@ import { useStore } from "@/stores/hooks";
 import { Button, Tooltip } from "@nextui-org/react";
 import { observer } from "mobx-react-lite";
 
+
 export default observer(function TokenButton(props: {
   // onSelect: (chainName: string) => void,
   chainName: string
@@ -16,7 +17,6 @@ export default observer(function TokenButton(props: {
 
   const direction = displayStore.showChainTokenSelector
   const chainInfo = BlockchainInfo[chainName]
-
 
   let selected = (direction==='from'&&pathrStore.fromChainName===chainName) || (direction==='to'&&pathrStore.toChainName===chainName)
 

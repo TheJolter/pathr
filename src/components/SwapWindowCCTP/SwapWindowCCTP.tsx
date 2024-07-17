@@ -16,6 +16,7 @@ import { Button } from "@nextui-org/react"
 import ProgressDialogContent from "./Review/ProgressDialogContent"
 import { getAndStorePlatformFees } from "@/utils/cctp/get-and-store-platform-fee"
 import ReviewPathr from "./ReviewPathr/Review"
+import allTokens from '@/configs/pathr/all-tokens.json'
 
 export default observer(function SwapWindow(
   props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>

@@ -80,6 +80,45 @@ export default observer(function ChainTokenSelector(props: {
     
     setTokens([...allTokensHot, ...allTokensNotHot])
   }, [chainName, searchText])
+
+  useEffect(()=>{
+    // if (displayStore.selectedMenu!=='bridge') return
+    // if (
+    //   displayStore.showChainTokenSelector==='from'
+    //   && pathrStore.fromChainName
+    //   && pathrStore.fromChainTokenAddr
+    // ) { // change the target token to the same symbol
+    //   if (pathrStore.fromChainName===pathrStore.toChainName) {
+    //     console.log('same chian')
+    //     pathrStore.setToChainTokenAddr(null)
+    //     pathrStore.setToChainName(null)
+    //     return
+    //   }
+    //   // find same symbol token in the target chain
+    //   const sourceSymbol = allTokens.find(item=>{
+    //     return (
+    //       item.blockchainName===pathrStore.fromChainName
+    //       && item.address.toLowerCase()===pathrStore.fromChainTokenAddr?.toLowerCase()
+    //     )
+    //   })?.symbol
+    //   console.log('sourceSymbol', sourceSymbol)
+    //   const targetTokenAddr = allTokens.find(item=>{
+    //     return (
+    //       item.blockchainName===pathrStore.toChainName
+    //       && item.symbol.toLowerCase()===sourceSymbol?.toLowerCase()
+    //     )
+    //   })?.address
+    //   console.log('targetTokenAddr', targetTokenAddr)
+    //   pathrStore.setToChainTokenAddr(targetTokenAddr??null)
+    // }
+  }, [
+    // displayStore.showChainTokenSelector,
+    // displayStore.selectedMenu,
+    // pathrStore.fromChainName,
+    // pathrStore.fromChainTokenAddr,
+    // pathrStore.toChainName,
+    // pathrStore.toChainTokenAddr
+  ])
   
   return (
 <div style={props.style}

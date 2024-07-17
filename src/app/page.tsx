@@ -17,8 +17,10 @@ export default observer(function Page() {
   if(!mounted) return null
   return (
     <main>
-      {displayStore.selectedMenu==='swap'&&<SwapWindowCCTP className="mt-9 w-full" />}
-      {displayStore.selectedMenu==='bridge'&&<JOLTBridge />}
+      {['swap', 'bridge'].includes(displayStore.selectedMenu)&&
+        <SwapWindowCCTP className="mt-9 w-full" />
+      }
+      {displayStore.selectedMenu==='jolt'&&<JOLTBridge />}
       <Modal isOpen={!!dialogStore.dialog} onOpenChange={()=>{
         if (dialogStore.dialog?.forbidClose) return
         dialogStore.hideDialog()

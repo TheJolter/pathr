@@ -38,7 +38,9 @@ export default observer(function Exchange(props: {
       className="max-w-[392px] w-full rounded-xl px-6 py-4" 
     >
       <div className="flex items-center">
-        <div className="font-semibold text-2xl grow">Exchange</div>
+        <div className="font-semibold text-2xl grow capitalize">
+          {displayStore.selectedMenu}
+        </div>
         {/* <Button isIconOnly className="bg-opacity" size="md" radius="full">
           <FontAwesomeIcon icon={faArrowsRotate} spin size="lg" />
         </Button> */}

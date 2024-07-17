@@ -58,11 +58,29 @@ export default observer(function TokenInfoCard(props: {
 <div className="flex items-center rounded-xl px-3 py-2 mt-4 border hover:border-gray-400 cursor-pointer"
   style={{display: hideCard?'none':'flex'}}
   onClick={()=>{
+
     if (displayStore.showChainTokenSelector==='from') {
       pathrStore.setFromChainTokenAddr(tokenInfo.address)
+      if (displayStore.selectedMenu!=='bridge') {
+        // if (pathrStore.fromChainName===pathrStore.toChainName) {
+        //   console.log('same chian')
+        //   pathrStore.setToChainTokenAddr(null)
+        //   pathrStore.setToChainName(null)
+        //   return
+        // }
+      }
     } else if(displayStore.showChainTokenSelector==='to') {
       pathrStore.setToChainTokenAddr(tokenInfo.address)
+      if (displayStore.selectedMenu!=='bridge') {
+        // if (pathrStore.fromChainName===pathrStore.toChainName) {
+        //   console.log('same chian')
+        //   pathrStore.setFromChainTokenAddr(null)
+        //   pathrStore.setFromChainName(null)
+        //   return
+        // }
+      }
     }
+
     displayStore.setShowChainTokenSelector(undefined)
   }}
 >
