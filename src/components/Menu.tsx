@@ -46,12 +46,12 @@ export default observer(function Menu() {
       // style={noneSelectedStyle}
     >Swap</MainButton>
     
-    {/* <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
         displayStore.setSelectedMenu('bridge')
       }}
       style={selectedMenu!=='bridge'?noneSelectedStyle:undefined}
-    >Bridge</MainButton> */}
+    >Bridge</MainButton>
 
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
