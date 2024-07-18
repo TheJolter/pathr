@@ -37,14 +37,15 @@ export default observer(function ChainTokenCard(props: {
 
   let tokenAddr = pathrStore.fromChainTokenAddr
   let chainName = pathrStore.fromChainName
+  // set default tokens only in non-bridge mode
   if (!tokenAddr && displayStore.selectedMenu!=='bridge') {
     tokenAddr = DEFAULT_TOKENS[chainName!]
     pathrStore.setFromChainTokenAddr(tokenAddr)
   }
-  if (direction==='to' && displayStore.selectedMenu!=='bridge') {
+  if (direction==='to') {
     tokenAddr = pathrStore.toChainTokenAddr
     chainName = pathrStore.toChainName
-    if (!tokenAddr) {
+    if (!tokenAddr && displayStore.selectedMenu!=='bridge') {
       tokenAddr = DEFAULT_TOKENS[chainName!]
       pathrStore.setToChainTokenAddr(tokenAddr)
     }
