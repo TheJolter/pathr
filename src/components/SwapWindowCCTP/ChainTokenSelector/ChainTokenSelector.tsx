@@ -1,7 +1,7 @@
 import { CSSProperties, useEffect, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { Button, ScrollShadow } from "@nextui-org/react"
+import { Avatar, Button, Chip, ScrollShadow } from "@nextui-org/react"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import TokenButton from "./TokenButton"
@@ -24,6 +24,7 @@ export default observer(function ChainTokenSelector(props: {
 
   const [searchText, setSearchText] = useState('')
   const [tokens, setTokens] = useState<typeof allTokens>([])
+  const [hotTokens, setHotTokens] = useState<typeof allTokens>([])
 
   let chainName = pathrStore.fromChainName
   let oppositeChainName = pathrStore.toChainName
@@ -64,6 +65,7 @@ export default observer(function ChainTokenSelector(props: {
         || item.blockchainName!==oppositeChainName
       )
     })
+    setHotTokens(allTokensHot)
 
     const allTokensNotHot = allTokens.filter(item=>{
       return (
@@ -121,6 +123,72 @@ export default observer(function ChainTokenSelector(props: {
     />}
   </div>
 
+  <div className="my-4 grid grid-cols-3 gap-3 p-2">
+    {hotTokens.map((tokenInfo, index)=>{
+      return (
+        <Chip className="cursor-pointer" variant="flat" key={`hot-token-${index}`}
+          onClick={()=>{
+            if (displayStore.showChainTokenSelector==='from') {
+              pathrStore.setFromChainTokenAddr(tokenInfo.address)
+              if (displayStore.selectedMenu==='bridge') {
+                if (pathrStore.fromChainName===pathrStore.toChainName) {
+                  console.log('same chian')
+                  pathrStore.setToChainTokenAddr(null)
+                  pathrStore.setToChainName(null)
+                } else {
+                  // find same symbol token in the target chain
+                  const sourceSymbol = allTokens.find(item=>{
+                    return (
+                      item.blockchainName===pathrStore.fromChainName
+                      && item.address.toLowerCase()===pathrStore.fromChainTokenAddr?.toLowerCase()
+                    )
+                  })?.symbol
+                  console.log('sourceSymbol', sourceSymbol)
+                  const targetTokenAddr = allTokens.find(item=>{
+                    return (
+                      item.blockchainName===pathrStore.toChainName
+                      && item.symbol.toLowerCase()===sourceSymbol?.toLowerCase()
+                    )
+                  })?.address
+                  console.log('targetTokenAddr', targetTokenAddr)
+                  pathrStore.setToChainTokenAddr(targetTokenAddr??null)
+                }
+              }
+            } else if(displayStore.showChainTokenSelector==='to') {
+              pathrStore.setToChainTokenAddr(tokenInfo.address)
+              if (displayStore.selectedMenu==='bridge') {
+                if (pathrStore.fromChainName===pathrStore.toChainName) {
+                  console.log('same chian')
+                  pathrStore.setFromChainTokenAddr(null)
+                  pathrStore.setFromChainName(null)
+                } else {
+                  // find same symbol token in the source chain
+                  const targetSymbol = allTokens.find(item=>{
+                    return (
+                      item.blockchainName===pathrStore.toChainName
+                      && item.address.toLowerCase()===pathrStore.toChainTokenAddr?.toLowerCase()
+                    )
+                  })?.symbol
+                  console.log('targetSymbol', targetSymbol)
+                  const sourceTokenAddr = allTokens.find(item=>{
+                    return (
+                      item.blockchainName===pathrStore.fromChainName
+                      && item.symbol.toLowerCase()===targetSymbol?.toLowerCase()
+                    )
+                  })?.address
+                  console.log('sourceTokenAddr', sourceTokenAddr)
+                  pathrStore.setFromChainTokenAddr(sourceTokenAddr??null)
+                }
+              }
+            }
+            displayStore.setShowChainTokenSelector(undefined)
+          }} 
+          avatar={<Avatar src={tokenInfo.image}/>}
+        >{tokenInfo.symbol}</Chip>
+      )
+    })}
+  </div>
+
   <div className="flex items-center border border-gray-400 mt-5 rounded-xl">
     <input placeholder="Search by token name or address" value={searchText}
       className="grow bg-transparent focus:outline-none border-none pl-3 text-base"
@@ -133,13 +201,6 @@ export default observer(function ChainTokenSelector(props: {
 
   <ScrollShadow className="max-h-[400px]">
     {tokens.map((tokenInfo, index)=>{
-      // if (tokenInfo.address===ADDR0) {
-      //   return <></>
-      // }
-      // const chain = CHAINS.find(item=>item.chainName===tokenInfo.blockchainName)
-      // if(!usdcPools.find(item=>{
-      //   return item.chainID===chain?.chainId && item.address===tokenInfo.address
-      // })) return <></>
       return <TokenInfoCard tokenInfo={tokenInfo} key={`token-info-${index}`} />
     })}
   </ScrollShadow>
