@@ -61,23 +61,55 @@ export default observer(function TokenInfoCard(props: {
 
     if (displayStore.showChainTokenSelector==='from') {
       pathrStore.setFromChainTokenAddr(tokenInfo.address)
-      if (displayStore.selectedMenu!=='bridge') {
-        // if (pathrStore.fromChainName===pathrStore.toChainName) {
-        //   console.log('same chian')
-        //   pathrStore.setToChainTokenAddr(null)
-        //   pathrStore.setToChainName(null)
-        //   return
-        // }
+      if (displayStore.selectedMenu==='bridge') {
+        if (pathrStore.fromChainName===pathrStore.toChainName) {
+          console.log('same chian')
+          pathrStore.setToChainTokenAddr(null)
+          pathrStore.setToChainName(null)
+        } else {
+          // find same symbol token in the target chain
+          const sourceSymbol = allTokens.find(item=>{
+            return (
+              item.blockchainName===pathrStore.fromChainName
+              && item.address.toLowerCase()===pathrStore.fromChainTokenAddr?.toLowerCase()
+            )
+          })?.symbol
+          console.log('sourceSymbol', sourceSymbol)
+          const targetTokenAddr = allTokens.find(item=>{
+            return (
+              item.blockchainName===pathrStore.toChainName
+              && item.symbol.toLowerCase()===sourceSymbol?.toLowerCase()
+            )
+          })?.address
+          console.log('targetTokenAddr', targetTokenAddr)
+          pathrStore.setToChainTokenAddr(targetTokenAddr??null)
+        }
       }
     } else if(displayStore.showChainTokenSelector==='to') {
       pathrStore.setToChainTokenAddr(tokenInfo.address)
-      if (displayStore.selectedMenu!=='bridge') {
-        // if (pathrStore.fromChainName===pathrStore.toChainName) {
-        //   console.log('same chian')
-        //   pathrStore.setFromChainTokenAddr(null)
-        //   pathrStore.setFromChainName(null)
-        //   return
-        // }
+      if (displayStore.selectedMenu==='bridge') {
+        if (pathrStore.fromChainName===pathrStore.toChainName) {
+          console.log('same chian')
+          pathrStore.setFromChainTokenAddr(null)
+          pathrStore.setFromChainName(null)
+        } else {
+          // find same symbol token in the source chain
+          const targetSymbol = allTokens.find(item=>{
+            return (
+              item.blockchainName===pathrStore.toChainName
+              && item.address.toLowerCase()===pathrStore.toChainTokenAddr?.toLowerCase()
+            )
+          })?.symbol
+          console.log('targetSymbol', targetSymbol)
+          const sourceTokenAddr = allTokens.find(item=>{
+            return (
+              item.blockchainName===pathrStore.fromChainName
+              && item.symbol.toLowerCase()===targetSymbol?.toLowerCase()
+            )
+          })?.address
+          console.log('sourceTokenAddr', sourceTokenAddr)
+          pathrStore.setFromChainTokenAddr(sourceTokenAddr??null)
+        }
       }
     }
 
