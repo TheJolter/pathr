@@ -116,6 +116,9 @@ export default observer(function ChainTokenSelector(props: {
 
       return <TokenButton chainName={chainName} key={`BackBtn-${index}`} />
     })}
+    {displayStore.selectedMenu==='bridge'&&<TokenButton chainName={'JOLTIFY'} 
+      chainLabel="https://joltify.io/wp-content/uploads/2023/09/joltify-02.png"
+    />}
   </div>
 
   <div className="flex items-center border border-gray-400 mt-5 rounded-xl">

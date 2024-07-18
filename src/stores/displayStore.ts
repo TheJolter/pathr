@@ -76,4 +76,11 @@ export default class DisplayStore {
     this.selectedMenu = selectedMenu
   }
 
+  @observable
+  joltifyChainSelected: 'source'|'target'|null = null
+  @action
+  setJoltifyChainSelected(joltifyChainSelected: 'source'|'target'|null) {
+    this.joltifyChainSelected = joltifyChainSelected
+  }
+
 }

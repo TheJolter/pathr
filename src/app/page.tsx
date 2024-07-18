@@ -14,13 +14,31 @@ export default observer(function Page() {
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(()=>{
+    if (displayStore.selectedMenu!=='bridge') {
+      displayStore.setJoltifyChainSelected(null)
+    }
+  }, [displayStore.selectedMenu])
+
   if(!mounted) return null
   return (
     <main>
-      {['swap', 'bridge'].includes(displayStore.selectedMenu)&&
+      {(
+        ['swap', 'bridge'].includes(displayStore.selectedMenu)
+        && displayStore.joltifyChainSelected===null
+      )&&
         <SwapWindowCCTP className="mt-9 w-full" />
       }
-      {displayStore.selectedMenu==='jolt'&&<JOLTBridge />}
+      {(
+        displayStore.selectedMenu==='jolt'
+        || (
+          displayStore.joltifyChainSelected!==null
+          && displayStore.selectedMenu==='bridge'
+        )
+      )&&
+        <JOLTBridge />
+      }
       <Modal isOpen={!!dialogStore.dialog} onOpenChange={()=>{
         if (dialogStore.dialog?.forbidClose) return
         dialogStore.hideDialog()

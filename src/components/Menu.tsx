@@ -53,12 +53,12 @@ export default observer(function Menu() {
       style={selectedMenu!=='bridge'?noneSelectedStyle:undefined}
     >Bridge</MainButton>
 
-    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+    {/* <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
         displayStore.setSelectedMenu('jolt')
       }}
       style={selectedMenu!=='jolt'?noneSelectedStyle:undefined}
-    >JOLT</MainButton>
+    >JOLT</MainButton> */}
 
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
