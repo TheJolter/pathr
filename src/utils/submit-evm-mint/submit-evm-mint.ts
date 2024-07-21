@@ -1,5 +1,5 @@
 import { evmChainInfos } from "./config"
-import { TransactionReceipt, TransactionResponse, ethers } from 'ethers'
+import { ethers } from 'ethers'
 import abi from './abi.json'
 
 export const submitEvmMint = ({
@@ -11,7 +11,7 @@ export const submitEvmMint = ({
     message: string,
     eventNonce: string
   },
-}): Promise<TransactionReceipt> => {
+}): Promise<any> => {
   return new Promise(async (resolve, reject)=>{
     if (!process.env.MINTER_PRIVATE_KEY) return reject('MINTER_PRIVATE_KEY not found')
 
@@ -19,7 +19,7 @@ export const submitEvmMint = ({
     if (!evmChainInfo) return reject('evmChainInfo not found')
     const {Messagetransmitter, rpc} = evmChainInfo
 
-    const provider = new ethers.JsonRpcProvider(rpc)
+    const provider = new ethers.providers.JsonRpcProvider(rpc)
     const wallet = new ethers.Wallet(process.env.MINTER_PRIVATE_KEY)
     // const messageBytes = ethers.toUtf8Bytes(message.message)
     // const attestationBytes = ethers.toUtf8Bytes(message.attestation)
@@ -30,14 +30,14 @@ export const submitEvmMint = ({
     try {
       const fee = {
         gasLimit: 15000000,
-        maxPriorityFeePerGas: ethers.parseUnits('2', 'gwei'),
-        maxFeePerGas: ((await provider.getFeeData()).maxFeePerGas||BigInt(0)) + ethers.parseUnits('2', 'gwei')
+        maxPriorityFeePerGas: ethers.utils.parseUnits('2', 'gwei'),
+        maxFeePerGas: BigInt(((await provider.getFeeData()).maxFeePerGas)?.toString()||BigInt(0)) + BigInt(ethers.utils.parseUnits('2', 'gwei').toString())
       }
       console.log('fee info', fee)
       const response = await contract.receiveMessage(message.message, message.attestation, 
         // fee
-      ) as TransactionResponse
-      const receipt = await response.wait() as TransactionReceipt
+      ) as any
+      const receipt = await response.wait() as any
       resolve(receipt)
     } catch (error) {
       reject({status: -1, error})

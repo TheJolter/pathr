@@ -62,10 +62,11 @@ export default observer(function Menu() {
 
     <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
-        window.open('https://usdc.pathr.io')
+        // window.open('https://usdc.pathr.io')
+        displayStore.setSelectedMenu('usdc')
       }}
-      // style={selectedMenu!=='swap'?noneSelectedStyle:undefined}
-      style={noneSelectedStyle}
+      style={selectedMenu!=='usdc'?noneSelectedStyle:undefined}
+      // style={noneSelectedStyle}
     >USDC</MainButton>
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 

@@ -1,5 +1,5 @@
-import { EvmChain, chains } from "@/config/chains"
-import { ethers, TransactionResponse, TransactionReceipt } from "ethers"
+import { EvmChain, chains } from "@/components/USDC/chains"
+import { ethers } from "ethers"
 import abi from './tokenMessengerAbi.json'
 import getMintRecipientFromCosmosAddress from './getMintRecipientFromCosmosAddress'
 
@@ -11,7 +11,7 @@ export default function evmToNoble({
   sourceChainID: string,
   amount: string,
   targetAddress: string
-}): Promise<TransactionReceipt> {
+}): Promise<any> {
   return new Promise(async (resolve, reject) => {
     const sourceChain = chains.find(chain => (
       chain.chainID === sourceChainID
@@ -35,8 +35,8 @@ export default function evmToNoble({
       }
     }
 
-    const provider = new ethers.BrowserProvider(ethereum)
-    let signer:ethers.JsonRpcSigner
+    const provider = new ethers.providers.JsonRpcProvider(ethereum)
+    let signer:ethers.Signer
     try {
       signer= await provider.getSigner()
     } catch (error) {
@@ -45,12 +45,12 @@ export default function evmToNoble({
     }
     const contract = new ethers.Contract(sourceChain.tokenMessenger, abi, signer)
     contract.depositForBurn(
-      ethers.parseUnits(amount, 6),
+      ethers.utils.parseUnits(amount, 6),
       4, // domain of noble
       getMintRecipientFromCosmosAddress(targetAddress),
       sourceChain.usdcAddress
-    ).then((txRes: TransactionResponse)=>{
-      txRes.wait().then((txRpt)=>{
+    ).then((txRes: any)=>{
+      txRes.wait().then((txRpt:any)=>{
         if (txRpt===null) {
           reject(new Error(`Transaction failed, txRpt is null`))
           return

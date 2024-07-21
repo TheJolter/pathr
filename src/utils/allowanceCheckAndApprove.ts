@@ -1,6 +1,6 @@
-import { EvmChain, chains } from "@/config/chains";
+import { EvmChain, chains } from "@/components/USDC/chains";
 import { ethers } from "ethers";
-import { bn } from "utils";
+import bn from "@/utils/bn";
 
 export default function allowanceCheckAndApprove({
   evmChainID,
@@ -16,8 +16,8 @@ export default function allowanceCheckAndApprove({
       return;
     }
 
-    const provider = new ethers.BrowserProvider(ethereum);
-    let signer: ethers.JsonRpcSigner;
+    const provider = new ethers.providers.JsonRpcProvider(ethereum);
+    let signer: ethers.Signer;
 
     try {
       signer = await provider.getSigner();
@@ -48,7 +48,7 @@ export default function allowanceCheckAndApprove({
       const currentAllowance = bn(allowanceAmountBN.toString()).div(bn(10).pow(bn(decimalsBN.toString())));
 
       if (currentAllowance.lt(bn(amount))) {
-        const amountToApprove = ethers.parseUnits(amount, Number(decimalsBN)).toString();
+        const amountToApprove = ethers.utils.parseUnits(amount, Number(decimalsBN)).toString();
         
         // Use a loop instead of setTimeout to handle recheck
         while (true) {

@@ -6,6 +6,7 @@ import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import { Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/react"
 import JOLTBridge from "@/components/JOLTBridge/JOLTBridge"
+import USDC from "@/components/USDC/page"
 
 export default observer(function Page() {
   const [mounted, setMounted] = useState(false)
@@ -24,12 +25,14 @@ export default observer(function Page() {
   if(!mounted) return null
   return (
     <main>
+
       {(
         ['swap', 'bridge'].includes(displayStore.selectedMenu)
         && displayStore.joltifyChainSelected===null
       )&&
         <SwapWindowCCTP className="mt-9 w-full" />
       }
+
       {(
         displayStore.selectedMenu==='jolt'
         || (
@@ -39,6 +42,14 @@ export default observer(function Page() {
       )&&
         <JOLTBridge />
       }
+
+
+      {displayStore.selectedMenu==='usdc' && 
+        <div className="mt-32">
+          <USDC />
+        </div>
+      }
+
       <Modal isOpen={!!dialogStore.dialog} onOpenChange={()=>{
         if (dialogStore.dialog?.forbidClose) return
         dialogStore.hideDialog()

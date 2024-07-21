@@ -22,7 +22,7 @@ import getUsdcBalance from "@/utils/get-usdc-balance";
 // import bigNumberFloor from "utils/src/bn";
 import { BACKEND_BASE_API_URL } from "@/configs/cctp/backend";
 
-export default observer(function Home() {
+export default observer(function USDC() {
   const inputStore = useStore('inputStore')
   const cosmosWalletStore = useStore('cosmosWalletStore')
   const evmWalletStore = useStore('evmWalletStore')
