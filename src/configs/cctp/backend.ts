@@ -1,0 +1,1 @@
+export const BACKEND_BASE_API_URL = 'https://usdc.pathr.io'

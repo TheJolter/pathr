@@ -8,7 +8,7 @@ import DialogStore from "./dialogStore";
 import ApiDataStore from "./ApiDataStore";
 import CCTPStore from "./CCTPStore";
 import CosmosWalletStore from "./CosmosWalletStore";
-
+import ModalStore from "./ModalStore";
 
 export const stores = Object.freeze({
   inputStore: new InputStore(),
@@ -19,7 +19,8 @@ export const stores = Object.freeze({
   dialogStore: new DialogStore(),
   apiDataStore: new ApiDataStore(),
   cctpStore: new CCTPStore(),
-  cosmosWalletStore: new CosmosWalletStore()
+  cosmosWalletStore: new CosmosWalletStore(),
+  modalStore: new ModalStore()
 })
 
 export const storesContext = React.createContext(stores);
