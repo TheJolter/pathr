@@ -85,7 +85,7 @@ export default observer(function EvmToJolyify({
       amount: inputStore.amount,
       targetAddress: inputStore.targetAddress
     }).then((txRpt) => {
-      watchCctpAttastation({domain: sourceChain?.domain!, txHash: txRpt.hash}).then((attestation) => {
+      watchCctpAttastation({domain: sourceChain?.domain!, txHash: txRpt.transactionHash}).then((attestation) => {
         fetch('/api/mint-on-noble', {
           method: 'POST',
           headers: {

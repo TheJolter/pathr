@@ -15,6 +15,11 @@ export default observer(function EvmWalletButton() {
   const address = wallet?.accounts?.[0]?.address
 
   const balanceStore = useStore('balanceStore')
+  const evmWalletStore = useStore('evmWalletStore')
+
+  useEffect(()=>{
+    evmWalletStore.login(address??null)
+  }, [address])
 
   useEffect(()=>{
     if (!address) return

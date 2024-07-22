@@ -35,7 +35,7 @@ export default function evmToNoble({
       }
     }
 
-    const provider = new ethers.providers.JsonRpcProvider(ethereum)
+    const provider = new ethers.providers.Web3Provider(ethereum)
     let signer:ethers.Signer
     try {
       signer= await provider.getSigner()

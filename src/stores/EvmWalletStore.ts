@@ -10,7 +10,7 @@ export default class EvmWalletStore {
   address: string|null = null
 
   @action
-  login(address: string) {
+  login(address: string|null) {
     this.address = address
   }
 

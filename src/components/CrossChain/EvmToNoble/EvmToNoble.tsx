@@ -23,6 +23,8 @@ export default observer(function EvmToNoble({
   const targetChain = chains.find(c => c.chainID === inputStore.targetChainID)
   const sourceChain = chains.find(c => c.chainID === inputStore.sourceChainID)
 
+  console.log('sourceChain', sourceChain)
+
   const handleEvmToNoble = async () => {
     if (!evmWalletStore.address || Number(inputStore.amount)<=0 || !inputStore.targetAddress) return
     setSending(true)
@@ -45,13 +47,17 @@ export default observer(function EvmToNoble({
         }
       }
 
-      console.log('approve start')
+      console.log('approve start', {
+        evmChainID: sourceChain?.chainID ?? '',
+        amount: inputStore.amount
+      })
       await allowanceCheckAndApprove({
         evmChainID: sourceChain?.chainID ?? '',
         amount: inputStore.amount
       })
       console.log('approve end')
     } catch(error:any) {
+      console.error(error)
       setSending(false)
       modalStore.showModal({
         title: 'Error',
@@ -65,7 +71,8 @@ export default observer(function EvmToNoble({
       amount: inputStore.amount,
       targetAddress: inputStore.targetAddress
     }).then((txRpt) => {
-      watchCctpAttastation({domain: sourceChain?.domain!, txHash: txRpt.hash}).then((attestation) => {
+      console.log('evmToNoble txRpt', txRpt)
+      watchCctpAttastation({domain: sourceChain?.domain!, txHash: txRpt.transactionHash}).then((attestation) => {
         fetch('/api/mint-on-noble', {
           method: 'POST',
           headers: {

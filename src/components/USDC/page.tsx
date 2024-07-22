@@ -98,18 +98,24 @@ export default observer(function USDC() {
   ])
 
   useEffect(() => {
+    console.log({
+      'cosmosWalletStore.address': cosmosWalletStore.address,
+      'evmWalletStore.address': evmWalletStore.address
+    })
     let address: string|undefined
     if (sourceChain?.chainType==='evm' && evmWalletStore.address) {
       address = evmWalletStore.address
     } else if (sourceChain?.chainType==='cosmos' && cosmosWalletStore.address) {
       address = cosmosAddrConvertor(cosmosWalletStore.address, sourceChain.prefix!)
     }
+    console.log('setSourceAddress', address)
     setSourceAddress(address)
     if (!address) return
     renewBalance(address)
   }, [sourceChain?.chainID, cosmosWalletStore.address, evmWalletStore.address])
 
   const renewBalance = (address: string) => {
+    console.log('renewBalance', address)
     if (!address) return
     getUsdcBalance({chainID: sourceChain?.chainID||'', address}).then(balance=>{
       balanceStore.addUsdcBalance({
