@@ -16,7 +16,7 @@ export default function allowanceCheckAndApprove({
       return;
     }
 
-    const provider = new ethers.providers.JsonRpcProvider(ethereum);
+    const provider = new ethers.providers.Web3Provider(ethereum);
     let signer: ethers.Signer;
 
     try {
