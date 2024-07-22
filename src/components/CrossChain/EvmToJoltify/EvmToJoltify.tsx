@@ -15,6 +15,7 @@ import bn from "@/utils/bn";
 import cosmosAddrConvertor from "@/utils/cosmosAddrConvertor";
 import allowanceCheckAndApprove from "@/utils/allowanceCheckAndApprove";
 import watchCctpAttastation from "@/utils/watchCctpAttastation";
+import { BACKEND_BASE_API_URL } from "@/configs/cctp/backend";
 
 export default observer(function EvmToJolyify({
   disabled
@@ -86,7 +87,7 @@ export default observer(function EvmToJolyify({
       targetAddress: inputStore.targetAddress
     }).then((txRpt) => {
       watchCctpAttastation({domain: sourceChain?.domain!, txHash: txRpt.transactionHash}).then((attestation) => {
-        fetch('/api/mint-on-noble', {
+        fetch(`${BACKEND_BASE_API_URL}/api/mint-on-noble`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

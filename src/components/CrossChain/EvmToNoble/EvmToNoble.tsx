@@ -9,6 +9,7 @@ import { chains } from "@/components/USDC/chains"
 import getUsdcBalance from "@/utils/get-usdc-balance"
 import watchCctpAttastation from "@/utils/watchCctpAttastation"
 import allowanceCheckAndApprove from "@/utils/allowanceCheckAndApprove"
+import { BACKEND_BASE_API_URL } from "@/configs/cctp/backend"
 
 export default observer(function EvmToNoble({
   disabled
@@ -73,7 +74,7 @@ export default observer(function EvmToNoble({
     }).then((txRpt) => {
       console.log('evmToNoble txRpt', txRpt)
       watchCctpAttastation({domain: sourceChain?.domain!, txHash: txRpt.transactionHash}).then((attestation) => {
-        fetch('/api/mint-on-noble', {
+        fetch(`${BACKEND_BASE_API_URL}/api/mint-on-noble`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -232,7 +232,7 @@ export default observer(function JoltifyToEvm({
             }, 6000)
             return
           }
-          fetch(`/api/mint-on-evm`, {
+          fetch(`${BACKEND_BASE_API_URL}/api/mint-on-evm`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
