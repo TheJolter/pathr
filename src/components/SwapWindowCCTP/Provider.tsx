@@ -40,6 +40,7 @@ export default observer(function Provider(props: {
     tradeType = (trade as WrappedCrossChainTrade).tradeType
     trade = trade.trade
   }
+  console.log('trade', trade)
   
 
   const { theme } = useTheme()
@@ -95,7 +96,7 @@ export default observer(function Provider(props: {
         <FontAwesomeIcon icon={faSackDollar} className="text-gray-400 mr-2" />
       </Tooltip>
       <div className="text-gray-400">
-        { bigNumberCeil(trade?.feeInfo?.pathrProxy?.fixedFee?.amount?.toString()||0, 6).toFormat()} {fromNativeToken?.symbol}
+        { bigNumberCeil(trade?.feeInfo?.pathrProxy?.fixedFee?.amount?.toString()||0, 18).toFormat()} {fromNativeToken?.symbol}
       </div>
     </div>
     {/* {trade?.feeInfo?.provider&&<div className="flex items-center">
