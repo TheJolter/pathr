@@ -41,7 +41,7 @@ export default observer(function Page() {
   return (
     <main>
 
-      {!showJOLTBridge&&
+      {!showJOLTBridge&&displayStore.selectedMenu!=='usdc'&&
         <SwapWindowCCTP className="mt-9 w-full" />
       }
 
