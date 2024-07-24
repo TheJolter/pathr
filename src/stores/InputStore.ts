@@ -46,4 +46,11 @@ export default class InputStore {
   setAmount(amount: string) {
     this.amount = amount
   }
+
+  @observable
+  bridgeToken: string|undefined = undefined
+  @action
+  setBridgeToken(bridgeToken: string|undefined) {
+    this.bridgeToken = bridgeToken
+  }
 }

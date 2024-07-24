@@ -12,6 +12,7 @@ export default observer(function Menu() {
   const displayStore = useStore('displayStore')
   const selectedMenu = displayStore.selectedMenu
   const pathrStore = useStore('pathrStore')
+  const inputStore = useStore('inputStore')
   const [menuBgStyle, setMenuBgStyle] = useState<CSSProperties>()
   const noneSelectedStyle = {background: 'rgba(0,0,0,0)', color: '#9FA8AB'}
 
@@ -21,6 +22,7 @@ export default observer(function Menu() {
       pathrStore.setToChainName(EVM_BLOCKCHAIN_NAME.BASE)
       pathrStore.setFromChainTokenAddr('0xaf88d065e77c8cC2239327C5EDb3A432268e5831'.toLowerCase())
       pathrStore.setToChainTokenAddr('0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'.toLowerCase())
+      inputStore.setBridgeToken('USDC')
     }
   }, [selectedMenu])
 

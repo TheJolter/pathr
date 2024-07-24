@@ -74,7 +74,8 @@ export default observer(function ProviderCCTP(props: {
     </div>
     <div className="flex items-center grow justify-end">
       <div className="text-gray-400">
-        Slippage: {((swapInfo?.slippage||0)*100).toFixed(2)}%
+        {/* Slippage: {((swapInfo?.slippage||0)*100).toFixed(2)}% */}
+        Time: 3m
       </div>
     </div>
   </div>

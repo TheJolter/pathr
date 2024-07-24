@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Button } from "@nextui-org/react"
+import { Avatar, Button } from "@nextui-org/react"
 import { CSSProperties, useEffect, useState } from "react"
 import ToggleButton from "./ToggleButton"
 import ChainTokenCard from "./ChainTokenCard"
@@ -9,6 +9,13 @@ import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import bn from "@/utils/bn"
+import {Autocomplete, AutocompleteItem} from "@nextui-org/react";
+import allTokens from "@/configs/pathr/all-tokens.json"
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import { useTheme } from "next-themes"
+import BRIDGE_TOKENS from "@/configs/bridge-tokens"
+import { BlockchainInfo } from "@/configs/pathr/blockchain-info"
 
 export default observer(function Exchange(props: {
   style?: CSSProperties
@@ -17,6 +24,27 @@ export default observer(function Exchange(props: {
   const displayStore = useStore('displayStore')
   const pathrStore = useStore('pathrStore')
   const inputStore = useStore('inputStore')
+
+  const { theme } = useTheme()
+
+  const [bridgeTokenImg, setBridgeTokenImg] = useState<string|undefined>(undefined)
+  const [background, setBackground] = useState('')
+
+  // useEffect(()=>{
+  //   setBlockchainNames(BRIDGE_TOKENS.find(item=>item.symbol===inputStore.bridgeToken)?.blockchainNames||[])
+  // }, [inputStore.bridgeToken])
+
+  useEffect(()=>{
+    if (theme==='dark') {
+      setBackground('#354439')
+      return
+    }
+    setBackground('#ffffff')
+  }, [theme])
+
+  useEffect(()=>{
+    setBridgeTokenImg(allTokens.find(item=>item.symbol===inputStore.bridgeToken)?.image)
+  }, [inputStore.bridgeToken])
 
   function handleToggle() {
     const _fromChainName = pathrStore.fromChainName
@@ -27,7 +55,11 @@ export default observer(function Exchange(props: {
     pathrStore.setToChainTokenAddr(_fromChainTokenAddr)
   }
 
-  // console.log('pathrStore.calculating', pathrStore.calculating)
+  const CustomAutocomplete = styled(Autocomplete)`
+    .bg-default-100 {
+      background-color: ${background};
+    }
+  `;
 
   return (
 <div 
@@ -49,10 +81,92 @@ export default observer(function Exchange(props: {
         </Button> */}
       </div>
 
-      <div className="relative w-full">
+      {displayStore.selectedMenu==='bridge'&&<>
+        <CustomAutocomplete
+          className="mt-3 border-[#35593F] border-1 rounded-xl"
+          label="Token"
+          placeholder="Search an token"
+          inputValue={inputStore.bridgeToken}
+          defaultItems={BRIDGE_TOKENS}
+          onSelectionChange={(token) => {
+            console.log('token', token)
+            inputStore.setBridgeToken(token as string)
+            pathrStore.resetChainToken()
+          }}
+          startContent={bridgeTokenImg&&
+          <img className="w-5 h-5 rounded-full"
+            src={bridgeTokenImg} />
+          }
+          isClearable={false}
+        >
+          {(token) => <AutocompleteItem key={(token as any).symbol}
+            startContent={
+              <Avatar className="w-5 h-5" src={(token as any).img} />
+            }
+          >{(token as any).symbol}</AutocompleteItem>}
+        </CustomAutocomplete>
+
+        <div className="grid grid-cols-[1fr_auto_1fr] mt-4">
+          <CustomAutocomplete
+            className="border-[#35593F] border-1 rounded-xl"
+            label="Source Chain"
+            placeholder="select chain"
+            inputValue={pathrStore.fromChainName??''}
+            items={
+              BRIDGE_TOKENS.find(item=>item.symbol.toLowerCase()===inputStore.bridgeToken?.toLowerCase())?.chains?.filter(item=>item.blockchainName!==pathrStore.toChainName)
+              ||[]
+            }
+            onSelectionChange={(blockchainName) => {
+              pathrStore.setFromChainName(blockchainName as string)
+              pathrStore.setFromChainTokenAddr(allTokens.find(item=>(
+                item.symbol===inputStore.bridgeToken
+                && item.blockchainName===blockchainName
+              ))?.address??null)
+            }}
+            isClearable={false}
+          >
+            {(chain) => {
+              return <AutocompleteItem key={(chain as any).blockchainName} className="text text-xs"
+              >{(chain as any).blockchainName}</AutocompleteItem>
+            }}
+          </CustomAutocomplete>
+
+          <div className="flex items-center px-2 rotate-90">
+            <ToggleButton onClick={()=>{
+              if (pathrStore.calculating) return
+              handleToggle()
+            }} />
+          </div>
+
+          <CustomAutocomplete
+            className="border-[#35593F] border-1 rounded-xl"
+            label="Target Chain"
+            placeholder="select chain"
+            inputValue={pathrStore.toChainName??''}
+            items={
+              BRIDGE_TOKENS.find(item=>item.symbol.toLowerCase()===inputStore.bridgeToken?.toLowerCase())?.chains.filter(item=>item.blockchainName!==pathrStore.fromChainName)
+              ||[]
+            }
+            onSelectionChange={(blockchainName) => {
+              pathrStore.setToChainName(blockchainName as string)
+              pathrStore.setToChainTokenAddr(allTokens.find(item=>(
+                item.symbol===inputStore.bridgeToken
+                && item.blockchainName===blockchainName
+              ))?.address??null)
+            }}
+            isClearable={false}
+          >
+            {(chain) => {
+              return <AutocompleteItem key={(chain as any).blockchainName} className="text text-xs"
+              >{(chain as any).blockchainName}</AutocompleteItem>
+            }}
+          </CustomAutocomplete>
+        </div>
+      </>}
+
+      {displayStore.selectedMenu==='swap'&&<div className="relative w-full">
         <div className="absolute z-10 text-center w-full top-[88px] pointer-events-none">
           <ToggleButton onClick={()=>{
-            // return
             if (pathrStore.calculating) return
             handleToggle()
           }} />
@@ -61,7 +175,7 @@ export default observer(function Exchange(props: {
           <ChainTokenCard direction="from" onClick={()=>{displayStore.setShowChainTokenSelector('from')}} />
           <ChainTokenCard direction="to" onClick={()=>displayStore.setShowChainTokenSelector('to')} />
         </div>
-      </div>
+      </div>}
 
       <InputCard className="mt-4 p-4" />
 

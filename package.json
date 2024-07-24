@@ -12,6 +12,8 @@
     "@cosmjs/encoding": "^0.32.4",
     "@cosmjs/proto-signing": "^0.32.4",
     "@cosmjs/stargate": "^0.32.4",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",

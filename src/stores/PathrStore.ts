@@ -35,6 +35,14 @@ export default class PathrStore {
     this.toChainTokenAddr = toChainTokenAddr
   }
 
+  @action
+  resetChainToken() {
+    this.fromChainName = null
+    this.toChainName = null
+    this.fromChainTokenAddr = null
+    this.toChainTokenAddr = null
+  }
+
   @observable
   routerCalcTime = new Date()
   @action
