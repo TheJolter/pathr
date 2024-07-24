@@ -30,9 +30,15 @@ export default observer(function Exchange(props: {
   const [bridgeTokenImg, setBridgeTokenImg] = useState<string|undefined>(undefined)
   const [background, setBackground] = useState('')
 
-  // useEffect(()=>{
-  //   setBlockchainNames(BRIDGE_TOKENS.find(item=>item.symbol===inputStore.bridgeToken)?.blockchainNames||[])
-  // }, [inputStore.bridgeToken])
+  useEffect(()=>{
+    if (pathrStore.fromChainName==='Joltify') {
+      displayStore.setJoltifyChainSelected('source')
+    } else if (pathrStore.toChainName==='Joltify') {
+      displayStore.setJoltifyChainSelected('target')
+    } else {
+      displayStore.setJoltifyChainSelected(null)
+    }
+  }, [pathrStore.fromChainName, pathrStore.toChainName])
 
   useEffect(()=>{
     if (theme==='dark') {

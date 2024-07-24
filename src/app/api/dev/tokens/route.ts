@@ -7,7 +7,7 @@ export async function GET(request:NextRequest) {
     {
       symbol: 'JOLT', 
       img: 'https://assets.rubic.exchange/assets/binance-smart-chain/0x7db21353a0c4659b6a9a0519066aa8d52639dfa5/logo.png',
-      chains: [{blockchainName:'BSC'}]
+      chains: [{blockchainName:'BSC'}, {blockchainName:'Joltify'}]
     }
   ]
   for (const token of allTokens) {

@@ -9,6 +9,9 @@ const BRIDGE_TOKENS = [
     "chains": [
       {
         "blockchainName": "BSC"
+      },
+      {
+        "blockchainName": "Joltify"
       }
     ]
   },
