@@ -6,6 +6,7 @@ import MainButton from "./MainButton"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
+import { DEFAULT_TOKENS } from "@/configs/default"
 
 export default observer(function Menu() {
   const { theme } = useTheme()
@@ -18,11 +19,16 @@ export default observer(function Menu() {
 
   useEffect(()=>{
     if (selectedMenu==='bridge') {
-      pathrStore.setFromChainName(EVM_BLOCKCHAIN_NAME.ARBITRUM)
-      pathrStore.setToChainName(EVM_BLOCKCHAIN_NAME.BASE)
-      pathrStore.setFromChainTokenAddr('0xaf88d065e77c8cC2239327C5EDb3A432268e5831'.toLowerCase())
-      pathrStore.setToChainTokenAddr('0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'.toLowerCase())
+      pathrStore.setFromChainName(DEFAULT_TOKENS.bridge.from.chainName)
+      pathrStore.setToChainName(DEFAULT_TOKENS.bridge.to.chainName)
+      pathrStore.setFromChainTokenAddr(DEFAULT_TOKENS.bridge.from.tokenAddress)
+      pathrStore.setToChainTokenAddr(DEFAULT_TOKENS.bridge.to.tokenAddress)
       inputStore.setBridgeToken('USDC')
+    } else if (selectedMenu==='swap') {
+      pathrStore.setFromChainName(DEFAULT_TOKENS.swap.from.chainName)
+      pathrStore.setToChainName(DEFAULT_TOKENS.swap.to.chainName)
+      pathrStore.setFromChainTokenAddr(DEFAULT_TOKENS.swap.from.tokenAddress)
+      pathrStore.setToChainTokenAddr(DEFAULT_TOKENS.swap.to.tokenAddress)
     }
   }, [selectedMenu])
 
