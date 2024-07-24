@@ -7,11 +7,14 @@ import { useStore } from "@/stores/hooks"
 import { Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/react"
 import JOLTBridge from "@/components/JOLTBridge/JOLTBridge"
 import USDC from "@/components/USDC/page"
+import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
 
 export default observer(function Page() {
   const [mounted, setMounted] = useState(false)
   const dialogStore =  useStore('dialogStore')
   const displayStore = useStore('displayStore')
+  const pathrStore = useStore('pathrStore')
+
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -23,23 +26,26 @@ export default observer(function Page() {
   }, [displayStore.selectedMenu])
 
   if(!mounted) return null
+
+  const showJOLTBridge = (
+    displayStore.selectedMenu==='jolt'
+    || (
+      (
+        (displayStore.joltifyChainSelected==='source' && pathrStore.toChainName===EVM_BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN)
+        || (displayStore.joltifyChainSelected==='target' && pathrStore.fromChainName===EVM_BLOCKCHAIN_NAME.BINANCE_SMART_CHAIN)
+      )
+      && displayStore.selectedMenu==='bridge'
+    )
+  )
+
   return (
     <main>
 
-      {(
-        ['swap', 'bridge'].includes(displayStore.selectedMenu)
-        && displayStore.joltifyChainSelected===null
-      )&&
+      {!showJOLTBridge&&
         <SwapWindowCCTP className="mt-9 w-full" />
       }
 
-      {(
-        displayStore.selectedMenu==='jolt'
-        || (
-          displayStore.joltifyChainSelected!==null
-          && displayStore.selectedMenu==='bridge'
-        )
-      )&&
+      {showJOLTBridge&&
         <JOLTBridge />
       }
 
