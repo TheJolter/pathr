@@ -92,8 +92,7 @@ export default observer(function Exchange(props: {
           className="mt-3 border-[#35593F] border-1 rounded-xl"
           label="Token"
           placeholder="Search an token"
-          inputValue={inputStore.bridgeToken}
-          defaultItems={BRIDGE_TOKENS}
+          defaultInputValue={inputStore.bridgeToken}
           onSelectionChange={(token) => {
             console.log('token', token)
             inputStore.setBridgeToken(token as string)
@@ -105,11 +104,11 @@ export default observer(function Exchange(props: {
           }
           isClearable={false}
         >
-          {(token) => <AutocompleteItem key={(token as any).symbol}
+          {BRIDGE_TOKENS.map((token) => <AutocompleteItem key={(token as any).symbol} value={(token as any).symbol}
             startContent={
               <Avatar className="w-5 h-5" src={(token as any).img} />
             }
-          >{(token as any).symbol}</AutocompleteItem>}
+          >{(token as any).symbol}</AutocompleteItem>)}
         </CustomAutocomplete>
 
         <div className="grid grid-cols-[1fr_auto_1fr] mt-4">
