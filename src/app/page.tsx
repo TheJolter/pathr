@@ -51,9 +51,7 @@ export default observer(function Page() {
 
 
       {displayStore.selectedMenu==='usdc' && 
-        <div className="mt-32">
-          <USDC />
-        </div>
+        <USDC />
       }
 
       <Modal isOpen={!!dialogStore.dialog} onOpenChange={()=>{
