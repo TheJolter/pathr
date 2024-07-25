@@ -5,7 +5,7 @@ import formatAddress from "@/utils/formatAddress";
 import { Button } from "@nextui-org/react";
 import { observer } from 'mobx-react-lite'
 import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
-// import cosmosAddrConvertor from "@/utils/cosmosAddrConvertor";
+import cosmosAddrConvertor from "@/utils/cosmosAddrConvertor";
 import { useEffect } from "react";
 import { Keplr } from "@keplr-wallet/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -55,18 +55,18 @@ export default observer(function CosmosWalletButton() {
       <Dropdown>
         <DropdownTrigger>
           <Button color="primary">
-            {/* Keplr Connected */}
-            {formatAddress(cosmosWalletStore.address)}
+            Keplr Connected
+            {/* {formatAddress(cosmosWalletStore.address)} */}
             <FontAwesomeIcon icon={faChevronDown} />
           </Button>
         </DropdownTrigger>
         <DropdownMenu>
-          {/* <DropdownItem>
+          <DropdownItem>
             Joltify: {formatAddress(cosmosWalletStore.address)}
-          </DropdownItem> */}
-          {/* <DropdownItem>
+          </DropdownItem>
+          <DropdownItem>
             Noble: {formatAddress(cosmosAddrConvertor(cosmosWalletStore.address, 'noble'))}
-          </DropdownItem> */}
+          </DropdownItem>
           <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
         </DropdownMenu>
       </Dropdown>
