@@ -1,21 +1,17 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Avatar, Button } from "@nextui-org/react"
+import { Avatar } from "@nextui-org/react"
 import { CSSProperties, useEffect, useState } from "react"
 import ToggleButton from "./ToggleButton"
 import ChainTokenCard from "./ChainTokenCard"
 import InputCard from "./InputCard"
 import MainButton from "../MainButton"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import bn from "@/utils/bn"
 import {Autocomplete, AutocompleteItem} from "@nextui-org/react";
 import allTokens from "@/configs/pathr/all-tokens.json"
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useTheme } from "next-themes"
 import BRIDGE_TOKENS from "@/configs/bridge-tokens"
-import { BlockchainInfo } from "@/configs/pathr/blockchain-info"
 
 export default observer(function Exchange(props: {
   style?: CSSProperties
