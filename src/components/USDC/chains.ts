@@ -1,3 +1,5 @@
+import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk";
+
 export type EvmChain = {
   chainID: string;
   chainName: string;
@@ -9,6 +11,7 @@ export type EvmChain = {
   tokenType: 'erc20',
   tokenMessenger: string,
   explorer: string,
+  rubicChainName: string,
 }
 
 export type CosmosChain = {
@@ -24,6 +27,7 @@ export type CosmosChain = {
   prefix: string,
   explorer: string,
   nativeToken: string,
+  rubicChainName: string,
 }
 
 export type Chain = EvmChain | CosmosChain;
@@ -39,6 +43,7 @@ export const chains:Chain[] = [
     tokenType: 'erc20',
     tokenMessenger: '0xbd3fa81b58ba92a82136038b25adec7066af3155', // https://developers.circle.com/stablecoins/docs/evm-smart-contracts#tokenmessenger-mainnet
     explorer: 'https://etherscan.io',
+    rubicChainName: EVM_BLOCKCHAIN_NAME.ETHEREUM
   },
   {
     chainID: '0xa86a',
@@ -50,6 +55,7 @@ export const chains:Chain[] = [
     tokenType: 'erc20',
     tokenMessenger: '0x6b25532e1060ce10cc3b0a99e5683b91bfde6982',
     explorer: 'https://snowtrace.io',
+    rubicChainName: EVM_BLOCKCHAIN_NAME.AVALANCHE
   },
   {
     chainID: '0xa4b1',
@@ -61,6 +67,7 @@ export const chains:Chain[] = [
     tokenType: 'erc20',
     tokenMessenger: '0x19330d10D9Cc8751218eaf51E8885D058642E08A',
     explorer: 'https://arbiscan.io',
+    rubicChainName: EVM_BLOCKCHAIN_NAME.ARBITRUM
   },
   {
     chainID: 'joltify_1729-1',
@@ -74,6 +81,7 @@ export const chains:Chain[] = [
     prefix: 'jolt',
     explorer: 'https://explorer.joltify.io/joltify',
     nativeToken: 'ujolt',
+    rubicChainName: 'Joltify'
   },
   {
     chainID: 'noble-1',
@@ -87,5 +95,6 @@ export const chains:Chain[] = [
     prefix: 'noble',
     explorer: 'https://www.mintscan.io/noble', // /accounts/address, /transactions/txhash
     nativeToken: 'uusdc',
+    rubicChainName: 'Noble'
   },
 ]

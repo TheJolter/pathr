@@ -12,6 +12,7 @@ import allTokens from "@/configs/pathr/all-tokens.json"
 import styled from "@emotion/styled";
 import { useTheme } from "next-themes"
 import BRIDGE_TOKENS from "@/configs/bridge-tokens"
+import { chains as usdcChains} from '@/components/USDC/chains'
 
 export default observer(function Exchange(props: {
   style?: CSSProperties
@@ -126,7 +127,19 @@ export default observer(function Exchange(props: {
             }}
             isClearable={false}
           >
-            {(chain) => {
+            {(chain: any) => {
+              console.log({
+                'pathrStore.toChainName': pathrStore.toChainName,
+                'chain.blockchainName': chain.blockchainName
+              })
+              if (
+                inputStore.bridgeToken==='USDC'
+                && !usdcChains.find(item=>item.rubicChainName===pathrStore.toChainName)
+                && (chain.blockchainName==='Joltify'||chain.blockchainName==='Noble')
+              ) {
+                return <AutocompleteItem key={(chain as any).blockchainName} className="text text-xs hidden"
+                >{(chain as any).blockchainName}</AutocompleteItem>
+              }
               return <AutocompleteItem key={(chain as any).blockchainName} className="text text-xs"
               >{(chain as any).blockchainName}</AutocompleteItem>
             }}
@@ -157,7 +170,15 @@ export default observer(function Exchange(props: {
             }}
             isClearable={false}
           >
-            {(chain) => {
+            {(chain:any) => {
+              if (
+                inputStore.bridgeToken==='USDC'
+                && !usdcChains.find(item=>item.rubicChainName===pathrStore.fromChainName)
+                && (chain.blockchainName==='Joltify'||chain.blockchainName==='Noble')
+              ) {
+                return <AutocompleteItem key={(chain as any).blockchainName} className="text text-xs hidden"
+                >{(chain as any).blockchainName}</AutocompleteItem>
+              }
               return <AutocompleteItem key={(chain as any).blockchainName} className="text text-xs"
               >{(chain as any).blockchainName}</AutocompleteItem>
             }}

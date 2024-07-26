@@ -68,14 +68,14 @@ export default observer(function Menu() {
       style={selectedMenu!=='jolt'?noneSelectedStyle:undefined}
     >JOLT</MainButton> */}
 
-    <MainButton className="h-[46px] font-semibold text-lg" fullWidth
+    {/* <MainButton className="h-[46px] font-semibold text-lg" fullWidth
       onClick={()=>{
         // window.open('https://usdc.pathr.io')
         displayStore.setSelectedMenu('usdc')
       }}
       style={selectedMenu!=='usdc'?noneSelectedStyle:undefined}
       // style={noneSelectedStyle}
-    >USDC</MainButton>
+    >USDC</MainButton> */}
   </div>
   <div className="rounded-full absolute w-full h-[58px] top-0" 
     style={menuBgStyle}

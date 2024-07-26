@@ -8,6 +8,7 @@ import { Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/react"
 import JOLTBridge from "@/components/JOLTBridge/JOLTBridge"
 import USDC from "@/components/USDC/page"
 import { EVM_BLOCKCHAIN_NAME } from "pathr-sdk"
+import ifShowUSDCIBC from "@/components/USDC/utils/if-show-usdc-ibc"
 
 export default observer(function Page() {
   const [mounted, setMounted] = useState(false)
@@ -41,16 +42,26 @@ export default observer(function Page() {
   return (
     <main>
 
-      {!showJOLTBridge&&displayStore.selectedMenu!=='usdc'&&
+      {(
+        !showJOLTBridge
+        &&displayStore.selectedMenu!=='usdc'
+        &&!ifShowUSDCIBC(pathrStore.fromChainName, pathrStore.toChainName)
+      )&&
         <SwapWindowCCTP className="mt-9 w-full" />
       }
 
-      {showJOLTBridge&&
+      {(
+        showJOLTBridge
+        && !ifShowUSDCIBC(pathrStore.fromChainName, pathrStore.toChainName)
+      )&&
         <JOLTBridge />
       }
 
 
-      {displayStore.selectedMenu==='usdc' && 
+      {(
+        displayStore.selectedMenu==='usdc'
+        || ifShowUSDCIBC(pathrStore.fromChainName, pathrStore.toChainName)
+      ) && 
         <USDC />
       }
 

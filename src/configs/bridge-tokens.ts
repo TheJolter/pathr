@@ -1,5 +1,5 @@
 /**
- * generated from /api/dev/tokens
+ * generated from /api/dev/bridge-tokens
  */
 
 const BRIDGE_TOKENS = [
@@ -12,6 +12,51 @@ const BRIDGE_TOKENS = [
       },
       {
         "blockchainName": "Joltify"
+      }
+    ]
+  },
+  {
+    "symbol": "USDC",
+    "img": "https://assets.rubic.exchange/assets/ethereum/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/logo.png",
+    "chains": [
+      // {
+      //   "blockchainName": "Noble"
+      // },
+      {
+        "blockchainName": "Joltify"
+      },
+      {
+        "blockchainName": "ETH"
+      },
+      {
+        "blockchainName": "BSC"
+      },
+      {
+        "blockchainName": "POLYGON"
+      },
+      {
+        "blockchainName": "OPTIMISM"
+      },
+      {
+        "blockchainName": "ARBITRUM"
+      },
+      {
+        "blockchainName": "GNOSIS"
+      },
+      {
+        "blockchainName": "AVALANCHE"
+      },
+      {
+        "blockchainName": "AURORA"
+      },
+      {
+        "blockchainName": "KLAYTN"
+      },
+      {
+        "blockchainName": "ZK_SYNC"
+      },
+      {
+        "blockchainName": "BASE"
       }
     ]
   },
@@ -114,45 +159,6 @@ const BRIDGE_TOKENS = [
       },
       {
         "blockchainName": "ZK_SYNC"
-      }
-    ]
-  },
-  {
-    "symbol": "USDC",
-    "img": "https://assets.rubic.exchange/assets/ethereum/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/logo.png",
-    "chains": [
-      {
-        "blockchainName": "ETH"
-      },
-      {
-        "blockchainName": "BSC"
-      },
-      {
-        "blockchainName": "POLYGON"
-      },
-      {
-        "blockchainName": "OPTIMISM"
-      },
-      {
-        "blockchainName": "ARBITRUM"
-      },
-      {
-        "blockchainName": "GNOSIS"
-      },
-      {
-        "blockchainName": "AVALANCHE"
-      },
-      {
-        "blockchainName": "AURORA"
-      },
-      {
-        "blockchainName": "KLAYTN"
-      },
-      {
-        "blockchainName": "ZK_SYNC"
-      },
-      {
-        "blockchainName": "BASE"
       }
     ]
   },
