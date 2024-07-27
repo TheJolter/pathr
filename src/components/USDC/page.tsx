@@ -4,7 +4,7 @@ import { useTheme } from "next-themes"
 import { CSSProperties, useEffect, useState } from "react"
 import ToggleButton from "../SwapWindowCCTP/ToggleButton"
 import MainButton from "../MainButton"
-import ChainTokenIcon from "@/components/JOLTBridge/ChainTokenIcon"
+import ChainTokenIcon from "./ChainTokenIcon"
 import { Autocomplete, AutocompleteItem, Avatar, Chip, Link } from "@nextui-org/react"
 import { useConnectWallet } from "@web3-onboard/react"
 import { observer } from "mobx-react-lite"
@@ -641,8 +641,11 @@ export default observer(function USDC() {
                     <div id="input-card-icon-input-amout" className="flex">
                       <div>
                         <ChainTokenIcon
-                          tokenImg="https://joltify.io/wp-content/uploads/2023/09/joltify-02.png"
-                          chainImg={JOLT_CHAIN_IMGS[sourceChainName]}
+                          tokenImg="https://assets.rubic.exchange/assets/ethereum/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/logo.png"
+                          chainImg={
+                            BlockchainInfo[pathrStore.fromChainName as any]?.chainLabel
+                            ?? 'https://joltify.io/wp-content/uploads/2023/09/joltify-02.png'
+                          }
                         />
                       </div>
                       <div className=" ml-4">
@@ -665,7 +668,7 @@ export default observer(function USDC() {
                           {address && <div
                             style={{ color: bn(amount || 0).gt(balance || 0) ? 'red' : undefined }}
                           >
-                            Balance: {balance}
+                            Balance: {balanceStore.getUsdcBalance(sourceChain?.chainID, sourceAddress)} USDC
                           </div>}
                         </div>
                       </div>
