@@ -650,12 +650,11 @@ export default observer(function USDC() {
                       </div>
                       <div className=" ml-4">
                         <div className="flex items-center mb-1">
-                          <input placeholder="0" value={amount} disabled={false}
+                          <input placeholder="0"
+                            value={inputStore.amount}
+                            disabled={false}
                             className="text-lg font-semibold mr-3 bg-transparent focus:outline-none border-none w-full"
-                            onChange={(e) => {
-                              if (! /^\d?(\d+[\.]?\d*)?$/.test(e.target.value)) return
-                              setAmount(e.target.value)
-                            }}
+                            onChange={handleAmountChange}
                           />
                           <Chip size="sm" color="success" className="cursor-pointer"
                             onClick={() => {
@@ -673,8 +672,11 @@ export default observer(function USDC() {
                         </div>
                       </div>
                     </div>
+                    
                   </div>
-
+                  {inputStore.amount&&errMsgAmount&&<div className="text-orange-600">
+                    {errMsgAmount}
+                  </div>}
                 </div>
               </div>
               <div className="max-w-2xl w-full mt-8 flex justify-center">
