@@ -280,7 +280,7 @@ export default observer(function JOLTBridge() {
     } catch (error: any) {
       setSending(false)
       dialogStore.showDialog({
-        title: 'Approve Faled',
+        title: 'Approve Failed',
         content: `approve failed: ${error?.message}`
       })
       return

@@ -84,7 +84,7 @@ export default observer(function Review(props: {
 
     if (!swapInfo) {
       dialogStore.showDialog({
-        title: 'Faled',
+        title: 'Failed',
         content: `swapInfo not found`
       })
       return
@@ -94,14 +94,14 @@ export default observer(function Review(props: {
     const targetChain = CHAINS.find(chain=>chain.chainName===pathrStore.toChainName)
     if (!sourceChain?.bridgeAddress) {
       dialogStore.showDialog({
-        title: 'Faled',
+        title: 'Failed',
         content: `bridge contract can not found on chain ${pathrStore.fromChainName}`
       })
       return
     }
     if (targetChain?.domain===undefined) {
       dialogStore.showDialog({
-        title: 'Faled',
+        title: 'Failed',
         content: `domain not found on chain ${pathrStore.toChainName}`
       })
       return
@@ -109,7 +109,7 @@ export default observer(function Review(props: {
 
     if (!targetChain.receiverContract) {
       dialogStore.showDialog({
-        title: 'Faled',
+        title: 'Failed',
         content: `receiver contract not found on chain ${pathrStore.toChainName}`
       })
       return
@@ -150,7 +150,7 @@ export default observer(function Review(props: {
     } catch(error:any) {
       setIsBusy(false)
       dialogStore.showDialog({
-        title: 'Faled',
+        title: 'Failed',
         content: `approve failed: ${error?.message}`
       })
       return
@@ -188,7 +188,7 @@ export default observer(function Review(props: {
       })
     }).catch(error=>{
       dialogStore.showDialog({
-        title: 'Faled',
+        title: 'Failed',
         content: `swap failed: ${error?.message}`
       })
     }).finally(()=>{
