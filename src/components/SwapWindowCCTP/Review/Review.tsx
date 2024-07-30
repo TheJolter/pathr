@@ -45,6 +45,13 @@ export default observer(function Review(props: {
 
   const chainInfo = BlockchainInfo[pathrStore.fromChainName!]
 
+  let routeName = 'Uniswap'
+  let routeImg = 'https://uniswap.org/favicon.ico'
+  if (swapInfo?.fee===0) {
+    routeName = 'CCTP'
+    routeImg = 'https://www.circle.com/hubfs/favicon.ico'
+  }
+
   let Injector = RubicInjector
   if (OWN_CHAINS.includes(pathrStore.fromChainName as any)) {
     Injector = PathrInjector
@@ -222,9 +229,9 @@ export default observer(function Review(props: {
     </div>
 
     <div className="flex items-center pl-6">
-      <Avatar size="sm" src="https://uniswap.org/favicon.ico" />
+      <Avatar size="sm" src={routeImg} />
       <div className="grow ml-3">
-        <div className="text-base">Swap Via Uniswap</div>
+        <div className="text-base">Swap Via {routeName}</div>
       </div>
     </div>
 

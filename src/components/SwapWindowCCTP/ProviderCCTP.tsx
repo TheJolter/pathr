@@ -30,6 +30,13 @@ export default observer(function ProviderCCTP(props: {
   let platformFee = apiDataStore.platformFees.find(fee=>fee.chainID===targetChain?.chainId)?.feeUSDC || '0'
   platformFee = bigNumberFloor(platformFee, 2).toFixed()
 
+  let routeName = 'Uniswap'
+  let routeImg = 'https://uniswap.org/favicon.ico'
+  if (swapInfo?.fee===0) {
+    routeName = 'CCTP'
+    routeImg = 'https://www.circle.com/hubfs/favicon.ico'
+  }
+
   useEffect(()=>{
     if (theme==='dark') {
       setBackground('#354439')
@@ -56,9 +63,9 @@ export default observer(function ProviderCCTP(props: {
         {swapInfo?.amountOut} {swapInfo?.tokenOut.symbol}
       </div>
       <div className="flex items-center text-gray-400 text-sm">
-        <Avatar className="w-4 h-4 mr-1" src="https://uniswap.org/favicon.ico" />
+        <Avatar className="w-4 h-4 mr-1" src={routeImg} />
         <div>
-          Uniswap
+          {routeName}
         </div>
       </div>
     </div>
