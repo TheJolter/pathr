@@ -144,8 +144,10 @@ export default observer(function Review(props: {
           amount: baseAmountIn,
         })
         setTimeout(()=>{
+          setIsBusy(false)
           handleSwap()
         }, 5000)
+        return
       }
     } catch(error:any) {
       setIsBusy(false)
