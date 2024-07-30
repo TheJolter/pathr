@@ -15,6 +15,7 @@ type Chain = {
   explorer: string,
   receiverContract?: string, // pathrIn, if not set, don't show in target chain selection list
   uniswapV3Factory: string, // https://docs.uniswap.org/contracts/v3/reference/deployments/base-deployments
+  timeSecond: number, // https://developers.circle.com/stablecoins/docs/required-block-confirmations
 }
 export const CHAINS:Chain[] = [
   {
@@ -29,7 +30,8 @@ export const CHAINS:Chain[] = [
     bridgeAddress: '0xa8B9DF47Ea16aB48ecf212B48a1F84b9DD4Fd0F0',
     receiverContract: '0x2025731CE82868DDDF81F2f265634f1dA6e7BE2d',
     explorer: 'https://arbiscan.io',
-    uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+    uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984',
+    timeSecond: 780
   },
   {
     chainName: EVM_BLOCKCHAIN_NAME.AVALANCHE,
@@ -44,6 +46,7 @@ export const CHAINS:Chain[] = [
     uniswapV3Factory: '0x740b1c1de25031C31FF4fC9A62f554A55cdC1baD',
     bridgeAddress: '0x32284883b927e060Bd6650911658D081b6b0D38E',
     receiverContract: '0xA491552e80e7D3F2C728c7422e6509e9E88b75d9',
+    timeSecond: 20
   },
   {
     chainName: EVM_BLOCKCHAIN_NAME.ETHEREUM,
@@ -58,6 +61,7 @@ export const CHAINS:Chain[] = [
     uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984',
     // bridgeAddress: ,
     // receiverContract: ,
+    timeSecond: 780
   },
 
   {
@@ -73,6 +77,7 @@ export const CHAINS:Chain[] = [
     uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984',
     bridgeAddress: '0x32284883b927e060Bd6650911658D081b6b0D38E',
     receiverContract: '0xA491552e80e7D3F2C728c7422e6509e9E88b75d9',
+    timeSecond: 780
   },
 
   {
@@ -88,6 +93,7 @@ export const CHAINS:Chain[] = [
     bridgeAddress: '0x76ad9e4aE5c4Eb3e52A8D23636fbaa04E63a9601',
     receiverContract: '0xd99D4B158a7F5dcb09079fDA4EfDb4f21Cd68e69',
     uniswapV3Factory: '0x33128a8fC17869897dcE68Ed026d694621f6FDfD',
+    timeSecond: 780
   },
 
   {
@@ -103,5 +109,6 @@ export const CHAINS:Chain[] = [
     uniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984',
     bridgeAddress: '0x2911445aF5144402839284ddC2E1a3B7B580DC99',
     receiverContract: '0x9b8C3bf7bC255F5a4F05BfF19Cb74A2EB2fafEc7',
+    timeSecond: 480
   },
 ]

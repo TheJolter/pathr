@@ -25,10 +25,31 @@ export default function calcRouter({
   amountOut: string,
   fee: number, // fee in source chain
   slippage: number,
-  targetFee: number
+  targetFee: number,
+  timeUsed: string,
+  timeSecond: number
 }> {
   const feeUSDC = apiDataStore.platformFees.find(fee=>fee.chainID===tokenOut.chainId)?.feeUSDC || '0'
   return new Promise((resolve, reject)=>{
+
+    const chainOut = CHAINS.find(chain=>chain.chainId===tokenOut.chainId)
+    if (!chainOut) {
+      reject('chainOut info not found')
+      return
+    }
+
+    const chainIn = CHAINS.find(chain=>chain.chainId===tokenIn.chainId)
+    if (!chainIn) {
+      reject('chainIn info not found')
+      return
+    }
+
+    const timeSecond = chainIn.timeSecond
+    let timeUsed = chainIn.timeSecond + 's'
+    if (chainIn.timeSecond > 60) {
+      timeUsed = Math.floor(chainIn.timeSecond / 60) + 'm'
+    }
+
     if (isUsdc(tokenIn) && isUsdc(tokenOut)) {
       let _amountOut = bn(amountIn).minus(feeUSDC)
       if (_amountOut.lt(0)) {
@@ -38,15 +59,13 @@ export default function calcRouter({
         amountOut: _amountOut.toFixed(),
         fee: 0,
         slippage: 0, // _amountOut.minus(amountIn).div(amountIn).toNumber(),
-        targetFee: 0
+        targetFee: 0,
+        timeSecond,
+        timeUsed
       })
       return
     }
-    const chainOut = CHAINS.find(chain=>chain.chainId===tokenOut.chainId)
-    if (!chainOut) {
-      reject('chainOut info not found')
-      return
-    }
+    
     const usdcTo = apiDataStore.coingeckoTokens.find(token=>token.address.toLowerCase()===chainOut.usdc.toLowerCase())
     if (!usdcTo) {
       reject(`There is no USDC on chain ${tokenOut.chainId}`)
@@ -69,16 +88,13 @@ export default function calcRouter({
           amountOut: swapInfo.amountOut,
           fee: 0, // only swap in target chain, no fee in source chain
           slippage: swapInfo.slippage,
-          targetFee: swapInfo.fee
+          targetFee: swapInfo.fee,
+          timeSecond,
+          timeUsed
         })
       }).catch(error=>{
         reject(error)
       })
-      return
-    }
-    const chainIn = CHAINS.find(chain=>chain.chainId===tokenIn.chainId)
-    if (!chainIn) {
-      reject('chainIn info not found')
       return
     }
 
@@ -99,7 +115,9 @@ export default function calcRouter({
           amountOut: _amountOut.toFixed(),
           fee: swapInfo.fee,
           slippage: swapInfo.slippage,
-          targetFee: 0 // only swap in source chain, no fee in target chain
+          targetFee: 0, // only swap in source chain, no fee in target chain
+          timeSecond,
+          timeUsed
         })
       }).catch(error=>{
         reject(error)
@@ -125,7 +143,9 @@ export default function calcRouter({
           amountOut: swapInfo.amountOut,
           fee: fee1,
           slippage: slippage1 + swapInfo.slippage,
-          targetFee: swapInfo.fee
+          targetFee: swapInfo.fee,
+          timeSecond,
+          timeUsed
         })
       }).catch(error=>{
         reject(error)

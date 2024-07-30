@@ -8,7 +8,9 @@ type SwapInfo = {
   amountOut: string,
   fee: number,
   slippage: number,
-  targetFee: number
+  targetFee: number,
+  timeSecond: number,
+  timeUsed: string,
 }
 
 export default class CCTPStore {

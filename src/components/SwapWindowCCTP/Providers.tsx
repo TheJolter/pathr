@@ -117,7 +117,9 @@ export default observer(function Providers(
           amountOut: result.amountOut,
           fee: result.fee,
           slippage: result.slippage,
-          targetFee: result.targetFee
+          targetFee: result.targetFee,
+          timeSecond: result.timeSecond,
+          timeUsed: result.timeUsed
         })
       }).catch(error=>{
         console.error('error calcRouter', error, error.message)

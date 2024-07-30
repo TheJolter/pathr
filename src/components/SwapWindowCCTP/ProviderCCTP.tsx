@@ -3,7 +3,7 @@ import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 import ChainTokenIcon from "./ChainTokenIcon"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSackDollar } from '@fortawesome/free-solid-svg-icons'
+import { faSackDollar, faQuestion, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { observer } from "mobx-react-lite"
 import { useStore } from "@/stores/hooks"
 import { CHAINS } from "@/configs/cctp/configs"
@@ -82,7 +82,13 @@ export default observer(function ProviderCCTP(props: {
     <div className="flex items-center grow justify-end">
       <div className="text-gray-400">
         {/* Slippage: {((swapInfo?.slippage||0)*100).toFixed(2)}% */}
-        Time: 3m
+        Time: {swapInfo?.timeUsed ?? '4m'}
+        {/* <FontAwesomeIcon icon={faQuestionCircle} className="text-gray-400 ml-1" 
+          onClick={(e)=>{
+            window.open('https://developers.circle.com/stablecoins/docs/required-block-confirmations')
+            e.preventDefault()
+          }}
+        /> */}
       </div>
     </div>
   </div>
