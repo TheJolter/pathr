@@ -105,8 +105,8 @@ export default observer(function Provider(props: {
             , 6
           ).toFormat()
         } {
-          trade?.feeInfo?.pathrProxy?.token?.symbol
-          ?? trade?.feeInfo?.rubicProxy?.token?.symbol
+          trade?.feeInfo?.pathrProxy?.fixedFee?.token?.symbol
+          ?? trade?.feeInfo?.rubicProxy?.fixedFee?.token?.symbol
           ?? trade?.feeInfo?.provider?.cryptoFee?.token?.symbol
         }
       </div>
