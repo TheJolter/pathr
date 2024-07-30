@@ -96,7 +96,19 @@ export default observer(function Provider(props: {
         <FontAwesomeIcon icon={faSackDollar} className="text-gray-400 mr-2" />
       </Tooltip>
       <div className="text-gray-400">
-        { bigNumberCeil(trade?.feeInfo?.pathrProxy?.fixedFee?.amount?.toString()||0, 18).toFormat()} {fromNativeToken?.symbol}
+        { bigNumberCeil(
+            bn(trade?.feeInfo?.pathrProxy?.fixedFee?.amount?.toString()||0).plus(
+              trade?.feeInfo?.rubicProxy?.fixedFee?.amount?.toString()||0
+            ).plus(
+              trade?.feeInfo?.provider?.cryptoFee?.amount?.toString()||0
+            )
+            , 6
+          ).toFormat()
+        } {
+          trade?.feeInfo?.pathrProxy?.token?.symbol
+          ?? trade?.feeInfo?.rubicProxy?.token?.symbol
+          ?? trade?.feeInfo?.provider?.cryptoFee?.token?.symbol
+        }
       </div>
     </div>
     {/* {trade?.feeInfo?.provider&&<div className="flex items-center">
