@@ -45,6 +45,11 @@ export default observer(function EvmToJolyify({
   }, [inputStore.targetAddress, targetChain?.chainType])
 
   const handleSendToNoble = async () => {
+    if (!evmWalletStore.address) {
+      modalStore.showModal({title: '⚠️', body: 'Please connect Metamask wallet first'})
+      return
+    }
+
     if (!evmWalletStore.address || Number(inputStore.amount)<=0 || !inputStore.targetAddress) return
     setSendingToNoble(true)
 
@@ -134,6 +139,12 @@ export default observer(function EvmToJolyify({
   const handleNobleToJoltify = async () => {
     const keplr:Keplr = (window as any).keplr
     if (!keplr || !nobleChain) return
+
+    if (!evmWalletStore.address) {
+      modalStore.showModal({title: '⚠️', body: 'Please connect Metamask wallet first'})
+      return
+    }
+
     const signer = keplr.getOfflineSignerOnlyAmino(nobleChain.chainID)
     setSendingToJoltify(true);
     const sender = (await signer.getAccounts())[0].address

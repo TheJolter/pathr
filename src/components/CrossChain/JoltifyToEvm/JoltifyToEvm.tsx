@@ -62,6 +62,10 @@ export default observer(function JoltifyToEvm({
   const handleSendToNoble = async () => {
     console.log('handleSendIbc')
     const keplr:Keplr = (window as any).keplr
+    if (!cosmosWalletStore.address) {
+      modalStore.showModal({ title: '⚠️', body: 'Please connect Keplr wallet first'})
+      return
+    }
     if (!keplr || !sourceChain || !cosmosWalletStore.address || Number(inputStore.amount)<=0) {
       console.log({keplr, sourceChain})
       return
