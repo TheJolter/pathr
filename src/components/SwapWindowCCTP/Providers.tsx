@@ -123,10 +123,10 @@ export default observer(function Providers(
         })
       }).catch(error=>{
         console.error('error calcRouter', error, error.message)
-        dialogStore.showDialog({
-          title: 'Error code 1610',
-          content: error.message
-        })
+        // dialogStore.showDialog({
+        //   title: 'Error code 1610',
+        //   content: error.message ?? error.toString()
+        // })
       })
       .finally(()=>{
         setCctpCalculating(false)

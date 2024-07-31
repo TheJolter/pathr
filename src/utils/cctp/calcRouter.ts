@@ -32,15 +32,19 @@ export default function calcRouter({
   const feeUSDC = apiDataStore.platformFees.find(fee=>fee.chainID===tokenOut.chainId)?.feeUSDC || '0'
   return new Promise((resolve, reject)=>{
 
-    const chainOut = CHAINS.find(chain=>chain.chainId===tokenOut.chainId)
-    if (!chainOut) {
-      reject('chainOut info not found')
-      return
-    }
-
     const chainIn = CHAINS.find(chain=>chain.chainId===tokenIn.chainId)
     if (!chainIn) {
       reject('chainIn info not found')
+      return
+    }
+    if (!chainIn.bridgeAddress) {
+      reject(`bridge contract can not found on chain ${tokenIn.chainId}`)
+      return
+    }
+
+    const chainOut = CHAINS.find(chain=>chain.chainId===tokenOut.chainId)
+    if (!chainOut) {
+      reject('chainOut info not found')
       return
     }
 
