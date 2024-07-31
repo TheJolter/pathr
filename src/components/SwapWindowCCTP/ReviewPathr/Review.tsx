@@ -179,7 +179,10 @@ export default observer(function ReviewPathr(props: {
       console.log('trade?.swap error', err, 'gasPrice', gasPrice)
       displayStore.setWarningDialogParams({
         title: 'Swap failed',
-        content: `${err.message || err.toString()}`,
+        content: `
+          This route is current unavaliable, please go back and choose another route.
+          ${err.message || err.toString()}
+        `,
       })
     })
   }
