@@ -127,6 +127,10 @@ export default observer(function ReviewPathr(props: {
       needApprove = await trade?.needApprove()
       console.log({needApprove})
     }
+
+    gasPrice = parseInt(bn(gasPrice).times(1.3).toFixed()).toString()
+
+    console.log('gasPrice', gasPrice)
     
     if (needApprove) {
       const tx = {
@@ -148,7 +152,6 @@ export default observer(function ReviewPathr(props: {
       return
     }
 
-    console.log('gasPrice', gasPrice)
     trade?.swap({
       onConfirm:(hash)=>{
       }, 
